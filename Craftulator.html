@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<!--Represents the document type, and helps browsers to display web pages correctly.-->
+
+<html lang="en"> 
+<!--declare the language of the Web page. This is meant to assist search engines and browsers.-->
+    <head> 
+    <!--container for metadata-->
+        <meta charset="utf-8"> 
+        <!--Specify the character encoding for the HTML document.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!--Gives the browser instructions on how to control the page's dimensions and scaling.-->
+
+        <title>Website</title> 
+        <!--Defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.-->
+        <link rel="stylesheet" href="Style/Style.css"> 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+        <!--Defines the relationship between the current document and an external resource. Used to link to external style sheets.-->
+
+        <script src="Scripts/JavaScript.js" defer></script> 
+        <!-- <script src="Scripts/_interactiveBackground.js" defer></script>  -->
+        <!--Used to embed a client-side script (JavaScript).-->
+        <!-- "defer" A script that will not run until after the page has loaded-->
+    </head>
+
+    <body> <!--Contains all the contents of an HTML document.-->
+
+        <header class="flex align">
+            <div class="dateTime flexChild">
+                <p id="date"></p>
+                <p id="time"></p>
+            </div>
+            <div class="logo flexChild">
+                <img class="imgLogo" src="Images/logo.png" alt="Logo">                
+            </div>
+            <div class="menu flexChild">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="DYIProfits.html">DIY Profits</a></li>
+                        <li><a href="Craftulator.html">Craftulator</a></li>
+                        <li><a href="MoreWebsites.html">More Websites</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="mainContent">
+            <p class="maintenance">This website is still in development. <br> Please be patient while I work on it :)</p>
+        </div>
+
+        <footer class="flex">
+            <p>just put some links at the bottom or something :P</p>
+        </footer>
+
+    </body>
+
+</html>

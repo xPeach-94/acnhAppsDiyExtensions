@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+<!--Represents the document type, and helps browsers to display web pages correctly.-->
+
+<html lang="en"> 
+<!--declare the language of the Web page. This is meant to assist search engines and browsers.-->
+    <head> 
+    <!--container for metadata-->
+        <meta charset="utf-8"> 
+        <!--Specify the character encoding for the HTML document.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!--Gives the browser instructions on how to control the page's dimensions and scaling.-->
+
+        <title>ACNH-Apps/Home</title> 
+        <!--Defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.-->
+        <link rel="stylesheet" href="Style/Style.css"> 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+        <!--Defines the relationship between the current document and an external resource. Used to link to external style sheets.-->
+
+        <script src="Scripts/JavaScript.js" defer></script> 
+        <script src="Scripts/_hemisphere.js" defer></script> 
+        <!-- <script src="Scripts/_interactiveBackground.js" defer></script> -->
+        <script src="Scripts/_materials.js" defer></script> 
+        <!-- <script src="Scripts/_eventsFunctions.js" defer></script> -->
+        <!-- <script src="Scripts/_events.js" defer></script> 
+        <script src="Scripts/_birthdays.js" defer></script>  -->
+        <script src="Scripts/_index.js" defer></script> 
+        <!--Used to embed a client-side script (JavaScript).-->
+        <!-- "defer" A script that will not run until after the page has loaded-->
+    </head>
+
+    <body> <!--Contains all the contents of an HTML document.-->
+
+        <header class="flex align">
+            <div class="dateTime flexChild">
+                <p id="date"></p>
+                <p id="time"></p>
+            </div>
+            <div class="logo flexChild">
+                <img class="imgLogo" src="Images/logo.png" alt="Logo">                
+            </div>
+            <div class="menu flexChild">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="DYIProfits.html">DIY Profits</a></li>
+                        <li><a href="Craftulator.html">Craftulator</a></li>
+                        <li><a href="MoreWebsites.html">More Websites</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="mainContent flexVertical">
+            <div class="intro flexVertical">
+                <h1>ACNH Apps</h1>
+                <p class="intro">
+                    Animal Crossing New Horizons Apps is a website with usefull apps for you to use. <br>
+                    I got this idea at first when I wanted to sell my excess materials but not just sell the materials. 
+                    I thought I could make more profit if I crafted items with those materials instead. <br>
+                    So my idea of DIY Profits was born! <br>
+                    I hope you find these apps as usefull as I do!
+                </p>
+                <p class="maintenance">This website is still in development. <br> Please be patient while I work on it :)</p>
+            </div>
+            
+            <div class="flex">
+                <a href="DYIProfits.html" class="btn">DIY Profits</a>
+                <a href="Craftulator.html" class="btn">Craftulator</a>
+            </div>
+            
+            <div class="currentEvents flexVertical">
+                <!-- https://www.w3schools.com/howto/howto_js_tabs.asp -->
+                <!-- Tab links -->
+                <h2>Currently Happening</h2>
+                
+                <div class="tabs">
+                    <div class="tab">
+                        <button class="tablinks active" onclick="hemisphere(event, 'north')">North Hemisphere</button>
+                        <button class="tablinks" onclick="hemisphere(event, 'south')">South Hemisphere</button>
+                    </div>
+                    <!-- Tab content -->
+                    <div>
+                        <div id="north" class="tabcontent" style="display: block;">
+                            <h3>North Hemisphere</h3>
+        
+                            <div class="flex noGap">
+                                <article id="seasonalNorth">
+                                    <h4>Seasonal</h4>
+                                </article>
+                                <article id="eventsNorth" class="events">
+                                    <h4>Events</h4>
+                                    <p>To be Continued</p>
+                                </article>
+                                <article id="birthdays">
+                                    <h4>Birthday</h4>
+                                    <p>To be Continued</p>
+                                </article>
+                            </div>
+                        </div>
+    
+                        <div id="south" class="tabcontent">
+                            <h3>South Hemisphere</h3>
+        
+                            <div class="flex noGap">
+                                <article id="seasonalSouth">
+                                    <h4>Seasonal</h4>
+                                    <p>To be Continued</p>
+                                </article>
+                                <article id="eventsSouth">
+                                    <h4>Events</h4>
+                                    <p>To be Continued</p>
+                                </article>
+                                <article id="birthdays">
+                                    <h4>Birthday</h4>
+                                    <p>To be Continued</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer class="flex">
+            <p>just put some links at the bottom or something :P</p>
+        </footer>
+
+    </body>
+
+</html>

@@ -1,0 +1,78 @@
+body
+{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+
+    margin: 0px 20px;
+    background-image: url("../../Images/background.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+h1, h2, h3, h4, h5, h6
+{
+    text-align: center;
+}
+h1, h2
+{
+    font-family: 'Satisfy', cursive;
+    color: $seaBlue;
+}
+h3
+{
+    color: $seaBlue;
+}
+
+header, .mainContent, footer
+{
+    background-color: rgba(white, 0.5);
+    padding: 0px 20px;
+    .imgLogo
+    {
+        background-color: rgba(white, 0.5);
+    }
+}
+header, footer
+{
+    margin: 0px -20px;
+}
+
+.flex
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    &Vertical
+    {
+        @extend .flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .flexChild
+    {
+        flex: 1;
+    }
+}
+.align
+{
+    align-items: center;
+}
+
+ul
+{
+    list-style-type: none;
+    a
+    {
+        text-decoration: none;
+        color: $seaBlue;
+    }
+}
+
+.maintenance
+{
+    font-size: 200%;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0px;
+}
