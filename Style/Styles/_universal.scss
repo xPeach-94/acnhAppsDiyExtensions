@@ -1,14 +1,15 @@
 body
 {
     font-family: 'M PLUS Rounded 1c', sans-serif;
-
-    margin: 0px 20px;
+}
+.backImage
+{
     // background-image: url("../Images/background.png");
     background-image: url("/acnhAppsDiyExtensions"+"/Images/background.png");
-    //https://xpeach-94.github.io/acnhAppsDiyExtensions/
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     background-attachment: fixed;
 }
 h1, h2, h3, h4, h5, h6
@@ -35,20 +36,31 @@ header, .mainContent, footer
     }
 }
 header, footer
+{    
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.mainContent
 {
-    margin: 0px -20px;
+    width: 75%;
+    margin: auto;
 }
 
 .flex
 {
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: 10px;
     &Vertical
     {
         @extend .flex;
         flex-direction: column;
         gap: 20px;
+    }
+    :not(header)
+    {
+        gap: 30px;
     }
     .flexChild
     {

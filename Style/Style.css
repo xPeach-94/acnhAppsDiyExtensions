@@ -359,11 +359,14 @@ h2
 */
 body {
   font-family: "M PLUS Rounded 1c", sans-serif;
-  margin: 0px 20px;
-  background-image: url("/acnhAppsDiyExtensions/Images/background.png");
-  background-position: top;
+}
+
+.backImage {
+  background-image: url("../Images/background.png");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
 }
 
@@ -389,17 +392,27 @@ header .imgLogo, .mainContent .imgLogo, footer .imgLogo {
 }
 
 header, footer {
-  margin: 0px -20px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.mainContent {
+  width: 75%;
+  margin: auto;
 }
 
 .flex, .flexVertical {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 10px;
 }
 .flexVertical {
   flex-direction: column;
   gap: 20px;
+}
+.flex :not(header), .flexVertical :not(header) {
+  gap: 30px;
 }
 .flex .flexChild, .flexVertical .flexChild {
   flex: 1;
@@ -427,6 +440,14 @@ ul a {
 
 .imgLogo {
   width: 100%;
+}
+
+.dateTime {
+  text-align: center;
+}
+
+ul {
+  padding: 0px;
 }
 
 .mainContent {
@@ -481,7 +502,7 @@ ul a {
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 15px 10px;
   transition: 0.3s;
 }
 .currentEvents .tab button:hover {

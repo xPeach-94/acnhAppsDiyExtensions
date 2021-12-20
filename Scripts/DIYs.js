@@ -1,6 +1,6 @@
 const diyArr = 
 [
-    //Housewares ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- Housewares
     {
         "Acoustic Guitar": 3210,
         "Softwood": 8,
@@ -91,5 +91,51 @@ const diyArr =
         "Barrel": 2100,
         "Wood": 5,
         "Iron Nugget": 2,
+    },
+    {
+        "Beekepers Hive": 2400,
+        "Wasp Nest": 3,
+        "Wood": 5,
+    },
+    {
+        "Big Festive Tree": 3200,
+        "Red Oranment": 6,
+        "Blue Ornament": 6,
+        "Gold Ornament": 4,
+        "Wood": 5,
+        "Clay": 5,
+    },
+    {
+        "Birdbath": 900,
+        "Stone": 6,
+    },
+    {
+        "Birdcage": 960,
+        "Wood": 8,
+    },
+    {
+        "Birdhouse": 840,
+        "Wood": 2,
+        "Softwood": 5,
+    },
+    {
+        "Blossom Viewing Lantern": 2880,
+        "Cherry Blossom Petal": 6,
+        "Hardwood": 4,
+    },
+    {
+        "Bonfire": 1230,
+        "Camprire": 1,
+        "Wood": 10,
+    },
+    {
+        "Bonsai Shelf": 8460,
+        "Cherry Blossom Bonsai": 1,
+        "Pine Bonsai Tree": 1,
+        "Wood": 8,
+    },
+    {
+        "Box Shaped Seat": 720,
+        "Wood": 6,
     },
 ]
