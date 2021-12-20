@@ -37,7 +37,6 @@ header, .mainContent, footer
 }
 header, footer
 {    
-    // width: 100%;
     padding: 0px;
     margin: 0px;
 }
@@ -50,8 +49,11 @@ header, footer
 .flex
 {
     display: flex;
-    justify-content: space-between;
     gap: 10px;
+    :not(footer)
+    {
+        justify-content: space-between;
+    }
     &Vertical
     {
         @extend .flex;

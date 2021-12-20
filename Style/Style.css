@@ -403,8 +403,10 @@ header, footer {
 
 .flex, .flexVertical {
   display: flex;
-  justify-content: space-between;
   gap: 10px;
+}
+.flex :not(footer), .flexVertical :not(footer) {
+  justify-content: space-between;
 }
 .flexVertical {
   flex-direction: column;
@@ -556,5 +558,6 @@ article {
 }
 
 footer {
-  padding: 20px;
+  padding: 20px 0px;
+  justify-content: space-around;
 }/*# sourceMappingURL=Style.css.map */
