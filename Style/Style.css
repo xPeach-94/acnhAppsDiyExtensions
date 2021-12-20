@@ -362,7 +362,7 @@ body {
 }
 
 .backImage {
-  background-image: url("../Images/background.png");
+  background-image: url("/acnhAppsDiyExtensions/Images/background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -392,7 +392,6 @@ header .imgLogo, .mainContent .imgLogo, footer .imgLogo {
 }
 
 header, footer {
-  width: 100%;
   padding: 0px;
   margin: 0px;
 }
