@@ -99,7 +99,7 @@ const diyArr =
         },
         {
             "Big Festive Tree": 3200,
-            "Red Oranment": 6,
+            "Red Ornament": 6,
             "Blue Ornament": 6,
             "Gold Ornament": 4,
             "Wood": 5,
@@ -125,7 +125,7 @@ const diyArr =
         },
         {
             "Bonfire": 1230,
-            "Camprire": 1,
+            "Campfire": 1,
             "Wood": 10,
         },
         {

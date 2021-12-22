@@ -1,24 +1,50 @@
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-const checkCompatibleDiy = function (materials) {
+const checkCompatibleDiy = function (materials) 
+{
     // check the given materials against the DIY's...
     // or check the diys against the materials...
-    // if a diy requirs a material not in the given materials list it should not be noted! (move on to the next diy (object))
-    // if a diy requirs more than the amount of the given materials the diy should not be noted! (move on to the next (object))
+    // if a diy requiers a material not in the given materials list it should not be noted! (move on to the next diy (object))
+    // if a diy requiers more than the amount of the given materials the diy should not be noted! (move on to the next (object))
     // put the diy's (objects) that pass the test in a diffrent array (craftableArr)
     // returns array of diys
+
+    
+
 }
 
-// function countMaterials(diy)
-// {
-//     
-// }
-
-const materialValue = function (diy) {
+const materialValue = function (diy) 
+{
     // make a function that takes an object of the diy and the array of the materials
     // take from the diy object the keys representing the materials and look up that value in the array of the materials 
     //(ignore the first key as that is the name and value of the diy)
     // take from the diy object the value of the keys and multiply with the value of the material
-    console.log(diy);
+
+    let bells = 0;
+    for (let i = 1; i< ((Object.keys(diy).length)); i++)
+    {
+        let materialItem = Object.keys(diy)[i];
+
+        materialArr.forEach //Loop through array
+        (
+            function (item) 
+            {
+                for (var key in item) {
+                    if (key == materialItem)
+                    {
+                        let amount = Object.values(diy)[i];
+                        let amountBells = Object.values(item)[0];
+                        let fullAmount = amount*amountBells
+                        bells = bells + fullAmount;
+
+                        // console.log(key, amount, "X", amountBells, "=", fullAmount)
+                    }
+                    break;
+                }
+            }
+        )
+    }
+    // console.log(Object.keys(diy)[0], "cost of Materials:",bells);
+    return bells;
 }
 
 const profitArr = function () {
@@ -44,14 +70,16 @@ const calcClick = function () {
             }
         }
     }
-    // console.log(amountArr, dropdownArr);
-
-    for (let i = 0; i <= diyArr.length; i++) {
-        materialValue(diyArr[i]);
-    }
-
     // put all input values and dropdown values in an array (amountArr, dropdownArr)
     // when done along side, the amount and dropdown value should have the same index
+
+    checkCompatibleDiy(dropdownArr);
+
+    // for (let i = 0; i <= (diyArr.length)-1; i++) {
+    //     materialValue(diyArr[i]);
+    // }
+
+    
 }
 
 let newDiyArr = checkCompatibleDiy(dropdownArr)

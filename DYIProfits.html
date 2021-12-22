@@ -29,6 +29,7 @@
         <!-- <script src="Scripts/eventsFunctions.js" defer type="text/javascript"></script> -->
         <script src="Scripts/materials.js" defer type="text/javascript"></script> 
         <script src="Scripts/DIYs.js" defer type="text/javascript"></script> 
+        <script src="Scripts/DYIProfitsRows.js" defer type="text/javascript"></script> 
         <script src="Scripts/DIYProfits.js" defer type="text/javascript"></script> 
         <!--Used to embed a client-side script (JavaScript).-->
         <!-- "defer" A script that will not run until after the page has loaded-->
@@ -57,9 +58,31 @@
         </header>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- main content -->
         <div class="mainContent flexVertical" id="formWrapper">
-            <p class="maintenance">This website is still in development. <br> Please be patient while I work on it :)</p>
+            
+            <p class="maintenance">This page is still in development. <br> Please be patient while I work on it :)</p>
+
+            <!-- <form class="flex">
+                <h3 style="display: inline-block;">Native Fruit?</h3>
+                <select name="fruits" id="fruitDropdown">
+                    <option value="">Pick One</option>
+                    <option value="apple">Apple</option>
+                    <option value="cherry">Cherry</option>
+                    <option value="peach">Peach</option>
+                    <option value="pear">Pear</option>
+                    <option value="orange">Orange</option>
+                </select>
+            </form>
+
+            <form class="hotItems">
+                <h3>Today's Hot Items:</h3>
+                <div class="flex">
+                    <input type="text" class="hotItem">
+                    <input type="text" class="hotItem">
+                </div>
+            </form> -->
+            
             <form class="flex form" id="form0">
-                <input type="text" pattern="\d*" id="input0" value="0">
+                <input type="number" id="input0" value="0">
                 <select id="material0">
                     
                 </select>

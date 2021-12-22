@@ -370,11 +370,17 @@ body {
   background-attachment: fixed;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-align: center;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Satisfy", cursive;
   color: #006994;
 }
@@ -383,15 +389,20 @@ h3 {
   color: #006994;
 }
 
-header, .mainContent, footer {
+header,
+.mainContent,
+footer {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 0px 20px;
 }
-header .imgLogo, .mainContent .imgLogo, footer .imgLogo {
+header .imgLogo,
+.mainContent .imgLogo,
+footer .imgLogo {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-header, footer {
+header,
+footer {
   padding: 0px;
   margin: 0px;
 }
@@ -405,12 +416,12 @@ header, footer {
   display: flex;
   gap: 10px;
 }
-.flex :not(footer), .flexVertical :not(footer) {
-  justify-content: space-between;
-}
 .flexVertical {
   flex-direction: column;
   gap: 20px;
+}
+.flex :not(footer), .flexVertical :not(footer) {
+  justify-content: space-between;
 }
 .flex :not(header), .flexVertical :not(header) {
   gap: 30px;
@@ -454,6 +465,8 @@ ul {
 .mainContent {
   margin-top: 20px;
   margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .intro h1 {
@@ -553,6 +566,16 @@ article {
   color: #1e7bfc;
 }
 
+#fruitDropdown {
+  flex-grow: 2;
+}
+
+.hotItem {
+  margin-top: 20px;
+  width: 100%;
+  height: 30px;
+}
+
 .calc {
   width: 100%;
 }
@@ -560,4 +583,9 @@ article {
 footer {
   padding: 20px 0px;
   justify-content: space-around;
+}
+
+.bottomLinks p {
+  text-align: center;
+  padding: 0px 10px;
 }/*# sourceMappingURL=Style.css.map */

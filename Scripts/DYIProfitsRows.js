@@ -1,9 +1,9 @@
-var I = 0;
 const fillSelect = function (Index)// Filling in each select
 {
     materialArr.forEach //Loop through array
         (
-            function (item) {
+            function (item) 
+            {
                 for (var key in item) {
                     var newSelect = document.getElementById("material" + Index);
                     var optn = document.createElement("option");
@@ -25,6 +25,7 @@ if (first) // Running for the first time because of index issues
     first = false;
 }
 
+var I = 0;
 var input = document.getElementById("input" + I);
 input.addEventListener("click", () =>               // method to check if the input has the starting value ( 0 ). and emtying the box for user friendly behaviour
 {
@@ -71,8 +72,7 @@ const addMaterials = function () // appends a whole new form with corresponding 
     form.setAttribute("id", "form" + I)
 
     var textBox = document.createElement("input");
-    textBox.setAttribute("type", "text");
-    textBox.setAttribute("pattern", "\d*");
+    textBox.setAttribute("type", "number");
     textBox.setAttribute("id", "input" + I);
     textBox.setAttribute("value", "0");
 
