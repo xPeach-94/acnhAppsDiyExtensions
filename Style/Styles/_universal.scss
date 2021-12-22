@@ -3,7 +3,7 @@ body {
 }
 .backImage {
   // background-image: url("../../Images/background.png");
-  background-image: url("/acnhAppsDiyExtensions/Images/background.png");
+  background-image: url("/acnhAppsDiyExtensions" + "/Images/background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
