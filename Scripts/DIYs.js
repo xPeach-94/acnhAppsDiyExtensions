@@ -4,7 +4,7 @@ const diyArr =
         {
             "Acoustic Guitar": 3210,
             "Softwood": 8,
-            "Iron": 3,
+            "Iron Nugget": 3,
         },
         {
             "Angled Signpost": 600,
