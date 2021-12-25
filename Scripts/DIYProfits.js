@@ -177,9 +177,9 @@ const calcClick = function ()
         for (let i = 0; i < newDiyArr.length; i++)
         {
             let diyTitle = Object.keys(newDiyArr[i])[0];
-            let diySell = Object.values(newDiyArr[i])[0];
-            let materialCost = materialValue(newDiyArr[i]);
-            let profit = profitCalc(newDiyArr[i]);
+            let diySell = Object.values(newDiyArr[i])[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // add dots after 3 digits
+            let materialCost = materialValue(newDiyArr[i]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            let profit = profitCalc(newDiyArr[i]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
             var createForm = document.createElement("form");
             createForm.setAttribute("class", "width border");
