@@ -69,7 +69,7 @@ const addMaterials = function () // appends a whole new form with corresponding 
     var addForm = document.getElementById("formWrapper");
     var form = document.createElement("form" + I);
     form.setAttribute("class", "flex form");
-    form.setAttribute("id", "form" + I)
+    form.setAttribute("id", "form" + I);
 
     var textBox = document.createElement("input");
     textBox.setAttribute("type", "number");

@@ -1,5 +1,6 @@
 let amountArr = [];
 let dropdownArr = [];
+let profitArr = []
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const checkCompatibleDiy = function (materials) 
@@ -102,20 +103,45 @@ const materialValue = function (diy)
     return bellsForMaterials;
 }
 
-const profitArr = function () 
+const profitCalc = function (diy) 
 {
-    // the value of the DIY should be more than the value of the combined materials (save this number) --> if not, delete the diy from the array
+    let profit = (Object.values(diy)[0]) - (materialValue(diy));
+    return profit;
+}
 
-    // once all the profitable diys are left, sort the array of diys with the highest number of profits at the first index (maybe need a diffrent array?)
-    // show the left over diys in an element with the amount of profit made were the player to craft that diy
+const sort = function (diyArr, profitArr)
+{
+    for (x = 0; x < profitArr.length; x++)
+    {
+        for (y = 0; y < profitArr.length; y++)
+        {
+            if (profitArr[x] > profitArr[y])
+            {
+                let temp = profitArr[x];
+                profitArr[x] = profitArr[y];
+                profitArr[y] = temp;
+
+                // console.log(profitArr[x], profitArr[y], "Sorted");
+
+                temp = diyArr[x];
+                diyArr[x] = diyArr[y];
+                diyArr[y] = temp;
+                // console.log(diyArr[x], diyArr[y], "Sorted");
+            }
+        }
+    }
+    // console.log(diyArr, profitArr);
+    return(diyArr);
 }
 
 const calcClick = function () 
 {
     amountArr = [];
     dropdownArr = [];
+    profitArr = [];
     
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 100; i++) 
+    {
         if (document.getElementById("input" + i) != null && document.getElementById("input" + i).value != 0)
         // check if there is not no input element left AND check for the input to not have the default value of 0
         {
@@ -126,22 +152,59 @@ const calcClick = function ()
     // console.log(amountArr, dropdownArr);
 
     let newDiyArr = checkCompatibleDiy(dropdownArr);
-    // console.log(newDiyArr);
 
     newDiyArr = countMaterials(newDiyArr, dropdownArr, amountArr);
-    console.log(newDiyArr);
+    // console.log(newDiyArr);
 
-    // when the new array is populated with the craftable diys we can check the amount of the materials required for the given diy.
-    // look up the materials in the materials.js and their values
-    // muliply the value of the material by the amount the DIY needs. save in an array named after current diy (material name and multiplied value)
-    // do so for all materials of that diy
+    for (let i = 0; i < newDiyArr.length; i++) 
+    {
+        profitArr.push(profitCalc(newDiyArr[i]));
+    }
+    // console.log(newDiyArr, profitArr);
+    
+    newDiyArr = sort(newDiyArr, profitArr);
 
-    // loop through array for all diy objects
-    // loop thourgh the object for all materials and their values (ignore first key and value for now)
+    // console.log(newDiyArr);
 
-    // for (let i = 0; i <= (newDiyArr.length)-1; i++) {
-    //     materialValue(diyArr[i]);
-    // }
+    var profitList = document.getElementById("profitable");
+    profitList.style = "display: none";
+
+    if (newDiyArr.length != 0)
+    {
+        profitList.style = "display: flex";
+        profitList.innerHTML = "";
+
+        for (let i = 0; i < newDiyArr.length; i++)
+        {
+            let diyTitle = Object.keys(newDiyArr[i])[0];
+            let diySell = Object.values(newDiyArr[i])[0];
+            let materialCost = materialValue(newDiyArr[i]);
+            let profit = profitCalc(newDiyArr[i]);
+
+            var createForm = document.createElement("form");
+            createForm.setAttribute("class", "width border");
+            var createH4 = document.createElement("h4");
+            var createP1 = document.createElement("p");
+            var createP2 = document.createElement("p");
+            var createP3 = document.createElement("p");
+            createP3.setAttribute("class", "bold");
+            
+            createForm.appendChild(createH4);
+            createForm.appendChild(createP1);
+            createForm.appendChild(createP2);
+            createForm.appendChild(createP3);
+            profitList.appendChild(createForm);
+
+            createH4.innerHTML = diyTitle;
+            createP1.innerHTML = "Sold for: "+ diySell + " Bells";
+            createP2.innerHTML = "Cost of Materials: "+ materialCost + " Bells";
+            createP3.innerHTML = "Total Profit: "+ profit + " Bells";
+        }
+    }
+    else
+    {
+        window.alert("No DIY's can be crafted :(");
+    }
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -143,3 +143,27 @@ article
 {
     width: 100%;
 }
+
+.width
+{
+    width: 70%;
+    margin: 0px auto;
+    h4
+    {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+}
+.bold
+{
+  font-weight: bold;
+  margin: 10px 0px;    
+  font-size: 1.1em;
+}
+.border
+{
+    padding: 10px;
+    border: 3px dashed lightgreen;
+    border-left: none;
+    border-right: none;
+}

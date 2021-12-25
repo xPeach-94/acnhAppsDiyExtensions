@@ -26,12 +26,12 @@ h3 {
   color: $seaBlue;
 }
 
-header,
-.mainContent,
-footer {
+header, .mainContent, footer 
+{
   background-color: rgba(white, 0.5);
   padding: 0px 20px;
-  .imgLogo {
+  .imgLogo 
+  {
     background-color: rgba(white, 0.5);
   }
 }
