@@ -317,4 +317,242 @@ const diyArr =
             "Iron Nugget": 2,
         },
 //------------------------------------------------------------------------------------------------------------------------------------------------- F
+        {
+            "Festive Tree": 1400,
+            "Red Ornament": 3,
+            "Blue Ornament": 3,
+            "Gold Ornament": 2,
+            "Wood": 5,
+        },
+        {
+            "Flat Garden Rock": 3000,
+            "Stone": 20,
+        },
+        {
+            "Flower Stand": 2880,
+            "Roses Red": 1,
+            "Roses Pink": 2,
+            "Roses Orange": 2,
+            "Lily White": 2,
+            "Lily Yellow": 1,
+            "Windflower Purple": 4,
+        },
+        {
+            "Flying Saucer": 15000,
+            "Star Fragment": 15,
+            "Iron Nugget": 10,
+        },
+        {
+            "Forbidden Altar": 4500,
+            "Stone": 30,
+        },
+        {
+            "Fountain": 11700,
+            "Drinking Fountain": 1,
+            "Stone": 20,
+            "Iron Nugget": 8,
+        },
+        {
+            "Frozen Arch": 9000,
+            "Large Snowflake": 1,
+            "Snowflake": 10,
+        },
+        {
+            "Frozen Bed": 9000,
+            "Large Snowflake": 1,
+            "Snowflake": 10,
+        },
+        {
+            "Frozen Chair": 6200,
+            "Large Snowflake": 1,
+            "Snowflake": 3,
+        },
+        {
+            "Frozen Counter": 7000,
+            "Large Snowflake": 1,
+            "Snowflake": 5,
+        },
+        {
+            "Frozen Partition": 7400,
+            "Large Snowflake": 1,
+            "Snowflake": 6,
+        },
+        {
+            "Frozen Pillar": 6200,
+            "Large Snowflake": 1,
+            "Snowflake": 3,
+        },
+        {
+            "Frozen Sculpture": 6600,
+            "Large Snowflake": 1,
+            "Snowflake": 4,
+        },
+        {
+            "Frozen Table": 8200,
+            "Large Snowflake": 1,
+            "Snowflake": 8,
+        },
+        {
+            "Frozen Tree": 8200,
+            "Large Snowflake": 1,
+            "Snowflake": 8,
+        },
+//------------------------------------------------------------------------------------------------------------------------------------------------- G
+        {
+            "Garden Bench": 4440,
+            "Wood": 12,
+            "Iron Nugget": 4,
+        },
+        {
+            "Garden Rock": 2250,
+            "Stone": 15,
+        },
+        {
+            "Garden Wagon": 3180,
+            "Hyacinth White": 3,
+            "Cosmos Red": 3,
+            "Roses Yellow": 3,
+            "Wood": 8,
+            "Iron Nugget": 2,
+        },
+        {
+            "Gear Apparatus": 2250,
+            "Gears": 3,
+        },
+        {
+            "Gear Tower": 3000,
+            "Gears": 4,
+        },
+        {
+            "Gemini Closet": 22200,
+            "Star Fragment": 3,
+            "Gemini Fragment": 2,
+            "Gold Nugget": 2,
+            "Stone": 6,
+        },
+        {
+            "Giant Ornament": 1000,
+            "Red Ornament": 10,
+        },
+        {
+            "Giant Teddy Bear": 6300,
+            "Papa Bear": 1,
+            "Mama Bear": 1,
+            "Baby Bear": 1,
+        },
+        {
+            "Giant Vine": 2500,
+            "Vine": 25,
+        },
+        {
+            "Gift Pile": 660,
+            "Red Wrapping Paper": 3,
+            "Wooden Block Toy": 1,
+            "Cardboard Box": 1,
+        },
+        {
+            "Glowing Moss Balloon": 1250,
+            "Glowing Moss": 10,
+            "Iron Nugget": 1,
+        },
+        {
+            "Glowing Moss Noulder": 750,
+            "Glowing Moss": 15,
+        },
+        {
+            "Glowing Moss Jar Shelves": 5400,
+            "Glowing Moss Jar": 6,
+            "Iron Nugget": 6,
+        },
+        {
+            "Glowing Moss Pond": 3000,
+            "Glowing Moss": 30,
+            "Stone": 10,
+        },
+        {
+            "Glowing Moss Statue": 1450,
+            "Glowing Moss": 5,
+            "Stone": 8,
+        },
+        {
+            "Glowing Moss Stool": 400,
+            "Glowing Moss": 8,
+        },
+        {
+            "Gold Nugget Mining Car": 30950,
+            "Gold Nugget": 3,
+            "Mining Car": 1,
+        },
+        {
+            "Golden Altar": 52250,
+            "Gold Nugget": 5,
+            "Forbidden Altar": 1,
+        },
+        {
+            "Golden Bathtub": 21725,
+            "Gold Nugget": 2,
+            "Square Bathtub": 1,
+        },
+        {
+            "Golden Casket": 80000,
+            "Gold Nugget": 8,
+        },
+        {
+            "Golden Gear Apparatus": 21125,
+            "Gold Nugget": 2,
+            "Gear Apparatus": 1,
+        },
+        {
+            "Golden Gear Tower": 21500,
+            "Gold Nugget": 2,
+            "Gear Tower": 1,
+        },
+        {
+            "Golden Meter And Pipes": 21150,
+            "Gold Nugget": 2,
+            "Meter And Pipes": 1,
+        },
+        {
+            "Golden Plate Armor": 23750,
+            "Gold Nugget": 2,
+            "Plate Armor": 1,
+        },
+        {
+            "Golden Samurai Suit": 57500,
+            "Gold Nugget": 2,
+            "Samurai Suit": 1,
+        },
+        {
+            "Golden Seat": 50000,
+            "Gold Nugget": 5,
+        },
+        {
+            "Golden Toilet": 60000,
+            "Gold Nugget": 6,
+        },
+        {
+            "Golden Vase": 42500,
+            "Gold Nugget": 1,
+            "Fine Vase": 1,
+        },
+        {
+            "Gong": 5100,
+            "Iron Nugget": 6,
+            "Wood": 5,
+        },
+        {
+            "Grass Standee": 480,
+            "Wood": 2,
+            "Softwood": 2,
+        },
+        {
+            "Green Leaf Pile": 600,
+            "Young Spring Bamboo": 1,
+            "Weeds": 10,
+        },
+//------------------------------------------------------------------------------------------------------------------------------------------------- H
+        {
+            "Hay Bed": 400,
+            "Weeds": 20,
+        },
     ]
