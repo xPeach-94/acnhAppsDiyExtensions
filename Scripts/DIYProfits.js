@@ -20,22 +20,30 @@ const checkCompatibleDiy = function (materials)
             let diyMaterialCount = 1;
 
             for (let i = 1; i< (Object.keys(item).length); i++)
-            {
+            {                
                 let curMaterial = Object.keys(item)[i];
-
+                
                 for (let x = 0; x < dropdownArr.length; x++)
                 {
-                    if (curMaterial == dropdownArr[x])
+                    if (curMaterial != "image_url")
+                    {
+                        if (curMaterial == dropdownArr[x])
+                        {
+                            diyMaterialCount++
+                            break;
+                        }
+                    } 
+                    else
                     {
                         diyMaterialCount++
                         break;
-                    }
+                    }                   
                 }
                 if (diyMaterialCount == Object.keys(item).length)
                 {
                     newDiyArr.push(item);
                 }                
-            }            
+            }          
         }
     )
     return newDiyArr;
@@ -59,8 +67,13 @@ const countMaterials = function (newDiyArr, dropdownArr, amountArr)
                         if (amountArr[x] >= Object.values(item)[i])
                         {
                             DIYAmountCount++;
-                            break
+                            break;
                         }                        
+                    }
+                    else if (Object.keys(item)[i] == "image_url")
+                    {
+                        DIYAmountCount++;
+                        break;
                     }
                 }
                 if (DIYAmountCount == Object.keys(item).length)
@@ -177,6 +190,7 @@ const calcClick = function ()
         for (let i = 0; i < newDiyArr.length; i++)
         {
             let diyTitle = Object.keys(newDiyArr[i])[0];
+            let diyImg = Object.values(newDiyArr[i])[(Object.values(newDiyArr[i]).length-1)];
             let diySell = Object.values(newDiyArr[i])[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // add dots after 3 digits
             let materialCost = materialValue(newDiyArr[i]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
             let profit = profitCalc(newDiyArr[i]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -184,12 +198,16 @@ const calcClick = function ()
             var createForm = document.createElement("form");
             createForm.setAttribute("class", "width border");
             var createH4 = document.createElement("h4");
+            var createImg = document.createElement("img");
+            createImg.setAttribute("src", diyImg);
+            createImg.setAttribute("style", "width: 50%; display: block; margin-left: auto; margin-right: auto");
             var createP1 = document.createElement("p");
             var createP2 = document.createElement("p");
             var createP3 = document.createElement("p");
             createP3.setAttribute("class", "bold");
             
             createForm.appendChild(createH4);
+            createForm.appendChild(createImg);
             createForm.appendChild(createP1);
             createForm.appendChild(createP2);
             createForm.appendChild(createP3);

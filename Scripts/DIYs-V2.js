@@ -1,1164 +1,392 @@
+//https://nookipedia.com/w/index.php?title=Special%3ACargoQuery&tables=nh_recipe%2C+nh_furniture%2C+nh_clothing%2C+nh_interior%2C+&fields=%2C+nh_recipe.en_name%2C+nh_furniture.sell%3DF%2C+nh_clothing.sell%3DC%2C+nh_interior.sell%3DI%2C+nh_recipe.material1%2C+nh_recipe.material1_num%2C+nh_recipe.material2%2C+nh_recipe.material2_num%2C+nh_recipe.material3%2C+nh_recipe.material3_num%2C+nh_recipe.material4%2C+nh_recipe.material4_num%2C+nh_recipe.material5%2C+nh_recipe.material5_num%2C+nh_recipe.material6%2C+nh_recipe.material6_num%2C+nh_recipe.image_url%2C+&where=&join_on=nh_recipe.en_name+%3D+nh_clothing.en_name%2C%0D%0Anh_recipe.en_name+%3D+nh_furniture.en_name%2C%0D%0Anh_recipe.en_name+%3D+nh_interior.en_name&group_by=&having=&order_by%5B0%5D=&order_by_options%5B0%5D=ASC&limit=1000&offset=0&format=
+const diyArr =
 [
     {
-        "en_name": "Acorn Pochette",
-        "sell": "",
-        "material1": "Acorn",
-        "material1_num": 6,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/de\/Acorn_Pochette_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Acorn Rug",
-        "sell": "",
-        "material1": "Acorn",
-        "material1_num": 6,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e2\/Acorn_Rug_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Acoustic Guitar",
-        "sell": 3210,
-        "material1": "Softwood",
-        "material1_num": 8,
-        "material2": "Iron Nugget",
-        "material2_num": 3,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/07\/Acoustic_Guitar_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Aji Fry",
-        "sell": 540,
-        "material1": "Horse Mackerel",
-        "material1_num": 1,
-        "material2": "Flour",
-        "material2_num": 1,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bc\/Aji_Fry_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Anchoas al Ajillo",
-        "sell": 600,
-        "material1": "Anchovy",
-        "material1_num": 2,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1c\/Anchoas_al_Ajillo_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Angled Signpost",
-        "sell": 600,
-        "material1": "Hardwood",
-        "material1_num": 2,
-        "material2": "Softwood",
-        "material2_num": 3,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/94\/Angled_Signpost_NH_DIY_Icon.png"
-    },
+        "Acorn Pochette": 2400,
+        "Acorn": 6,
+        "image_url": "https://dodo.ac/np/images/d/de/Acorn_Pochette_NH_DIY_Icon.png"
+    },
+    {
+        "Acorn Rug": 2400,
+        "Acorn": 6,
+        "image_url": "https://dodo.ac/np/images/e/e2/Acorn_Rug_NH_DIY_Icon.png"
+    },
+    {
+        "Acoustic Guitar": 3210,
+        "Softwood": 8,
+        "Iron Nugget": 3,
+        "image_url": "https://dodo.ac/np/images/0/07/Acoustic_Guitar_NH_DIY_Icon.png"
+    },
+    {
+        "Aji Fry": 540,
+        "Horse Mackerel": 1,
+        "Flour": 1,
+        "image_url": "https://dodo.ac/np/images/b/bc/Aji_Fry_NH_DIY_Icon.png"
+    },
+    {
+        "Anchoas al Ajillo": 600,
+        "Anchovy": 2,
+        "image_url": "https://dodo.ac/np/images/1/1c/Anchoas_al_Ajillo_NH_DIY_Icon.png"
+    },
+    {
+        "Angled Signpost": 600,
+        "Hardwood": 2,
+        "Softwood": 3,
+        "image_url": "https://dodo.ac/np/images/9/94/Angled_Signpost_NH_DIY_Icon.png"
+    },
+    {
+        "Apple Chair": 2480,
+        "Apple": 10,
+        "Wood": 4,
+        "image_url": "https://dodo.ac/np/images/4/49/Apple_Chair_NH_DIY_Icon.png"
+    },
+    {
+        "Apple Dress": 1600,
+        "Apple": 8,
+        "image_url": "https://dodo.ac/np/images/c/c9/Apple_Dress_NH_DIY_Icon.png"
+    },
+    {
+        "Apple Hat": 1000,
+        "Apple": 5,
+        "image_url": "https://dodo.ac/np/images/2/26/Apple_Hat_NH_DIY_Icon.png"
+    },
+    {
+        "Apple Jam": 450,
+        "Apple": 3,
+        "image_url": "https://dodo.ac/np/images/d/d2/Apple_Jam_NH_DIY_Icon.png"
+    },
+    {
+        "Apple Jelly": 300,
+        "Apple": 2,
+        "image_url": "https://dodo.ac/np/images/e/e2/Apple_Jelly_NH_DIY_Icon.png"
+    },
+    {
+        "Apple Pie": 1880,
+        "Flour": 3,
+        "Sugar": 2,
+        "Apple": 2,
+        "image_url": "https://dodo.ac/np/images/2/22/Apple_Pie_NH_DIY_Icon.png"
+    },
+    {
+        "Apple Rug": 1200,
+        "Apple": 6,
+        "image_url": "https://dodo.ac/np/images/f/fa/Apple_Rug_NH_DIY_Icon.png"
+    },
+    {
+        "Apple Smoothie": 300,
+        "Apple": 2,
+        "image_url": "https://dodo.ac/np/images/8/8e/Apple_Smoothie_NH_DIY_Icon.png"
+    },
+    {
+        "Apple Tart": 780,
+        "Flour": 1,
+        "Sugar": 1,
+        "Apple": 1,
+        "image_url": "https://dodo.ac/np/images/8/84/Apple_Tart_NH_DIY_Icon.png"
+    },
+    {
+        "Apple Umbrella": 1400,
+        "Apple": 7,
+        "image_url": "https://dodo.ac/np/images/b/bf/Apple_Umbrella_NH_DIY_Icon.png"
+    },
+    {
+        "Apple Wall": 4000,
+        "Apple": 20,
+        "image_url": "https://dodo.ac/np/images/6/69/Apple_Wall_NH_DIY_Icon.png"
+    },
+    {
+        "Aquarius Urn": 22125,
+        "Star Fragment": 3,
+        "Aquarius Fragment": 2,
+        "Gold Nugget": 2,
+        "Stone": 5,
+        "image_url": "https://dodo.ac/np/images/1/14/Aquarius_Urn_NH_DIY_Icon.png"
+    },
+    {
+        "Aries Rocking Chair": 12125,
+        "Star Fragment": 3,
+        "Aries Fragment": 2,
+        "Gold Nugget": 1,
+        "Stone": 5,
+        "image_url": "https://dodo.ac/np/images/1/1b/Aries_Rocking_Chair_NH_DIY_Icon.png"
+    },
+    {
+        "Armor Shoes": 3000,
+        "Iron Nugget": 4,
+        "image_url": "https://dodo.ac/np/images/8/8c/Armor_Shoes_NH_DIY_Icon.png"
+    },
+    {
+        "Aroma Pot": 600,
+        "Clay": 3,
+        "image_url": "https://dodo.ac/np/images/9/9f/Aroma_Pot_NH_DIY_Icon.png"
+    },
+    {
+        "Asteroid": 4000,
+        "Star Fragment": 5,
+        "Stone": 10,
+        "image_url": "https://dodo.ac/np/images/6/67/Asteroid_NH_DIY_Icon.png"
+    },
+    {
+        "Astronaut Suit": 6250,
+        "Star Fragment": 5,
+        "Iron Nugget": 5,
+        "image_url": "https://dodo.ac/np/images/3/3c/Astronaut_Suit_NH_DIY_Icon.png"
+    },
+    {
+        "Autumn Wall": 4700,
+        "Maple Leaf": 10,
+        "Wood": 5,
+        "Weeds": 5,
+        "image_url": "https://dodo.ac/np/images/e/e9/Autumn_Wall_NH_DIY_Icon.png"
+    },
+    {
+        "Axe": 625,
+        "Flimsy Axe": 1,
+        "Wood": 3,
+        "Iron Nugget": 1,
+        "image_url": "https://dodo.ac/np/images/8/8b/Axe_NH_DIY_Icon.png"
+    },
+    {
+        "Backyard Lawn": 600,
+        "Weeds": 30,
+        "image_url": "https://dodo.ac/np/images/9/9b/Backyard_Lawn_NH_DIY_Icon.png"
+    },
+    {
+        "Baked Potatoes": 840,
+        "Potato": 2,
+        "image_url": "https://dodo.ac/np/images/f/f6/Baked_Potatoes_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Basket": 1120,
+        "Bamboo Piece": 7,
+        "image_url": "https://dodo.ac/np/images/9/9b/Bamboo_Basket_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Bench": 1280,
+        "Bamboo Piece": 8,
+        "image_url": "https://dodo.ac/np/images/a/ae/Bamboo_Bench_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Candleholder": 880,
+        "Bamboo Piece": 3,
+        "Clay": 2,
+        "image_url": "https://dodo.ac/np/images/e/ed/Bamboo_Candleholder_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Doll": 2400,
+        "Young Spring Bamboo": 6,
+        "image_url": "https://dodo.ac/np/images/b/bf/Bamboo_Doll_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Drum": 720,
+        "Bamboo Piece": 3,
+        "Softwood": 2,
+        "image_url": "https://dodo.ac/np/images/5/56/Bamboo_Drum_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Floor Lamp": 1280,
+        "Bamboo Piece": 8,
+        "image_url": "https://dodo.ac/np/images/8/85/Bamboo_Floor_Lamp_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Flooring": 2400,
+        "Bamboo Piece": 15,
+        "image_url": "https://dodo.ac/np/images/9/94/Bamboo_Flooring_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Hat": 200,
+        "Weeds": 10,
+        "image_url": "https://dodo.ac/np/images/8/8c/Bamboo_Hat_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Lattice Fence": 960,
+        "Bamboo Piece": 6,
+        "image_url": "https://dodo.ac/np/images/7/72/Bamboo_Lattice_Fence_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Lunch Box": 640,
+        "Bamboo Piece": 4,
+        "image_url": "https://dodo.ac/np/images/d/d7/Bamboo_Lunch_Box_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Noodle Slide": 3160,
+        "Young Spring Bamboo": 7,
+        "Wood": 3,
+        "image_url": "https://dodo.ac/np/images/0/0a/Bamboo_Noodle_Slide_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Partition": 2020,
+        "Bamboo Piece": 7,
+        "Stone": 6,
+        "image_url": "https://dodo.ac/np/images/e/ed/Bamboo_Partition_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Shelf": 2400,
+        "Bamboo Piece": 15,
+        "image_url": "https://dodo.ac/np/images/e/e0/Bamboo_Shelf_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Speaker": 1230,
+        "Bamboo Piece": 3,
+        "Iron Nugget": 1,
+        "image_url": "https://dodo.ac/np/images/b/b0/Bamboo_Speaker_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Sphere": 480,
+        "Bamboo Piece": 3,
+        "image_url": "https://dodo.ac/np/images/d/da/Bamboo_Sphere_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Stool": 800,
+        "Bamboo Piece": 5,
+        "image_url": "https://dodo.ac/np/images/1/1d/Bamboo_Stool_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Stopblock": 480,
+        "Bamboo Piece": 3,
+        "image_url": "https://dodo.ac/np/images/e/e0/Bamboo_Stopblock_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Wall": 2400,
+        "Bamboo Piece": 15,
+        "image_url": "https://dodo.ac/np/images/0/03/Bamboo_Wall_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Wall Decoration": 160,
+        "Bamboo Piece": 1,
+        "image_url": "https://dodo.ac/np/images/3/37/Bamboo_Wall_Decoration_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Wand": 3900,
+        "Young Spring Bamboo": 6,
+        "Star Fragment": 3,
+        "image_url": "https://dodo.ac/np/images/7/77/Bamboo_Wand_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo-Grove Wall": 4300,
+        "Young Spring Bamboo": 7,
+        "Bamboo Shoot": 3,
+        "image_url": "https://dodo.ac/np/images/8/81/Bamboo-Grove_Wall_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Shoot Lamp": 4900,
+        "Young Spring Bamboo": 4,
+        "Bamboo Shoot": 5,
+        "Clay": 4,
+        "image_url": "https://dodo.ac/np/images/7/77/Bamboo-Shoot_Lamp_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo Shoot Soup": 1000,
+        "Bamboo Shoot": 2,
+        "image_url": "https://dodo.ac/np/images/8/84/Bamboo-Shoot_Soup_NH_DIY_Icon.png"
+    },
+    {
+        "Bamboo-Slats Fence": 48,
+        "Bamboo Piece": 3,
+        "image_url": "https://dodo.ac/np/images/d/d8/Bamboo-Slats_Fence_NH_DIY_Icon.png"
+    },
+    {
+        "Barbed-Wire Fence": 1980,
+        "Hardwood": 4,
+        "Iron Nugget": 2,
+        "image_url": "https://dodo.ac/np/images/8/85/Barbed-Wire_Fence_NH_DIY_Icon.png"
+    },
+    {
+        "Barbell": 7500,
+        "Iron Nugget": 10,
+        "image_url": "https://dodo.ac/np/images/b/b8/Barbell_NH_DIY_Icon.png"
+    },
+    {
+        "Barred Knifejaw Carpaccio": 6000,
+        "Barred Knifejaw": 1,
+        "image_url": "https://dodo.ac/np/images/1/1e/Barred-Knifejaw_Carpaccio_NH_DIY_Icon.png"
+    },
+    {
+        "Barrel": 2100,
+        "Wood": 5,
+        "Iron Nugget": 2,
+        "image_url": "https://dodo.ac/np/images/c/c2/Barrel_NH_DIY_Icon.png"
+    },
+    {
+        "Basement Flooring": 1500,
+        "Stone": 10,
+        "image_url": "https://dodo.ac/np/images/3/3d/Basement_Flooring_NH_DIY_Icon.png"
+    },
+    {
+        "Basket Pack": 2400,
+        "Young Spring Bamboo": 6,
+        "image_url": "https://dodo.ac/np/images/8/83/Basket_Pack_NH_DIY_Icon.png"
+    },
+    {
+        "Beekeepers Hive": 2400,
+        "Wasp Nest": 3,
+        "Wood": 5,
+        "image_url": "https://dodo.ac/np/images/5/5f/Beekeeper%27s_Hive_NH_DIY_Icon.png"
+    },
+    {
+        "Big Festive Tree": 3200,
+        "Red Ornament": 6,
+        "Blue Ornament": 6,
+        "Gold Ornament": 4,
+        "Wood": 5,
+        "Clay": 5,
+        "image_url": "https://dodo.ac/np/images/2/23/Big_Festive_Tree_NH_DIY_Icon.png"
+    },
+    {
+        "Birdbath": 900,
+        "Stone": 6,
+        "image_url": "https://dodo.ac/np/images/a/aa/Birdbath_NH_DIY_Icon.png"
+    },
+    {
+        "Birdcage": 960,
+        "Wood": 8,
+        "image_url": "https://dodo.ac/np/images/5/54/Birdcage_NH_DIY_Icon.png"
+    },
+    {
+        "Birdhouse": 840,
+        "Wood": 2,
+        "Softwood": 5,
+        "image_url": "https://dodo.ac/np/images/8/89/Birdhouse_NH_DIY_Icon.png"
+    },
+    {
+        "Block Fence": 270,
+        "Stone": 8,
+        "Iron Nugget": 2,
+        "image_url": "https://dodo.ac/np/images/d/d4/Block_Fence_NH_DIY_Icon.png"
+    },
+    {
+        "Blossom Viewing Lantern": 2880,
+        "Cherry Blossom Petal": 6,
+        "Hardwood": 4,
+        "image_url": "https://dodo.ac/np/images/3/3f/Blossom-Viewing_Lantern_NH_DIY_Icon.png"
+    },
+    {
+        "Blue Rose Crown": 12000,
+        "Roses Blue": 6,
+        "image_url": "https://dodo.ac/np/images/1/1b/Blue_Rose_Crown_NH_DIY_Icon.png"
+    },
+    {
+        "Blue Rose Wreath": 20000,
+        "Roses Blue": 10,
+        "image_url": "https://dodo.ac/np/images/9/97/Blue_Rose_Wreath_NH_DIY_Icon.png"
+    },
+    {
+        "Bone Doorplate": 360,
+        "Softwood": 3,
+        "image_url": "https://dodo.ac/np/images/b/b1/Bone_Doorplate_NH_DIY_Icon.png"
+    },
     {
-        "en_name": "Apple Chair",
-        "sell": 2480,
-        "material1": "Apple",
-        "material1_num": 10,
-        "material2": "Wood",
-        "material2_num": 4,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/49\/Apple_Chair_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Apple Dress",
-        "sell": "",
-        "material1": "Apple",
-        "material1_num": 8,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c9\/Apple_Dress_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Apple Hat",
-        "sell": "",
-        "material1": "Apple",
-        "material1_num": 5,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/26\/Apple_Hat_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Apple Jam",
-        "sell": 450,
-        "material1": "Apple",
-        "material1_num": 3,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d2\/Apple_Jam_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Apple Jelly",
-        "sell": 300,
-        "material1": "Apple",
-        "material1_num": 2,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e2\/Apple_Jelly_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Apple Pie",
-        "sell": 1880,
-        "material1": "Flour",
-        "material1_num": 3,
-        "material2": "Sugar",
-        "material2_num": 2,
-        "material3": "Apple",
-        "material3_num": 2,
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/22\/Apple_Pie_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Apple Rug",
-        "sell": "",
-        "material1": "Apple",
-        "material1_num": 6,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fa\/Apple_Rug_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Apple Smoothie",
-        "sell": 300,
-        "material1": "Apple",
-        "material1_num": 2,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8e\/Apple_Smoothie_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Apple Tart",
-        "sell": 780,
-        "material1": "Flour",
-        "material1_num": 1,
-        "material2": "Sugar",
-        "material2_num": 1,
-        "material3": "Apple",
-        "material3_num": 1,
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/84\/Apple_Tart_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Apple Umbrella",
-        "sell": "",
-        "material1": "Apple",
-        "material1_num": 7,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bf\/Apple_Umbrella_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Apple Wall",
-        "sell": "",
-        "material1": "Apple",
-        "material1_num": 20,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/69\/Apple_Wall_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Aquarius Urn",
-        "sell": 22125,
-        "material1": "Star Fragment",
-        "material1_num": 3,
-        "material2": "Aquarius Fragment",
-        "material2_num": 2,
-        "material3": "Gold Nugget",
-        "material3_num": 2,
-        "material4": "Stone",
-        "material4_num": 5,
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/14\/Aquarius_Urn_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Aries Rocking Chair",
-        "sell": 12125,
-        "material1": "Star Fragment",
-        "material1_num": 3,
-        "material2": "Aries Fragment",
-        "material2_num": 2,
-        "material3": "Gold Nugget",
-        "material3_num": 1,
-        "material4": "Stone",
-        "material4_num": 5,
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1b\/Aries_Rocking_Chair_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Armor Shoes",
-        "sell": "",
-        "material1": "Iron Nugget",
-        "material1_num": 4,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8c\/Armor_Shoes_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Aroma Pot",
-        "sell": 600,
-        "material1": "Clay",
-        "material1_num": 3,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9f\/Aroma_Pot_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Asteroid",
-        "sell": 4000,
-        "material1": "Star Fragment",
-        "material1_num": 5,
-        "material2": "Stone",
-        "material2_num": 10,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/67\/Asteroid_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Astronaut Suit",
-        "sell": 6250,
-        "material1": "Star Fragment",
-        "material1_num": 5,
-        "material2": "Iron Nugget",
-        "material2_num": 5,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3c\/Astronaut_Suit_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Autumn Wall",
-        "sell": "",
-        "material1": "Maple Leaf",
-        "material1_num": 10,
-        "material2": "Wood",
-        "material2_num": 5,
-        "material3": "Clump of Weeds",
-        "material3_num": 5,
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e9\/Autumn_Wall_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Axe",
-        "sell": "",
-        "material1": "Flimsy Axe",
-        "material1_num": 1,
-        "material2": "Wood",
-        "material2_num": 3,
-        "material3": "Iron Nugget",
-        "material3_num": 1,
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8b\/Axe_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Backyard Lawn",
-        "sell": "",
-        "material1": "Clump of Weeds",
-        "material1_num": 30,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9b\/Backyard_Lawn_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Baked Potatoes",
-        "sell": 840,
-        "material1": "Potato",
-        "material1_num": 2,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f6\/Baked_Potatoes_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Basket",
-        "sell": 1120,
-        "material1": "Bamboo Piece",
-        "material1_num": 7,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9b\/Bamboo_Basket_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Bench",
-        "sell": 1280,
-        "material1": "Bamboo Piece",
-        "material1_num": 8,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ae\/Bamboo_Bench_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Candleholder",
-        "sell": 880,
-        "material1": "Bamboo Piece",
-        "material1_num": 3,
-        "material2": "Clay",
-        "material2_num": 2,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/ed\/Bamboo_Candleholder_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Doll",
-        "sell": 2400,
-        "material1": "Young Spring Bamboo",
-        "material1_num": 6,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bf\/Bamboo_Doll_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Drum",
-        "sell": 720,
-        "material1": "Bamboo Piece",
-        "material1_num": 3,
-        "material2": "Softwood",
-        "material2_num": 2,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/56\/Bamboo_Drum_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Floor Lamp",
-        "sell": 1280,
-        "material1": "Bamboo Piece",
-        "material1_num": 8,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/85\/Bamboo_Floor_Lamp_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Flooring",
-        "sell": "",
-        "material1": "Bamboo Piece",
-        "material1_num": 15,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/94\/Bamboo_Flooring_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Hat",
-        "sell": "",
-        "material1": "Clump of Weeds",
-        "material1_num": 10,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8c\/Bamboo_Hat_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Lattice Fence",
-        "sell": "",
-        "material1": "Bamboo Piece",
-        "material1_num": 6,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/72\/Bamboo_Lattice_Fence_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Lunch Box",
-        "sell": 640,
-        "material1": "Bamboo Piece",
-        "material1_num": 4,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d7\/Bamboo_Lunch_Box_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Noodle Slide",
-        "sell": 3160,
-        "material1": "Young Spring Bamboo",
-        "material1_num": 7,
-        "material2": "Wood",
-        "material2_num": 3,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0a\/Bamboo_Noodle_Slide_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Partition",
-        "sell": 2020,
-        "material1": "Bamboo Piece",
-        "material1_num": 7,
-        "material2": "Stone",
-        "material2_num": 6,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/ed\/Bamboo_Partition_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Shelf",
-        "sell": 2400,
-        "material1": "Bamboo Piece",
-        "material1_num": 15,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e0\/Bamboo_Shelf_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Speaker",
-        "sell": 1230,
-        "material1": "Bamboo Piece",
-        "material1_num": 3,
-        "material2": "Iron Nugget",
-        "material2_num": 1,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b0\/Bamboo_Speaker_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Sphere",
-        "sell": 480,
-        "material1": "Bamboo Piece",
-        "material1_num": 3,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/da\/Bamboo_Sphere_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Stool",
-        "sell": 800,
-        "material1": "Bamboo Piece",
-        "material1_num": 5,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1d\/Bamboo_Stool_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Stopblock",
-        "sell": 480,
-        "material1": "Bamboo Piece",
-        "material1_num": 3,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e0\/Bamboo_Stopblock_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Wall",
-        "sell": "",
-        "material1": "Bamboo Piece",
-        "material1_num": 15,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/03\/Bamboo_Wall_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Wall Decoration",
-        "sell": 160,
-        "material1": "Bamboo Piece",
-        "material1_num": 1,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/37\/Bamboo_Wall_Decoration_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo Wand",
-        "sell": "",
-        "material1": "Young Spring Bamboo",
-        "material1_num": 6,
-        "material2": "Star Fragment",
-        "material2_num": 3,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/77\/Bamboo_Wand_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo-Grove Wall",
-        "sell": "",
-        "material1": "Young Spring Bamboo",
-        "material1_num": 7,
-        "material2": "Bamboo Shoot",
-        "material2_num": 3,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/81\/Bamboo-Grove_Wall_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo-Shoot Lamp",
-        "sell": 4900,
-        "material1": "Young Spring Bamboo",
-        "material1_num": 4,
-        "material2": "Bamboo Shoot",
-        "material2_num": 5,
-        "material3": "Clay",
-        "material3_num": 4,
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/77\/Bamboo-Shoot_Lamp_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo-Shoot Soup",
-        "sell": 1000,
-        "material1": "Bamboo Shoot",
-        "material1_num": 2,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/84\/Bamboo-Shoot_Soup_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bamboo-Slats Fence",
-        "sell": "",
-        "material1": "Bamboo Piece",
-        "material1_num": 3,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d8\/Bamboo-Slats_Fence_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Barbed-Wire Fence",
-        "sell": "",
-        "material1": "Hardwood",
-        "material1_num": 4,
-        "material2": "Iron Nugget",
-        "material2_num": 2,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/85\/Barbed-Wire_Fence_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Barbell",
-        "sell": 7500,
-        "material1": "Iron Nugget",
-        "material1_num": 10,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b8\/Barbell_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Barred-Knifejaw Carpaccio",
-        "sell": 6000,
-        "material1": "Barred Knifejaw",
-        "material1_num": 1,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1e\/Barred-Knifejaw_Carpaccio_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Barrel",
-        "sell": 2100,
-        "material1": "Wood",
-        "material1_num": 5,
-        "material2": "Iron Nugget",
-        "material2_num": 2,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c2\/Barrel_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Basement Flooring",
-        "sell": "",
-        "material1": "Stone",
-        "material1_num": 10,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3d\/Basement_Flooring_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Basket Pack",
-        "sell": "",
-        "material1": "Young Spring Bamboo",
-        "material1_num": 6,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/83\/Basket_Pack_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Beekeeper's Hive",
-        "sell": 2400,
-        "material1": "Wasp Nest",
-        "material1_num": 3,
-        "material2": "Wood",
-        "material2_num": 5,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5f\/Beekeeper%27s_Hive_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Big Festive Tree",
-        "sell": 3200,
-        "material1": "Red Ornament",
-        "material1_num": 6,
-        "material2": "Blue Ornament",
-        "material2_num": 6,
-        "material3": "Gold Ornament",
-        "material3_num": 4,
-        "material4": "Wood",
-        "material4_num": 5,
-        "material5": "Clay",
-        "material5_num": 5,
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/23\/Big_Festive_Tree_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Birdbath",
-        "sell": 900,
-        "material1": "Stone",
-        "material1_num": 6,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/aa\/Birdbath_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Birdcage",
-        "sell": 960,
-        "material1": "Wood",
-        "material1_num": 8,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/54\/Birdcage_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Birdhouse",
-        "sell": 840,
-        "material1": "Wood",
-        "material1_num": 2,
-        "material2": "Softwood",
-        "material2_num": 5,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/89\/Birdhouse_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Block Fence",
-        "sell": "",
-        "material1": "Stone",
-        "material1_num": 8,
-        "material2": "Iron Nugget",
-        "material2_num": 2,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d4\/Block_Fence_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Blossom-Viewing Lantern",
-        "sell": 2880,
-        "material1": "Cherry-Blossom Petal",
-        "material1_num": 6,
-        "material2": "Hardwood",
-        "material2_num": 4,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3f\/Blossom-Viewing_Lantern_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Blue Rose Crown",
-        "sell": "",
-        "material1": "Blue Roses",
-        "material1_num": 6,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1b\/Blue_Rose_Crown_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Blue Rose Wreath",
-        "sell": 20000,
-        "material1": "Blue Roses",
-        "material1_num": 10,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/97\/Blue_Rose_Wreath_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bone Doorplate",
-        "sell": 360,
-        "material1": "Softwood",
-        "material1_num": 3,
-        "material2": "",
-        "material2_num": "",
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b1\/Bone_Doorplate_NH_DIY_Icon.png"
-    },
-    {
-        "en_name": "Bonfire",
-        "sell": 1230,
-        "material1": "Campfire",
-        "material1_num": 1,
-        "material2": "Wood",
-        "material2_num": 10,
-        "material3": "",
-        "material3_num": "",
-        "material4": "",
-        "material4_num": "",
-        "material5": "",
-        "material5_num": "",
-        "material6": "",
-        "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c9\/Bonfire_NH_DIY_Icon.png"
+        "Bonfire": 1230,
+        "Campfire": 1,
+        "Wood": 10,
+        "image_url": "https://dodo.ac/np/images/c/c9/Bonfire_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bonsai Shelf",
-        "sell": 8460,
-        "material1": "Cherry-Blossom Bonsai",
+        "F": 8460,
+        "C": "",
+        "I": "",
+        "material1": "Cherry Blossom Bonsai",
         "material1_num": 1,
         "material2": "Pine Bonsai Tree",
         "material2_num": 1,
@@ -1170,11 +398,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6b\/Bonsai_Shelf_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6b/Bonsai_Shelf_NH_DIY_Icon.png"
     },
     {
         "en_name": "Boomerang",
-        "sell": 360,
+        "F": 360,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 3,
         "material2": "",
@@ -1187,11 +417,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/90\/Boomerang_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/90/Boomerang_NH_DIY_Icon.png"
     },
     {
         "en_name": "Box-Shaped Seat",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 6,
         "material2": "",
@@ -1204,11 +436,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c6\/Box-Shaped_Seat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c6/Box-Shaped_Seat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bread",
-        "sell": 950,
+        "F": 950,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "",
@@ -1221,11 +455,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cd\/Bread_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cd/Bread_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bread Gratin",
-        "sell": 1260,
+        "F": 1260,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Whole-Wheat Flour",
@@ -1238,11 +474,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1e\/Bread_Gratin_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1e/Bread_Gratin_NH_DIY_Icon.png"
     },
     {
         "en_name": "Brick Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 6,
         "material2": "",
@@ -1255,11 +493,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/09\/Brick_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/09/Brick_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Brick Oven",
-        "sell": 3820,
+        "F": 3820,
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 8,
         "material2": "Iron Nugget",
@@ -1272,11 +512,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3a\/Brick_Oven_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3a/Brick_Oven_NH_DIY_Icon.png"
     },
     {
         "en_name": "Brick Pillar",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 4,
         "material2": "",
@@ -1289,11 +531,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e7\/Brick_Pillar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e7/Brick_Pillar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Brick Well",
-        "sell": 2800,
+        "F": 2800,
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 8,
         "material2": "Wood",
@@ -1306,11 +550,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/40\/Brick_Well_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/40/Brick_Well_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bridge Construction Kit",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Log Stakes",
         "material1_num": 4,
         "material2": "Clay",
@@ -1323,11 +569,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/71\/Bridge_Construction_Kit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/71/Bridge_Construction_Kit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Brown Herringbone Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1800,
         "material1": "Softwood",
         "material1_num": 15,
         "material2": "",
@@ -1340,11 +588,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/17\/Brown_Herringbone_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/17/Brown_Herringbone_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Brown Sugar",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Sugarcane",
         "material1_num": 5,
         "material2": "",
@@ -1357,11 +607,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/95\/Brown_Sugar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/95/Brown_Sugar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Brown-Sugar Cupcakes",
-        "sell": 630,
+        "F": 630,
+        "C": "",
+        "I": "",
         "material1": "Whole-Wheat Flour",
         "material1_num": 1,
         "material2": "Brown Sugar",
@@ -1374,11 +626,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6b\/Brown-Sugar_Cupcakes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6b/Brown-Sugar_Cupcakes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Brown-Sugar Pound Cake",
-        "sell": 950,
+        "F": 950,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Brown Sugar",
@@ -1391,11 +645,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c8\/Brown-Sugar_Pound_Cake_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c8/Brown-Sugar_Pound_Cake_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Arch",
-        "sell": 4800,
+        "F": 4800,
+        "C": "",
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 2,
         "material2": "Stone Egg",
@@ -1408,11 +664,13 @@
         "material5_num": 2,
         "material6": "Water Egg",
         "material6_num": 2,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/75\/Bunny_Day_Arch_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/75/Bunny_Day_Arch_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Bag",
-        "sell": "",
+        "F": "",
+        "C": 2400,
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 1,
         "material2": "Stone Egg",
@@ -1425,11 +683,13 @@
         "material5_num": 1,
         "material6": "Water Egg",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/14\/Bunny_Day_Bag_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/14/Bunny_Day_Bag_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Bed",
-        "sell": 2400,
+        "F": 2400,
+        "C": "",
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 1,
         "material2": "Stone Egg",
@@ -1442,11 +702,13 @@
         "material5_num": 1,
         "material6": "Water Egg",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7d\/Bunny_Day_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7d/Bunny_Day_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Crown",
-        "sell": "",
+        "F": "",
+        "C": 2400,
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 1,
         "material2": "Stone Egg",
@@ -1459,11 +721,13 @@
         "material5_num": 1,
         "material6": "Water Egg",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/01\/Bunny_Day_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/01/Bunny_Day_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 1,
         "material2": "Stone Egg",
@@ -1476,11 +740,13 @@
         "material5_num": 1,
         "material6": "Water Egg",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2b\/Bunny_Day_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2b/Bunny_Day_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Festive Balloons",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Stone Egg",
         "material1_num": 1,
         "material2": "Wood Egg",
@@ -1493,11 +759,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0d\/Bunny_Day_Festive_Balloons_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0d/Bunny_Day_Festive_Balloons_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 4800,
         "material1": "Earth Egg",
         "material1_num": 2,
         "material2": "Stone Egg",
@@ -1510,11 +778,13 @@
         "material5_num": 2,
         "material6": "Water Egg",
         "material6_num": 2,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/38\/Bunny_Day_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/38/Bunny_Day_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Glowy Garland",
-        "sell": 2400,
+        "F": 2400,
+        "C": "",
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 1,
         "material2": "Stone Egg",
@@ -1527,11 +797,13 @@
         "material5_num": 1,
         "material6": "Water Egg",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/99\/Bunny_Day_Glowy_Garland_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/99/Bunny_Day_Glowy_Garland_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Lamp",
-        "sell": 1600,
+        "F": 1600,
+        "C": "",
+        "I": "",
         "material1": "Wood Egg",
         "material1_num": 4,
         "material2": "",
@@ -1544,11 +816,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/24\/Bunny_Day_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/24/Bunny_Day_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Merry Balloons",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 1,
         "material2": "Leaf Egg",
@@ -1561,11 +835,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/74\/Bunny_Day_Merry_Balloons_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/74/Bunny_Day_Merry_Balloons_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 2400,
         "material1": "Earth Egg",
         "material1_num": 1,
         "material2": "Stone Egg",
@@ -1578,11 +854,13 @@
         "material5_num": 1,
         "material6": "Water Egg",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/68\/Bunny_Day_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/68/Bunny_Day_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Stool",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Water Egg",
         "material1_num": 3,
         "material2": "",
@@ -1595,11 +873,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/61\/Bunny_Day_Stool_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/61/Bunny_Day_Stool_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Table",
-        "sell": 1600,
+        "F": 1600,
+        "C": "",
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 4,
         "material2": "",
@@ -1612,11 +892,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8c\/Bunny_Day_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8c/Bunny_Day_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Vanity",
-        "sell": 1600,
+        "F": 1600,
+        "C": "",
+        "I": "",
         "material1": "Leaf Egg",
         "material1_num": 4,
         "material2": "",
@@ -1629,11 +911,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0b\/Bunny_Day_Vanity_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0b/Bunny_Day_Vanity_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 4800,
         "material1": "Earth Egg",
         "material1_num": 2,
         "material2": "Stone Egg",
@@ -1646,11 +930,13 @@
         "material5_num": 2,
         "material6": "Water Egg",
         "material6_num": 2,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/80\/Bunny_Day_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/80/Bunny_Day_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Wall Clock",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Sky Egg",
         "material1_num": 3,
         "material2": "",
@@ -1663,11 +949,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9a\/Bunny_Day_Wall_Clock_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9a/Bunny_Day_Wall_Clock_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wobbling Zipper Toy",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -1680,11 +968,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/db\/Bunny_Day_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/db/Bunny_Day_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Wardrobe",
-        "sell": 1600,
+        "F": 1600,
+        "C": "",
+        "I": "",
         "material1": "Stone Egg",
         "material1_num": 4,
         "material2": "",
@@ -1697,11 +987,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d2\/Bunny_Day_Wardrobe_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d2/Bunny_Day_Wardrobe_NH_DIY_Icon.png"
     },
     {
         "en_name": "Bunny Day Wreath",
-        "sell": 2400,
+        "F": 2400,
+        "C": "",
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 1,
         "material2": "Stone Egg",
@@ -1714,11 +1006,13 @@
         "material5_num": 1,
         "material6": "Water Egg",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d5\/Bunny_Day_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d5/Bunny_Day_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Butter Churn",
-        "sell": 1980,
+        "F": 1980,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 4,
         "material2": "Iron Nugget",
@@ -1731,11 +1025,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/64\/Butter_Churn_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/64/Butter_Churn_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cabin Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1800,
         "material1": "Hardwood",
         "material1_num": 15,
         "material2": "",
@@ -1748,11 +1044,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c2\/Cabin_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c2/Cabin_Wall_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Cake Sal\u00e9",
-        "sell": 1680,
+        "en_name": "Cake Salu00e9",
+        "F": 1680,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Carrot",
@@ -1765,11 +1063,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/16\/Cake_Sal%C3%A9_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/16/Cake_Sal%C3%A9_NH_DIY_Icon.png"
     },
     {
         "en_name": "Campfire",
-        "sell": 30,
+        "F": 30,
+        "C": "",
+        "I": "",
         "material1": "Tree Branch",
         "material1_num": 3,
         "material2": "",
@@ -1782,11 +1082,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/98\/Campfire_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/98/Campfire_NH_DIY_Icon.png"
     },
     {
         "en_name": "Campsite Construction Kit",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 15,
         "material2": "Softwood",
@@ -1799,11 +1101,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a8\/Campsite_Construction_Kit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a8/Campsite_Construction_Kit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cancer Table",
-        "sell": 21975,
+        "F": 21975,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 3,
         "material2": "Cancer Fragment",
@@ -1816,11 +1120,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8f\/Cancer_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8f/Cancer_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Capricorn Ornament",
-        "sell": 22650,
+        "F": 22650,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 3,
         "material2": "Capricorn Fragment",
@@ -1833,11 +1139,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cd\/Capricorn_Ornament_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cd/Capricorn_Ornament_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cardboard Bed",
-        "sell": 240,
+        "F": 240,
+        "C": "",
+        "I": "",
         "material1": "Cardboard Box",
         "material1_num": 4,
         "material2": "",
@@ -1850,11 +1158,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/94\/Cardboard_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/94/Cardboard_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cardboard Chair",
-        "sell": 60,
+        "F": 60,
+        "C": "",
+        "I": "",
         "material1": "Cardboard Box",
         "material1_num": 1,
         "material2": "",
@@ -1867,11 +1177,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f2\/Cardboard_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f2/Cardboard_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cardboard Sofa",
-        "sell": 120,
+        "F": 120,
+        "C": "",
+        "I": "",
         "material1": "Cardboard Box",
         "material1_num": 2,
         "material2": "",
@@ -1884,11 +1196,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/17\/Cardboard_Sofa_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/17/Cardboard_Sofa_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cardboard Table",
-        "sell": 240,
+        "F": 240,
+        "C": "",
+        "I": "",
         "material1": "Cardboard Box",
         "material1_num": 4,
         "material2": "",
@@ -1901,11 +1215,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8c\/Cardboard_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8c/Cardboard_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Carp on a Cutting Board",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Carp",
         "material1_num": 1,
         "material2": "Wood",
@@ -1918,11 +1234,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0f\/Carp_on_a_Cutting_Board_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0f/Carp_on_a_Cutting_Board_NH_DIY_Icon.png"
     },
     {
         "en_name": "Carpaccio di Capesante",
-        "sell": 2880,
+        "F": 2880,
+        "C": "",
+        "I": "",
         "material1": "Scallop",
         "material1_num": 2,
         "material2": "",
@@ -1935,11 +1253,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/49\/Carpaccio_di_Capesante_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/49/Carpaccio_di_Capesante_NH_DIY_Icon.png"
     },
     {
         "en_name": "Carpaccio di Marlin Blu",
-        "sell": 12000,
+        "F": 12000,
+        "C": "",
+        "I": "",
         "material1": "Blue Marlin",
         "material1_num": 1,
         "material2": "",
@@ -1952,11 +1272,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7d\/Carpaccio_di_Marlin_Blu_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7d/Carpaccio_di_Marlin_Blu_NH_DIY_Icon.png"
     },
     {
         "en_name": "Carpaccio di Salmone",
-        "sell": 840,
+        "F": 840,
+        "C": "",
+        "I": "",
         "material1": "Salmon",
         "material1_num": 1,
         "material2": "",
@@ -1969,11 +1291,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/59\/Carpaccio_di_Salmone_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/59/Carpaccio_di_Salmone_NH_DIY_Icon.png"
     },
     {
         "en_name": "Carrot Bagel Sandwich",
-        "sell": 2210,
+        "F": 2210,
+        "C": "",
+        "I": "",
         "material1": "Whole-Wheat Flour",
         "material1_num": 2,
         "material2": "Carrot",
@@ -1986,11 +1310,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/15\/Carrot_Bagel_Sandwich_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/15/Carrot_Bagel_Sandwich_NH_DIY_Icon.png"
     },
     {
         "en_name": "Carrot Cake",
-        "sell": 1160,
+        "F": 1160,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -2003,11 +1329,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/12\/Carrot_Cake_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/12/Carrot_Cake_NH_DIY_Icon.png"
     },
     {
         "en_name": "Carrot Juice",
-        "sell": 840,
+        "F": 840,
+        "C": "",
+        "I": "",
         "material1": "Carrot",
         "material1_num": 2,
         "material2": "",
@@ -2020,11 +1348,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/06\/Carrot_Juice_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/06/Carrot_Juice_NH_DIY_Icon.png"
     },
     {
         "en_name": "Carrot Potage",
-        "sell": 1370,
+        "F": 1370,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Carrot",
@@ -2037,11 +1367,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7f\/Carrot_Potage_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7f/Carrot_Potage_NH_DIY_Icon.png"
     },
     {
         "en_name": "Carrot Scones",
-        "sell": 2000,
+        "F": 2000,
+        "C": "",
+        "I": "",
         "material1": "Whole-Wheat Flour",
         "material1_num": 2,
         "material2": "Sugar",
@@ -2054,11 +1386,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/32\/Carrot_Scones_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/32/Carrot_Scones_NH_DIY_Icon.png"
     },
     {
         "en_name": "Carrot-Tops Curry",
-        "sell": 2520,
+        "F": 2520,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Carrot",
@@ -2071,11 +1405,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9f\/Carrot-Tops_Curry_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9f/Carrot-Tops_Curry_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cave",
-        "sell": 6500,
+        "F": 6500,
+        "C": "",
+        "I": "",
         "material1": "Vine",
         "material1_num": 10,
         "material2": "Glowing Moss",
@@ -2088,11 +1424,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f2\/Cave_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f2/Cave_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Champi\u00f1ones al Ajillo",
-        "sell": 20040,
+        "en_name": "Champiu00f1ones al Ajillo",
+        "F": 20040,
+        "C": "",
+        "I": "",
         "material1": "Round Mushroom",
         "material1_num": 1,
         "material2": "Flat Mushroom",
@@ -2105,11 +1443,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2d\/Champi%C3%B1ones_al_Ajillo_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2d/Champi%C3%B1ones_al_Ajillo_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cherry Dress",
-        "sell": "",
+        "F": "",
+        "C": 1600,
+        "I": "",
         "material1": "Cherry",
         "material1_num": 8,
         "material2": "",
@@ -2122,11 +1462,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/aa\/Cherry_Dress_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/aa/Cherry_Dress_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cherry Hat",
-        "sell": "",
+        "F": "",
+        "C": 1000,
+        "I": "",
         "material1": "Cherry",
         "material1_num": 5,
         "material2": "",
@@ -2139,11 +1481,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3a\/Cherry_Hat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3a/Cherry_Hat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cherry Jam",
-        "sell": 450,
+        "F": 450,
+        "C": "",
+        "I": "",
         "material1": "Cherry",
         "material1_num": 3,
         "material2": "",
@@ -2156,11 +1500,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a3\/Cherry_Jam_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a3/Cherry_Jam_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cherry Jelly",
-        "sell": 300,
+        "F": 300,
+        "C": "",
+        "I": "",
         "material1": "Cherry",
         "material1_num": 2,
         "material2": "",
@@ -2173,11 +1519,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0b\/Cherry_Jelly_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0b/Cherry_Jelly_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cherry Lamp",
-        "sell": 2400,
+        "F": 2400,
+        "C": "",
+        "I": "",
         "material1": "Cherry",
         "material1_num": 10,
         "material2": "Clay",
@@ -2190,11 +1538,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ae\/Cherry_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ae/Cherry_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cherry Pie",
-        "sell": 1880,
+        "F": 1880,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Sugar",
@@ -2207,11 +1557,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ab\/Cherry_Pie_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ab/Cherry_Pie_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cherry Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1200,
         "material1": "Cherry",
         "material1_num": 6,
         "material2": "",
@@ -2224,11 +1576,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6b\/Cherry_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6b/Cherry_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cherry Smoothie",
-        "sell": 300,
+        "F": 300,
+        "C": "",
+        "I": "",
         "material1": "Cherry",
         "material1_num": 2,
         "material2": "",
@@ -2241,11 +1595,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/47\/Cherry_Smoothie_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/47/Cherry_Smoothie_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cherry Speakers",
-        "sell": 3500,
+        "F": 3500,
+        "C": "",
+        "I": "",
         "material1": "Cherry",
         "material1_num": 10,
         "material2": "Iron Nugget",
@@ -2258,11 +1614,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/17\/Cherry_Speakers_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/17/Cherry_Speakers_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cherry Tart",
-        "sell": 780,
+        "F": 780,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -2275,11 +1633,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/df\/Cherry_Tart_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/df/Cherry_Tart_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cherry Umbrella",
-        "sell": "",
+        "F": "",
+        "C": 1400,
+        "I": "",
         "material1": "Cherry",
         "material1_num": 7,
         "material2": "",
@@ -2292,11 +1652,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/83\/Cherry_Umbrella_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/83/Cherry_Umbrella_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cherry Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 4000,
         "material1": "Cherry",
         "material1_num": 20,
         "material2": "",
@@ -2309,16 +1671,18 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/16\/Cherry_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/16/Cherry_Wall_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Cherry-Blossom Bonsai",
-        "sell": 3300,
-        "material1": "Cherry-Blossom Petal",
+        "en_name": "Cherry Blossom Bonsai",
+        "F": 3300,
+        "C": "",
+        "I": "",
+        "material1": " Cherry Blossom Petal",
         "material1_num": 6,
         "material2": "Hardwood",
         "material2_num": 2,
-        "material3": "Clump of Weeds",
+        "material3": "Weeds",
         "material3_num": 3,
         "material4": "Clay",
         "material4_num": 3,
@@ -2326,12 +1690,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9e\/Cherry-Blossom_Bonsai_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9e/Cherry Blossom_Bonsai_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Cherry-Blossom Branches",
-        "sell": 4240,
-        "material1": "Cherry-Blossom Petal",
+        "en_name": "Cherry Blossom Branches",
+        "F": 4240,
+        "C": "",
+        "I": "",
+        "material1": " Cherry Blossom Petal",
         "material1_num": 8,
         "material2": "Tree Branch",
         "material2_num": 4,
@@ -2343,12 +1709,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3b\/Cherry-Blossom_Branches_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3b/Cherry Blossom_Branches_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Cherry-Blossom Clock",
-        "sell": 2750,
-        "material1": "Cherry-Blossom Petal",
+        "en_name": "Cherry Blossom Clock",
+        "F": 2750,
+        "C": "",
+        "I": "",
+        "material1": " Cherry Blossom Petal",
         "material1_num": 5,
         "material2": "",
         "material2_num": "",
@@ -2360,14 +1728,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1a\/Cherry-Blossom_Clock_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1a/Cherry Blossom_Clock_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Cherry-Blossom Flooring",
-        "sell": "",
-        "material1": "Cherry-Blossom Petal",
+        "en_name": "Cherry Blossom Flooring",
+        "F": "",
+        "C": "",
+        "I": 4400,
+        "material1": " Cherry Blossom Petal",
         "material1_num": 10,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 20,
         "material3": "",
         "material3_num": "",
@@ -2377,12 +1747,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/73\/Cherry-Blossom_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/73/Cherry Blossom_Flooring_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Cherry-Blossom Pochette",
-        "sell": "",
-        "material1": "Cherry-Blossom Petal",
+        "en_name": "Cherry Blossom Pochette",
+        "F": "",
+        "C": 2400,
+        "I": "",
+        "material1": " Cherry Blossom Petal",
         "material1_num": 6,
         "material2": "",
         "material2_num": "",
@@ -2394,14 +1766,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/64\/Cherry-Blossom_Pochette_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/64/Cherry Blossom_Pochette_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Cherry-Blossom Pond Stone",
-        "sell": 2700,
+        "en_name": "Cherry Blossom Pond Stone",
+        "F": 2700,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 10,
-        "material2": "Cherry-Blossom Petal",
+        "material2": " Cherry Blossom Petal",
         "material2_num": 3,
         "material3": "",
         "material3_num": "",
@@ -2411,12 +1785,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c2\/Cherry-Blossom_Pond_Stone_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c2/Cherry Blossom_Pond_Stone_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Cherry-Blossom Rug",
-        "sell": "",
-        "material1": "Cherry-Blossom Petal",
+        "en_name": "Cherry Blossom Rug",
+        "F": "",
+        "C": "",
+        "I": 2400,
+        "material1": " Cherry Blossom Petal",
         "material1_num": 6,
         "material2": "",
         "material2_num": "",
@@ -2428,12 +1804,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/30\/Cherry-Blossom_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/30/Cherry Blossom_Rug_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Cherry-Blossom Umbrella",
-        "sell": "",
-        "material1": "Cherry-Blossom Petal",
+        "en_name": "Cherry Blossom Umbrella",
+        "F": "",
+        "C": 2800,
+        "I": "",
+        "material1": " Cherry Blossom Petal",
         "material1_num": 7,
         "material2": "",
         "material2_num": "",
@@ -2445,12 +1823,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/20\/Cherry-Blossom_Umbrella_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/20/Cherry Blossom_Umbrella_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Cherry-Blossom Wand",
-        "sell": "",
-        "material1": "Cherry-Blossom Petal",
+        "en_name": "Cherry Blossom Wand",
+        "F": "",
+        "C": "",
+        "I": "",
+        "material1": " Cherry Blossom Petal",
         "material1_num": 3,
         "material2": "Star Fragment",
         "material2_num": 3,
@@ -2462,12 +1842,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1f\/Cherry-Blossom_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1f/Cherry Blossom_Wand_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Cherry-Blossom-Petal Pile",
-        "sell": 2000,
-        "material1": "Cherry-Blossom Petal",
+        "en_name": "Cherry Blossom-Petal Pile",
+        "F": 2000,
+        "C": "",
+        "I": "",
+        "material1": " Cherry Blossom Petal",
         "material1_num": 5,
         "material2": "",
         "material2_num": "",
@@ -2479,12 +1861,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/48\/Cherry-Blossom-Petal_Pile_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/48/Cherry Blossom-Petal_Pile_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Cherry-Blossom-Trees Wall",
-        "sell": "",
-        "material1": "Cherry-Blossom Petal",
+        "en_name": "Cherry Blossom-Trees Wall",
+        "F": "",
+        "C": "",
+        "I": 4600,
+        "material1": " Cherry Blossom Petal",
         "material1_num": 10,
         "material2": "Hardwood",
         "material2_num": 5,
@@ -2496,11 +1880,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/56\/Cherry-Blossom-Trees_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/56/Cherry Blossom-Trees_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Chic Cosmos Wreath",
-        "sell": 4800,
+        "F": 4800,
+        "C": "",
+        "I": "",
         "material1": "Black Cosmos",
         "material1_num": 10,
         "material2": "",
@@ -2513,11 +1899,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2a\/Chic_Cosmos_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2a/Chic_Cosmos_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Chic Mum Crown",
-        "sell": "",
+        "F": "",
+        "C": 960,
+        "I": "",
         "material1": "Purple Mums",
         "material1_num": 3,
         "material2": "Pink Mums",
@@ -2530,11 +1918,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4f\/Chic_Mum_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4f/Chic_Mum_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Chic Rose Crown",
-        "sell": "",
+        "F": "",
+        "C": 2880,
+        "I": "",
         "material1": "Purple Roses",
         "material1_num": 3,
         "material2": "Black Roses",
@@ -2547,11 +1937,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e7\/Chic_Rose_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e7/Chic_Rose_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Chic Tulip Crown",
-        "sell": "",
+        "F": "",
+        "C": 1440,
+        "I": "",
         "material1": "Purple Tulips",
         "material1_num": 2,
         "material2": "Pink Tulips",
@@ -2564,11 +1956,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/69\/Chic_Tulip_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/69/Chic_Tulip_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Chic Windflower Wreath",
-        "sell": 4800,
+        "F": 4800,
+        "C": "",
+        "I": "",
         "material1": "Purple Windflowers",
         "material1_num": 10,
         "material2": "",
@@ -2581,11 +1975,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/47\/Chic_Windflower_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/47/Chic_Windflower_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Chocolate Herringbone Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1800,
         "material1": "Softwood",
         "material1_num": 15,
         "material2": "",
@@ -2598,11 +1994,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b7\/Chocolate_Herringbone_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b7/Chocolate_Herringbone_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Clackercart",
-        "sell": 960,
+        "F": 960,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 2,
         "material2": "Softwood",
@@ -2615,11 +2013,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e0\/Clackercart_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e0/Clackercart_NH_DIY_Icon.png"
     },
     {
         "en_name": "Clam Chowder",
-        "sell": 1020,
+        "F": 1020,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Manila Clam",
@@ -2632,11 +2032,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3e\/Clam_Chowder_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3e/Clam_Chowder_NH_DIY_Icon.png"
     },
     {
         "en_name": "Classic Pitcher",
-        "sell": 800,
+        "F": 800,
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 4,
         "material2": "",
@@ -2649,11 +2051,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/86\/Classic_Pitcher_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/86/Classic_Pitcher_NH_DIY_Icon.png"
     },
     {
         "en_name": "Classic-Library Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1450,
         "material1": "Book",
         "material1_num": 10,
         "material2": "",
@@ -2666,11 +2070,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ae\/Classic-Library_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ae/Classic-Library_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Clothesline",
-        "sell": 100,
+        "F": 100,
+        "C": "",
+        "I": "",
         "material1": "Tree Branch",
         "material1_num": 10,
         "material2": "",
@@ -2683,11 +2089,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6d\/Clothesline_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6d/Clothesline_NH_DIY_Icon.png"
     },
     {
         "en_name": "Coconut Cookies",
-        "sell": 1010,
+        "F": 1010,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -2700,11 +2108,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cc\/Coconut_Cookies_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cc/Coconut_Cookies_NH_DIY_Icon.png"
     },
     {
         "en_name": "Coconut Juice",
-        "sell": 500,
+        "F": 500,
+        "C": "",
+        "I": "",
         "material1": "Coconut",
         "material1_num": 1,
         "material2": "",
@@ -2717,11 +2127,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e9\/Coconut_Juice_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e9/Coconut_Juice_NH_DIY_Icon.png"
     },
     {
         "en_name": "Coconut Milk",
-        "sell": 750,
+        "F": 750,
+        "C": "",
+        "I": "",
         "material1": "Coconut",
         "material1_num": 2,
         "material2": "",
@@ -2734,11 +2146,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e2\/Coconut_Milk_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e2/Coconut_Milk_NH_DIY_Icon.png"
     },
     {
         "en_name": "Coconut Oil",
-        "sell": 1130,
+        "F": 1130,
+        "C": "",
+        "I": "",
         "material1": "Coconut",
         "material1_num": 3,
         "material2": "",
@@ -2751,11 +2165,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6c\/Coconut_Oil_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6c/Coconut_Oil_NH_DIY_Icon.png"
     },
     {
         "en_name": "Coconut Pancakes",
-        "sell": 2010,
+        "F": 2010,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Sugar",
@@ -2768,11 +2184,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e2\/Coconut_Pancakes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e2/Coconut_Pancakes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Coconut Pudding",
-        "sell": 1070,
+        "F": 1070,
+        "C": "",
+        "I": "",
         "material1": "Sugar",
         "material1_num": 1,
         "material2": "Coconut",
@@ -2785,14 +2203,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/10\/Coconut_Pudding_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/10/Coconut_Pudding_NH_DIY_Icon.png"
     },
     {
         "en_name": "Coconut Wall Planter",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Coconut",
         "material1_num": 1,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 5,
         "material3": "",
         "material3_num": "",
@@ -2802,14 +2222,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/88\/Coconut_Wall_Planter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/88/Coconut_Wall_Planter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Colored-Leaves Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 4300,
         "material1": "Maple Leaf",
         "material1_num": 10,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 15,
         "material3": "",
         "material3_num": "",
@@ -2819,11 +2241,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a8\/Colored-Leaves_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a8/Colored-Leaves_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Concrete Pillar",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 3,
         "material2": "Iron Nugget",
@@ -2836,11 +2260,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/06\/Concrete_Pillar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/06/Concrete_Pillar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cookies",
-        "sell": 630,
+        "F": 630,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -2853,11 +2279,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3d\/Cookies_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3d/Cookies_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cool Hyacinth Crown",
-        "sell": "",
+        "F": "",
+        "C": 1280,
+        "I": "",
         "material1": "Blue Hyacinths",
         "material1_num": 4,
         "material2": "Pink Hyacinths",
@@ -2870,11 +2298,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f9\/Cool_Hyacinth_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f9/Cool_Hyacinth_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cool Hyacinth Wreath",
-        "sell": 1440,
+        "F": 1440,
+        "C": "",
+        "I": "",
         "material1": "Orange Hyacinths",
         "material1_num": 3,
         "material2": "Blue Hyacinths",
@@ -2887,11 +2317,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a6\/Cool_Hyacinth_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a6/Cool_Hyacinth_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cool Pansy Crown",
-        "sell": "",
+        "F": "",
+        "C": 960,
+        "I": "",
         "material1": "Orange Pansies",
         "material1_num": 3,
         "material2": "Blue Pansies",
@@ -2904,11 +2336,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/55\/Cool_Pansy_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/55/Cool_Pansy_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cool Pansy Wreath",
-        "sell": 4800,
+        "F": 4800,
+        "C": "",
+        "I": "",
         "material1": "Purple Pansies",
         "material1_num": 10,
         "material2": "",
@@ -2921,11 +2355,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/61\/Cool_Pansy_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/61/Cool_Pansy_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cool Windflower Crown",
-        "sell": "",
+        "F": "",
+        "C": 960,
+        "I": "",
         "material1": "Blue Windflowers",
         "material1_num": 3,
         "material2": "Pink Windflowers",
@@ -2938,11 +2374,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fb\/Cool_Windflower_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fb/Cool_Windflower_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cool Windflower Wreath",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Blue Windflowers",
         "material1_num": 3,
         "material2": "Pink Windflowers",
@@ -2955,11 +2393,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/40\/Cool_Windflower_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/40/Cool_Windflower_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Corral Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 6,
         "material2": "",
@@ -2972,11 +2412,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/18\/Corral_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/18/Corral_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Corrugated Iron Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 3,
         "material2": "Hardwood",
@@ -2989,11 +2431,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8e\/Corrugated_Iron_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8e/Corrugated_Iron_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cosmos Crown",
-        "sell": "",
+        "F": "",
+        "C": 480,
+        "I": "",
         "material1": "Red Cosmos",
         "material1_num": 2,
         "material2": "Yellow Cosmos",
@@ -3006,11 +2450,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/40\/Cosmos_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/40/Cosmos_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cosmos Shower",
-        "sell": 3050,
+        "F": 3050,
+        "C": "",
+        "I": "",
         "material1": "Pink Cosmos",
         "material1_num": 5,
         "material2": "Iron Nugget",
@@ -3023,11 +2469,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7e\/Cosmos_Shower_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7e/Cosmos_Shower_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cosmos Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "White Cosmos",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -3040,11 +2488,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6e\/Cosmos_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6e/Cosmos_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cosmos Wreath",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Yellow Cosmos",
         "material1_num": 3,
         "material2": "White Cosmos",
@@ -3057,11 +2507,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/31\/Cosmos_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/31/Cosmos_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Country Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 6,
         "material2": "",
@@ -3074,11 +2526,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/77\/Country_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/77/Country_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Crescent-Moon Chair",
-        "sell": 8500,
+        "F": 8500,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 7,
         "material2": "Large Star Fragment",
@@ -3091,11 +2545,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8e\/Crescent-Moon_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8e/Crescent-Moon_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Crest Doorplate",
-        "sell": 3000,
+        "F": 3000,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 4,
         "material2": "",
@@ -3108,11 +2564,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/60\/Crest_Doorplate_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/60/Crest_Doorplate_NH_DIY_Icon.png"
     },
     {
         "en_name": "Crewed Spaceship",
-        "sell": 20000,
+        "F": 20000,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 10,
         "material2": "Iron Nugget",
@@ -3125,11 +2583,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7a\/Crewed_Spaceship_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7a/Crewed_Spaceship_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cute Lily Crown",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Pink Lilies",
         "material1_num": 2,
         "material2": "Orange Lilies",
@@ -3142,11 +2602,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c6\/Cute_Lily_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c6/Cute_Lily_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cute Rose Crown",
-        "sell": "",
+        "F": "",
+        "C": 960,
+        "I": "",
         "material1": "Pink Roses",
         "material1_num": 3,
         "material2": "Orange Roses",
@@ -3159,11 +2621,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/de\/Cute_Rose_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/de/Cute_Rose_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Cutting Board",
-        "sell": 990,
+        "F": 990,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 2,
         "material2": "Iron Nugget",
@@ -3176,11 +2640,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a1\/Cutting_Board_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a1/Cutting_Board_NH_DIY_Icon.png"
     },
     {
         "en_name": "Dark Bamboo Bath Mat",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 480,
         "material1": "Bamboo Piece",
         "material1_num": 3,
         "material2": "",
@@ -3193,11 +2659,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7e\/Dark_Bamboo_Bath_Mat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7e/Dark_Bamboo_Bath_Mat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Dark Bamboo Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 960,
         "material1": "Bamboo Piece",
         "material1_num": 6,
         "material2": "",
@@ -3210,11 +2678,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/51\/Dark_Bamboo_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/51/Dark_Bamboo_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Dark Cosmos Crown",
-        "sell": "",
+        "F": "",
+        "C": 3360,
+        "I": "",
         "material1": "Black Cosmos",
         "material1_num": 7,
         "material2": "",
@@ -3227,11 +2697,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/37\/Dark_Cosmos_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/37/Dark_Cosmos_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Dark Lily Crown",
-        "sell": "",
+        "F": "",
+        "C": 960,
+        "I": "",
         "material1": "Black Lilies",
         "material1_num": 6,
         "material2": "",
@@ -3244,11 +2716,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a0\/Dark_Lily_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a0/Dark_Lily_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Dark Lily Wreath",
-        "sell": 1600,
+        "F": 1600,
+        "C": "",
+        "I": "",
         "material1": "Black Lilies",
         "material1_num": 10,
         "material2": "",
@@ -3261,11 +2735,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4d\/Dark_Lily_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4d/Dark_Lily_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Dark Rose Wreath",
-        "sell": 4320,
+        "F": 4320,
+        "C": "",
+        "I": "",
         "material1": "Black Roses",
         "material1_num": 3,
         "material2": "Purple Roses",
@@ -3278,11 +2754,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d4\/Dark_Rose_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d4/Dark_Rose_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Dark Tulip Crown",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Black Tulips",
         "material1_num": 5,
         "material2": "",
@@ -3295,11 +2773,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c8\/Dark_Tulip_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c8/Dark_Tulip_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Dark Tulip Wreath",
-        "sell": 1600,
+        "F": 1600,
+        "C": "",
+        "I": "",
         "material1": "Black Tulips",
         "material1_num": 10,
         "material2": "",
@@ -3312,11 +2792,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d7\/Dark_Tulip_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d7/Dark_Tulip_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Dark Wooden-Mosaic Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1800,
         "material1": "Wood",
         "material1_num": 15,
         "material2": "",
@@ -3329,11 +2811,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/40\/Dark_Wooden-Mosaic_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/40/Dark_Wooden-Mosaic_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Decayed Tree",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 10,
         "material2": "",
@@ -3346,11 +2830,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b0\/Decayed_Tree_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b0/Decayed_Tree_NH_DIY_Icon.png"
     },
     {
         "en_name": "Decoy Duck",
-        "sell": 480,
+        "F": 480,
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 4,
         "material2": "",
@@ -3363,11 +2849,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/47\/Decoy_Duck_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/47/Decoy_Duck_NH_DIY_Icon.png"
     },
     {
         "en_name": "Deer Decoration",
-        "sell": 960,
+        "F": 960,
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 8,
         "material2": "",
@@ -3380,16 +2868,18 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/be\/Deer_Decoration_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/be/Deer_Decoration_NH_DIY_Icon.png"
     },
     {
         "en_name": "Deer Scare",
-        "sell": 1740,
+        "F": 1740,
+        "C": "",
+        "I": "",
         "material1": "Bamboo Piece",
         "material1_num": 3,
         "material2": "Stone",
         "material2_num": 8,
-        "material3": "Clump of Weeds",
+        "material3": "Weeds",
         "material3_num": 3,
         "material4": "",
         "material4_num": "",
@@ -3397,11 +2887,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7d\/Deer_Scare_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7d/Deer_Scare_NH_DIY_Icon.png"
     },
     {
         "en_name": "Destinations Signpost",
-        "sell": 1440,
+        "F": 1440,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 4,
         "material2": "Softwood",
@@ -3414,11 +2906,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c7\/Destinations_Signpost_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c7/Destinations_Signpost_NH_DIY_Icon.png"
     },
     {
         "en_name": "Dharma",
-        "sell": 3630,
+        "F": 3630,
+        "C": "",
+        "I": "",
         "material1": "Mini Dharma",
         "material1_num": 3,
         "material2": "",
@@ -3431,11 +2925,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/44\/Dharma_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/44/Dharma_NH_DIY_Icon.png"
     },
     {
         "en_name": "DIY Workbench",
-        "sell": 6630,
+        "F": 6630,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 5,
         "material2": "Hardwood",
@@ -3448,11 +2944,13 @@
         "material5_num": 1,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/28\/DIY_Workbench_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/28/DIY_Workbench_NH_DIY_Icon.png"
     },
     {
         "en_name": "Document Stack",
-        "sell": 400,
+        "F": 400,
+        "C": "",
+        "I": "",
         "material1": "Scattered Papers",
         "material1_num": 1,
         "material2": "",
@@ -3465,11 +2963,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/62\/Document_Stack_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/62/Document_Stack_NH_DIY_Icon.png"
     },
     {
         "en_name": "Doghouse",
-        "sell": 2040,
+        "F": 2040,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 10,
         "material2": "Hardwood",
@@ -3482,11 +2982,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/68\/Doghouse_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/68/Doghouse_NH_DIY_Icon.png"
     },
     {
         "en_name": "Donation Box",
-        "sell": 960,
+        "F": 960,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 4,
         "material2": "Softwood",
@@ -3499,11 +3001,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6e\/Donation_Box_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6e/Donation_Box_NH_DIY_Icon.png"
     },
     {
         "en_name": "Drinking Fountain",
-        "sell": 2700,
+        "F": 2700,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 8,
         "material2": "Iron Nugget",
@@ -3516,11 +3020,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/27\/Drinking_Fountain_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/27/Drinking_Fountain_NH_DIY_Icon.png"
     },
     {
         "en_name": "Earth-Egg Outfit",
-        "sell": "",
+        "F": "",
+        "C": 1200,
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 3,
         "material2": "",
@@ -3533,11 +3039,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a3\/Earth-Egg_Outfit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a3/Earth-Egg_Outfit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Earth-Egg Shell",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 2,
         "material2": "",
@@ -3550,11 +3058,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/70\/Earth-Egg_Shell_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/70/Earth-Egg_Shell_NH_DIY_Icon.png"
     },
     {
         "en_name": "Earth-Egg Shoes",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 2,
         "material2": "",
@@ -3567,11 +3077,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4a\/Earth-Egg_Shoes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4a/Earth-Egg_Shoes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Egg Party Dress",
-        "sell": "",
+        "F": "",
+        "C": 7200,
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 3,
         "material2": "Stone Egg",
@@ -3584,11 +3096,13 @@
         "material5_num": 3,
         "material6": "Water Egg",
         "material6_num": 3,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f2\/Egg_Party_Dress_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f2/Egg_Party_Dress_NH_DIY_Icon.png"
     },
     {
         "en_name": "Egg Party Hat",
-        "sell": "",
+        "F": "",
+        "C": 4800,
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 2,
         "material2": "Stone Egg",
@@ -3601,11 +3115,13 @@
         "material5_num": 2,
         "material6": "Water Egg",
         "material6_num": 2,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/43\/Egg_Party_Hat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/43/Egg_Party_Hat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Falling-Snow Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 2700,
         "material1": "Snowflake",
         "material1_num": 3,
         "material2": "Stone",
@@ -3618,11 +3134,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0e\/Falling-Snow_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0e/Falling-Snow_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fancy Lily Wreath",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Orange Lilies",
         "material1_num": 3,
         "material2": "Pink Lilies",
@@ -3635,11 +3153,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a0\/Fancy_Lily_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a0/Fancy_Lily_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fancy Mum Wreath",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Pink Mums",
         "material1_num": 3,
         "material2": "Purple Mums",
@@ -3652,11 +3172,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fb\/Fancy_Mum_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fb/Fancy_Mum_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fancy Rose Wreath",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Orange Roses",
         "material1_num": 3,
         "material2": "Pink Roses",
@@ -3669,11 +3191,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f5\/Fancy_Rose_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f5/Fancy_Rose_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Festival-Lantern Set",
-        "sell": 2000,
+        "F": 2000,
+        "C": "",
+        "I": "",
         "material1": "Festival Lantern",
         "material1_num": 4,
         "material2": "",
@@ -3686,11 +3210,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f5\/Festival-Lantern_Set_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f5/Festival-Lantern_Set_NH_DIY_Icon.png"
     },
     {
         "en_name": "Festive Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1500,
         "material1": "Red Ornament",
         "material1_num": 5,
         "material2": "Blue Ornament",
@@ -3703,11 +3229,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/10\/Festive_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/10/Festive_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Festive Top Set",
-        "sell": 320,
+        "F": 320,
+        "C": "",
+        "I": "",
         "material1": "Gold Ornament",
         "material1_num": 2,
         "material2": "Hardwood",
@@ -3720,11 +3248,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fa\/Festive_Top_Set_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fa/Festive_Top_Set_NH_DIY_Icon.png"
     },
     {
         "en_name": "Festive Tree",
-        "sell": 1400,
+        "F": 1400,
+        "C": "",
+        "I": "",
         "material1": "Red Ornament",
         "material1_num": 3,
         "material2": "Blue Ornament",
@@ -3737,11 +3267,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4a\/Festive_Tree_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4a/Festive_Tree_NH_DIY_Icon.png"
     },
     {
         "en_name": "Festive Wrapping Paper",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Red Ornament",
         "material1_num": 1,
         "material2": "Blue Ornament",
@@ -3754,11 +3286,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/38\/Festive_Wrapping_Paper_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/38/Festive_Wrapping_Paper_NH_DIY_Icon.png"
     },
     {
         "en_name": "Firewood",
-        "sell": 960,
+        "F": 960,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 8,
         "material2": "",
@@ -3771,11 +3305,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/45\/Firewood_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/45/Firewood_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fish Bait",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Manila Clam",
         "material1_num": 1,
         "material2": "",
@@ -3788,11 +3324,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/dd\/Fish_Bait_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/dd/Fish_Bait_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fish-and-Chips",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Potato",
         "material1_num": 2,
         "material2": "Dab",
@@ -3805,11 +3343,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c3\/Fish-and-Chips_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c3/Fish-and-Chips_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fishing Rod",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Flimsy Fishing Rod",
         "material1_num": 1,
         "material2": "Iron Nugget",
@@ -3822,11 +3362,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5e\/Fishing_Rod_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5e/Fishing_Rod_NH_DIY_Icon.png"
     },
     {
         "en_name": "Flat Garden Rock",
-        "sell": 3000,
+        "F": 3000,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 20,
         "material2": "",
@@ -3839,11 +3381,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7c\/Flat_Garden_Rock_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7c/Flat_Garden_Rock_NH_DIY_Icon.png"
     },
     {
         "en_name": "Flimsy Axe",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Tree Branch",
         "material1_num": 5,
         "material2": "Stone",
@@ -3856,11 +3400,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ac\/Flimsy_Axe_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ac/Flimsy_Axe_NH_DIY_Icon.png"
     },
     {
         "en_name": "Flimsy Fishing Rod",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Tree Branch",
         "material1_num": 5,
         "material2": "",
@@ -3873,11 +3419,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b3\/Flimsy_Fishing_Rod_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b3/Flimsy_Fishing_Rod_NH_DIY_Icon.png"
     },
     {
         "en_name": "Flimsy Net",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Tree Branch",
         "material1_num": 5,
         "material2": "",
@@ -3890,11 +3438,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5e\/Flimsy_Net_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5e/Flimsy_Net_NH_DIY_Icon.png"
     },
     {
         "en_name": "Flimsy Shovel",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 5,
         "material2": "",
@@ -3907,11 +3457,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c3\/Flimsy_Shovel_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c3/Flimsy_Shovel_NH_DIY_Icon.png"
     },
     {
         "en_name": "Flimsy Watering Can",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 5,
         "material2": "",
@@ -3924,12 +3476,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6d\/Flimsy_Watering_Can_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6d/Flimsy_Watering_Can_NH_DIY_Icon.png"
     },
     {
         "en_name": "Floral Swag",
-        "sell": 200,
-        "material1": "Clump of Weeds",
+        "F": 200,
+        "C": "",
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 10,
         "material2": "",
         "material2_num": "",
@@ -3941,11 +3495,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/41\/Floral_Swag_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/41/Floral_Swag_NH_DIY_Icon.png"
     },
     {
         "en_name": "Flour",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wheat",
         "material1_num": 5,
         "material2": "",
@@ -3958,11 +3514,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/98\/Flour_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/98/Flour_NH_DIY_Icon.png"
     },
     {
         "en_name": "Flower Stand",
-        "sell": 2880,
+        "F": 2880,
+        "C": "",
+        "I": "",
         "material1": "Red Roses",
         "material1_num": 1,
         "material2": "Pink Roses",
@@ -3975,11 +3533,13 @@
         "material5_num": 1,
         "material6": "Purple Windflowers",
         "material6_num": 4,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3f\/Flower_Stand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3f/Flower_Stand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Flying Saucer",
-        "sell": 15000,
+        "F": 15000,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 15,
         "material2": "Iron Nugget",
@@ -3992,11 +3552,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/ff\/Flying_Saucer_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/ff/Flying_Saucer_NH_DIY_Icon.png"
     },
     {
         "en_name": "Forbidden Altar",
-        "sell": 4500,
+        "F": 4500,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 30,
         "material2": "",
@@ -4009,11 +3571,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/95\/Forbidden_Altar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/95/Forbidden_Altar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Forest Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 35000,
         "material1": "Rare Mushroom",
         "material1_num": 1,
         "material2": "Round Mushroom",
@@ -4022,15 +3586,17 @@
         "material3_num": 2,
         "material4": "Flat Mushroom",
         "material4_num": 2,
-        "material5": "Clump of Weeds",
+        "material5": "Weeds",
         "material5_num": 10,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/39\/Forest_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/39/Forest_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Forest Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 44000,
         "material1": "Elegant Mushroom",
         "material1_num": 2,
         "material2": "Round Mushroom",
@@ -4043,11 +3609,13 @@
         "material5_num": 10,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bd\/Forest_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bd/Forest_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fossil Doorplate",
-        "sell": 500,
+        "F": 500,
+        "C": "",
+        "I": "",
         "material1": "Fossil",
         "material1_num": 1,
         "material2": "Stone",
@@ -4060,11 +3628,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/84\/Fossil_Doorplate_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/84/Fossil_Doorplate_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fountain",
-        "sell": 11700,
+        "F": 11700,
+        "C": "",
+        "I": "",
         "material1": "Drinking Fountain",
         "material1_num": 1,
         "material2": "Stone",
@@ -4077,12 +3647,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a3\/Fountain_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a3/Fountain_NH_DIY_Icon.png"
     },
     {
         "en_name": "Foxtail",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": "",
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 3,
         "material2": "",
         "material2_num": "",
@@ -4094,11 +3666,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d0\/Foxtail_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d0/Foxtail_NH_DIY_Icon.png"
     },
     {
         "en_name": "French Fries",
-        "sell": 1260,
+        "F": 1260,
+        "C": "",
+        "I": "",
         "material1": "Potato",
         "material1_num": 3,
         "material2": "",
@@ -4111,11 +3685,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7f\/French_Fries_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7f/French_Fries_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frosted Cookies",
-        "sell": 950,
+        "F": 950,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -4128,11 +3704,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1e\/Frosted_Cookies_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1e/Frosted_Cookies_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frosted Pretzels",
-        "sell": 950,
+        "F": 950,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -4145,11 +3723,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ad\/Frosted_Pretzels_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ad/Frosted_Pretzels_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen Arch",
-        "sell": 9000,
+        "F": 9000,
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -4162,11 +3742,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/92\/Frozen_Arch_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/92/Frozen_Arch_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen Bed",
-        "sell": 9000,
+        "F": 9000,
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -4179,11 +3761,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7d\/Frozen_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7d/Frozen_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen Chair",
-        "sell": 6200,
+        "F": 6200,
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -4196,11 +3780,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bf\/Frozen_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bf/Frozen_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen Counter",
-        "sell": 7000,
+        "F": 7000,
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -4213,11 +3799,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/db\/Frozen_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/db/Frozen_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Snowflake",
         "material1_num": 5,
         "material2": "",
@@ -4230,11 +3818,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2a\/Frozen_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2a/Frozen_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen Floor Tiles",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 3200,
         "material1": "Snowflake",
         "material1_num": 8,
         "material2": "",
@@ -4247,11 +3837,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bf\/Frozen_Floor_Tiles_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bf/Frozen_Floor_Tiles_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen Mini Snowperson",
-        "sell": 5800,
+        "F": 5800,
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -4264,11 +3856,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ae\/Frozen_Mini_Snowperson_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ae/Frozen_Mini_Snowperson_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen Partition",
-        "sell": 7400,
+        "F": 7400,
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -4281,11 +3875,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/57\/Frozen_Partition_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/57/Frozen_Partition_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen Pillar",
-        "sell": 6200,
+        "F": 6200,
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -4298,11 +3894,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/46\/Frozen_Pillar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/46/Frozen_Pillar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen Sculpture",
-        "sell": 6600,
+        "F": 6600,
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -4315,11 +3913,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bc\/Frozen_Sculpture_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bc/Frozen_Sculpture_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen Table",
-        "sell": 8200,
+        "F": 8200,
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -4332,11 +3932,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b2\/Frozen_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b2/Frozen_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen Tree",
-        "sell": 8200,
+        "F": 8200,
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -4349,11 +3951,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f7\/Frozen_Tree_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f7/Frozen_Tree_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frozen-Treat Set",
-        "sell": 5400,
+        "F": 5400,
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -4366,11 +3970,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/36\/Frozen-Treat_Set_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/36/Frozen-Treat_Set_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fruit Basket",
-        "sell": 1000,
+        "F": 1000,
+        "C": "",
+        "I": "",
         "material1": "Apple",
         "material1_num": 1,
         "material2": "Pear",
@@ -4383,11 +3989,13 @@
         "material5_num": 1,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/17\/Fruit_Basket_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/17/Fruit_Basket_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fruit Cupcakes",
-        "sell": 1870,
+        "F": 1870,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Apple",
@@ -4400,11 +4008,13 @@
         "material5_num": 1,
         "material6": "Cherry",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6f\/Fruit_Cupcakes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6f/Fruit_Cupcakes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fruit Pizza",
-        "sell": 2500,
+        "F": 2500,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Apple",
@@ -4417,11 +4027,13 @@
         "material5_num": 1,
         "material6": "Cherry",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0c\/Fruit_Pizza_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0c/Fruit_Pizza_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fruit Salad",
-        "sell": 1550,
+        "F": 1550,
+        "C": "",
+        "I": "",
         "material1": "Apple",
         "material1_num": 1,
         "material2": "Orange",
@@ -4434,11 +4046,13 @@
         "material5_num": 1,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a3\/Fruit_Salad_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a3/Fruit_Salad_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fruit Scones",
-        "sell": 2180,
+        "F": 2180,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Apple",
@@ -4451,11 +4065,13 @@
         "material5_num": 1,
         "material6": "Cherry",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/eb\/Fruit_Scones_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/eb/Fruit_Scones_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fruit Wreath",
-        "sell": 2000,
+        "F": 2000,
+        "C": "",
+        "I": "",
         "material1": "Apple",
         "material1_num": 2,
         "material2": "Pear",
@@ -4468,11 +4084,13 @@
         "material5_num": 1,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2d\/Fruit_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2d/Fruit_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Fruit-Topped Pancakes",
-        "sell": 2180,
+        "F": 2180,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Apple",
@@ -4485,11 +4103,13 @@
         "material5_num": 1,
         "material6": "Cherry",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8f\/Fruit-Topped_Pancakes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8f/Fruit-Topped_Pancakes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Frying Pan",
-        "sell": 1500,
+        "F": 1500,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 2,
         "material2": "",
@@ -4502,11 +4122,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/21\/Frying_Pan_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/21/Frying_Pan_NH_DIY_Icon.png"
     },
     {
         "en_name": "Full-Body Glowing-Moss Suit",
-        "sell": "",
+        "F": "",
+        "C": 750,
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 15,
         "material2": "",
@@ -4519,11 +4141,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/05\/Full-Body_Glowing-Moss_Suit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/05/Full-Body_Glowing-Moss_Suit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Galaxy Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 7500,
         "material1": "Star Fragment",
         "material1_num": 5,
         "material2": "Large Star Fragment",
@@ -4536,11 +4160,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cf\/Galaxy_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cf/Galaxy_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Garbage-Heap Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 120,
         "material1": "Empty Can",
         "material1_num": 2,
         "material2": "Boot",
@@ -4553,11 +4179,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fa\/Garbage-Heap_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fa/Garbage-Heap_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Garbage-Heap Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 120,
         "material1": "Empty Can",
         "material1_num": 2,
         "material2": "Boot",
@@ -4570,11 +4198,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f0\/Garbage-Heap_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f0/Garbage-Heap_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Garden Bench",
-        "sell": 4440,
+        "F": 4440,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 12,
         "material2": "Iron Nugget",
@@ -4587,11 +4217,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/85\/Garden_Bench_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/85/Garden_Bench_NH_DIY_Icon.png"
     },
     {
         "en_name": "Garden Rock",
-        "sell": 2250,
+        "F": 2250,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 15,
         "material2": "",
@@ -4604,11 +4236,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/be\/Garden_Rock_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/be/Garden_Rock_NH_DIY_Icon.png"
     },
     {
         "en_name": "Garden Wagon",
-        "sell": 3180,
+        "F": 3180,
+        "C": "",
+        "I": "",
         "material1": "White Hyacinths",
         "material1_num": 3,
         "material2": "Red Cosmos",
@@ -4621,11 +4255,13 @@
         "material5_num": 2,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/05\/Garden_Wagon_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/05/Garden_Wagon_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gear Apparatus",
-        "sell": 2250,
+        "F": 2250,
+        "C": "",
+        "I": "",
         "material1": "Gears",
         "material1_num": 3,
         "material2": "",
@@ -4638,11 +4274,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/57\/Gear_Apparatus_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/57/Gear_Apparatus_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gear Tower",
-        "sell": 3000,
+        "F": 3000,
+        "C": "",
+        "I": "",
         "material1": "Gears",
         "material1_num": 4,
         "material2": "",
@@ -4655,11 +4293,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f4\/Gear_Tower_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f4/Gear_Tower_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gemini Closet",
-        "sell": 22200,
+        "F": 22200,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 3,
         "material2": "Gemini Fragment",
@@ -4672,11 +4312,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ae\/Gemini_Closet_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ae/Gemini_Closet_NH_DIY_Icon.png"
     },
     {
         "en_name": "Giant Ornament",
-        "sell": 1000,
+        "F": 1000,
+        "C": "",
+        "I": "",
         "material1": "Red Ornament",
         "material1_num": 10,
         "material2": "",
@@ -4689,11 +4331,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e3\/Giant_Ornament_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e3/Giant_Ornament_NH_DIY_Icon.png"
     },
     {
         "en_name": "Giant Teddy Bear",
-        "sell": 6300,
+        "F": 6300,
+        "C": "",
+        "I": "",
         "material1": "Papa Bear",
         "material1_num": 1,
         "material2": "Mama Bear",
@@ -4706,11 +4350,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/ed\/Giant_Teddy_Bear_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/ed/Giant_Teddy_Bear_NH_DIY_Icon.png"
     },
     {
         "en_name": "Giant Vine",
-        "sell": 2500,
+        "F": 2500,
+        "C": "",
+        "I": "",
         "material1": "Vine",
         "material1_num": 25,
         "material2": "",
@@ -4723,11 +4369,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/47\/Giant_Vine_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/47/Giant_Vine_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gift Pile",
-        "sell": 660,
+        "F": 660,
+        "C": "",
+        "I": "",
         "material1": "Red Wrapping Paper",
         "material1_num": 3,
         "material2": "Wooden-Block Toy",
@@ -4740,11 +4388,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d9\/Gift_Pile_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d9/Gift_Pile_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glow-in-the-Dark Stickers",
-        "sell": 250,
+        "F": 250,
+        "C": "",
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 5,
         "material2": "",
@@ -4757,11 +4407,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ab\/Glow-in-the-Dark_Stickers_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ab/Glow-in-the-Dark_Stickers_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Balloon",
-        "sell": 1250,
+        "F": 1250,
+        "C": "",
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 10,
         "material2": "Iron Nugget",
@@ -4774,11 +4426,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d8\/Glowing-Moss_Balloon_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d8/Glowing-Moss_Balloon_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Boulder",
-        "sell": 750,
+        "F": 750,
+        "C": "",
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 15,
         "material2": "",
@@ -4791,11 +4445,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/70\/Glowing-Moss_Boulder_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/70/Glowing-Moss_Boulder_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Cave Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 2500,
         "material1": "Glowing Moss",
         "material1_num": 10,
         "material2": "Clay",
@@ -4808,11 +4464,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/66\/Glowing-Moss_Cave_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/66/Glowing-Moss_Cave_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Dress",
-        "sell": "",
+        "F": "",
+        "C": 750,
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 15,
         "material2": "",
@@ -4825,14 +4483,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/85\/Glowing-Moss_Dress_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/85/Glowing-Moss_Dress_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1450,
         "material1": "Glowing Moss",
         "material1_num": 10,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 10,
         "material3": "Stone",
         "material3_num": 5,
@@ -4842,11 +4502,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c6\/Glowing-Moss_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c6/Glowing-Moss_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Forest Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1700,
         "material1": "Glowing Moss",
         "material1_num": 10,
         "material2": "Hardwood",
@@ -4859,11 +4521,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c0\/Glowing-Moss_Forest_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c0/Glowing-Moss_Forest_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Headband",
-        "sell": "",
+        "F": "",
+        "C": 150,
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 3,
         "material2": "",
@@ -4876,11 +4540,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f8\/Glowing-Moss_Headband_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f8/Glowing-Moss_Headband_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Hood",
-        "sell": "",
+        "F": "",
+        "C": 400,
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 8,
         "material2": "",
@@ -4893,11 +4559,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/56\/Glowing-Moss_Hood_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/56/Glowing-Moss_Hood_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Jar",
-        "sell": 150,
+        "F": 150,
+        "C": "",
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 3,
         "material2": "",
@@ -4910,11 +4578,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ac\/Glowing-Moss_Jar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ac/Glowing-Moss_Jar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Pointed Cap",
-        "sell": "",
+        "F": "",
+        "C": 400,
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 8,
         "material2": "",
@@ -4927,11 +4597,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c9\/Glowing-Moss_Pointed_Cap_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c9/Glowing-Moss_Pointed_Cap_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Pond",
-        "sell": 3000,
+        "F": 3000,
+        "C": "",
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 30,
         "material2": "Stone",
@@ -4944,11 +4616,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/01\/Glowing-Moss_Pond_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/01/Glowing-Moss_Pond_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 300,
         "material1": "Glowing Moss",
         "material1_num": 6,
         "material2": "",
@@ -4961,11 +4635,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/76\/Glowing-Moss_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/76/Glowing-Moss_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Ruins Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 2000,
         "material1": "Glowing Moss",
         "material1_num": 10,
         "material2": "Ruins Wall",
@@ -4978,11 +4654,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/48\/Glowing-Moss_Ruins_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/48/Glowing-Moss_Ruins_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Statue",
-        "sell": 1450,
+        "F": 1450,
+        "C": "",
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 5,
         "material2": "Stone",
@@ -4995,11 +4673,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5e\/Glowing-Moss_Statue_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5e/Glowing-Moss_Statue_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Stool",
-        "sell": 400,
+        "F": 400,
+        "C": "",
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 8,
         "material2": "",
@@ -5012,11 +4692,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d5\/Glowing-Moss_Stool_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d5/Glowing-Moss_Stool_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss Wreath",
-        "sell": 250,
+        "F": 250,
+        "C": "",
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 5,
         "material2": "",
@@ -5029,11 +4711,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/db\/Glowing-Moss_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/db/Glowing-Moss_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Glowing-Moss-Jar Shelves",
-        "sell": 5400,
+        "F": 5400,
+        "C": "",
+        "I": "",
         "material1": "Glowing-Moss Jar",
         "material1_num": 6,
         "material2": "Iron Nugget",
@@ -5046,11 +4730,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d2\/Glowing-Moss-Jar_Shelves_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d2/Glowing-Moss-Jar_Shelves_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gnocchi di Carote",
-        "sell": 2210,
+        "F": 2210,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Carrot",
@@ -5063,11 +4749,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/12\/Gnocchi_di_Carote_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/12/Gnocchi_di_Carote_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gnocchi di Patate",
-        "sell": 2210,
+        "F": 2210,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Potato",
@@ -5080,11 +4768,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2d\/Gnocchi_di_Patate_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2d/Gnocchi_di_Patate_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gnocchi di Zucca",
-        "sell": 2210,
+        "F": 2210,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Orange Pumpkin",
@@ -5097,11 +4787,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d0\/Gnocchi_di_Zucca_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d0/Gnocchi_di_Zucca_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gold Armor",
-        "sell": "",
+        "F": "",
+        "C": 80000,
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 8,
         "material2": "",
@@ -5114,11 +4806,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/16\/Gold_Armor_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/16/Gold_Armor_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gold Bars",
-        "sell": 30000,
+        "F": 30000,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 3,
         "material2": "",
@@ -5131,11 +4825,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b5\/Gold_Bars_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b5/Gold_Bars_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gold Helmet",
-        "sell": "",
+        "F": "",
+        "C": 50000,
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 5,
         "material2": "",
@@ -5148,11 +4844,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d1\/Gold_Helmet_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d1/Gold_Helmet_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gold Rose Crown",
-        "sell": "",
+        "F": "",
+        "C": 12000,
+        "I": "",
         "material1": "Gold Roses",
         "material1_num": 6,
         "material2": "",
@@ -5165,11 +4863,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/07\/Gold_Rose_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/07/Gold_Rose_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gold Rose Wreath",
-        "sell": 20000,
+        "F": 20000,
+        "C": "",
+        "I": "",
         "material1": "Gold Roses",
         "material1_num": 10,
         "material2": "",
@@ -5182,11 +4882,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/05\/Gold_Rose_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/05/Gold_Rose_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gold-Armor Shoes",
-        "sell": "",
+        "F": "",
+        "C": 40000,
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 4,
         "material2": "",
@@ -5199,11 +4901,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b4\/Gold-Armor_Shoes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b4/Gold-Armor_Shoes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gold-Nugget Mining Car",
-        "sell": 30950,
+        "F": 30950,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 3,
         "material2": "Mining Car",
@@ -5216,11 +4920,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f1\/Gold-Nugget_Mining_Car_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f1/Gold-Nugget_Mining_Car_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gold-Screen Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 20750,
         "material1": "Gold Nugget",
         "material1_num": 2,
         "material2": "Screen Wall",
@@ -5233,11 +4939,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4f\/Gold-Screen_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4f/Gold-Screen_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Altar",
-        "sell": 52250,
+        "F": 52250,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 5,
         "material2": "Forbidden Altar",
@@ -5250,11 +4958,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/20\/Golden_Altar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/20/Golden_Altar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Arowana Model",
-        "sell": 30000,
+        "F": 30000,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 3,
         "material2": "",
@@ -5267,11 +4977,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d2\/Golden_Arowana_Model_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d2/Golden_Arowana_Model_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Axe",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Axe",
         "material1_num": 1,
         "material2": "Gold Nugget",
@@ -5284,11 +4996,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/ed\/Golden_Axe_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/ed/Golden_Axe_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Bathtub",
-        "sell": 21725,
+        "F": 21725,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 2,
         "material2": "Square Bathtub",
@@ -5301,11 +5015,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4e\/Golden_Bathtub_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4e/Golden_Bathtub_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Candlestick",
-        "sell": 20000,
+        "F": 20000,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 2,
         "material2": "",
@@ -5318,11 +5034,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/92\/Golden_Candlestick_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/92/Golden_Candlestick_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Casket",
-        "sell": 80000,
+        "F": 80000,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 8,
         "material2": "",
@@ -5335,11 +5053,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/de\/Golden_Casket_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/de/Golden_Casket_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Decorative Plate",
-        "sell": 13500,
+        "F": 13500,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 1,
         "material2": "Decorative Plate",
@@ -5352,11 +5072,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6c\/Golden_Decorative_Plate_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6c/Golden_Decorative_Plate_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Dharma",
-        "sell": 11815,
+        "F": 11815,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 1,
         "material2": "Dharma",
@@ -5369,11 +5091,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8a\/Golden_Dharma_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8a/Golden_Dharma_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Dishes",
-        "sell": 10000,
+        "F": 10000,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 1,
         "material2": "",
@@ -5386,11 +5110,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e0\/Golden_Dishes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e0/Golden_Dishes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Dung Beetle",
-        "sell": 30000,
+        "F": 30000,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 3,
         "material2": "",
@@ -5403,11 +5129,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1f\/Golden_Dung_Beetle_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1f/Golden_Dung_Beetle_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 40000,
         "material1": "Gold Nugget",
         "material1_num": 4,
         "material2": "",
@@ -5420,11 +5148,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e0\/Golden_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e0/Golden_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Garden Bunny",
-        "sell": 10425,
+        "F": 10425,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 1,
         "material2": "Bunny Garden Decoration",
@@ -5437,11 +5167,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/98\/Golden_Garden_Bunny_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/98/Golden_Garden_Bunny_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Gear Apparatus",
-        "sell": 21125,
+        "F": 21125,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 2,
         "material2": "Gear Apparatus",
@@ -5454,11 +5186,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/24\/Golden_Gear_Apparatus_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/24/Golden_Gear_Apparatus_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Gear Tower",
-        "sell": 21500,
+        "F": 21500,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 2,
         "material2": "Gear Tower",
@@ -5471,11 +5205,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e5\/Golden_Gear_Tower_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e5/Golden_Gear_Tower_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Gears",
-        "sell": 11125,
+        "F": 11125,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 1,
         "material2": "Iron Nugget",
@@ -5488,11 +5224,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d9\/Golden_Gears_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d9/Golden_Gears_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Ladder Set-Up Kit",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Ladder",
         "material1_num": 1,
         "material2": "Gold Nugget",
@@ -5505,11 +5243,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/69\/Golden_Ladder_Set-Up_Kit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/69/Golden_Ladder_Set-Up_Kit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Meter and Pipes",
-        "sell": 21150,
+        "F": 21150,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 2,
         "material2": "Meter and Pipes",
@@ -5522,11 +5262,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/46\/Golden_Meter_and_Pipes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/46/Golden_Meter_and_Pipes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Net",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Net",
         "material1_num": 1,
         "material2": "Gold Nugget",
@@ -5539,11 +5281,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9e\/Golden_Net_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9e/Golden_Net_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Piggy Bank",
-        "sell": 10185,
+        "F": 10185,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 1,
         "material2": "Piggy Bank",
@@ -5556,11 +5300,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0b\/Golden_Piggy_Bank_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0b/Golden_Piggy_Bank_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Pillar",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 4,
         "material2": "",
@@ -5573,11 +5319,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b8\/Golden_Pillar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b8/Golden_Pillar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Plate Armor",
-        "sell": 23750,
+        "F": 23750,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 2,
         "material2": "Plate Armor",
@@ -5590,11 +5338,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3c\/Golden_Plate_Armor_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3c/Golden_Plate_Armor_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Rod",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Fishing Rod",
         "material1_num": 1,
         "material2": "Gold Nugget",
@@ -5607,11 +5357,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/20\/Golden_Rod_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/20/Golden_Rod_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Samurai Suit",
-        "sell": 57500,
+        "F": 57500,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 2,
         "material2": "Samurai Suit",
@@ -5624,11 +5376,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/dc\/Golden_Samurai_Suit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/dc/Golden_Samurai_Suit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Seat",
-        "sell": 50000,
+        "F": 50000,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 5,
         "material2": "",
@@ -5641,11 +5395,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2d\/Golden_Seat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2d/Golden_Seat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Shovel",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Shovel",
         "material1_num": 1,
         "material2": "Gold Nugget",
@@ -5658,11 +5414,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f0\/Golden_Shovel_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f0/Golden_Shovel_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Slingshot",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Slingshot",
         "material1_num": 1,
         "material2": "Gold Nugget",
@@ -5675,11 +5433,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9a\/Golden_Slingshot_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9a/Golden_Slingshot_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Toilet",
-        "sell": 60000,
+        "F": 60000,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 6,
         "material2": "",
@@ -5692,11 +5452,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e7\/Golden_Toilet_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e7/Golden_Toilet_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Urn",
-        "sell": 11250,
+        "F": 11250,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 1,
         "material2": "Metal Pot",
@@ -5709,11 +5471,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/45\/Golden_Urn_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/45/Golden_Urn_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Vase",
-        "sell": 42500,
+        "F": 42500,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 1,
         "material2": "Fine Vase",
@@ -5726,11 +5490,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/47\/Golden_Vase_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/47/Golden_Vase_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 40000,
         "material1": "Gold Nugget",
         "material1_num": 4,
         "material2": "",
@@ -5743,11 +5509,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/10\/Golden_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/10/Golden_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 2,
         "material2": "Star Fragment",
@@ -5760,11 +5528,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/35\/Golden_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/35/Golden_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Watering Can",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Watering Can",
         "material1_num": 1,
         "material2": "Gold Nugget",
@@ -5777,11 +5547,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fd\/Golden_Watering_Can_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fd/Golden_Watering_Can_NH_DIY_Icon.png"
     },
     {
         "en_name": "Golden Wristwatch",
-        "sell": 27000,
+        "F": 27000,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 1,
         "material2": "Wristwatch",
@@ -5794,11 +5566,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c9\/Golden_Wristwatch_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c9/Golden_Wristwatch_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gong",
-        "sell": 5100,
+        "F": 5100,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 6,
         "material2": "Wood",
@@ -5811,12 +5585,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/46\/Gong_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/46/Gong_NH_DIY_Icon.png"
     },
     {
         "en_name": "Grass Skirt",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": 140,
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 7,
         "material2": "",
         "material2_num": "",
@@ -5828,11 +5604,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d9\/Grass_Skirt_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d9/Grass_Skirt_NH_DIY_Icon.png"
     },
     {
         "en_name": "Grass Standee",
-        "sell": 480,
+        "F": 480,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 2,
         "material2": "Softwood",
@@ -5845,11 +5623,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/79\/Grass_Standee_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/79/Grass_Standee_NH_DIY_Icon.png"
     },
     {
         "en_name": "Gratin",
-        "sell": 2000,
+        "F": 2000,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Potato",
@@ -5862,11 +5642,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/29\/Gratin_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/29/Gratin_NH_DIY_Icon.png"
     },
     {
         "en_name": "Green Bamboo Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Bamboo Piece",
         "material1_num": 6,
         "material2": "",
@@ -5879,11 +5661,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fe\/Green_Bamboo_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fe/Green_Bamboo_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Green Bamboo Mat",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 480,
         "material1": "Bamboo Piece",
         "material1_num": 3,
         "material2": "",
@@ -5896,12 +5680,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f8\/Green_Bamboo_Mat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f8/Green_Bamboo_Mat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Green Grass Skirt",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": 140,
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 7,
         "material2": "",
         "material2_num": "",
@@ -5913,14 +5699,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/66\/Green_Grass_Skirt_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/66/Green_Grass_Skirt_NH_DIY_Icon.png"
     },
     {
         "en_name": "Green-Leaf Pile",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Young Spring Bamboo",
         "material1_num": 1,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 10,
         "material3": "",
         "material3_num": "",
@@ -5930,14 +5718,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f5\/Green-Leaf_Pile_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f5/Green-Leaf_Pile_NH_DIY_Icon.png"
     },
     {
         "en_name": "Grilled Sea Bass with Herbs",
-        "sell": 540,
+        "F": 540,
+        "C": "",
+        "I": "",
         "material1": "Sea Bass",
         "material1_num": 1,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 5,
         "material3": "",
         "material3_num": "",
@@ -5947,11 +5737,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/65\/Grilled_Sea_Bass_with_Herbs_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/65/Grilled_Sea_Bass_with_Herbs_NH_DIY_Icon.png"
     },
     {
         "en_name": "Hanging Glowing Moss",
-        "sell": 550,
+        "F": 550,
+        "C": "",
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 5,
         "material2": "Vine",
@@ -5964,12 +5756,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/36\/Hanging_Glowing_Moss_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/36/Hanging_Glowing_Moss_NH_DIY_Icon.png"
     },
     {
         "en_name": "Hanging Terrarium",
-        "sell": 3240,
-        "material1": "Clump of Weeds",
+        "F": 3240,
+        "C": "",
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 12,
         "material2": "Iron Nugget",
         "material2_num": 4,
@@ -5981,12 +5775,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fd\/Hanging_Terrarium_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fd/Hanging_Terrarium_NH_DIY_Icon.png"
     },
     {
         "en_name": "Hay Bed",
-        "sell": 400,
-        "material1": "Clump of Weeds",
+        "F": 400,
+        "C": "",
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 20,
         "material2": "",
         "material2_num": "",
@@ -5998,11 +5794,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/50\/Hay_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/50/Hay_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Hearth",
-        "sell": 5470,
+        "F": 5470,
+        "C": "",
+        "I": "",
         "material1": "Bamboo Piece",
         "material1_num": 2,
         "material2": "Iron Nugget",
@@ -6015,12 +5813,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7d\/Hearth_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7d/Hearth_NH_DIY_Icon.png"
     },
     {
         "en_name": "Hedge",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": "",
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 10,
         "material2": "Tree Branch",
         "material2_num": 5,
@@ -6032,11 +5832,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b2\/Hedge_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b2/Hedge_NH_DIY_Icon.png"
     },
     {
         "en_name": "Hedge Standee",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 2,
         "material2": "Softwood",
@@ -6049,14 +5851,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/78\/Hedge_Standee_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/78/Hedge_Standee_NH_DIY_Icon.png"
     },
     {
         "en_name": "Holiday Candle",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Red Ornament",
         "material1_num": 5,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 5,
         "material3": "",
         "material3_num": "",
@@ -6066,11 +5870,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d6\/Holiday_Candle_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d6/Holiday_Candle_NH_DIY_Icon.png"
     },
     {
         "en_name": "Honeycomb Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 3000,
         "material1": "Wasp Nest",
         "material1_num": 5,
         "material2": "",
@@ -6083,11 +5889,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fc\/Honeycomb_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fc/Honeycomb_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Honeycomb Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 3600,
         "material1": "Wasp Nest",
         "material1_num": 6,
         "material2": "",
@@ -6100,11 +5908,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ac\/Honeycomb_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ac/Honeycomb_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Hyacinth Crown",
-        "sell": "",
+        "F": "",
+        "C": 640,
+        "I": "",
         "material1": "Red Hyacinths",
         "material1_num": 4,
         "material2": "Yellow Hyacinths",
@@ -6117,11 +5927,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/08\/Hyacinth_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/08/Hyacinth_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Hyacinth Lamp",
-        "sell": 3000,
+        "F": 3000,
+        "C": "",
+        "I": "",
         "material1": "Purple Hyacinths",
         "material1_num": 5,
         "material2": "Clay",
@@ -6134,11 +5946,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d7\/Hyacinth_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d7/Hyacinth_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Hyacinth Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Pink Hyacinths",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -6151,11 +5965,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/61\/Hyacinth_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/61/Hyacinth_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Hyacinth Wreath",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "White Hyacinths",
         "material1_num": 3,
         "material2": "Red Hyacinths",
@@ -6168,11 +5984,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/08\/Hyacinth_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/08/Hyacinth_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ice Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 8200,
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -6185,11 +6003,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0e\/Ice_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0e/Ice_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ice Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 8200,
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -6202,11 +6022,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3a\/Ice_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3a/Ice_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ice Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -6219,11 +6041,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a1\/Ice_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a1/Ice_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iceberg Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 4000,
         "material1": "Snowflake",
         "material1_num": 10,
         "material2": "",
@@ -6236,11 +6060,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d4\/Iceberg_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d4/Iceberg_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iceberg Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 4000,
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -6253,11 +6079,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d9\/Iceberg_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d9/Iceberg_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Illuminated Present",
-        "sell": 2950,
+        "F": 2950,
+        "C": "",
+        "I": "",
         "material1": "Red Ornament",
         "material1_num": 3,
         "material2": "Gold Ornament",
@@ -6270,11 +6098,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0d\/Illuminated_Present_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0d/Illuminated_Present_NH_DIY_Icon.png"
     },
     {
         "en_name": "Illuminated Reindeer",
-        "sell": 4350,
+        "F": 4350,
+        "C": "",
+        "I": "",
         "material1": "Gold Ornament",
         "material1_num": 6,
         "material2": "Iron Nugget",
@@ -6287,11 +6117,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fb\/Illuminated_Reindeer_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fb/Illuminated_Reindeer_NH_DIY_Icon.png"
     },
     {
         "en_name": "Illuminated Snowflakes",
-        "sell": 3150,
+        "F": 3150,
+        "C": "",
+        "I": "",
         "material1": "Blue Ornament",
         "material1_num": 9,
         "material2": "Iron Nugget",
@@ -6304,11 +6136,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/69\/Illuminated_Snowflakes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/69/Illuminated_Snowflakes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Illuminated Tree",
-        "sell": 6700,
+        "F": 6700,
+        "C": "",
+        "I": "",
         "material1": "Red Ornament",
         "material1_num": 3,
         "material2": "Gold Ornament",
@@ -6321,11 +6155,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/29\/Illuminated_Tree_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/29/Illuminated_Tree_NH_DIY_Icon.png"
     },
     {
         "en_name": "Imperial Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 6,
         "material2": "Softwood",
@@ -6338,11 +6174,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/88\/Imperial_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/88/Imperial_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Imperial Pot",
-        "sell": 2250,
+        "F": 2250,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 3,
         "material2": "",
@@ -6355,11 +6193,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9a\/Imperial_Pot_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9a/Imperial_Pot_NH_DIY_Icon.png"
     },
     {
         "en_name": "Infused-Water Dispenser",
-        "sell": 3000,
+        "F": 3000,
+        "C": "",
+        "I": "",
         "material1": "Apple",
         "material1_num": 2,
         "material2": "Pear",
@@ -6372,11 +6212,13 @@
         "material5_num": 2,
         "material6": "Coconut",
         "material6_num": 2,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6c\/Infused-Water_Dispenser_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6c/Infused-Water_Dispenser_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Armor",
-        "sell": "",
+        "F": "",
+        "C": 6000,
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 8,
         "material2": "",
@@ -6389,11 +6231,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bd\/Iron_Armor_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bd/Iron_Armor_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Closet",
-        "sell": 9000,
+        "F": 9000,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 12,
         "material2": "",
@@ -6406,11 +6250,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d2\/Iron_Closet_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d2/Iron_Closet_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Doorplate",
-        "sell": 1500,
+        "F": 1500,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 2,
         "material2": "",
@@ -6423,11 +6269,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/01\/Iron_Doorplate_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/01/Iron_Doorplate_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 6,
         "material2": "",
@@ -6440,11 +6288,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b3\/Iron_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b3/Iron_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Frame",
-        "sell": 15000,
+        "F": 15000,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 20,
         "material2": "",
@@ -6457,11 +6307,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bf\/Iron_Frame_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bf/Iron_Frame_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Garden Bench",
-        "sell": 6000,
+        "F": 6000,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 8,
         "material2": "",
@@ -6474,11 +6326,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/39\/Iron_Garden_Bench_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/39/Iron_Garden_Bench_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Garden Chair",
-        "sell": 2250,
+        "F": 2250,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 3,
         "material2": "",
@@ -6491,11 +6345,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a2\/Iron_Garden_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a2/Iron_Garden_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Garden Table",
-        "sell": 3750,
+        "F": 3750,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 5,
         "material2": "",
@@ -6508,11 +6364,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/80\/Iron_Garden_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/80/Iron_Garden_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Hanger Stand",
-        "sell": 2250,
+        "F": 2250,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 3,
         "material2": "",
@@ -6525,11 +6383,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d0\/Iron_Hanger_Stand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d0/Iron_Hanger_Stand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Ladder Set-Up Kit",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Ladder",
         "material1_num": 1,
         "material2": "Iron Nugget",
@@ -6542,11 +6402,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/95\/Iron_Ladder_Set-Up_Kit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/95/Iron_Ladder_Set-Up_Kit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Shelf",
-        "sell": 10500,
+        "F": 10500,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 14,
         "material2": "",
@@ -6559,11 +6421,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a6\/Iron_Shelf_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a6/Iron_Shelf_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Wall Lamp",
-        "sell": 3400,
+        "F": 3400,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 4,
         "material2": "Clay",
@@ -6576,11 +6440,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c1\/Iron_Wall_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c1/Iron_Wall_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Wall Rack",
-        "sell": 2450,
+        "F": 2450,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 3,
         "material2": "Clay",
@@ -6593,11 +6459,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0a\/Iron_Wall_Rack_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0a/Iron_Wall_Rack_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 3,
         "material2": "Star Fragment",
@@ -6610,11 +6478,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9a\/Iron_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9a/Iron_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron Worktable",
-        "sell": 7500,
+        "F": 7500,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 10,
         "material2": "",
@@ -6627,11 +6497,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/35\/Iron_Worktable_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/35/Iron_Worktable_NH_DIY_Icon.png"
     },
     {
         "en_name": "Iron-and-Stone Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 6,
         "material2": "Iron Nugget",
@@ -6644,11 +6516,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2b\/Iron-and-Stone_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2b/Iron-and-Stone_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ironwood Bed",
-        "sell": 9900,
+        "F": 9900,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 20,
         "material2": "Iron Nugget",
@@ -6661,11 +6535,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/ed\/Ironwood_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/ed/Ironwood_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ironwood Cart",
-        "sell": 3720,
+        "F": 3720,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 6,
         "material2": "Iron Nugget",
@@ -6678,11 +6554,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f9\/Ironwood_Cart_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f9/Ironwood_Cart_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ironwood Chair",
-        "sell": 1860,
+        "F": 1860,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "Iron Nugget",
@@ -6695,11 +6573,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/05\/Ironwood_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/05/Ironwood_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ironwood Clock",
-        "sell": 1740,
+        "F": 1740,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 2,
         "material2": "Iron Nugget",
@@ -6712,11 +6592,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/27\/Ironwood_Clock_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/27/Ironwood_Clock_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ironwood Cupboard",
-        "sell": 9780,
+        "F": 9780,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 12,
         "material2": "Iron Nugget",
@@ -6729,11 +6611,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5d\/Ironwood_Cupboard_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5d/Ironwood_Cupboard_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ironwood DIY Workbench",
-        "sell": 8520,
+        "F": 8520,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 12,
         "material2": "Iron Nugget",
@@ -6746,11 +6630,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cc\/Ironwood_DIY_Workbench_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cc/Ironwood_DIY_Workbench_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ironwood Dresser",
-        "sell": 3840,
+        "F": 3840,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 7,
         "material2": "Iron Nugget",
@@ -6763,11 +6649,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/52\/Ironwood_Dresser_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/52/Ironwood_Dresser_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ironwood Kitchenette",
-        "sell": 7560,
+        "F": 7560,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 4,
         "material2": "Iron Nugget",
@@ -6780,11 +6668,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8f\/Ironwood_Kitchenette_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8f/Ironwood_Kitchenette_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ironwood Low Table",
-        "sell": 3720,
+        "F": 3720,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 6,
         "material2": "Iron Nugget",
@@ -6797,11 +6687,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/90\/Ironwood_Low_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/90/Ironwood_Low_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ironwood Table",
-        "sell": 5940,
+        "F": 5940,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 12,
         "material2": "Iron Nugget",
@@ -6814,11 +6706,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c5\/Ironwood_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c5/Ironwood_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Jail Bars",
-        "sell": 3750,
+        "F": 3750,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 5,
         "material2": "",
@@ -6831,11 +6725,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4d\/Jail_Bars_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4d/Jail_Bars_NH_DIY_Icon.png"
     },
     {
         "en_name": "Jarred Bamboo Shoots",
-        "sell": 1500,
+        "F": 1500,
+        "C": "",
+        "I": "",
         "material1": "Bamboo Shoot",
         "material1_num": 3,
         "material2": "",
@@ -6848,11 +6744,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f6\/Jarred_Bamboo_Shoots_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f6/Jarred_Bamboo_Shoots_NH_DIY_Icon.png"
     },
     {
         "en_name": "Jarred Mushrooms",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Skinny Mushroom",
         "material1_num": 2,
         "material2": "",
@@ -6865,11 +6763,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bf\/Jarred_Mushrooms_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bf/Jarred_Mushrooms_NH_DIY_Icon.png"
     },
     {
         "en_name": "Jingle Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 2500,
         "material1": "Red Ornament",
         "material1_num": 5,
         "material2": "Blue Ornament",
@@ -6882,11 +6782,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9a\/Jingle_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9a/Jingle_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Juicy-Apple TV",
-        "sell": 3500,
+        "F": 3500,
+        "C": "",
+        "I": "",
         "material1": "Apple",
         "material1_num": 10,
         "material2": "Iron Nugget",
@@ -6899,12 +6801,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a3\/Juicy-Apple_TV_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a3/Juicy-Apple_TV_NH_DIY_Icon.png"
     },
     {
         "en_name": "Jungle Flooring",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": "",
+        "I": 2200,
+        "material1": "Weeds",
         "material1_num": 10,
         "material2": "Clay",
         "material2_num": 10,
@@ -6916,12 +6820,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/df\/Jungle_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/df/Jungle_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Jungle Wall",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": "",
+        "I": 1380,
+        "material1": "Weeds",
         "material1_num": 15,
         "material2": "Wood",
         "material2_num": 3,
@@ -6933,11 +6839,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/de\/Jungle_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/de/Jungle_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Kabu Ankake",
-        "sell": 450,
+        "F": 450,
+        "C": "",
+        "I": "",
         "material1": "10 Turnips",
         "material1_num": 1,
         "material2": "",
@@ -6950,11 +6858,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/10\/Kabu_Ankake_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/10/Kabu_Ankake_NH_DIY_Icon.png"
     },
     {
         "en_name": "Karei no Nitsuke",
-        "sell": 360,
+        "F": 360,
+        "C": "",
+        "I": "",
         "material1": "Dab",
         "material1_num": 1,
         "material2": "",
@@ -6967,11 +6877,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/82\/Karei_no_Nitsuke_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/82/Karei_no_Nitsuke_NH_DIY_Icon.png"
     },
     {
         "en_name": "Kettle Bathtub",
-        "sell": 6270,
+        "F": 6270,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 8,
         "material2": "Wood",
@@ -6984,11 +6896,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/14\/Kettle_Bathtub_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/14/Kettle_Bathtub_NH_DIY_Icon.png"
     },
     {
         "en_name": "Kettlebell",
-        "sell": 3750,
+        "F": 3750,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 5,
         "material2": "",
@@ -7001,11 +6915,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/65\/Kettlebell_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/65/Kettlebell_NH_DIY_Icon.png"
     },
     {
         "en_name": "Key Holder",
-        "sell": 1110,
+        "F": 1110,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "Iron Nugget",
@@ -7018,11 +6934,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ab\/Key_Holder_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ab/Key_Holder_NH_DIY_Icon.png"
     },
     {
         "en_name": "King Tut Mask",
-        "sell": "",
+        "F": "",
+        "C": 50000,
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 5,
         "material2": "",
@@ -7035,11 +6953,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bc\/King_Tut_Mask_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bc/King_Tut_Mask_NH_DIY_Icon.png"
     },
     {
         "en_name": "Knight's Helmet",
-        "sell": "",
+        "F": "",
+        "C": 3750,
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 5,
         "material2": "",
@@ -7052,12 +6972,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4a\/Knight%27s_Helmet_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4a/Knight%27s_Helmet_NH_DIY_Icon.png"
     },
     {
         "en_name": "Knitted-Grass Backpack",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": 400,
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 20,
         "material2": "",
         "material2_num": "",
@@ -7069,11 +6991,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/43\/Knitted-Grass_Backpack_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/43/Knitted-Grass_Backpack_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ladder",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 4,
         "material2": "Hardwood",
@@ -7086,11 +7010,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a4\/Ladder_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a4/Ladder_NH_DIY_Icon.png"
     },
     {
         "en_name": "Large Cardboard Boxes",
-        "sell": 300,
+        "F": 300,
+        "C": "",
+        "I": "",
         "material1": "Cardboard Box",
         "material1_num": 5,
         "material2": "",
@@ -7103,11 +7029,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9b\/Large_Cardboard_Boxes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9b/Large_Cardboard_Boxes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Large Lattice Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 10,
         "material2": "",
@@ -7120,11 +7048,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/31\/Large_Lattice_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/31/Large_Lattice_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Lattice Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 8,
         "material2": "",
@@ -7137,12 +7067,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a4\/Lattice_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a4/Lattice_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Leaf",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": 100,
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 5,
         "material2": "",
         "material2_num": "",
@@ -7154,14 +7086,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5f\/Leaf_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5f/Leaf_NH_DIY_Icon.png"
     },
     {
         "en_name": "Leaf Campfire",
-        "sell": 1330,
+        "F": 1330,
+        "C": "",
+        "I": "",
         "material1": "Pine Cone",
         "material1_num": 3,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 5,
         "material3": "Tree Branch",
         "material3_num": 3,
@@ -7171,12 +7105,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cb\/Leaf_Campfire_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cb/Leaf_Campfire_NH_DIY_Icon.png"
     },
     {
         "en_name": "Leaf Mask",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": 200,
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 10,
         "material2": "",
         "material2_num": "",
@@ -7188,11 +7124,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/ce\/Leaf_Mask_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/ce/Leaf_Mask_NH_DIY_Icon.png"
     },
     {
         "en_name": "Leaf Stool",
-        "sell": 1560,
+        "F": 1560,
+        "C": "",
+        "I": "",
         "material1": "Maple Leaf",
         "material1_num": 3,
         "material2": "Wood",
@@ -7205,12 +7143,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c0\/Leaf_Stool_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c0/Leaf_Stool_NH_DIY_Icon.png"
     },
     {
         "en_name": "Leaf Umbrella",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": 300,
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 15,
         "material2": "",
         "material2_num": "",
@@ -7222,11 +7162,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9a\/Leaf_Umbrella_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9a/Leaf_Umbrella_NH_DIY_Icon.png"
     },
     {
         "en_name": "Leaf-Egg Outfit",
-        "sell": "",
+        "F": "",
+        "C": 1200,
+        "I": "",
         "material1": "Leaf Egg",
         "material1_num": 3,
         "material2": "",
@@ -7239,11 +7181,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/12\/Leaf-Egg_Outfit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/12/Leaf-Egg_Outfit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Leaf-Egg Shell",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Leaf Egg",
         "material1_num": 2,
         "material2": "",
@@ -7256,11 +7200,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f5\/Leaf-Egg_Shell_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f5/Leaf-Egg_Shell_NH_DIY_Icon.png"
     },
     {
         "en_name": "Leaf-Egg Shoes",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Leaf Egg",
         "material1_num": 2,
         "material2": "",
@@ -7273,11 +7219,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/aa\/Leaf-Egg_Shoes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/aa/Leaf-Egg_Shoes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Leo Sculpture",
-        "sell": 21975,
+        "F": 21975,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 3,
         "material2": "Leo Fragment",
@@ -7290,11 +7238,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/aa\/Leo_Sculpture_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/aa/Leo_Sculpture_NH_DIY_Icon.png"
     },
     {
         "en_name": "Libra Scale",
-        "sell": 21750,
+        "F": 21750,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 3,
         "material2": "Libra Fragment",
@@ -7307,11 +7257,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/40\/Libra_Scale_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/40/Libra_Scale_NH_DIY_Icon.png"
     },
     {
         "en_name": "Light Bamboo Bath Mat",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1200,
         "material1": "Young Spring Bamboo",
         "material1_num": 3,
         "material2": "",
@@ -7324,11 +7276,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/68\/Light_Bamboo_Bath_Mat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/68/Light_Bamboo_Bath_Mat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Light Bamboo Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 2400,
         "material1": "Young Spring Bamboo",
         "material1_num": 6,
         "material2": "",
@@ -7341,11 +7295,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e0\/Light_Bamboo_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e0/Light_Bamboo_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Lily Crown",
-        "sell": "",
+        "F": "",
+        "C": 480,
+        "I": "",
         "material1": "Red Lilies",
         "material1_num": 2,
         "material2": "Yellow Lilies",
@@ -7358,11 +7314,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a2\/Lily_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a2/Lily_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Lily Record Player",
-        "sell": 3010,
+        "F": 3010,
+        "C": "",
+        "I": "",
         "material1": "White Lilies",
         "material1_num": 5,
         "material2": "Iron Nugget",
@@ -7375,11 +7333,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/eb\/Lily_Record_Player_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/eb/Lily_Record_Player_NH_DIY_Icon.png"
     },
     {
         "en_name": "Lily Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "White Lilies",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -7392,11 +7352,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/45\/Lily_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/45/Lily_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Lily Wreath",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "White Lilies",
         "material1_num": 3,
         "material2": "Red Lilies",
@@ -7409,11 +7371,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e5\/Lily_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e5/Lily_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Bed",
-        "sell": 3600,
+        "F": 3600,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 30,
         "material2": "",
@@ -7426,11 +7390,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d0\/Log_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d0/Log_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Bench",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 5,
         "material2": "",
@@ -7443,11 +7409,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/65\/Log_Bench_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/65/Log_Bench_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Chair",
-        "sell": 960,
+        "F": 960,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 8,
         "material2": "",
@@ -7460,11 +7428,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/92\/Log_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/92/Log_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Decorative Shelves",
-        "sell": 1560,
+        "F": 1560,
+        "C": "",
+        "I": "",
         "material1": "Log Bench",
         "material1_num": 2,
         "material2": "Hardwood",
@@ -7477,11 +7447,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/94\/Log_Decorative_Shelves_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/94/Log_Decorative_Shelves_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Dining Table",
-        "sell": 1800,
+        "F": 1800,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 15,
         "material2": "",
@@ -7494,11 +7466,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cf\/Log_Dining_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cf/Log_Dining_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Extra-Long Sofa",
-        "sell": 1920,
+        "F": 1920,
+        "C": "",
+        "I": "",
         "material1": "Log Chair",
         "material1_num": 2,
         "material2": "",
@@ -7511,11 +7485,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fd\/Log_Extra-Long_Sofa_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fd/Log_Extra-Long_Sofa_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 6,
         "material2": "",
@@ -7528,11 +7504,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/82\/Log_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/82/Log_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Garden Lounge",
-        "sell": 1440,
+        "F": 1440,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 12,
         "material2": "",
@@ -7545,11 +7523,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/dd\/Log_Garden_Lounge_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/dd/Log_Garden_Lounge_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Pack",
-        "sell": "",
+        "F": "",
+        "C": 960,
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "Hardwood",
@@ -7562,11 +7542,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/ff\/Log_Pack_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/ff/Log_Pack_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Round Table",
-        "sell": 1800,
+        "F": 1800,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 15,
         "material2": "",
@@ -7579,11 +7561,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9f\/Log_Round_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9f/Log_Round_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Stakes",
-        "sell": 360,
+        "F": 360,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "",
@@ -7596,11 +7580,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/16\/Log_Stakes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/16/Log_Stakes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Stool",
-        "sell": 480,
+        "F": 480,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 4,
         "material2": "",
@@ -7613,11 +7599,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ae\/Log_Stool_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ae/Log_Stool_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log Wall-Mounted Clock",
-        "sell": 990,
+        "F": 990,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 2,
         "material2": "Iron Nugget",
@@ -7630,11 +7618,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c0\/Log_Wall-Mounted_Clock_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c0/Log_Wall-Mounted_Clock_NH_DIY_Icon.png"
     },
     {
         "en_name": "Log-Wall Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 10,
         "material2": "",
@@ -7647,11 +7637,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9a\/Log-Wall_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9a/Log-Wall_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Lovely Cosmos Crown",
-        "sell": "",
+        "F": "",
+        "C": 1120,
+        "I": "",
         "material1": "Pink Cosmos",
         "material1_num": 4,
         "material2": "Orange Cosmos",
@@ -7664,11 +7656,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/75\/Lovely_Cosmos_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/75/Lovely_Cosmos_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Low Brick Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 4,
         "material2": "",
@@ -7681,11 +7675,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b1\/Low_Brick_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b1/Low_Brick_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Low Concrete Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 3,
         "material2": "Iron Nugget",
@@ -7698,11 +7694,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6c\/Low_Concrete_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6c/Low_Concrete_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Low Golden Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 4,
         "material2": "",
@@ -7715,11 +7713,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/67\/Low_Golden_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/67/Low_Golden_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Low Marble Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 8,
         "material2": "",
@@ -7732,11 +7732,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f2\/Low_Marble_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f2/Low_Marble_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Low Simple Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 2,
         "material2": "Stone",
@@ -7749,11 +7751,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/ba\/Low_Simple_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/ba/Low_Simple_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Low Steel Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 4,
         "material2": "",
@@ -7766,11 +7770,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/36\/Low_Steel_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/36/Low_Steel_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Low Wooden Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 2,
         "material2": "Hardwood",
@@ -7783,11 +7789,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/77\/Low_Wooden_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/77/Low_Wooden_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Lucky Gold Cat",
-        "sell": 21675,
+        "F": 21675,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 2,
         "material2": "Lucky Cat",
@@ -7800,11 +7808,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6b\/Lucky_Gold_Cat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6b/Lucky_Gold_Cat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Lunar Lander",
-        "sell": 16250,
+        "F": 16250,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 10,
         "material2": "Iron Nugget",
@@ -7817,11 +7827,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/ec\/Lunar_Lander_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/ec/Lunar_Lander_NH_DIY_Icon.png"
     },
     {
         "en_name": "Lunar Rover",
-        "sell": 12580,
+        "F": 12580,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 10,
         "material2": "Iron Nugget",
@@ -7834,11 +7846,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/36\/Lunar_Rover_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/36/Lunar_Rover_NH_DIY_Icon.png"
     },
     {
         "en_name": "Lunar Surface",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 7500,
         "material1": "Star Fragment",
         "material1_num": 5,
         "material2": "Large Star Fragment",
@@ -7851,11 +7865,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e1\/Lunar_Surface_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e1/Lunar_Surface_NH_DIY_Icon.png"
     },
     {
         "en_name": "Magazine Rack",
-        "sell": 690,
+        "F": 690,
+        "C": "",
+        "I": "",
         "material1": "Magazine",
         "material1_num": 2,
         "material2": "Wood",
@@ -7868,11 +7884,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5f\/Magazine_Rack_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5f/Magazine_Rack_NH_DIY_Icon.png"
     },
     {
         "en_name": "Manga-Library Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1050,
         "material1": "Magazine",
         "material1_num": 10,
         "material2": "",
@@ -7885,11 +7903,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/63\/Manga-Library_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/63/Manga-Library_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Manhole Cover",
-        "sell": 2250,
+        "F": 2250,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 3,
         "material2": "",
@@ -7902,11 +7922,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0d\/Manhole_Cover_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0d/Manhole_Cover_NH_DIY_Icon.png"
     },
     {
         "en_name": "Maple-Leaf Pochette",
-        "sell": "",
+        "F": "",
+        "C": 2400,
+        "I": "",
         "material1": "Maple Leaf",
         "material1_num": 6,
         "material2": "",
@@ -7919,11 +7941,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cf\/Maple-Leaf_Pochette_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cf/Maple-Leaf_Pochette_NH_DIY_Icon.png"
     },
     {
         "en_name": "Maple-Leaf Pond Stone",
-        "sell": 2700,
+        "F": 2700,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 10,
         "material2": "Maple Leaf",
@@ -7936,11 +7960,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/16\/Maple-Leaf_Pond_Stone_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/16/Maple-Leaf_Pond_Stone_NH_DIY_Icon.png"
     },
     {
         "en_name": "Maple-Leaf Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 2400,
         "material1": "Maple Leaf",
         "material1_num": 6,
         "material2": "",
@@ -7953,11 +7979,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/38\/Maple-Leaf_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/38/Maple-Leaf_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Maple-Leaf Umbrella",
-        "sell": "",
+        "F": "",
+        "C": 2800,
+        "I": "",
         "material1": "Maple Leaf",
         "material1_num": 7,
         "material2": "",
@@ -7970,11 +7998,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1b\/Maple-Leaf_Umbrella_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1b/Maple-Leaf_Umbrella_NH_DIY_Icon.png"
     },
     {
         "en_name": "Marble Pillar",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 8,
         "material2": "",
@@ -7987,11 +8017,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/ea\/Marble_Pillar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/ea/Marble_Pillar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Matryoshka",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 5,
         "material2": "",
@@ -8004,14 +8036,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/dd\/Matryoshka_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/dd/Matryoshka_NH_DIY_Icon.png"
     },
     {
         "en_name": "Medicine",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wasp Nest",
         "material1_num": 1,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 4,
         "material3": "",
         "material3_num": "",
@@ -8021,11 +8055,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2f\/Medicine_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2f/Medicine_NH_DIY_Icon.png"
     },
     {
         "en_name": "Medium Cardboard Boxes",
-        "sell": 240,
+        "F": 240,
+        "C": "",
+        "I": "",
         "material1": "Cardboard Box",
         "material1_num": 4,
         "material2": "",
@@ -8038,11 +8074,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/af\/Medium_Cardboard_Boxes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/af/Medium_Cardboard_Boxes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Medium Wooden Partition",
-        "sell": 2400,
+        "F": 2400,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 20,
         "material2": "",
@@ -8055,11 +8093,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/76\/Medium_Wooden_Partition_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/76/Medium_Wooden_Partition_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Bed",
-        "sell": 22400,
+        "F": 22400,
+        "C": "",
+        "I": "",
         "material1": "Pearl",
         "material1_num": 2,
         "material2": "Giant Clam",
@@ -8072,11 +8112,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/96\/Mermaid_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/96/Mermaid_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Chair",
-        "sell": 11140,
+        "F": 11140,
+        "C": "",
+        "I": "",
         "material1": "Pearl",
         "material1_num": 1,
         "material2": "Giant Clam",
@@ -8089,11 +8131,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bf\/Mermaid_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bf/Mermaid_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Closet",
-        "sell": 11140,
+        "F": 11140,
+        "C": "",
+        "I": "",
         "material1": "Pearl",
         "material1_num": 2,
         "material2": "Giant Clam",
@@ -8106,11 +8150,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/55\/Mermaid_Closet_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/55/Mermaid_Closet_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Dresser",
-        "sell": 22400,
+        "F": 22400,
+        "C": "",
+        "I": "",
         "material1": "Pearl",
         "material1_num": 2,
         "material2": "Giant Clam",
@@ -8123,11 +8169,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/94\/Mermaid_Dresser_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/94/Mermaid_Dresser_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Pearl",
         "material1_num": 1,
         "material2": "Coral",
@@ -8140,11 +8188,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/65\/Mermaid_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/65/Mermaid_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 20975,
         "material1": "Pearl",
         "material1_num": 2,
         "material2": "Sand Dollar",
@@ -8157,11 +8207,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/32\/Mermaid_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/32/Mermaid_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Lamp",
-        "sell": 13850,
+        "F": 13850,
+        "C": "",
+        "I": "",
         "material1": "Pearl",
         "material1_num": 1,
         "material2": "Conch",
@@ -8174,11 +8226,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e4\/Mermaid_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e4/Mermaid_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 10360,
         "material1": "Pearl",
         "material1_num": 1,
         "material2": "Sand Dollar",
@@ -8191,11 +8245,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/69\/Mermaid_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/69/Mermaid_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Screen",
-        "sell": 23300,
+        "F": 23300,
+        "C": "",
+        "I": "",
         "material1": "Pearl",
         "material1_num": 2,
         "material2": "Giant Clam",
@@ -8208,11 +8264,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/95\/Mermaid_Screen_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/95/Mermaid_Screen_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Shelf",
-        "sell": 12900,
+        "F": 12900,
+        "C": "",
+        "I": "",
         "material1": "Pearl",
         "material1_num": 1,
         "material2": "Giant Clam",
@@ -8225,11 +8283,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/aa\/Mermaid_Shelf_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/aa/Mermaid_Shelf_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Sofa",
-        "sell": 11200,
+        "F": 11200,
+        "C": "",
+        "I": "",
         "material1": "Pearl",
         "material1_num": 1,
         "material2": "Sand Dollar",
@@ -8242,11 +8302,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e7\/Mermaid_Sofa_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e7/Mermaid_Sofa_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Table",
-        "sell": 10480,
+        "F": 10480,
+        "C": "",
+        "I": "",
         "material1": "Pearl",
         "material1_num": 1,
         "material2": "Sand Dollar",
@@ -8259,11 +8321,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4b\/Mermaid_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4b/Mermaid_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Vanity",
-        "sell": 12650,
+        "F": 12650,
+        "C": "",
+        "I": "",
         "material1": "Pearl",
         "material1_num": 1,
         "material2": "Giant Clam",
@@ -8276,11 +8340,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ac\/Mermaid_Vanity_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ac/Mermaid_Vanity_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 23520,
         "material1": "Pearl",
         "material1_num": 2,
         "material2": "Sea Snail",
@@ -8293,11 +8359,13 @@
         "material5_num": 2,
         "material6": "Cowrie",
         "material6_num": 2,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f0\/Mermaid_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f0/Mermaid_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mermaid Wall Clock",
-        "sell": 12290,
+        "F": 12290,
+        "C": "",
+        "I": "",
         "material1": "Pearl",
         "material1_num": 1,
         "material2": "Sea Snail",
@@ -8310,11 +8378,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/11\/Mermaid_Wall_Clock_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/11/Mermaid_Wall_Clock_NH_DIY_Icon.png"
     },
     {
         "en_name": "Minestrone Soup",
-        "sell": 2100,
+        "F": 2100,
+        "C": "",
+        "I": "",
         "material1": "Tomato",
         "material1_num": 2,
         "material2": "Potato",
@@ -8327,11 +8397,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e1\/Minestrone_Soup_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e1/Minestrone_Soup_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mini DIY Workbench",
-        "sell": 2580,
+        "F": 2580,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "Hardwood",
@@ -8344,11 +8416,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/85\/Mini_DIY_Workbench_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/85/Mini_DIY_Workbench_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mini Golden Dharma",
-        "sell": 10605,
+        "F": 10605,
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 1,
         "material2": "Mini Dharma",
@@ -8361,11 +8435,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a3\/Mini_Golden_Dharma_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a3/Mini_Golden_Dharma_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mixed-Fruits Bagel Sandwich",
-        "sell": 2180,
+        "F": 2180,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Apple",
@@ -8378,11 +8454,13 @@
         "material5_num": 1,
         "material6": "Cherry",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b3\/Mixed-Fruits_Bagel_Sandwich_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b3/Mixed-Fruits_Bagel_Sandwich_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mixed-Fruits Crepe",
-        "sell": 2180,
+        "F": 2180,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Apple",
@@ -8395,11 +8473,13 @@
         "material5_num": 1,
         "material6": "Cherry",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ac\/Mixed-Fruits_Crepe_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ac/Mixed-Fruits_Crepe_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mixed-Fruits Pie",
-        "sell": 2500,
+        "F": 2500,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Apple",
@@ -8412,11 +8492,13 @@
         "material5_num": 1,
         "material6": "Cherry",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fa\/Mixed-Fruits_Pie_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fa/Mixed-Fruits_Pie_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mixed-Fruits Sandwich",
-        "sell": 2180,
+        "F": 2180,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Orange",
@@ -8429,11 +8511,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/17\/Mixed-Fruits_Sandwich_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/17/Mixed-Fruits_Sandwich_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mixed-Fruits Tart",
-        "sell": 1870,
+        "F": 1870,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Apple",
@@ -8446,11 +8530,13 @@
         "material5_num": 1,
         "material6": "Cherry",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0d\/Mixed-Fruits_Tart_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0d/Mixed-Fruits_Tart_NH_DIY_Icon.png"
     },
     {
         "en_name": "Modeling Clay",
-        "sell": 400,
+        "F": 400,
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 2,
         "material2": "",
@@ -8463,11 +8549,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/45\/Modeling_Clay_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/45/Modeling_Clay_NH_DIY_Icon.png"
     },
     {
         "en_name": "Modern Wood Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1800,
         "material1": "Wood",
         "material1_num": 5,
         "material2": "Softwood",
@@ -8480,11 +8568,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a3\/Modern_Wood_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a3/Modern_Wood_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Money Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 25000,
         "material1": "50,000 Bells",
         "material1_num": 1,
         "material2": "",
@@ -8497,11 +8587,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/19\/Money_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/19/Money_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Moon",
-        "sell": 12500,
+        "F": 12500,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 15,
         "material2": "Large Star Fragment",
@@ -8514,14 +8606,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c7\/Moon_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c7/Moon_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mossy Garden Rock",
-        "sell": 2550,
+        "F": 2550,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 15,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 15,
         "material3": "",
         "material3_num": "",
@@ -8531,11 +8625,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/60\/Mossy_Garden_Rock_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/60/Mossy_Garden_Rock_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mountain Standee",
-        "sell": 1080,
+        "F": 1080,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 4,
         "material2": "Softwood",
@@ -8548,11 +8644,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/29\/Mountain_Standee_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/29/Mountain_Standee_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mum Crown",
-        "sell": "",
+        "F": "",
+        "C": 480,
+        "I": "",
         "material1": "Red Mums",
         "material1_num": 2,
         "material2": "Yellow Mums",
@@ -8565,14 +8663,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cb\/Mum_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cb/Mum_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mum Cushion",
-        "sell": 440,
+        "F": 440,
+        "C": "",
+        "I": "",
         "material1": "Yellow Mums",
         "material1_num": 3,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 10,
         "material3": "",
         "material3_num": "",
@@ -8582,11 +8682,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/92\/Mum_Cushion_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/92/Mum_Cushion_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mum Wreath",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "White Mums",
         "material1_num": 3,
         "material2": "Yellow Mums",
@@ -8599,11 +8701,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/96\/Mum_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/96/Mum_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mums Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Yellow Mums",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -8616,11 +8720,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/00\/Mums_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/00/Mums_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mush Lamp",
-        "sell": 1600,
+        "F": 1600,
+        "C": "",
+        "I": "",
         "material1": "Skinny Mushroom",
         "material1_num": 1,
         "material2": "Clay",
@@ -8633,11 +8739,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c2\/Mush_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c2/Mush_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mush Log",
-        "sell": 1680,
+        "F": 1680,
+        "C": "",
+        "I": "",
         "material1": "Skinny Mushroom",
         "material1_num": 2,
         "material2": "Log Stool",
@@ -8650,11 +8758,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1d\/Mush_Log_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1d/Mush_Log_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mush Low Stool",
-        "sell": 800,
+        "F": 800,
+        "C": "",
+        "I": "",
         "material1": "Round Mushroom",
         "material1_num": 2,
         "material2": "",
@@ -8667,11 +8777,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1e\/Mush_Low_Stool_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1e/Mush_Low_Stool_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mush Parasol",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Flat Mushroom",
         "material1_num": 3,
         "material2": "",
@@ -8684,11 +8796,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/ba\/Mush_Parasol_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/ba/Mush_Parasol_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mush Partition",
-        "sell": 1800,
+        "F": 1800,
+        "C": "",
+        "I": "",
         "material1": "Skinny Mushroom",
         "material1_num": 3,
         "material2": "",
@@ -8701,11 +8815,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b8\/Mush_Partition_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b8/Mush_Partition_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mush Table",
-        "sell": 1520,
+        "F": 1520,
+        "C": "",
+        "I": "",
         "material1": "Flat Mushroom",
         "material1_num": 2,
         "material2": "Wood",
@@ -8718,11 +8834,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/12\/Mush_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/12/Mush_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mush Umbrella",
-        "sell": "",
+        "F": "",
+        "C": 1200,
+        "I": "",
         "material1": "Flat Mushroom",
         "material1_num": 3,
         "material2": "",
@@ -8735,11 +8853,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a9\/Mush_Umbrella_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a9/Mush_Umbrella_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mush Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 21400,
         "material1": "Elegant Mushroom",
         "material1_num": 1,
         "material2": "Round Mushroom",
@@ -8752,11 +8872,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/56\/Mush_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/56/Mush_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mushroom Crepe",
-        "sell": 1840,
+        "F": 1840,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Round Mushroom",
@@ -8769,11 +8891,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b3\/Mushroom_Crepe_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b3/Mushroom_Crepe_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mushroom Curry",
-        "sell": 2660,
+        "F": 2660,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Round Mushroom",
@@ -8786,11 +8910,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/af\/Mushroom_Curry_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/af/Mushroom_Curry_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mushroom Pizza",
-        "sell": 2860,
+        "F": 2860,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Round Mushroom",
@@ -8803,11 +8929,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c8\/Mushroom_Pizza_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c8/Mushroom_Pizza_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mushroom Potage",
-        "sell": 1220,
+        "F": 1220,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Round Mushroom",
@@ -8820,11 +8948,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0c\/Mushroom_Potage_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0c/Mushroom_Potage_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mushroom Salad",
-        "sell": 1400,
+        "F": 1400,
+        "C": "",
+        "I": "",
         "material1": "Round Mushroom",
         "material1_num": 1,
         "material2": "Flat Mushroom",
@@ -8837,11 +8967,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7e\/Mushroom_Salad_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7e/Mushroom_Salad_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mushroom Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Skinny Mushroom",
         "material1_num": 3,
         "material2": "Star Fragment",
@@ -8854,11 +8986,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/70\/Mushroom_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/70/Mushroom_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Mushroom Wreath",
-        "sell": 1500,
+        "F": 1500,
+        "C": "",
+        "I": "",
         "material1": "Tree Branch",
         "material1_num": 10,
         "material2": "Round Mushroom",
@@ -8871,11 +9005,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/04\/Mushroom_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/04/Mushroom_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Music Stand",
-        "sell": 960,
+        "F": 960,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 8,
         "material2": "",
@@ -8888,11 +9024,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c6\/Music_Stand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c6/Music_Stand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Natural Garden Chair",
-        "sell": 2220,
+        "F": 2220,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 6,
         "material2": "Iron Nugget",
@@ -8905,11 +9043,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f9\/Natural_Garden_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f9/Natural_Garden_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Natural Garden Table",
-        "sell": 3330,
+        "F": 3330,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 9,
         "material2": "Iron Nugget",
@@ -8922,11 +9062,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5c\/Natural_Garden_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5c/Natural_Garden_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Natural Mum Wreath",
-        "sell": 4800,
+        "F": 4800,
+        "C": "",
+        "I": "",
         "material1": "Green Mums",
         "material1_num": 10,
         "material2": "",
@@ -8939,11 +9081,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7c\/Natural_Mum_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7c/Natural_Mum_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Natural Square Table",
-        "sell": 1980,
+        "F": 1980,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 4,
         "material2": "Iron Nugget",
@@ -8956,11 +9100,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6f\/Natural_Square_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6f/Natural_Square_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Net",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Flimsy Net",
         "material1_num": 1,
         "material2": "Iron Nugget",
@@ -8973,11 +9119,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e3\/Net_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e3/Net_NH_DIY_Icon.png"
     },
     {
         "en_name": "Nice Branch",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Tree Branch",
         "material1_num": 3,
         "material2": "",
@@ -8990,11 +9138,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4e\/Nice_Branch_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4e/Nice_Branch_NH_DIY_Icon.png"
     },
     {
         "en_name": "Nova Light",
-        "sell": 2500,
+        "F": 2500,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 5,
         "material2": "",
@@ -9007,11 +9157,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/66\/Nova_Light_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/66/Nova_Light_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ocarina",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 5,
         "material2": "",
@@ -9024,11 +9176,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/92\/Ocarina_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/92/Ocarina_NH_DIY_Icon.png"
     },
     {
         "en_name": "Oil-Barrel Bathtub",
-        "sell": 655,
+        "F": 655,
+        "C": "",
+        "I": "",
         "material1": "Oil Barrel",
         "material1_num": 1,
         "material2": "Campfire",
@@ -9041,11 +9195,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7f\/Oil-Barrel_Bathtub_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7f/Oil-Barrel_Bathtub_NH_DIY_Icon.png"
     },
     {
         "en_name": "Old-Fashioned Washtub",
-        "sell": 360,
+        "F": 360,
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 3,
         "material2": "",
@@ -9058,11 +9214,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ac\/Old-Fashioned_Washtub_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ac/Old-Fashioned_Washtub_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Olive-Flounder Meuni\u00e8re",
-        "sell": 1470,
+        "en_name": "Olive-Flounder Meuniu00e8re",
+        "F": 1470,
+        "C": "",
+        "I": "",
         "material1": "Olive Flounder",
         "material1_num": 1,
         "material2": "Flour",
@@ -9075,11 +9233,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/05\/Olive-Flounder_Meuni%C3%A8re_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/05/Olive-Flounder_Meuni%C3%A8re_NH_DIY_Icon.png"
     },
     {
         "en_name": "Open Wooden Shelves",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 10,
         "material2": "",
@@ -9092,11 +9252,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4c\/Open_Wooden_Shelves_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4c/Open_Wooden_Shelves_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange Dress",
-        "sell": "",
+        "F": "",
+        "C": 1600,
+        "I": "",
         "material1": "Orange",
         "material1_num": 8,
         "material2": "",
@@ -9109,11 +9271,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/52\/Orange_Dress_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/52/Orange_Dress_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange End Table",
-        "sell": 2480,
+        "F": 2480,
+        "C": "",
+        "I": "",
         "material1": "Orange",
         "material1_num": 10,
         "material2": "Wood",
@@ -9126,11 +9290,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1d\/Orange_End_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1d/Orange_End_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange Hat",
-        "sell": "",
+        "F": "",
+        "C": 1000,
+        "I": "",
         "material1": "Orange",
         "material1_num": 5,
         "material2": "",
@@ -9143,11 +9309,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/77\/Orange_Hat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/77/Orange_Hat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange Jelly",
-        "sell": 300,
+        "F": 300,
+        "C": "",
+        "I": "",
         "material1": "Orange",
         "material1_num": 2,
         "material2": "",
@@ -9160,11 +9328,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6c\/Orange_Jelly_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6c/Orange_Jelly_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange Marmalade",
-        "sell": 450,
+        "F": 450,
+        "C": "",
+        "I": "",
         "material1": "Orange",
         "material1_num": 3,
         "material2": "",
@@ -9177,11 +9347,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b0\/Orange_Marmalade_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b0/Orange_Marmalade_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange Pie",
-        "sell": 1880,
+        "F": 1880,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Sugar",
@@ -9194,11 +9366,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/43\/Orange_Pie_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/43/Orange_Pie_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange Pound Cake",
-        "sell": 1250,
+        "F": 1250,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Sugar",
@@ -9211,11 +9385,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1d\/Orange_Pound_Cake_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1d/Orange_Pound_Cake_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1200,
         "material1": "Orange",
         "material1_num": 6,
         "material2": "",
@@ -9228,11 +9404,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5b\/Orange_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5b/Orange_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange Smoothie",
-        "sell": 300,
+        "F": 300,
+        "C": "",
+        "I": "",
         "material1": "Orange",
         "material1_num": 2,
         "material2": "",
@@ -9245,11 +9423,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/79\/Orange_Smoothie_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/79/Orange_Smoothie_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange Tart",
-        "sell": 780,
+        "F": 780,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -9262,11 +9442,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3a\/Orange_Tart_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3a/Orange_Tart_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange Umbrella",
-        "sell": "",
+        "F": "",
+        "C": 1400,
+        "I": "",
         "material1": "Orange",
         "material1_num": 7,
         "material2": "",
@@ -9279,11 +9461,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bc\/Orange_Umbrella_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bc/Orange_Umbrella_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 4000,
         "material1": "Orange",
         "material1_num": 20,
         "material2": "",
@@ -9296,11 +9480,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/72\/Orange_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/72/Orange_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Orange Wall-Mounted Clock",
-        "sell": 2240,
+        "F": 2240,
+        "C": "",
+        "I": "",
         "material1": "Orange",
         "material1_num": 10,
         "material2": "Wood",
@@ -9313,11 +9499,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/44\/Orange_Wall-Mounted_Clock_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/44/Orange_Wall-Mounted_Clock_NH_DIY_Icon.png"
     },
     {
         "en_name": "Organic Bread",
-        "sell": 950,
+        "F": 950,
+        "C": "",
+        "I": "",
         "material1": "Whole-Wheat Flour",
         "material1_num": 3,
         "material2": "",
@@ -9330,11 +9518,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/19\/Organic_Bread_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/19/Organic_Bread_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ornament Crown",
-        "sell": "",
+        "F": "",
+        "C": 900,
+        "I": "",
         "material1": "Red Ornament",
         "material1_num": 3,
         "material2": "Blue Ornament",
@@ -9347,11 +9537,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5a\/Ornament_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5a/Ornament_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ornament Garland",
-        "sell": 4350,
+        "F": 4350,
+        "C": "",
+        "I": "",
         "material1": "Red Ornament",
         "material1_num": 2,
         "material2": "Blue Ornament",
@@ -9364,11 +9556,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c5\/Ornament_Garland_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c5/Ornament_Garland_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ornament Mobile",
-        "sell": 340,
+        "F": 340,
+        "C": "",
+        "I": "",
         "material1": "Red Ornament",
         "material1_num": 1,
         "material2": "Blue Ornament",
@@ -9381,11 +9575,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8c\/Ornament_Mobile_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8c/Ornament_Mobile_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ornament Table Lamp",
-        "sell": 1700,
+        "F": 1700,
+        "C": "",
+        "I": "",
         "material1": "Red Ornament",
         "material1_num": 2,
         "material2": "Iron Nugget",
@@ -9398,11 +9594,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bb\/Ornament_Table_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bb/Ornament_Table_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ornament Tree",
-        "sell": 2850,
+        "F": 2850,
+        "C": "",
+        "I": "",
         "material1": "Red Ornament",
         "material1_num": 3,
         "material2": "Blue Ornament",
@@ -9415,11 +9613,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9c\/Ornament_Tree_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9c/Ornament_Tree_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ornament Wreath",
-        "sell": 800,
+        "F": 800,
+        "C": "",
+        "I": "",
         "material1": "Blue Ornament",
         "material1_num": 6,
         "material2": "Gold Ornament",
@@ -9432,11 +9632,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9a\/Ornament_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9a/Ornament_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Outdoor Bath",
-        "sell": 4350,
+        "F": 4350,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 20,
         "material2": "Shovel",
@@ -9449,12 +9651,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cd\/Outdoor_Bath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cd/Outdoor_Bath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Outdoor Picnic Set",
-        "sell": 4000,
-        "material1": "Cherry-Blossom Petal",
+        "F": 4000,
+        "C": "",
+        "I": "",
+        "material1": " Cherry Blossom Petal",
         "material1_num": 10,
         "material2": "",
         "material2_num": "",
@@ -9466,11 +9670,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e9\/Outdoor_Picnic_Set_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e9/Outdoor_Picnic_Set_NH_DIY_Icon.png"
     },
     {
         "en_name": "Palm-Tree Lamp",
-        "sell": 3280,
+        "F": 3280,
+        "C": "",
+        "I": "",
         "material1": "Coconut",
         "material1_num": 4,
         "material2": "Wood",
@@ -9483,11 +9689,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/dd\/Palm-Tree_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/dd/Palm-Tree_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pan Flute",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Young Spring Bamboo",
         "material1_num": 7,
         "material2": "",
@@ -9500,11 +9708,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/ee\/Pan_Flute_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/ee/Pan_Flute_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pancakes",
-        "sell": 1260,
+        "F": 1260,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Sugar",
@@ -9517,11 +9727,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e9\/Pancakes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e9/Pancakes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pansy Crown",
-        "sell": "",
+        "F": "",
+        "C": 480,
+        "I": "",
         "material1": "Red Pansies",
         "material1_num": 2,
         "material2": "Yellow Pansies",
@@ -9534,11 +9746,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/66\/Pansy_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/66/Pansy_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pansy Table",
-        "sell": 760,
+        "F": 760,
+        "C": "",
+        "I": "",
         "material1": "Yellow Pansies",
         "material1_num": 5,
         "material2": "Hardwood",
@@ -9551,11 +9765,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1e\/Pansy_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1e/Pansy_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pansy Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Yellow Pansies",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -9568,11 +9784,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/77\/Pansy_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/77/Pansy_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pansy Wreath",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Yellow Pansies",
         "material1_num": 3,
         "material2": "White Pansies",
@@ -9585,11 +9803,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3d\/Pansy_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3d/Pansy_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Park Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 5,
         "material2": "",
@@ -9602,11 +9822,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d2\/Park_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d2/Park_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Partition Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "Clay",
@@ -9619,11 +9841,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6f\/Partition_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6f/Partition_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Paw-Print Doorplate",
-        "sell": 360,
+        "F": 360,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "",
@@ -9636,11 +9860,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bb\/Paw-Print_Doorplate_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bb/Paw-Print_Doorplate_NH_DIY_Icon.png"
     },
     {
         "en_name": "Peach Chair",
-        "sell": 2600,
+        "F": 2600,
+        "C": "",
+        "I": "",
         "material1": "Peach",
         "material1_num": 10,
         "material2": "Wood",
@@ -9653,11 +9879,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3c\/Peach_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3c/Peach_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Peach Dress",
-        "sell": "",
+        "F": "",
+        "C": 1600,
+        "I": "",
         "material1": "Peach",
         "material1_num": 8,
         "material2": "",
@@ -9670,11 +9898,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6a\/Peach_Dress_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6a/Peach_Dress_NH_DIY_Icon.png"
     },
     {
         "en_name": "Peach Hat",
-        "sell": "",
+        "F": "",
+        "C": 1000,
+        "I": "",
         "material1": "Peach",
         "material1_num": 6,
         "material2": "",
@@ -9687,11 +9917,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a3\/Peach_Hat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a3/Peach_Hat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Peach Jam",
-        "sell": 450,
+        "F": 450,
+        "C": "",
+        "I": "",
         "material1": "Peach",
         "material1_num": 3,
         "material2": "",
@@ -9704,11 +9936,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d1\/Peach_Jam_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d1/Peach_Jam_NH_DIY_Icon.png"
     },
     {
         "en_name": "Peach Jelly",
-        "sell": 300,
+        "F": 300,
+        "C": "",
+        "I": "",
         "material1": "Peach",
         "material1_num": 2,
         "material2": "",
@@ -9721,11 +9955,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/42\/Peach_Jelly_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/42/Peach_Jelly_NH_DIY_Icon.png"
     },
     {
         "en_name": "Peach Pie",
-        "sell": 1880,
+        "F": 1880,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Sugar",
@@ -9738,11 +9974,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4e\/Peach_Pie_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4e/Peach_Pie_NH_DIY_Icon.png"
     },
     {
         "en_name": "Peach Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1200,
         "material1": "Peach",
         "material1_num": 6,
         "material2": "",
@@ -9755,11 +9993,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/25\/Peach_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/25/Peach_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Peach Smoothie",
-        "sell": 300,
+        "F": 300,
+        "C": "",
+        "I": "",
         "material1": "Peach",
         "material1_num": 2,
         "material2": "",
@@ -9772,11 +10012,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6c\/Peach_Smoothie_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6c/Peach_Smoothie_NH_DIY_Icon.png"
     },
     {
         "en_name": "Peach Surprise Box",
-        "sell": 2480,
+        "F": 2480,
+        "C": "",
+        "I": "",
         "material1": "Peach",
         "material1_num": 10,
         "material2": "Softwood",
@@ -9789,11 +10031,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/19\/Peach_Surprise_Box_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/19/Peach_Surprise_Box_NH_DIY_Icon.png"
     },
     {
         "en_name": "Peach Tart",
-        "sell": 780,
+        "F": 780,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -9806,11 +10050,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4c\/Peach_Tart_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4c/Peach_Tart_NH_DIY_Icon.png"
     },
     {
         "en_name": "Peach Umbrella",
-        "sell": "",
+        "F": "",
+        "C": 1400,
+        "I": "",
         "material1": "Peach",
         "material1_num": 7,
         "material2": "",
@@ -9823,11 +10069,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/93\/Peach_Umbrella_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/93/Peach_Umbrella_NH_DIY_Icon.png"
     },
     {
         "en_name": "Peach Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 4000,
         "material1": "Peach",
         "material1_num": 20,
         "material2": "",
@@ -9840,11 +10088,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c2\/Peach_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c2/Peach_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pear Bed",
-        "sell": 2720,
+        "F": 2720,
+        "C": "",
+        "I": "",
         "material1": "Pear",
         "material1_num": 10,
         "material2": "Softwood",
@@ -9857,11 +10107,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/48\/Pear_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/48/Pear_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pear Dress",
-        "sell": "",
+        "F": "",
+        "C": 1600,
+        "I": "",
         "material1": "Pear",
         "material1_num": 8,
         "material2": "",
@@ -9874,11 +10126,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6c\/Pear_Dress_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6c/Pear_Dress_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pear Hat",
-        "sell": "",
+        "F": "",
+        "C": 1000,
+        "I": "",
         "material1": "Pear",
         "material1_num": 5,
         "material2": "",
@@ -9891,11 +10145,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/66\/Pear_Hat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/66/Pear_Hat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pear Jam",
-        "sell": 450,
+        "F": 450,
+        "C": "",
+        "I": "",
         "material1": "Pear",
         "material1_num": 3,
         "material2": "",
@@ -9908,11 +10164,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5f\/Pear_Jam_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5f/Pear_Jam_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pear Jelly",
-        "sell": 300,
+        "F": 300,
+        "C": "",
+        "I": "",
         "material1": "Pear",
         "material1_num": 2,
         "material2": "",
@@ -9925,11 +10183,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b1\/Pear_Jelly_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b1/Pear_Jelly_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pear Pie",
-        "sell": 1880,
+        "F": 1880,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Sugar",
@@ -9942,11 +10202,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4c\/Pear_Pie_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4c/Pear_Pie_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pear Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1200,
         "material1": "Pear",
         "material1_num": 6,
         "material2": "",
@@ -9959,11 +10221,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/09\/Pear_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/09/Pear_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pear Smoothie",
-        "sell": 300,
+        "F": 300,
+        "C": "",
+        "I": "",
         "material1": "Pear",
         "material1_num": 2,
         "material2": "",
@@ -9976,11 +10240,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/73\/Pear_Smoothie_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/73/Pear_Smoothie_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pear Tart",
-        "sell": 780,
+        "F": 780,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -9993,11 +10259,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/90\/Pear_Tart_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/90/Pear_Tart_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pear Umbrella",
-        "sell": "",
+        "F": "",
+        "C": 1400,
+        "I": "",
         "material1": "Pear",
         "material1_num": 7,
         "material2": "",
@@ -10010,11 +10278,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/db\/Pear_Umbrella_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/db/Pear_Umbrella_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pear Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 4000,
         "material1": "Pear",
         "material1_num": 20,
         "material2": "",
@@ -10027,11 +10297,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e5\/Pear_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e5/Pear_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pear Wardrobe",
-        "sell": 2600,
+        "F": 2600,
+        "C": "",
+        "I": "",
         "material1": "Pear",
         "material1_num": 10,
         "material2": "Wood",
@@ -10044,11 +10316,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c9\/Pear_Wardrobe_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c9/Pear_Wardrobe_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pesce All'acqua Pazza",
-        "sell": 4140,
+        "F": 4140,
+        "C": "",
+        "I": "",
         "material1": "Red Snapper",
         "material1_num": 1,
         "material2": "Tomato",
@@ -10061,11 +10335,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d2\/Pesce_All%27acqua_Pazza_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d2/Pesce_All%27acqua_Pazza_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pickled Veggies",
-        "sell": 2100,
+        "F": 2100,
+        "C": "",
+        "I": "",
         "material1": "Carrot",
         "material1_num": 1,
         "material2": "Potato",
@@ -10078,11 +10354,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2c\/Pickled_Veggies_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2c/Pickled_Veggies_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pile of Cardboard Boxes",
-        "sell": 180,
+        "F": 180,
+        "C": "",
+        "I": "",
         "material1": "Cardboard Box",
         "material1_num": 3,
         "material2": "",
@@ -10095,11 +10373,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cb\/Pile_of_Cardboard_Boxes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cb/Pile_of_Cardboard_Boxes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pile of Cash",
-        "sell": 148500,
+        "F": 148500,
+        "C": "",
+        "I": "",
         "material1": "99,000 Bells",
         "material1_num": 3,
         "material2": "",
@@ -10112,14 +10392,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/62\/Pile_of_Cash_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/62/Pile_of_Cash_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pile of Leaves",
-        "sell": 1300,
+        "F": 1300,
+        "C": "",
+        "I": "",
         "material1": "Pine Cone",
         "material1_num": 3,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 5,
         "material3": "",
         "material3_num": "",
@@ -10129,11 +10411,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7a\/Pile_of_Leaves_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7a/Pile_of_Leaves_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pile of Zen Cushions",
-        "sell": 750,
+        "F": 750,
+        "C": "",
+        "I": "",
         "material1": "Zen Cushion",
         "material1_num": 3,
         "material2": "",
@@ -10146,11 +10430,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e2\/Pile_of_Zen_Cushions_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e2/Pile_of_Zen_Cushions_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pine Bonsai Tree",
-        "sell": 4200,
+        "F": 4200,
+        "C": "",
+        "I": "",
         "material1": "Pine Cone",
         "material1_num": 8,
         "material2": "Clay",
@@ -10163,11 +10449,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a2\/Pine_Bonsai_Tree_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a2/Pine_Bonsai_Tree_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pisces Lamp",
-        "sell": 22050,
+        "F": 22050,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 3,
         "material2": "Pisces Fragment",
@@ -10180,12 +10468,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/54\/Pisces_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/54/Pisces_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pitfall Seed",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": "",
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 4,
         "material2": "Tree Branch",
         "material2_num": 6,
@@ -10197,11 +10487,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/08\/Pitfall_Seed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/08/Pitfall_Seed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pizza Margherita",
-        "sell": 2000,
+        "F": 2000,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Tomato",
@@ -10214,11 +10506,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/99\/Pizza_Margherita_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/99/Pizza_Margherita_NH_DIY_Icon.png"
     },
     {
         "en_name": "Plain Cupcakes",
-        "sell": 630,
+        "F": 630,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -10231,11 +10525,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/df\/Plain_Cupcakes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/df/Plain_Cupcakes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Plain Scones",
-        "sell": 950,
+        "F": 950,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Sugar",
@@ -10248,11 +10544,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/99\/Plain_Scones_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/99/Plain_Scones_NH_DIY_Icon.png"
     },
     {
         "en_name": "Plain Sink",
-        "sell": 2270,
+        "F": 2270,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 6,
         "material2": "Clay",
@@ -10265,11 +10563,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ab\/Plain_Sink_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ab/Plain_Sink_NH_DIY_Icon.png"
     },
     {
         "en_name": "Plain Wooden Shop Sign",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 6,
         "material2": "",
@@ -10282,11 +10582,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c2\/Plain_Wooden_Shop_Sign_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c2/Plain_Wooden_Shop_Sign_NH_DIY_Icon.png"
     },
     {
         "en_name": "Plate Armor",
-        "sell": 7500,
+        "F": 7500,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 10,
         "material2": "",
@@ -10299,11 +10601,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/13\/Plate_Armor_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/13/Plate_Armor_NH_DIY_Icon.png"
     },
     {
         "en_name": "Poke",
-        "sell": 1260,
+        "F": 1260,
+        "C": "",
+        "I": "",
         "material1": "Salmon",
         "material1_num": 1,
         "material2": "Tomato",
@@ -10316,11 +10620,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/72\/Poke_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/72/Poke_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pond Stone",
-        "sell": 1500,
+        "F": 1500,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 10,
         "material2": "",
@@ -10333,11 +10639,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4a\/Pond_Stone_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4a/Pond_Stone_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pot",
-        "sell": 1000,
+        "F": 1000,
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 5,
         "material2": "",
@@ -10350,11 +10658,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/54\/Pot_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/54/Pot_NH_DIY_Icon.png"
     },
     {
         "en_name": "Potato Curry",
-        "sell": 2520,
+        "F": 2520,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Potato",
@@ -10367,11 +10677,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d3\/Potato_Curry_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d3/Potato_Curry_NH_DIY_Icon.png"
     },
     {
         "en_name": "Potato Galette",
-        "sell": 2210,
+        "F": 2210,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Potato",
@@ -10384,11 +10696,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d6\/Potato_Galette_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d6/Potato_Galette_NH_DIY_Icon.png"
     },
     {
         "en_name": "Potato Potage",
-        "sell": 1370,
+        "F": 1370,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Potato",
@@ -10401,12 +10715,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fb\/Potato_Potage_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fb/Potato_Potage_NH_DIY_Icon.png"
     },
     {
         "en_name": "Potted Ivy",
-        "sell": 1100,
-        "material1": "Clump of Weeds",
+        "F": 1100,
+        "C": "",
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 5,
         "material2": "Clay",
         "material2_num": 5,
@@ -10418,11 +10734,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/39\/Potted_Ivy_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/39/Potted_Ivy_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pound Cake",
-        "sell": 950,
+        "F": 950,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Sugar",
@@ -10435,11 +10753,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/05\/Pound_Cake_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/05/Pound_Cake_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pretty Cosmos Wreath",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Orange Cosmos",
         "material1_num": 3,
         "material2": "Pink Cosmos",
@@ -10452,11 +10772,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e0\/Pretty_Cosmos_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e0/Pretty_Cosmos_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pretty Tulip Wreath",
-        "sell": 2400,
+        "F": 2400,
+        "C": "",
+        "I": "",
         "material1": "Orange Tulips",
         "material1_num": 3,
         "material2": "Pink Tulips",
@@ -10469,11 +10791,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5f\/Pretty_Tulip_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5f/Pretty_Tulip_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pretzels",
-        "sell": 630,
+        "F": 630,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -10486,11 +10810,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/30\/Pretzels_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/30/Pretzels_NH_DIY_Icon.png"
     },
     {
         "en_name": "Project Table",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 10,
         "material2": "",
@@ -10503,11 +10829,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9d\/Project_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9d/Project_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pull-Apart Bread",
-        "sell": 630,
+        "F": 630,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "",
@@ -10520,11 +10848,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c8\/Pull-Apart_Bread_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c8/Pull-Apart_Bread_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pumpkin Bagel Sandwich",
-        "sell": 2210,
+        "F": 2210,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Orange Pumpkin",
@@ -10537,11 +10867,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/98\/Pumpkin_Bagel_Sandwich_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/98/Pumpkin_Bagel_Sandwich_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pumpkin Cupcakes",
-        "sell": 1680,
+        "F": 1680,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -10554,11 +10886,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/63\/Pumpkin_Cupcakes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/63/Pumpkin_Cupcakes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pumpkin Curry",
-        "sell": 2520,
+        "F": 2520,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Orange Pumpkin",
@@ -10571,11 +10905,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/42\/Pumpkin_Curry_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/42/Pumpkin_Curry_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pumpkin Pie",
-        "sell": 2630,
+        "F": 2630,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Sugar",
@@ -10588,11 +10924,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/17\/Pumpkin_Pie_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/17/Pumpkin_Pie_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pumpkin Pound Cake",
-        "sell": 2000,
+        "F": 2000,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Sugar",
@@ -10605,11 +10943,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/aa\/Pumpkin_Pound_Cake_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/aa/Pumpkin_Pound_Cake_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pumpkin Scones",
-        "sell": 2000,
+        "F": 2000,
+        "C": "",
+        "I": "",
         "material1": "Whole-Wheat Flour",
         "material1_num": 2,
         "material2": "Sugar",
@@ -10622,11 +10962,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b8\/Pumpkin_Scones_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b8/Pumpkin_Scones_NH_DIY_Icon.png"
     },
     {
         "en_name": "Pumpkin Soup",
-        "sell": 1260,
+        "F": 1260,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 3,
         "material2": "",
@@ -10639,11 +10981,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/93\/Pumpkin_Soup_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/93/Pumpkin_Soup_NH_DIY_Icon.png"
     },
     {
         "en_name": "Purple Hyacinth Crown",
-        "sell": "",
+        "F": "",
+        "C": 2880,
+        "I": "",
         "material1": "Purple Hyacinths",
         "material1_num": 6,
         "material2": "",
@@ -10656,11 +11000,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/43\/Purple_Hyacinth_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/43/Purple_Hyacinth_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Purple Hyacinth Wreath",
-        "sell": 4800,
+        "F": 4800,
+        "C": "",
+        "I": "",
         "material1": "Purple Hyacinths",
         "material1_num": 10,
         "material2": "",
@@ -10673,11 +11019,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/09\/Purple_Hyacinth_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/09/Purple_Hyacinth_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Purple Pansy Crown",
-        "sell": "",
+        "F": "",
+        "C": 2880,
+        "I": "",
         "material1": "Purple Pansies",
         "material1_num": 6,
         "material2": "",
@@ -10690,11 +11038,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4c\/Purple_Pansy_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4c/Purple_Pansy_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Purple Windflower Crown",
-        "sell": "",
+        "F": "",
+        "C": 2880,
+        "I": "",
         "material1": "Purple Windflowers",
         "material1_num": 6,
         "material2": "",
@@ -10707,11 +11057,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8a\/Purple_Windflower_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8a/Purple_Windflower_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Raccoon Figurine",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 6,
         "material2": "",
@@ -10724,11 +11076,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b8\/Raccoon_Figurine_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b8/Raccoon_Figurine_NH_DIY_Icon.png"
     },
     {
         "en_name": "Rainbow Feather",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Red Feather",
         "material1_num": 1,
         "material2": "Blue Feather",
@@ -10741,11 +11095,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f5\/Rainbow_Feather_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f5/Rainbow_Feather_NH_DIY_Icon.png"
     },
     {
         "en_name": "Recycled Boots",
-        "sell": "",
+        "F": "",
+        "C": 40,
+        "I": "",
         "material1": "Boot",
         "material1_num": 2,
         "material2": "",
@@ -10758,11 +11114,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5b\/Recycled_Boots_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5b/Recycled_Boots_NH_DIY_Icon.png"
     },
     {
         "en_name": "Recycled-Can Thumb Piano",
-        "sell": 890,
+        "F": 890,
+        "C": "",
+        "I": "",
         "material1": "Empty Can",
         "material1_num": 1,
         "material2": "Wood",
@@ -10775,14 +11133,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ab\/Recycled-Can_Thumb_Piano_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ab/Recycled-Can_Thumb_Piano_NH_DIY_Icon.png"
     },
     {
         "en_name": "Red-Leaf Pile",
-        "sell": 1280,
+        "F": 1280,
+        "C": "",
+        "I": "",
         "material1": "Maple Leaf",
         "material1_num": 3,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 4,
         "material3": "",
         "material3_num": "",
@@ -10792,11 +11152,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e9\/Red-Leaf_Pile_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e9/Red-Leaf_Pile_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ringtoss",
-        "sell": 480,
+        "F": 480,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 2,
         "material2": "Softwood",
@@ -10809,11 +11171,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/88\/Ringtoss_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/88/Ringtoss_NH_DIY_Icon.png"
     },
     {
         "en_name": "Robot Hero",
-        "sell": 250000,
+        "F": 250000,
+        "C": "",
+        "I": "",
         "material1": "Rocket",
         "material1_num": 1,
         "material2": "Gold Armor",
@@ -10826,11 +11190,13 @@
         "material5_num": 10,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c3\/Robot_Hero_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c3/Robot_Hero_NH_DIY_Icon.png"
     },
     {
         "en_name": "Rocket",
-        "sell": 20000,
+        "F": 20000,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 10,
         "material2": "Iron Nugget",
@@ -10843,11 +11209,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fa\/Rocket_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fa/Rocket_NH_DIY_Icon.png"
     },
     {
         "en_name": "Rocking Chair",
-        "sell": 960,
+        "F": 960,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "Softwood",
@@ -10860,11 +11228,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/58\/Rocking_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/58/Rocking_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Rocking Horse",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 5,
         "material2": "",
@@ -10877,11 +11247,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e0\/Rocking_Horse_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e0/Rocking_Horse_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Roost Sabl\u00e9 Cookie",
-        "sell": 950,
+        "en_name": "Roost Sablu00e9 Cookie",
+        "F": 950,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -10894,11 +11266,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/95\/Roost_Sabl%C3%A9_Cookie_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/95/Roost_Sabl%C3%A9_Cookie_NH_DIY_Icon.png"
     },
     {
         "en_name": "Rope Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 4,
         "material2": "",
@@ -10911,11 +11285,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/58\/Rope_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/58/Rope_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Rope-Net Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1000,
         "material1": "Vine",
         "material1_num": 10,
         "material2": "",
@@ -10928,11 +11304,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6f\/Rope-Net_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6f/Rope-Net_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Rope-Net Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 2200,
         "material1": "Vine",
         "material1_num": 10,
         "material2": "Wood",
@@ -10945,11 +11323,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/47\/Rope-Net_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/47/Rope-Net_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Rose Bed",
-        "sell": 1400,
+        "F": 1400,
+        "C": "",
+        "I": "",
         "material1": "Red Roses",
         "material1_num": 10,
         "material2": "Wood",
@@ -10962,11 +11342,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bb\/Rose_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bb/Rose_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Rose Crown",
-        "sell": "",
+        "F": "",
+        "C": 480,
+        "I": "",
         "material1": "Red Roses",
         "material1_num": 2,
         "material2": "Yellow Roses",
@@ -10979,11 +11361,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/03\/Rose_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/03/Rose_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Rose Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Red Roses",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -10996,11 +11380,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ab\/Rose_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ab/Rose_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Rose Wreath",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Red Roses",
         "material1_num": 3,
         "material2": "White Roses",
@@ -11013,11 +11399,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d4\/Rose_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d4/Rose_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Round Glowing-Moss Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 200,
         "material1": "Glowing Moss",
         "material1_num": 4,
         "material2": "",
@@ -11030,11 +11418,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/02\/Round_Glowing-Moss_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/02/Round_Glowing-Moss_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Round Vine Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 400,
         "material1": "Vine",
         "material1_num": 4,
         "material2": "",
@@ -11047,11 +11437,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6e\/Round_Vine_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6e/Round_Vine_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ruined Arch",
-        "sell": 3500,
+        "F": 3500,
+        "C": "",
+        "I": "",
         "material1": "Vine",
         "material1_num": 5,
         "material2": "Stone",
@@ -11064,11 +11456,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bc\/Ruined_Arch_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bc/Ruined_Arch_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ruined Broken Pillar",
-        "sell": 1250,
+        "F": 1250,
+        "C": "",
+        "I": "",
         "material1": "Vine",
         "material1_num": 5,
         "material2": "Stone",
@@ -11081,11 +11475,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/66\/Ruined_Broken_Pillar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/66/Ruined_Broken_Pillar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ruined Decorated Pillar",
-        "sell": 2000,
+        "F": 2000,
+        "C": "",
+        "I": "",
         "material1": "Vine",
         "material1_num": 5,
         "material2": "Stone",
@@ -11098,11 +11494,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/78\/Ruined_Decorated_Pillar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/78/Ruined_Decorated_Pillar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ruined Seat",
-        "sell": 750,
+        "F": 750,
+        "C": "",
+        "I": "",
         "material1": "Vine",
         "material1_num": 3,
         "material2": "Stone",
@@ -11115,11 +11513,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b5\/Ruined_Seat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b5/Ruined_Seat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Rustic-Stone Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1750,
         "material1": "Stone",
         "material1_num": 5,
         "material2": "Clay",
@@ -11132,11 +11532,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f0\/Rustic-Stone_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f0/Rustic-Stone_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sagittarius Arrow",
-        "sell": 21750,
+        "F": 21750,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 3,
         "material2": "Sagittarius Fragment",
@@ -11149,12 +11551,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d8\/Sagittarius_Arrow_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d8/Sagittarius_Arrow_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sakura-Wood Flooring",
-        "sell": "",
-        "material1": "Cherry-Blossom Petal",
+        "F": "",
+        "C": "",
+        "I": 3200,
+        "material1": " Cherry Blossom Petal",
         "material1_num": 5,
         "material2": "Wood",
         "material2_num": 10,
@@ -11166,12 +11570,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fc\/Sakura-Wood_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fc/Sakura-Wood_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sakura-Wood Wall",
-        "sell": "",
-        "material1": "Cherry-Blossom Petal",
+        "F": "",
+        "C": "",
+        "I": 3200,
+        "material1": " Cherry Blossom Petal",
         "material1_num": 5,
         "material2": "Wood",
         "material2_num": 10,
@@ -11183,11 +11589,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b6\/Sakura-Wood_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b6/Sakura-Wood_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Salad",
-        "sell": 2100,
+        "F": 2100,
+        "C": "",
+        "I": "",
         "material1": "Tomato",
         "material1_num": 1,
         "material2": "Carrot",
@@ -11200,11 +11608,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/36\/Salad_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/36/Salad_NH_DIY_Icon.png"
     },
     {
         "en_name": "Salad-Stuffed Tomato",
-        "sell": 1260,
+        "F": 1260,
+        "C": "",
+        "I": "",
         "material1": "Tomato",
         "material1_num": 3,
         "material2": "",
@@ -11217,11 +11627,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8b\/Salad-Stuffed_Tomato_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8b/Salad-Stuffed_Tomato_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Salade de Carottes R\u00e2p\u00e9es",
-        "sell": 1260,
+        "en_name": "Salade de Carottes Ru00e2pu00e9es",
+        "F": 1260,
+        "C": "",
+        "I": "",
         "material1": "Carrot",
         "material1_num": 3,
         "material2": "",
@@ -11234,11 +11646,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/83\/Salade_de_Carottes_R%C3%A2p%C3%A9es_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/83/Salade_de_Carottes_R%C3%A2p%C3%A9es_NH_DIY_Icon.png"
     },
     {
         "en_name": "Salmon Bagel Sandwich",
-        "sell": 1350,
+        "F": 1350,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Salmon",
@@ -11251,11 +11665,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/69\/Salmon_Bagel_Sandwich_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/69/Salmon_Bagel_Sandwich_NH_DIY_Icon.png"
     },
     {
         "en_name": "Salmon Sandwich",
-        "sell": 1350,
+        "F": 1350,
+        "C": "",
+        "I": "",
         "material1": "Whole-Wheat Flour",
         "material1_num": 2,
         "material2": "Salmon",
@@ -11268,11 +11684,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/43\/Salmon_Sandwich_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/43/Salmon_Sandwich_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sandy-Beach Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 4120,
         "material1": "Sea Snail",
         "material1_num": 1,
         "material2": "Venus Comb",
@@ -11285,11 +11703,13 @@
         "material5_num": 1,
         "material6": "Cowrie",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/15\/Sandy-Beach_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/15/Sandy-Beach_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sardines in Oil",
-        "sell": 300,
+        "F": 300,
+        "C": "",
+        "I": "",
         "material1": "Anchovy",
         "material1_num": 1,
         "material2": "",
@@ -11302,11 +11722,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/29\/Sardines_in_Oil_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/29/Sardines_in_Oil_NH_DIY_Icon.png"
     },
     {
         "en_name": "Satellite",
-        "sell": 16250,
+        "F": 16250,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 10,
         "material2": "Iron Nugget",
@@ -11319,11 +11741,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5b\/Satellite_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5b/Satellite_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sauna Heater",
-        "sell": 3510,
+        "F": 3510,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 6,
         "material2": "Iron Nugget",
@@ -11336,11 +11760,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ad\/Sauna_Heater_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ad/Sauna_Heater_NH_DIY_Icon.png"
     },
     {
-        "en_name": "Saut\u00e9ed Olive Flounder",
-        "sell": 1320,
+        "en_name": "Sautu00e9ed Olive Flounder",
+        "F": 1320,
+        "C": "",
+        "I": "",
         "material1": "Olive Flounder",
         "material1_num": 1,
         "material2": "Skinny Mushroom",
@@ -11353,11 +11779,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c8\/Saut%C3%A9ed_Olive_Flounder_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c8/Saut%C3%A9ed_Olive_Flounder_NH_DIY_Icon.png"
     },
     {
         "en_name": "Savory Bread",
-        "sell": 2520,
+        "F": 2520,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Carrot",
@@ -11370,14 +11798,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/ef\/Savory_Bread_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/ef/Savory_Bread_NH_DIY_Icon.png"
     },
     {
         "en_name": "Scarecrow",
-        "sell": 130,
+        "F": 130,
+        "C": "",
+        "I": "",
         "material1": "Tree Branch",
         "material1_num": 3,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 5,
         "material3": "",
         "material3_num": "",
@@ -11387,11 +11817,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/33\/Scarecrow_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/33/Scarecrow_NH_DIY_Icon.png"
     },
     {
         "en_name": "Scattered Papers",
-        "sell": 400,
+        "F": 400,
+        "C": "",
+        "I": "",
         "material1": "Document Stack",
         "material1_num": 1,
         "material2": "",
@@ -11404,11 +11836,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/37\/Scattered_Papers_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/37/Scattered_Papers_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sci-Fi Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 7500,
         "material1": "Star Fragment",
         "material1_num": 5,
         "material2": "Large Star Fragment",
@@ -11421,11 +11855,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/ce\/Sci-Fi_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/ce/Sci-Fi_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sci-Fi Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 7500,
         "material1": "Star Fragment",
         "material1_num": 5,
         "material2": "Large Star Fragment",
@@ -11438,11 +11874,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/46\/Sci-Fi_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/46/Sci-Fi_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Scorpio Lamp",
-        "sell": 22125,
+        "F": 22125,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 3,
         "material2": "Scorpius Fragment",
@@ -11455,11 +11893,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c7\/Scorpio_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c7/Scorpio_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sea-Bass Pie",
-        "sell": 1240,
+        "F": 1240,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Sea Bass",
@@ -11472,11 +11912,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/81\/Sea-Bass_Pie_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/81/Sea-Bass_Pie_NH_DIY_Icon.png"
     },
     {
         "en_name": "Seafood Ajillo",
-        "sell": 5640,
+        "F": 5640,
+        "C": "",
+        "I": "",
         "material1": "Tiger Prawn",
         "material1_num": 1,
         "material2": "Squid",
@@ -11489,11 +11931,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/96\/Seafood_Ajillo_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/96/Seafood_Ajillo_NH_DIY_Icon.png"
     },
     {
         "en_name": "Seafood Pizza",
-        "sell": 4600,
+        "F": 4600,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Tiger Prawn",
@@ -11506,11 +11950,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/44\/Seafood_Pizza_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/44/Seafood_Pizza_NH_DIY_Icon.png"
     },
     {
         "en_name": "Seafood Salad",
-        "sell": 2280,
+        "F": 2280,
+        "C": "",
+        "I": "",
         "material1": "Squid",
         "material1_num": 1,
         "material2": "Sweet Shrimp",
@@ -11523,11 +11969,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2c\/Seafood_Salad_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2c/Seafood_Salad_NH_DIY_Icon.png"
     },
     {
         "en_name": "Seaweed Soup",
-        "sell": 1440,
+        "F": 1440,
+        "C": "",
+        "I": "",
         "material1": "Seaweed",
         "material1_num": 2,
         "material2": "",
@@ -11540,11 +11988,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c8\/Seaweed_Soup_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c8/Seaweed_Soup_NH_DIY_Icon.png"
     },
     {
         "en_name": "Senmaizuke Barrel",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "30 Turnips",
         "material1_num": 1,
         "material2": "",
@@ -11557,12 +12007,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/81\/Senmaizuke_Barrel_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/81/Senmaizuke_Barrel_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shamrock Wand",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": "",
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 3,
         "material2": "Star Fragment",
         "material2_num": 3,
@@ -11574,11 +12026,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4b\/Shamrock_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4b/Shamrock_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shell Arch",
-        "sell": 12360,
+        "F": 12360,
+        "C": "",
+        "I": "",
         "material1": "Sea Snail",
         "material1_num": 3,
         "material2": "Venus Comb",
@@ -11591,11 +12045,13 @@
         "material5_num": 3,
         "material6": "Cowrie",
         "material6_num": 3,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2b\/Shell_Arch_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2b/Shell_Arch_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shell Bed",
-        "sell": 10200,
+        "F": 10200,
+        "C": "",
+        "I": "",
         "material1": "Giant Clam",
         "material1_num": 5,
         "material2": "Clay",
@@ -11608,11 +12064,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/60\/Shell_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/60/Shell_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shell Fountain",
-        "sell": 9450,
+        "F": 9450,
+        "C": "",
+        "I": "",
         "material1": "Giant Clam",
         "material1_num": 5,
         "material2": "Stone",
@@ -11625,11 +12083,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c0\/Shell_Fountain_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c0/Shell_Fountain_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shell Lamp",
-        "sell": 4200,
+        "F": 4200,
+        "C": "",
+        "I": "",
         "material1": "Giant Clam",
         "material1_num": 2,
         "material2": "Clay",
@@ -11642,11 +12102,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/10\/Shell_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/10/Shell_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shell Music Box",
-        "sell": 6900,
+        "F": 6900,
+        "C": "",
+        "I": "",
         "material1": "Giant Clam",
         "material1_num": 3,
         "material2": "Iron Nugget",
@@ -11659,11 +12121,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fa\/Shell_Music_Box_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fa/Shell_Music_Box_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shell Partition",
-        "sell": 8000,
+        "F": 8000,
+        "C": "",
+        "I": "",
         "material1": "Venus Comb",
         "material1_num": 4,
         "material2": "Conch",
@@ -11676,11 +12140,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d3\/Shell_Partition_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d3/Shell_Partition_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shell Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 5400,
         "material1": "Giant Clam",
         "material1_num": 3,
         "material2": "",
@@ -11693,11 +12159,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/61\/Shell_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/61/Shell_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shell Speaker",
-        "sell": 5700,
+        "F": 5700,
+        "C": "",
+        "I": "",
         "material1": "Conch",
         "material1_num": 3,
         "material2": "Iron Nugget",
@@ -11710,11 +12178,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/99\/Shell_Speaker_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/99/Shell_Speaker_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shell Stool",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Cowrie",
         "material1_num": 5,
         "material2": "",
@@ -11727,11 +12197,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8d\/Shell_Stool_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8d/Shell_Stool_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shell Table",
-        "sell": 2280,
+        "F": 2280,
+        "C": "",
+        "I": "",
         "material1": "Sand Dollar",
         "material1_num": 7,
         "material2": "Clay",
@@ -11744,11 +12216,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/96\/Shell_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/96/Shell_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shell Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Summer Shell",
         "material1_num": 3,
         "material2": "Star Fragment",
@@ -11761,11 +12235,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6e\/Shell_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6e/Shell_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shell Wreath",
-        "sell": 4720,
+        "F": 4720,
+        "C": "",
+        "I": "",
         "material1": "Summer Shell",
         "material1_num": 1,
         "material2": "Sea Snail",
@@ -11778,11 +12254,13 @@
         "material5_num": 1,
         "material6": "Cowrie",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6d\/Shell_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6d/Shell_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shellfish Pochette",
-        "sell": "",
+        "F": "",
+        "C": 10800,
+        "I": "",
         "material1": "Giant Clam",
         "material1_num": 2,
         "material2": "Summer Shell",
@@ -11795,11 +12273,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a6\/Shellfish_Pochette_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a6/Shellfish_Pochette_NH_DIY_Icon.png"
     },
     {
         "en_name": "Shovel",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Flimsy Shovel",
         "material1_num": 1,
         "material2": "Iron Nugget",
@@ -11812,11 +12292,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a5\/Shovel_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a5/Shovel_NH_DIY_Icon.png"
     },
     {
         "en_name": "Signpost",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 2,
         "material2": "Softwood",
@@ -11829,11 +12311,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/11\/Signpost_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/11/Signpost_NH_DIY_Icon.png"
     },
     {
         "en_name": "Silo",
-        "sell": 13920,
+        "F": 13920,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 12,
         "material2": "Hardwood",
@@ -11846,11 +12330,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d0\/Silo_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d0/Silo_NH_DIY_Icon.png"
     },
     {
         "en_name": "Simple DIY Workbench",
-        "sell": 1350,
+        "F": 1350,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 5,
         "material2": "Iron Nugget",
@@ -11863,11 +12349,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c8\/Simple_DIY_Workbench_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c8/Simple_DIY_Workbench_NH_DIY_Icon.png"
     },
     {
         "en_name": "Simple Mum Crown",
-        "sell": "",
+        "F": "",
+        "C": 2880,
+        "I": "",
         "material1": "Green Mums",
         "material1_num": 6,
         "material2": "",
@@ -11880,11 +12368,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bb\/Simple_Mum_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bb/Simple_Mum_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Simple Pillar",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 2,
         "material2": "Stone",
@@ -11897,11 +12387,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/60\/Simple_Pillar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/60/Simple_Pillar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Simple Well",
-        "sell": 2850,
+        "F": 2850,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 15,
         "material2": "Flimsy Shovel",
@@ -11914,11 +12406,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/af\/Simple_Well_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/af/Simple_Well_NH_DIY_Icon.png"
     },
     {
         "en_name": "Simple Wooden Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 6,
         "material2": "",
@@ -11931,11 +12425,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9c\/Simple_Wooden_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9c/Simple_Wooden_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Skateboard Wall Rack",
-        "sell": 1425,
+        "F": 1425,
+        "C": "",
+        "I": "",
         "material1": "Skateboard",
         "material1_num": 3,
         "material2": "Hardwood",
@@ -11948,11 +12444,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2e\/Skateboard_Wall_Rack_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2e/Skateboard_Wall_Rack_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ski-Slope Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 3200,
         "material1": "Snowflake",
         "material1_num": 8,
         "material2": "",
@@ -11965,11 +12463,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/eb\/Ski-Slope_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/eb/Ski-Slope_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ski-Slope Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 3200,
         "material1": "Snowflake",
         "material1_num": 8,
         "material2": "",
@@ -11982,11 +12482,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5e\/Ski-Slope_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5e/Ski-Slope_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sky-Egg Outfit",
-        "sell": "",
+        "F": "",
+        "C": 1200,
+        "I": "",
         "material1": "Sky Egg",
         "material1_num": 3,
         "material2": "",
@@ -11999,11 +12501,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f5\/Sky-Egg_Outfit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f5/Sky-Egg_Outfit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sky-Egg Shell",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Sky Egg",
         "material1_num": 2,
         "material2": "",
@@ -12016,11 +12520,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1e\/Sky-Egg_Shell_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1e/Sky-Egg_Shell_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sky-Egg Shoes",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Sky Egg",
         "material1_num": 2,
         "material2": "",
@@ -12033,11 +12539,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d9\/Sky-Egg_Shoes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d9/Sky-Egg_Shoes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sleigh",
-        "sell": 960,
+        "F": 960,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 8,
         "material2": "",
@@ -12050,11 +12558,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a2\/Sleigh_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a2/Sleigh_NH_DIY_Icon.png"
     },
     {
         "en_name": "Slingshot",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 5,
         "material2": "",
@@ -12067,11 +12577,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/08\/Slingshot_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/08/Slingshot_NH_DIY_Icon.png"
     },
     {
         "en_name": "Small Cardboard Boxes",
-        "sell": 120,
+        "F": 120,
+        "C": "",
+        "I": "",
         "material1": "Cardboard Box",
         "material1_num": 2,
         "material2": "",
@@ -12084,11 +12596,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/85\/Small_Cardboard_Boxes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/85/Small_Cardboard_Boxes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Small Wooden Partition",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 10,
         "material2": "",
@@ -12101,11 +12615,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2a\/Small_Wooden_Partition_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2a/Small_Wooden_Partition_NH_DIY_Icon.png"
     },
     {
         "en_name": "Snack Bread",
-        "sell": 1260,
+        "F": 1260,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Sugar",
@@ -12118,11 +12634,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5b\/Snack_Bread_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5b/Snack_Bread_NH_DIY_Icon.png"
     },
     {
         "en_name": "Snazzy Pansy Wreath",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Orange Pansies",
         "material1_num": 3,
         "material2": "Blue Pansies",
@@ -12135,11 +12653,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1b\/Snazzy_Pansy_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1b/Snazzy_Pansy_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Snowflake Pochette",
-        "sell": "",
+        "F": "",
+        "C": 2400,
+        "I": "",
         "material1": "Snowflake",
         "material1_num": 6,
         "material2": "",
@@ -12152,11 +12672,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8f\/Snowflake_Pochette_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8f/Snowflake_Pochette_NH_DIY_Icon.png"
     },
     {
         "en_name": "Snowflake Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 4800,
         "material1": "Snowflake",
         "material1_num": 12,
         "material2": "",
@@ -12169,11 +12691,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/83\/Snowflake_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/83/Snowflake_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Snowflake Wreath",
-        "sell": 1600,
+        "F": 1600,
+        "C": "",
+        "I": "",
         "material1": "Snowflake",
         "material1_num": 4,
         "material2": "",
@@ -12186,11 +12710,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2a\/Snowflake_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2a/Snowflake_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Snowperson Head",
-        "sell": "",
+        "F": "",
+        "C": 7000,
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -12203,11 +12729,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c0\/Snowperson_Head_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c0/Snowperson_Head_NH_DIY_Icon.png"
     },
     {
         "en_name": "Space Shuttle",
-        "sell": 10000,
+        "F": 10000,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 5,
         "material2": "Iron Nugget",
@@ -12220,11 +12748,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/08\/Space_Shuttle_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/08/Space_Shuttle_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spaghetti Marinara",
-        "sell": 2210,
+        "F": 2210,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Tomato Puree",
@@ -12237,11 +12767,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e1\/Spaghetti_Marinara_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e1/Spaghetti_Marinara_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spaghetti Napolitan",
-        "sell": 2210,
+        "F": 2210,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Tomato Puree",
@@ -12254,11 +12786,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c9\/Spaghetti_Napolitan_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c9/Spaghetti_Napolitan_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spiky Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 8,
         "material2": "",
@@ -12271,11 +12805,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/02\/Spiky_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/02/Spiky_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Arch",
-        "sell": 4500,
+        "F": 4500,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 10,
         "material2": "Hardwood",
@@ -12288,11 +12824,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c4\/Spooky_Arch_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c4/Spooky_Arch_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Candy Set",
-        "sell": 875,
+        "F": 875,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 1,
         "material2": "Candy",
@@ -12305,11 +12843,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/dc\/Spooky_Candy_Set_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/dc/Spooky_Candy_Set_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Carriage",
-        "sell": 35700,
+        "F": 35700,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 30,
         "material2": "Hardwood",
@@ -12322,11 +12862,13 @@
         "material5_num": 10,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/21\/Spooky_Carriage_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/21/Spooky_Carriage_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Chair",
-        "sell": 1250,
+        "F": 1250,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 3,
         "material2": "Softwood",
@@ -12339,11 +12881,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/30\/Spooky_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/30/Spooky_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Cookies",
-        "sell": 1820,
+        "F": 1820,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Orange Pumpkin",
@@ -12356,11 +12900,13 @@
         "material5_num": 1,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4b\/Spooky_Cookies_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4b/Spooky_Cookies_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 3,
         "material2": "Iron Nugget",
@@ -12373,11 +12919,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/82\/Spooky_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/82/Spooky_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Garland",
-        "sell": 1650,
+        "F": 1650,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 1,
         "material2": "Iron Nugget",
@@ -12390,11 +12938,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b2\/Spooky_Garland_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b2/Spooky_Garland_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Lantern",
-        "sell": 1400,
+        "F": 1400,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 4,
         "material2": "",
@@ -12407,14 +12957,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e1\/Spooky_Lantern_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e1/Spooky_Lantern_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Lantern Set",
-        "sell": 1475,
+        "F": 1475,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 4,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 4,
         "material3": "",
         "material3_num": "",
@@ -12424,11 +12976,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/81\/Spooky_Lantern_Set_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/81/Spooky_Lantern_Set_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Scarecrow",
-        "sell": 1300,
+        "F": 1300,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 3,
         "material2": "Wood",
@@ -12441,11 +12995,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/77\/Spooky_Scarecrow_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/77/Spooky_Scarecrow_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Standing Lamp",
-        "sell": 1450,
+        "F": 1450,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 3,
         "material2": "Hardwood",
@@ -12458,11 +13014,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0e\/Spooky_Standing_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0e/Spooky_Standing_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Table",
-        "sell": 5500,
+        "F": 5500,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 14,
         "material2": "Softwood",
@@ -12475,11 +13033,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/05\/Spooky_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/05/Spooky_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Table Setting",
-        "sell": 1650,
+        "F": 1650,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 1,
         "material2": "Iron Nugget",
@@ -12492,11 +13052,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/73\/Spooky_Table_Setting_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/73/Spooky_Table_Setting_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Tower",
-        "sell": 2450,
+        "F": 2450,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 7,
         "material2": "",
@@ -12509,11 +13071,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f6\/Spooky_Tower_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f6/Spooky_Tower_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Treats Basket",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 1,
         "material2": "Candy",
@@ -12526,11 +13090,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/52\/Spooky_Treats_Basket_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/52/Spooky_Treats_Basket_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Tree",
-        "sell": 2500,
+        "F": 2500,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 5,
         "material2": "Hardwood",
@@ -12543,11 +13109,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/74\/Spooky_Tree_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/74/Spooky_Tree_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Trick Lamp",
-        "sell": 2900,
+        "F": 2900,
+        "C": "",
+        "I": "",
         "material1": "Orange Pumpkin",
         "material1_num": 4,
         "material2": "Iron Nugget",
@@ -12560,11 +13128,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f7\/Spooky_Trick_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f7/Spooky_Trick_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Spooky Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Spooky Lantern",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -12577,11 +13147,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bd\/Spooky_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bd/Spooky_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Squid-Ink Curry",
-        "sell": 1360,
+        "F": 1360,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Squid",
@@ -12594,11 +13166,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/80\/Squid-Ink_Curry_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/80/Squid-Ink_Curry_NH_DIY_Icon.png"
     },
     {
         "en_name": "Squid-Ink Spaghetti",
-        "sell": 1360,
+        "F": 1360,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Squid",
@@ -12611,11 +13185,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/85\/Squid-Ink_Spaghetti_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/85/Squid-Ink_Spaghetti_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stack of Books",
-        "sell": 725,
+        "F": 725,
+        "C": "",
+        "I": "",
         "material1": "Book",
         "material1_num": 5,
         "material2": "",
@@ -12628,11 +13204,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1c\/Stack_of_Books_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1c/Stack_of_Books_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stacked Bottle Crates",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Bottle Crate",
         "material1_num": 2,
         "material2": "Wood",
@@ -12645,11 +13223,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e9\/Stacked_Bottle_Crates_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e9/Stacked_Bottle_Crates_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stacked Fish Containers",
-        "sell": 1800,
+        "F": 1800,
+        "C": "",
+        "I": "",
         "material1": "Fish Container",
         "material1_num": 3,
         "material2": "",
@@ -12662,11 +13242,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/36\/Stacked_Fish_Containers_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/36/Stacked_Fish_Containers_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stacked Magazines",
-        "sell": 630,
+        "F": 630,
+        "C": "",
+        "I": "",
         "material1": "Magazine",
         "material1_num": 6,
         "material2": "",
@@ -12679,11 +13261,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/06\/Stacked_Magazines_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/06/Stacked_Magazines_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stacked Senmaizuke Barrels",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Senmaizuke Barrel",
         "material1_num": 2,
         "material2": "",
@@ -12696,11 +13280,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5e\/Stacked_Senmaizuke_Barrels_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5e/Stacked_Senmaizuke_Barrels_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stacked Shopping Baskets",
-        "sell": 825,
+        "F": 825,
+        "C": "",
+        "I": "",
         "material1": "Shopping Basket",
         "material1_num": 5,
         "material2": "",
@@ -12713,11 +13299,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/df\/Stacked_Shopping_Baskets_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/df/Stacked_Shopping_Baskets_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stacked-Wood Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1800,
         "material1": "Hardwood",
         "material1_num": 15,
         "material2": "",
@@ -12730,11 +13318,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/36\/Stacked-Wood_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/36/Stacked-Wood_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stall",
-        "sell": 1440,
+        "F": 1440,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 12,
         "material2": "",
@@ -12747,11 +13337,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6d\/Stall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6d/Stall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Standard Umbrella Stand",
-        "sell": 2250,
+        "F": 2250,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 3,
         "material2": "",
@@ -12764,11 +13356,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/71\/Standard_Umbrella_Stand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/71/Standard_Umbrella_Stand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Star Clock",
-        "sell": 2250,
+        "F": 2250,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 3,
         "material2": "Iron Nugget",
@@ -12781,11 +13375,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e1\/Star_Clock_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e1/Star_Clock_NH_DIY_Icon.png"
     },
     {
         "en_name": "Star Head",
-        "sell": "",
+        "F": "",
+        "C": 2500,
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 5,
         "material2": "",
@@ -12798,11 +13394,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c9\/Star_Head_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c9/Star_Head_NH_DIY_Icon.png"
     },
     {
         "en_name": "Star Pochette",
-        "sell": "",
+        "F": "",
+        "C": 3000,
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 6,
         "material2": "",
@@ -12815,11 +13413,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/df\/Star_Pochette_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/df/Star_Pochette_NH_DIY_Icon.png"
     },
     {
         "en_name": "Star Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Large Star Fragment",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -12832,11 +13432,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/64\/Star_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/64/Star_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Starry Garland",
-        "sell": 5000,
+        "F": 5000,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 10,
         "material2": "",
@@ -12849,11 +13451,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f0\/Starry_Garland_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f0/Starry_Garland_NH_DIY_Icon.png"
     },
     {
         "en_name": "Starry Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 7500,
         "material1": "Star Fragment",
         "material1_num": 5,
         "material2": "Large Star Fragment",
@@ -12866,11 +13470,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cf\/Starry_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cf/Starry_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Starry-Sands Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 7720,
         "material1": "Summer Shell",
         "material1_num": 3,
         "material2": "Sandy-Beach Flooring",
@@ -12883,11 +13489,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8f\/Starry-Sands_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8f/Starry-Sands_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Starry-Skies Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 5500,
         "material1": "Star Fragment",
         "material1_num": 1,
         "material2": "Large Star Fragment",
@@ -12900,11 +13508,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/45\/Starry-Skies_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/45/Starry-Skies_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Starry-Sky Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 7500,
         "material1": "Star Fragment",
         "material1_num": 5,
         "material2": "Large Star Fragment",
@@ -12917,11 +13527,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/46\/Starry-Sky_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/46/Starry-Sky_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Steamer-Basket Set",
-        "sell": 2400,
+        "F": 2400,
+        "C": "",
+        "I": "",
         "material1": "Young Spring Bamboo",
         "material1_num": 6,
         "material2": "",
@@ -12934,11 +13546,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/de\/Steamer-Basket_Set_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/de/Steamer-Basket_Set_NH_DIY_Icon.png"
     },
     {
         "en_name": "Steel Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 5250,
         "material1": "Iron Nugget",
         "material1_num": 7,
         "material2": "",
@@ -12951,11 +13565,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/51\/Steel_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/51/Steel_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Steel Pillar",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 4,
         "material2": "",
@@ -12968,11 +13584,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e5\/Steel_Pillar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e5/Steel_Pillar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Steel-Frame Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 6000,
         "material1": "Iron Nugget",
         "material1_num": 8,
         "material2": "",
@@ -12985,11 +13603,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f3\/Steel-Frame_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f3/Steel-Frame_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stone Arch",
-        "sell": 13500,
+        "F": 13500,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 90,
         "material2": "",
@@ -13002,11 +13622,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6e\/Stone_Arch_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6e/Stone_Arch_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stone Axe",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Flimsy Axe",
         "material1_num": 1,
         "material2": "Wood",
@@ -13019,11 +13641,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b2\/Stone_Axe_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b2/Stone_Axe_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stone Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 4,
         "material2": "",
@@ -13036,11 +13660,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0a\/Stone_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0a/Stone_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stone Lion-Dog",
-        "sell": 3600,
+        "F": 3600,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 24,
         "material2": "",
@@ -13053,11 +13679,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3a\/Stone_Lion-Dog_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3a/Stone_Lion-Dog_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stone Stool",
-        "sell": 450,
+        "F": 450,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 3,
         "material2": "",
@@ -13070,11 +13698,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c9\/Stone_Stool_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c9/Stone_Stool_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stone Table",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 8,
         "material2": "",
@@ -13087,11 +13717,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a0\/Stone_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a0/Stone_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stone Tablet",
-        "sell": 1800,
+        "F": 1800,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 12,
         "material2": "",
@@ -13104,11 +13736,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/98\/Stone_Tablet_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/98/Stone_Tablet_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stone Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1500,
         "material1": "Stone",
         "material1_num": 10,
         "material2": "",
@@ -13121,11 +13755,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b1\/Stone_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b1/Stone_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stone-Egg Outfit",
-        "sell": "",
+        "F": "",
+        "C": 1200,
+        "I": "",
         "material1": "Stone Egg",
         "material1_num": 3,
         "material2": "",
@@ -13138,11 +13774,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/ae\/Stone-Egg_Outfit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/ae/Stone-Egg_Outfit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stone-Egg Shell",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Stone Egg",
         "material1_num": 2,
         "material2": "",
@@ -13155,11 +13793,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/27\/Stone-Egg_Shell_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/27/Stone-Egg_Shell_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stone-Egg Shoes",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Stone Egg",
         "material1_num": 2,
         "material2": "",
@@ -13172,11 +13812,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/67\/Stone-Egg_Shoes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/67/Stone-Egg_Shoes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Stonework Kitchen",
-        "sell": 15000,
+        "F": 15000,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 30,
         "material2": "Clay",
@@ -13189,12 +13831,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c0\/Stonework_Kitchen_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c0/Stonework_Kitchen_NH_DIY_Icon.png"
     },
     {
         "en_name": "Straw Fence",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": "",
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 10,
         "material2": "Wood",
         "material2_num": 3,
@@ -13206,12 +13850,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bf\/Straw_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bf/Straw_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Straw Umbrella Hat",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": 200,
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 10,
         "material2": "",
         "material2_num": "",
@@ -13223,11 +13869,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a0\/Straw_Umbrella_Hat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a0/Straw_Umbrella_Hat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Street Piano",
-        "sell": 26755,
+        "F": 26755,
+        "C": "",
+        "I": "",
         "material1": "Upright Piano",
         "material1_num": 1,
         "material2": "Painting Set",
@@ -13240,12 +13888,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e9\/Street_Piano_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e9/Street_Piano_NH_DIY_Icon.png"
     },
     {
         "en_name": "Succulent Plant",
-        "sell": 220,
-        "material1": "Clump of Weeds",
+        "F": 220,
+        "C": "",
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 10,
         "material2": "Empty Can",
         "material2_num": 1,
@@ -13257,11 +13907,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bd\/Succulent_Plant_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bd/Succulent_Plant_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sugar",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Sugarcane",
         "material1_num": 5,
         "material2": "",
@@ -13274,11 +13926,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/db\/Sugar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/db/Sugar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Sugar Crepe",
-        "sell": 1260,
+        "F": 1260,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Sugar",
@@ -13291,11 +13945,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0c\/Sugar_Crepe_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0c/Sugar_Crepe_NH_DIY_Icon.png"
     },
     {
         "en_name": "Summer-Shell Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 7200,
         "material1": "Summer Shell",
         "material1_num": 6,
         "material2": "",
@@ -13308,11 +13964,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f5\/Summer-Shell_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f5/Summer-Shell_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Suspicious Cauldron",
-        "sell": 8000,
+        "F": 8000,
+        "C": "",
+        "I": "",
         "material1": "Glowing Moss",
         "material1_num": 10,
         "material2": "Iron Nugget",
@@ -13325,11 +13983,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/72\/Suspicious_Cauldron_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/72/Suspicious_Cauldron_NH_DIY_Icon.png"
     },
     {
         "en_name": "Swinging Bench",
-        "sell": 1440,
+        "F": 1440,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 5,
         "material2": "Softwood",
@@ -13342,11 +14002,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/76\/Swinging_Bench_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/76/Swinging_Bench_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tabletop Festive Tree",
-        "sell": 930,
+        "F": 930,
+        "C": "",
+        "I": "",
         "material1": "Gold Ornament",
         "material1_num": 5,
         "material2": "Tree Branch",
@@ -13359,11 +14021,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cd\/Tabletop_Festive_Tree_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cd/Tabletop_Festive_Tree_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tall Brick Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 8,
         "material2": "",
@@ -13376,11 +14040,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9a\/Tall_Brick_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9a/Tall_Brick_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tall Concrete Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 6,
         "material2": "Iron Nugget",
@@ -13393,11 +14059,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4e\/Tall_Concrete_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4e/Tall_Concrete_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tall Garden Rock",
-        "sell": 9000,
+        "F": 9000,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 60,
         "material2": "",
@@ -13410,11 +14078,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4f\/Tall_Garden_Rock_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4f/Tall_Garden_Rock_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tall Golden Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Gold Nugget",
         "material1_num": 8,
         "material2": "",
@@ -13427,11 +14097,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/41\/Tall_Golden_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/41/Tall_Golden_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tall Lantern",
-        "sell": 2700,
+        "F": 2700,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 18,
         "material2": "",
@@ -13444,11 +14116,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4a\/Tall_Lantern_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4a/Tall_Lantern_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tall Marble Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 16,
         "material2": "",
@@ -13461,11 +14135,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5c\/Tall_Marble_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5c/Tall_Marble_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tall Simple Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 4,
         "material2": "Stone",
@@ -13478,11 +14154,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1c\/Tall_Simple_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1c/Tall_Simple_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tall Steel Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 8,
         "material2": "",
@@ -13495,11 +14173,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3c\/Tall_Steel_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3c/Tall_Steel_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tall Wooden Island Counter",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "Hardwood",
@@ -13512,11 +14192,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/78\/Tall_Wooden_Island_Counter_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/78/Tall_Wooden_Island_Counter_NH_DIY_Icon.png"
     },
     {
         "en_name": "Taurus Bathtub",
-        "sell": 12350,
+        "F": 12350,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 3,
         "material2": "Taurus Fragment",
@@ -13529,11 +14211,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/54\/Taurus_Bathtub_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/54/Taurus_Bathtub_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tea Table",
-        "sell": 1440,
+        "F": 1440,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 12,
         "material2": "",
@@ -13546,11 +14230,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/98\/Tea_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/98/Tea_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tension-Pole Rack",
-        "sell": 960,
+        "F": 960,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 8,
         "material2": "",
@@ -13563,12 +14249,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/df\/Tension-Pole_Rack_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/df/Tension-Pole_Rack_NH_DIY_Icon.png"
     },
     {
         "en_name": "Terrarium",
-        "sell": 1740,
-        "material1": "Clump of Weeds",
+        "F": 1740,
+        "C": "",
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 12,
         "material2": "Iron Nugget",
         "material2_num": 2,
@@ -13580,11 +14268,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/33\/Terrarium_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/33/Terrarium_NH_DIY_Icon.png"
     },
     {
         "en_name": "Three-Tiered Snowperson",
-        "sell": 7420,
+        "F": 7420,
+        "C": "",
+        "I": "",
         "material1": "Large Snowflake",
         "material1_num": 1,
         "material2": "Snowflake",
@@ -13597,11 +14287,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/04\/Three-Tiered_Snowperson_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/04/Three-Tiered_Snowperson_NH_DIY_Icon.png"
     },
     {
         "en_name": "Thumbprint Jam Cookies",
-        "sell": 630,
+        "F": 630,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -13614,11 +14306,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2d\/Thumbprint_Jam_Cookies_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2d/Thumbprint_Jam_Cookies_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tiki Torch",
-        "sell": 650,
+        "F": 650,
+        "C": "",
+        "I": "",
         "material1": "Tree Branch",
         "material1_num": 5,
         "material2": "Wood",
@@ -13631,11 +14325,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c6\/Tiki_Torch_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c6/Tiki_Torch_NH_DIY_Icon.png"
     },
     {
         "en_name": "Timber Doorplate",
-        "sell": 400,
+        "F": 400,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 2,
         "material2": "Pink Roses",
@@ -13648,11 +14344,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/ca\/Timber_Doorplate_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/ca/Timber_Doorplate_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tiny Library",
-        "sell": 1035,
+        "F": 1035,
+        "C": "",
+        "I": "",
         "material1": "Book",
         "material1_num": 3,
         "material2": "Wood",
@@ -13665,11 +14363,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/78\/Tiny_Library_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/78/Tiny_Library_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tire Stack",
-        "sell": 60,
+        "F": 60,
+        "C": "",
+        "I": "",
         "material1": "Old Tire",
         "material1_num": 3,
         "material2": "",
@@ -13682,11 +14382,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/45\/Tire_Stack_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/45/Tire_Stack_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tire Toy",
-        "sell": 20,
+        "F": 20,
+        "C": "",
+        "I": "",
         "material1": "Old Tire",
         "material1_num": 1,
         "material2": "",
@@ -13699,11 +14401,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fd\/Tire_Toy_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fd/Tire_Toy_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tomates al Ajillo",
-        "sell": 1260,
+        "F": 1260,
+        "C": "",
+        "I": "",
         "material1": "Tomato",
         "material1_num": 3,
         "material2": "",
@@ -13716,11 +14420,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/79\/Tomates_al_Ajillo_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/79/Tomates_al_Ajillo_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tomato Bagel Sandwich",
-        "sell": 2210,
+        "F": 2210,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Tomato",
@@ -13733,11 +14439,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1a\/Tomato_Bagel_Sandwich_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1a/Tomato_Bagel_Sandwich_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tomato Curry",
-        "sell": 2520,
+        "F": 2520,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 3,
         "material2": "Tomato",
@@ -13750,11 +14458,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/86\/Tomato_Curry_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/86/Tomato_Curry_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tomato Juice",
-        "sell": 840,
+        "F": 840,
+        "C": "",
+        "I": "",
         "material1": "Tomato",
         "material1_num": 2,
         "material2": "",
@@ -13767,11 +14477,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5d\/Tomato_Juice_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5d/Tomato_Juice_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tomato Puree",
-        "sell": 1260,
+        "F": 1260,
+        "C": "",
+        "I": "",
         "material1": "Tomato",
         "material1_num": 3,
         "material2": "",
@@ -13784,11 +14496,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5f\/Tomato_Puree_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5f/Tomato_Puree_NH_DIY_Icon.png"
     },
     {
         "en_name": "Traditional Balancing Toy",
-        "sell": 1840,
+        "F": 1840,
+        "C": "",
+        "I": "",
         "material1": "Acorn",
         "material1_num": 4,
         "material2": "Hardwood",
@@ -13801,12 +14515,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d2\/Traditional_Balancing_Toy_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d2/Traditional_Balancing_Toy_NH_DIY_Icon.png"
     },
     {
         "en_name": "Traditional Straw Coat",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": 160,
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 8,
         "material2": "",
         "material2_num": "",
@@ -13818,11 +14534,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9b\/Traditional_Straw_Coat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9b/Traditional_Straw_Coat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Trash Bags",
-        "sell": 60,
+        "F": 60,
+        "C": "",
+        "I": "",
         "material1": "Empty Can",
         "material1_num": 1,
         "material2": "Boot",
@@ -13835,11 +14553,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1e\/Trash_Bags_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1e/Trash_Bags_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tree Branch Wreath",
-        "sell": 100,
+        "F": 100,
+        "C": "",
+        "I": "",
         "material1": "Tree Branch",
         "material1_num": 10,
         "material2": "",
@@ -13852,11 +14572,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e9\/Tree_Branch_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e9/Tree_Branch_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tree Standee",
-        "sell": 1560,
+        "F": 1560,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 5,
         "material2": "Softwood",
@@ -13869,11 +14591,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c0\/Tree_Standee_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c0/Tree_Standee_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tree's Bounty Arch",
-        "sell": 5750,
+        "F": 5750,
+        "C": "",
+        "I": "",
         "material1": "Pine Cone",
         "material1_num": 4,
         "material2": "Acorn",
@@ -13886,11 +14610,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/af\/Tree%27s_Bounty_Arch_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/af/Tree%27s_Bounty_Arch_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tree's Bounty Big Tree",
-        "sell": 6080,
+        "F": 6080,
+        "C": "",
+        "I": "",
         "material1": "Pine Cone",
         "material1_num": 5,
         "material2": "Acorn",
@@ -13903,11 +14629,13 @@
         "material5_num": 4,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/31\/Tree%27s_Bounty_Big_Tree_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/31/Tree%27s_Bounty_Big_Tree_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tree's Bounty Lamp",
-        "sell": 3200,
+        "F": 3200,
+        "C": "",
+        "I": "",
         "material1": "Acorn",
         "material1_num": 6,
         "material2": "Clay",
@@ -13920,11 +14648,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c5\/Tree%27s_Bounty_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c5/Tree%27s_Bounty_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tree's Bounty Little Tree",
-        "sell": 4120,
+        "F": 4120,
+        "C": "",
+        "I": "",
         "material1": "Pine Cone",
         "material1_num": 6,
         "material2": "Acorn",
@@ -13937,11 +14667,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/62\/Tree%27s_Bounty_Little_Tree_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/62/Tree%27s_Bounty_Little_Tree_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tree's Bounty Mobile",
-        "sell": 2030,
+        "F": 2030,
+        "C": "",
+        "I": "",
         "material1": "Pine Cone",
         "material1_num": 2,
         "material2": "Acorn",
@@ -13954,11 +14686,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f4\/Tree%27s_Bounty_Mobile_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f4/Tree%27s_Bounty_Mobile_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tree-Branch Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Tree Branch",
         "material1_num": 5,
         "material2": "Star Fragment",
@@ -13971,11 +14705,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/97\/Tree-Branch_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/97/Tree-Branch_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tree-Stump Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 720,
         "material1": "Wood",
         "material1_num": 6,
         "material2": "",
@@ -13988,11 +14724,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/27\/Tree-Stump_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/27/Tree-Stump_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Trophy Case",
-        "sell": 33690,
+        "F": 33690,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 24,
         "material2": "Gold Nugget",
@@ -14005,11 +14743,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/88\/Trophy_Case_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/88/Trophy_Case_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tropical Vista",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 6000,
         "material1": "Summer Shell",
         "material1_num": 5,
         "material2": "",
@@ -14022,11 +14762,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/ee\/Tropical_Vista_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/ee/Tropical_Vista_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tulip Crown",
-        "sell": "",
+        "F": "",
+        "C": 400,
+        "I": "",
         "material1": "Red Tulips",
         "material1_num": 2,
         "material2": "Yellow Tulips",
@@ -14039,11 +14781,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/42\/Tulip_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/42/Tulip_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tulip Surprise Box",
-        "sell": 760,
+        "F": 760,
+        "C": "",
+        "I": "",
         "material1": "Red Tulips",
         "material1_num": 5,
         "material2": "Softwood",
@@ -14056,11 +14800,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a4\/Tulip_Surprise_Box_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a4/Tulip_Surprise_Box_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tulip Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Red Tulips",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -14073,11 +14819,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e0\/Tulip_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e0/Tulip_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Tulip Wreath",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Red Tulips",
         "material1_num": 3,
         "material2": "Yellow Tulips",
@@ -14090,11 +14838,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4f\/Tulip_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4f/Tulip_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Turkey Day Casserole",
-        "sell": 1750,
+        "F": 1750,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 5,
         "material2": "Clay",
@@ -14107,11 +14857,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1e\/Turkey_Day_Casserole_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1e/Turkey_Day_Casserole_NH_DIY_Icon.png"
     },
     {
         "en_name": "Turkey Day Chair",
-        "sell": 550,
+        "F": 550,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 5,
         "material2": "Hardwood",
@@ -14124,14 +14876,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a5\/Turkey_Day_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a5/Turkey_Day_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Turkey Day Decorations",
-        "sell": 500,
+        "F": 500,
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 2,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 5,
         "material3": "Clay",
         "material3_num": 2,
@@ -14141,11 +14895,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0e\/Turkey_Day_Decorations_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0e/Turkey_Day_Decorations_NH_DIY_Icon.png"
     },
     {
         "en_name": "Turkey Day Garden Stand",
-        "sell": 900,
+        "F": 900,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 8,
         "material2": "Clay",
@@ -14158,11 +14914,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/36\/Turkey_Day_Garden_Stand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/36/Turkey_Day_Garden_Stand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Turkey Day Hearth",
-        "sell": 3250,
+        "F": 3250,
+        "C": "",
+        "I": "",
         "material1": "Campfire",
         "material1_num": 1,
         "material2": "Stone",
@@ -14175,11 +14933,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/9c\/Turkey_Day_Hearth_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/9c/Turkey_Day_Hearth_NH_DIY_Icon.png"
     },
     {
         "en_name": "Turkey Day Table",
-        "sell": 1125,
+        "F": 1125,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 10,
         "material2": "Softwood",
@@ -14192,11 +14952,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/57\/Turkey_Day_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/57/Turkey_Day_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Turkey Day Table Setting",
-        "sell": 1000,
+        "F": 1000,
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 4,
         "material2": "Iron Nugget",
@@ -14209,12 +14971,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/06\/Turkey_Day_Table_Setting_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/06/Turkey_Day_Table_Setting_NH_DIY_Icon.png"
     },
     {
         "en_name": "Turkey Day Wheat Decor",
-        "sell": 200,
-        "material1": "Clump of Weeds",
+        "F": 200,
+        "C": "",
+        "I": "",
+        "material1": "Weeds",
         "material1_num": 10,
         "material2": "",
         "material2_num": "",
@@ -14226,11 +14990,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/26\/Turkey_Day_Wheat_Decor_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/26/Turkey_Day_Wheat_Decor_NH_DIY_Icon.png"
     },
     {
         "en_name": "Turnip Salad",
-        "sell": 680,
+        "F": 680,
+        "C": "",
+        "I": "",
         "material1": "10 Turnips",
         "material1_num": 1,
         "material2": "Tomato",
@@ -14243,11 +15009,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3b\/Turnip_Salad_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3b/Turnip_Salad_NH_DIY_Icon.png"
     },
     {
         "en_name": "Ukulele",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 5,
         "material2": "",
@@ -14260,11 +15028,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8f\/Ukulele_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8f/Ukulele_NH_DIY_Icon.png"
     },
     {
         "en_name": "Underwater Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 6600,
         "material1": "Summer Shell",
         "material1_num": 3,
         "material2": "Coral",
@@ -14277,11 +15047,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/85\/Underwater_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/85/Underwater_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Underwater Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 8600,
         "material1": "Summer Shell",
         "material1_num": 3,
         "material2": "Coral",
@@ -14294,11 +15066,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/65\/Underwater_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/65/Underwater_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Unglazed Dish Set",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Clay",
         "material1_num": 3,
         "material2": "",
@@ -14311,11 +15085,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a2\/Unglazed_Dish_Set_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a2/Unglazed_Dish_Set_NH_DIY_Icon.png"
     },
     {
         "en_name": "Vaulting Pole",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 5,
         "material2": "",
@@ -14328,11 +15104,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/24\/Vaulting_Pole_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/24/Vaulting_Pole_NH_DIY_Icon.png"
     },
     {
         "en_name": "Veggie Basket",
-        "sell": 3150,
+        "F": 3150,
+        "C": "",
+        "I": "",
         "material1": "Tomato",
         "material1_num": 1,
         "material2": "Carrot",
@@ -14345,11 +15123,13 @@
         "material5_num": 1,
         "material6": "Sugarcane",
         "material6_num": 1,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7e\/Veggie_Basket_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7e/Veggie_Basket_NH_DIY_Icon.png"
     },
     {
         "en_name": "Veggie Cookies",
-        "sell": 2210,
+        "F": 2210,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -14362,11 +15142,13 @@
         "material5_num": 1,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/49\/Veggie_Cookies_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/49/Veggie_Cookies_NH_DIY_Icon.png"
     },
     {
         "en_name": "Veggie Crepe",
-        "sell": 1680,
+        "F": 1680,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Tomato",
@@ -14379,11 +15161,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/85\/Veggie_Crepe_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/85/Veggie_Crepe_NH_DIY_Icon.png"
     },
     {
         "en_name": "Veggie Cupcakes",
-        "sell": 2210,
+        "F": 2210,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Sugar",
@@ -14396,11 +15180,13 @@
         "material5_num": 1,
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7b\/Veggie_Cupcakes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7b/Veggie_Cupcakes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Veggie Quiche",
-        "sell": 1370,
+        "F": 1370,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 1,
         "material2": "Potato",
@@ -14413,11 +15199,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3f\/Veggie_Quiche_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3f/Veggie_Quiche_NH_DIY_Icon.png"
     },
     {
         "en_name": "Veggie Sandwich",
-        "sell": 1680,
+        "F": 1680,
+        "C": "",
+        "I": "",
         "material1": "Flour",
         "material1_num": 2,
         "material2": "Tomato",
@@ -14430,11 +15218,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c1\/Veggie_Sandwich_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c1/Veggie_Sandwich_NH_DIY_Icon.png"
     },
     {
         "en_name": "Vertical-Board Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 8,
         "material2": "",
@@ -14447,11 +15237,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f1\/Vertical-Board_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f1/Vertical-Board_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Vine Bench",
-        "sell": 800,
+        "F": 800,
+        "C": "",
+        "I": "",
         "material1": "Vine",
         "material1_num": 8,
         "material2": "",
@@ -14464,11 +15256,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cc\/Vine_Bench_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cc/Vine_Bench_NH_DIY_Icon.png"
     },
     {
         "en_name": "Vine Crown",
-        "sell": "",
+        "F": "",
+        "C": 300,
+        "I": "",
         "material1": "Vine",
         "material1_num": 3,
         "material2": "",
@@ -14481,11 +15275,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/17\/Vine_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/17/Vine_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Vine Garland",
-        "sell": 700,
+        "F": 700,
+        "C": "",
+        "I": "",
         "material1": "Vine",
         "material1_num": 7,
         "material2": "",
@@ -14498,11 +15294,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c3\/Vine_Garland_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c3/Vine_Garland_NH_DIY_Icon.png"
     },
     {
         "en_name": "Vine Hanging Chair",
-        "sell": 1000,
+        "F": 1000,
+        "C": "",
+        "I": "",
         "material1": "Vine",
         "material1_num": 10,
         "material2": "",
@@ -14515,11 +15313,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5e\/Vine_Hanging_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5e/Vine_Hanging_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Vine Ladder Set-Up Kit",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Ladder",
         "material1_num": 1,
         "material2": "Vine",
@@ -14532,11 +15332,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/ee\/Vine_Ladder_Set-Up_Kit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/ee/Vine_Ladder_Set-Up_Kit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Vine Lamp",
-        "sell": 2000,
+        "F": 2000,
+        "C": "",
+        "I": "",
         "material1": "Vine",
         "material1_num": 5,
         "material2": "Iron Nugget",
@@ -14549,11 +15351,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cf\/Vine_Lamp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cf/Vine_Lamp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Vine Outfit",
-        "sell": "",
+        "F": "",
+        "C": 1000,
+        "I": "",
         "material1": "Vine",
         "material1_num": 10,
         "material2": "",
@@ -14566,11 +15370,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/dd\/Vine_Outfit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/dd/Vine_Outfit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Virgo Harp",
-        "sell": 22050,
+        "F": 22050,
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 3,
         "material2": "Virgo Fragment",
@@ -14583,11 +15389,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/30\/Virgo_Harp_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/30/Virgo_Harp_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Star Fragment",
         "material1_num": 2,
         "material2": "",
@@ -14600,11 +15408,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/64\/Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/64/Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Water Flooring",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 7200,
         "material1": "Summer Shell",
         "material1_num": 6,
         "material2": "",
@@ -14617,11 +15427,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/b8\/Water_Flooring_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/b8/Water_Flooring_NH_DIY_Icon.png"
     },
     {
         "en_name": "Water Pump",
-        "sell": 2700,
+        "F": 2700,
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 2,
         "material2": "Clay",
@@ -14634,11 +15446,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/9\/97\/Water_Pump_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/9/97/Water_Pump_NH_DIY_Icon.png"
     },
     {
         "en_name": "Water-Egg Outfit",
-        "sell": "",
+        "F": "",
+        "C": 1200,
+        "I": "",
         "material1": "Water Egg",
         "material1_num": 3,
         "material2": "",
@@ -14651,11 +15465,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fb\/Water-Egg_Outfit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fb/Water-Egg_Outfit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Water-Egg Shell",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Water Egg",
         "material1_num": 2,
         "material2": "",
@@ -14668,11 +15484,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/14\/Water-Egg_Shell_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/14/Water-Egg_Shell_NH_DIY_Icon.png"
     },
     {
         "en_name": "Water-Egg Shoes",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Water Egg",
         "material1_num": 2,
         "material2": "",
@@ -14685,11 +15503,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/32\/Water-Egg_Shoes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/32/Water-Egg_Shoes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Watering Can",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Flimsy Watering Can",
         "material1_num": 1,
         "material2": "Iron Nugget",
@@ -14702,11 +15522,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/19\/Watering_Can_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/19/Watering_Can_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wave Breaker",
-        "sell": 3500,
+        "F": 3500,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 10,
         "material2": "Clay",
@@ -14719,11 +15541,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7c\/Wave_Breaker_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7c/Wave_Breaker_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wedding Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 5,
         "material2": "Softwood",
@@ -14736,11 +15560,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bc\/Wedding_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bc/Wedding_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wedding Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wedding Flower Stand",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -14753,11 +15579,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/1f\/Wedding_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/1f/Wedding_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Western-Style Stone",
-        "sell": 4500,
+        "F": 4500,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 30,
         "material2": "",
@@ -14770,11 +15598,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d8\/Western-Style_Stone_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d8/Western-Style_Stone_NH_DIY_Icon.png"
     },
     {
         "en_name": "Whole-Wheat Flour",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wheat",
         "material1_num": 5,
         "material2": "",
@@ -14787,11 +15617,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/ca\/Whole-Wheat_Flour_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/ca/Whole-Wheat_Flour_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wild Log Bench",
-        "sell": 960,
+        "F": 960,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 8,
         "material2": "",
@@ -14804,11 +15636,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/cd\/Wild_Log_Bench_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/cd/Wild_Log_Bench_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wild-Wood Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1800,
         "material1": "Wood",
         "material1_num": 15,
         "material2": "",
@@ -14821,11 +15655,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2a\/Wild-Wood_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2a/Wild-Wood_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Windflower Crown",
-        "sell": "",
+        "F": "",
+        "C": 480,
+        "I": "",
         "material1": "Red Windflowers",
         "material1_num": 2,
         "material2": "Orange Windflowers",
@@ -14838,11 +15674,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/7f\/Windflower_Crown_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/7f/Windflower_Crown_NH_DIY_Icon.png"
     },
     {
         "en_name": "Windflower Fan",
-        "sell": 1740,
+        "F": 1740,
+        "C": "",
+        "I": "",
         "material1": "Red Windflowers",
         "material1_num": 3,
         "material2": "Iron Nugget",
@@ -14855,11 +15693,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/f8\/Windflower_Fan_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/f8/Windflower_Fan_NH_DIY_Icon.png"
     },
     {
         "en_name": "Windflower Wand",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Orange Windflowers",
         "material1_num": 1,
         "material2": "Star Fragment",
@@ -14872,11 +15712,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4d\/Windflower_Wand_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4d/Windflower_Wand_NH_DIY_Icon.png"
     },
     {
         "en_name": "Windflower Wreath",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Red Windflowers",
         "material1_num": 3,
         "material2": "White Windflowers",
@@ -14889,11 +15731,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/21\/Windflower_Wreath_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/21/Windflower_Wreath_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wobbling Zipper Toy",
-        "sell": 9600,
+        "F": 9600,
+        "C": "",
+        "I": "",
         "material1": "Earth Egg",
         "material1_num": 4,
         "material2": "Stone Egg",
@@ -14906,11 +15750,13 @@
         "material5_num": 4,
         "material6": "Water Egg",
         "material6_num": 4,
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/af\/Wobbling_Zipper_Toy_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/af/Wobbling_Zipper_Toy_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wood-Egg Outfit",
-        "sell": "",
+        "F": "",
+        "C": 1200,
+        "I": "",
         "material1": "Wood Egg",
         "material1_num": 3,
         "material2": "",
@@ -14923,11 +15769,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d0\/Wood-Egg_Outfit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d0/Wood-Egg_Outfit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wood-Egg Shell",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Wood Egg",
         "material1_num": 2,
         "material2": "",
@@ -14940,11 +15788,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/17\/Wood-Egg_Shell_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/17/Wood-Egg_Shell_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wood-Egg Shoes",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Wood Egg",
         "material1_num": 2,
         "material2": "",
@@ -14957,11 +15807,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5c\/Wood-Egg_Shoes_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5c/Wood-Egg_Shoes_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Bookshelf",
-        "sell": 1925,
+        "F": 1925,
+        "C": "",
+        "I": "",
         "material1": "Book",
         "material1_num": 5,
         "material2": "Wood",
@@ -14974,11 +15826,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/67\/Wooden_Bookshelf_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/67/Wooden_Bookshelf_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Box",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 6,
         "material2": "",
@@ -14991,11 +15845,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8a\/Wooden_Box_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8a/Wooden_Box_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Bucket",
-        "sell": 1110,
+        "F": 1110,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "Iron Nugget",
@@ -15008,11 +15864,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d6\/Wooden_Bucket_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d6/Wooden_Bucket_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Chair",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 6,
         "material2": "",
@@ -15025,11 +15883,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/4e\/Wooden_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/4e/Wooden_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Chest",
-        "sell": 1920,
+        "F": 1920,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 16,
         "material2": "",
@@ -15042,11 +15902,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a6\/Wooden_Chest_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a6/Wooden_Chest_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Double Bed",
-        "sell": 3600,
+        "F": 3600,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 30,
         "material2": "",
@@ -15059,11 +15921,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a0\/Wooden_Double_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a0/Wooden_Double_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden End Table",
-        "sell": 960,
+        "F": 960,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 8,
         "material2": "",
@@ -15076,11 +15940,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/f\/fc\/Wooden_End_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/f/fc/Wooden_End_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Field Sign",
-        "sell": 960,
+        "F": 960,
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 6,
         "material2": "Hardwood",
@@ -15093,11 +15959,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/79\/Wooden_Field_Sign_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/79/Wooden_Field_Sign_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Fish",
-        "sell": 360,
+        "F": 360,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "",
@@ -15110,11 +15978,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/78\/Wooden_Fish_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/78/Wooden_Fish_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Full-Length Mirror",
-        "sell": 1350,
+        "F": 1350,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 5,
         "material2": "Iron Nugget",
@@ -15127,11 +15997,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/44\/Wooden_Full-Length_Mirror_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/44/Wooden_Full-Length_Mirror_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Ladder Set-Up Kit",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Ladder",
         "material1_num": 1,
         "material2": "Wood",
@@ -15144,11 +16016,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0f\/Wooden_Ladder_Set-Up_Kit_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0f/Wooden_Ladder_Set-Up_Kit_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Low Table",
-        "sell": 1200,
+        "F": 1200,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 10,
         "material2": "",
@@ -15161,11 +16035,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a9\/Wooden_Low_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a9/Wooden_Low_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Mini Table",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 6,
         "material2": "",
@@ -15178,11 +16054,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/02\/Wooden_Mini_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/02/Wooden_Mini_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Music Box",
-        "sell": 1470,
+        "F": 1470,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "Softwood",
@@ -15195,11 +16073,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/32\/Wooden_Music_Box_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/32/Wooden_Music_Box_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Pillar",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 2,
         "material2": "Hardwood",
@@ -15212,11 +16092,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/48\/Wooden_Pillar_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/48/Wooden_Pillar_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Simple Bed",
-        "sell": 2160,
+        "F": 2160,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 18,
         "material2": "",
@@ -15229,11 +16111,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/08\/Wooden_Simple_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/08/Wooden_Simple_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Stool",
-        "sell": 480,
+        "F": 480,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 4,
         "material2": "",
@@ -15246,11 +16130,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/89\/Wooden_Stool_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/89/Wooden_Stool_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Storage Shed",
-        "sell": 18300,
+        "F": 18300,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 30,
         "material2": "Hardwood",
@@ -15263,11 +16149,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/78\/Wooden_Storage_Shed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/78/Wooden_Storage_Shed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Table",
-        "sell": 1800,
+        "F": 1800,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 15,
         "material2": "",
@@ -15280,11 +16168,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/86\/Wooden_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/86/Wooden_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Table Mirror",
-        "sell": 1110,
+        "F": 1110,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 3,
         "material2": "Iron Nugget",
@@ -15297,11 +16187,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/1\/11\/Wooden_Table_Mirror_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/1/11/Wooden_Table_Mirror_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Toolbox",
-        "sell": 1980,
+        "F": 1980,
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 4,
         "material2": "Iron Nugget",
@@ -15314,11 +16206,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/2d\/Wooden_Toolbox_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/2d/Wooden_Toolbox_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Wardrobe",
-        "sell": 1440,
+        "F": 1440,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 12,
         "material2": "",
@@ -15331,11 +16225,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/3b\/Wooden_Wardrobe_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/3b/Wooden_Wardrobe_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden Waste Bin",
-        "sell": 480,
+        "F": 480,
+        "C": "",
+        "I": "",
         "material1": "Wood",
         "material1_num": 4,
         "material2": "",
@@ -15348,11 +16244,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/22\/Wooden_Waste_Bin_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/22/Wooden_Waste_Bin_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Block Bed",
-        "sell": 2400,
+        "F": 2400,
+        "C": "",
+        "I": "",
         "material1": "Wooden-Block Toy",
         "material1_num": 1,
         "material2": "Softwood",
@@ -15365,11 +16263,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/0a\/Wooden-Block_Bed_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/0a/Wooden-Block_Bed_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Block Bench",
-        "sell": 840,
+        "F": 840,
+        "C": "",
+        "I": "",
         "material1": "Wooden-Block Toy",
         "material1_num": 1,
         "material2": "Softwood",
@@ -15382,11 +16282,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/87\/Wooden-Block_Bench_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/87/Wooden-Block_Bench_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Block Bookshelf",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Wooden-Block Toy",
         "material1_num": 1,
         "material2": "Softwood",
@@ -15399,11 +16301,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/5\/5e\/Wooden-Block_Bookshelf_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/5/5e/Wooden-Block_Bookshelf_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Block Chair",
-        "sell": 720,
+        "F": 720,
+        "C": "",
+        "I": "",
         "material1": "Wooden-Block Toy",
         "material1_num": 1,
         "material2": "Softwood",
@@ -15416,11 +16320,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/8b\/Wooden-Block_Chair_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/8b/Wooden-Block_Chair_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Block Chest",
-        "sell": 1800,
+        "F": 1800,
+        "C": "",
+        "I": "",
         "material1": "Wooden-Block Toy",
         "material1_num": 1,
         "material2": "Softwood",
@@ -15433,11 +16339,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/6\/6b\/Wooden-Block_Chest_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/6/6b/Wooden-Block_Chest_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Block Stereo",
-        "sell": 2460,
+        "F": 2460,
+        "C": "",
+        "I": "",
         "material1": "Wooden-Block Toy",
         "material1_num": 1,
         "material2": "Softwood",
@@ -15450,11 +16358,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/3\/30\/Wooden-Block_Stereo_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/3/30/Wooden-Block_Stereo_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Block Stool",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Wooden-Block Toy",
         "material1_num": 1,
         "material2": "Softwood",
@@ -15467,11 +16377,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/45\/Wooden-Block_Stool_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/45/Wooden-Block_Stool_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Block Table",
-        "sell": 1320,
+        "F": 1320,
+        "C": "",
+        "I": "",
         "material1": "Wooden-Block Toy",
         "material1_num": 1,
         "material2": "Softwood",
@@ -15484,11 +16396,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/2\/20\/Wooden-Block_Table_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/2/20/Wooden-Block_Table_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Block Toy",
-        "sell": 360,
+        "F": 360,
+        "C": "",
+        "I": "",
         "material1": "Softwood",
         "material1_num": 3,
         "material2": "",
@@ -15501,11 +16415,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/03\/Wooden-Block_Toy_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/03/Wooden-Block_Toy_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Block Wall Clock",
-        "sell": 1350,
+        "F": 1350,
+        "C": "",
+        "I": "",
         "material1": "Wooden-Block Toy",
         "material1_num": 1,
         "material2": "Softwood",
@@ -15518,11 +16434,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/a4\/Wooden-Block_Wall_Clock_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/a4/Wooden-Block_Wall_Clock_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Knot Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1800,
         "material1": "Hardwood",
         "material1_num": 15,
         "material2": "",
@@ -15535,11 +16453,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/d8\/Wooden-Knot_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/d8/Wooden-Knot_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Mosaic Wall",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1800,
         "material1": "Wood",
         "material1_num": 15,
         "material2": "",
@@ -15552,11 +16472,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/c\/c4\/Wooden-Mosaic_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/c/c4/Wooden-Mosaic_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Wooden-Plank Sign",
-        "sell": 600,
+        "F": 600,
+        "C": "",
+        "I": "",
         "material1": "Hardwood",
         "material1_num": 5,
         "material2": "",
@@ -15569,12 +16491,14 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/8\/85\/Wooden-Plank_Sign_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/8/85/Wooden-Plank_Sign_NH_DIY_Icon.png"
     },
     {
         "en_name": "Woodland Wall",
-        "sell": "",
-        "material1": "Clump of Weeds",
+        "F": "",
+        "C": "",
+        "I": 1380,
+        "material1": "Weeds",
         "material1_num": 15,
         "material2": "Softwood",
         "material2_num": 9,
@@ -15586,11 +16510,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/0\/02\/Woodland_Wall_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/0/02/Woodland_Wall_NH_DIY_Icon.png"
     },
     {
         "en_name": "Woven-Vine Pochette",
-        "sell": "",
+        "F": "",
+        "C": 500,
+        "I": "",
         "material1": "Vine",
         "material1_num": 5,
         "material2": "",
@@ -15603,11 +16529,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/a\/af\/Woven-Vine_Pochette_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/a/af/Woven-Vine_Pochette_NH_DIY_Icon.png"
     },
     {
         "en_name": "Woven-Vines Hat",
-        "sell": "",
+        "F": "",
+        "C": 800,
+        "I": "",
         "material1": "Vine",
         "material1_num": 8,
         "material2": "",
@@ -15620,11 +16548,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/e\/e6\/Woven-Vines_Hat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/e/e6/Woven-Vines_Hat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Yellow Bamboo Mat",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1200,
         "material1": "Young Spring Bamboo",
         "material1_num": 3,
         "material2": "",
@@ -15637,11 +16567,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/dd\/Yellow_Bamboo_Mat_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/dd/Yellow_Bamboo_Mat_NH_DIY_Icon.png"
     },
     {
         "en_name": "Yellow Star Rug",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": 1500,
         "material1": "Star Fragment",
         "material1_num": 3,
         "material2": "",
@@ -15654,14 +16586,16 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/7\/76\/Yellow_Star_Rug_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/7/76/Yellow_Star_Rug_NH_DIY_Icon.png"
     },
     {
         "en_name": "Yellow-Leaf Pile",
-        "sell": 1300,
+        "F": 1300,
+        "C": "",
+        "I": "",
         "material1": "Acorn",
         "material1_num": 3,
-        "material2": "Clump of Weeds",
+        "material2": "Weeds",
         "material2_num": 5,
         "material3": "",
         "material3_num": "",
@@ -15671,11 +16605,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/4\/44\/Yellow-Leaf_Pile_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/4/44/Yellow-Leaf_Pile_NH_DIY_Icon.png"
     },
     {
         "en_name": "Zen Fence",
-        "sell": "",
+        "F": "",
+        "C": "",
+        "I": "",
         "material1": "Iron Nugget",
         "material1_num": 3,
         "material2": "Clay",
@@ -15688,11 +16624,13 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/b\/bc\/Zen_Fence_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/b/bc/Zen_Fence_NH_DIY_Icon.png"
     },
     {
         "en_name": "Zen-Style Stone",
-        "sell": 4500,
+        "F": 4500,
+        "C": "",
+        "I": "",
         "material1": "Stone",
         "material1_num": 30,
         "material2": "",
@@ -15705,6 +16643,6 @@
         "material5_num": "",
         "material6": "",
         "material6_num": "",
-        "image_url": "https:\/\/dodo.ac\/np\/images\/d\/da\/Zen-Style_Stone_NH_DIY_Icon.png"
+        "image_url": "https://dodo.ac/np/images/d/da/Zen-Style_Stone_NH_DIY_Icon.png"
     }
 ]
