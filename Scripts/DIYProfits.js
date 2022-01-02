@@ -45,22 +45,31 @@ const checkCompatibleDiy = function (materials)
 const countMaterials = function (newDiyArr, dropdownArr, amountArr)
 {
     let newUpdatedDIYArr = [];
+
+    // console.log(dropdownArr);
+    // console.log(amountArr);
+    // console.log(newDiyArr);
+
+    // make new array with diy name
+    // diyArr 0 = [acoustic guitar, [softwood, 8], [iron nugget, 3]]
+
     newDiyArr.forEach
     (
         function (item) // item in diy arr
         {
-            let DIYAmountCount = 1;
-        
+            // console.log(item.name)
             for (let i = 0; i < Object.keys(item).length; i++) 
             {
                 for (let x = 0; x < Object.keys(item).length; x++) 
                 {
                     if (Object.keys(item)[i] == "material"+[x])
                     {
-                        console.log(Object.keys(item)[i], "material"+[x], "MATCH");
-
+                        // console.log(Object.values(item)[i]);
                     }
-                    
+                    if (Object.keys(item)[i] == "material"+[x]+"_num")
+                    {
+                        // console.log(Object.values(item)[i]);
+                    }
                 }
             }
 
@@ -188,7 +197,7 @@ const calcClick = function ()
     // console.log(amountArr, dropdownArr);
 
     let newDiyArr = checkCompatibleDiy(dropdownArr);
-    console.log(newDiyArr);
+    // console.log(newDiyArr);
 
     newDiyArr = countMaterials(newDiyArr, dropdownArr, amountArr);
     console.log(newDiyArr);

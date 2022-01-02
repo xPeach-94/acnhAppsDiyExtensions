@@ -1,5 +1,18 @@
-var curDate = ((new Date().getMonth() + 1).toString()) + (new Date().getDate().toString());
-// var curDate = "0405";
+var month = (new Date().getMonth() + 1).toString();
+var day = (new Date().getDate().toString());
+
+if (month.length <2)
+{
+    month = "0"+month;
+}
+if (day.length <2)
+{
+    day = "0"+day;
+}
+
+var curDate = month + day;
+
+// console.log(curDate)
 
 const seasonalMaterialsNorth = function (item) 
 {

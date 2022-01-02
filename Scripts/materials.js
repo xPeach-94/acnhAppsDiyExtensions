@@ -54,7 +54,7 @@ const materialArr =
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {
         "name": "Acorn",
-        "img": "https://dodo.ac/np/images/9/9f/Acorn_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/DIYAcorn.png",
         "sell": 200,
         "material_seasonality": "Autumn",
         "Start": "0901",
@@ -130,7 +130,7 @@ const materialArr =
     },
     {
         "name": "Blue Ornament",
-        "img": "https://dodo.ac/np/images/9/95/Blue_Ornament_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/ChristmasOrnamentB.png",
         "sell": 50,
         "material_seasonality": "Festive season",
         "Start": "1215",
@@ -176,7 +176,7 @@ const materialArr =
     },
     {
         "name": "Candy",
-        "img": "https://dodo.ac/np/images/e/e1/Candy_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Candy.png",
         "sell": 30,
         "material_seasonality": "Halloween",
         "Start": "1001",
@@ -202,7 +202,7 @@ const materialArr =
     },
     {
         "name": "Cherry-Blossom Petal",
-        "img": "https://dodo.ac/np/images/2/22/Cherry-Blossom_Petal_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Sakurapetal.png",
         "sell": 200,
         "material_seasonality": "Spring",
         "Start": "0401",
@@ -236,13 +236,13 @@ const materialArr =
     },
     {
         "name": "Earth Egg",
-        "img": "https://dodo.ac/np/images/2/25/Earth_Egg_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggGround.png",
         "sell": 200,
         "material_seasonality": "Bunny Day"
     },
     {
         "name": "Elegant Mushroom",
-        "img": "https://dodo.ac/np/images/e/e0/Elegant_Mushroom_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Mush0.png",
         "sell": 10000,
         "material_seasonality": "Autumn",
         "Start": "1101",
@@ -258,7 +258,7 @@ const materialArr =
     },
     {
         "name": "Flat Mushroom",
-        "img": "https://dodo.ac/np/images/2/2b/Flat_Mushroom_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Mush3.png",
         "sell": 200,
         "material_seasonality": "Autumn",
         "Start": "1101",
@@ -304,7 +304,7 @@ const materialArr =
     },
     {
         "name": "Gold Ornament",
-        "img": "https://dodo.ac/np/images/9/96/Gold_Ornament_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/ChristmasOrnamentC.png",
         "sell": 50,
         "material_seasonality": "Festive season",
         "Start": "1215",
@@ -352,7 +352,7 @@ const materialArr =
     },
     {
         "name": "Leaf Egg",
-        "img": "https://dodo.ac/np/images/9/93/Leaf_Egg_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggLeaf.png",
         "sell": 200,
         "material_seasonality": "Bunny Day"
     },
@@ -520,7 +520,7 @@ const materialArr =
     },
     {
         "name": "Rare Mushroom",
-        "img": "https://dodo.ac/np/images/4/4c/Rare_Mushroom_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Mush4.png",
         "sell": 16000,
         "material_seasonality": "Autumn",
         "Start": "1101",
@@ -560,7 +560,7 @@ const materialArr =
     },
     {
         "name": "Red Ornament",
-        "img": "https://dodo.ac/np/images/d/d0/Red_Ornament_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/ChristmasOrnamentA.png",
         "sell": 50,
         "material_seasonality": "Festive season",
         "Start": "1215",
@@ -600,7 +600,7 @@ const materialArr =
     },
     {
         "name": "Round Mushroom",
-        "img": "https://dodo.ac/np/images/6/65/Round_Mushroom_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Mush1.png",
         "sell": 200,
         "material_seasonality": "Autumn",
         "Start": "1101",
@@ -640,7 +640,7 @@ const materialArr =
     },
     {
         "name": "Skinny Mushroom",
-        "img": "https://dodo.ac/np/images/b/b0/Skinny_Mushroom_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Mush2.png",
         "sell": 300,
         "material_seasonality": "Autumn",
         "Start": "1101",
@@ -650,7 +650,7 @@ const materialArr =
     },
     {
         "name": "Sky Egg",
-        "img": "https://dodo.ac/np/images/1/1d/Sky_Egg_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggSky.png",
         "sell": 200,
         "material_seasonality": "Bunny Day"
     },
@@ -670,7 +670,7 @@ const materialArr =
     },
     {
         "name": "Stone Egg",
-        "img": "https://dodo.ac/np/images/e/e8/Stone_Egg_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggRock.png",
         "sell": 200,
         "material_seasonality": "Bunny Day"
     },
@@ -688,7 +688,7 @@ const materialArr =
     },
     {
         "name": "Summer Shell",
-        "img": "https://dodo.ac/np/images/2/27/Summer_Shell_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/ShellSummer.png",
         "sell": 600,
         "material_seasonality": "Summer",
         "Start": "0601",
@@ -740,7 +740,7 @@ const materialArr =
     },
     {
         "name": "Water Egg",
-        "img": "https://dodo.ac/np/images/3/35/Water_Egg_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggFish.png",
         "sell": 200,
         "material_seasonality": "Bunny Day"
     },
@@ -812,7 +812,7 @@ const materialArr =
     },
     {
         "name": "Wood Egg",
-        "img": "https://dodo.ac/np/images/d/d1/Wood_Egg_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggForest.png",
         "sell": 200,
         "material_seasonality": "Bunny Day"
     },
@@ -866,7 +866,7 @@ const materialArr =
     },
     {
         "name": "Young Spring Bamboo",
-        "img": "https://dodo.ac/np/images/2/28/Young_Spring_Bamboo_NH_Icon.png",
+        "img": "https://cdn.nookazon.com/nookazon/MenuIcon/DIYBambooSpring.png",
         "sell": 200,
         "material_seasonality": "Spring",
         "Start": "0225",
