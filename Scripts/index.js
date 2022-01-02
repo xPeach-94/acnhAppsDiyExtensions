@@ -28,11 +28,6 @@ materialArr.forEach //Loop through array
 
             if (("Start" in item) && ("End" in item) && ("img" in item)) 
             {
-                // console.log(Object.keys(item)[0], Object.values(item)[0]);
-                // console.log(item.img);
-                // console.log("Start Date", item.Start);
-                // console.log("End Date", item.End);
-
                 if ((curDate >= item.Start && curDate <= item.End)) 
                 {
                     seasonalMaterialsNorth(item)

@@ -4,12 +4,13 @@ const fillSelect = function (Index)// Filling in each select
         (
             function (item) 
             {
-                for (var key in item) {
+                for (var key in item) 
+                {
                     var newSelect = document.getElementById("material" + Index);
                     var optn = document.createElement("option");
-                    optn.value = key.replace(" ", "");
+                    optn.value = Object.values(item)[0].replace(" ", "");
 
-                    optn.innerHTML = key;
+                    optn.innerHTML = Object.values(item)[0];
 
                     newSelect.appendChild(optn);
                     break;
