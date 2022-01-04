@@ -88,7 +88,7 @@ const materialValue = function (diy)
         {
            if (materialItem == materialArr[x].name)
            {
-                bellsForMaterials = amount*materialArr[x].sell
+                bellsForMaterials = bellsForMaterials + (amount*materialArr[x].sell)
            }
         }
     }
