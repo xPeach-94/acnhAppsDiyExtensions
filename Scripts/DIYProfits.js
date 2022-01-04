@@ -6,37 +6,27 @@ let profitArr = []
 const checkCompatibleDiy = function (materials) 
 {
     let newDiyArr = []; 
-    let diyMaterialCount;
 
-    diyArr.forEach //Loop through array
+    diyArr.forEach
     (
-        function (item) 
+        function (diy)
         {
-            diyMaterialCount = 0;
+            let diyMaterialCount = Object.keys(diy.materials).length;
 
-            for (let i = 1; i< (Object.keys(item).length); i++)
+            for (let i = 0; i < Object.keys(diy.materials).length; i++)
             {
-                let curMaterial = Object.values(item)[i];
-                for (let x = 1; x<= Object.keys(item).length; x++)
-                {
-                    if (((Object.keys(item)[i]) == "material"+[x]) && (curMaterial != ""))
-                    {
-                        diyMaterialCount++;
-
-                        for (let y = 0; y< (dropdownArr.length); y++)
-                        if (curMaterial == dropdownArr[y])
-                        {
-                            diyMaterialCount--;
-                        }
-                    }
-                }
-                
+               for (let x = 0; x < materials.length; x++) 
+               {
+                   if (Object.keys(diy.materials)[i] == materials[x]) 
+                   {
+                        diyMaterialCount--;
+                   }
+               }
             }
-            // console.log(diyMaterialCount);
-            if (diyMaterialCount == 0)
+            if (diyMaterialCount == 0) 
             {
-                newDiyArr.push(item);
-            }      
+                newDiyArr.push(diy);
+            }
         }
     )
     return newDiyArr;
@@ -44,113 +34,76 @@ const checkCompatibleDiy = function (materials)
 
 const countMaterials = function (newDiyArr, dropdownArr, amountArr)
 {
+    // check of de huidige diy minder materialen gebruikt dan de opgegeven aantal materialen
     let newUpdatedDIYArr = [];
 
-    // console.log(dropdownArr);
-    // console.log(amountArr);
-    // console.log(newDiyArr);
-
-    // make new array with diy name
-    // diyArr 0 = [acoustic guitar, [softwood, 8], [iron nugget, 3]]
+    // console.log(amountArr, dropdownArr);
 
     newDiyArr.forEach
     (
-        function (item) // item in diy arr
+        function (diy)
         {
-            // console.log(item.name)
-            for (let i = 0; i < Object.keys(item).length; i++) 
-            {
-                for (let x = 0; x < Object.keys(item).length; x++) 
-                {
-                    if (Object.keys(item)[i] == "material"+[x])
-                    {
-                        // console.log(Object.values(item)[i]);
-                    }
-                    if (Object.keys(item)[i] == "material"+[x]+"_num")
-                    {
-                        // console.log(Object.values(item)[i]);
-                    }
-                }
-            }
+            let diyMaterialCount = Object.keys(diy.materials).length;
 
-            // for (let i = 1; i< (Object.keys(item).length); i++)
-            // {
-            //     for (let x = 0; x< dropdownArr.length; x++)
-            //     {
-            //         if (Object.keys(item)[i] == dropdownArr[x])
-            //         {
-            //             if (amountArr[x] >= Object.values(item)[i])
-            //             {
-            //                 DIYAmountCount++;
-            //                 break;
-            //             }                        
-            //         }
-            //         else if (Object.keys(item)[i] == "image_url")
-            //         {
-            //             DIYAmountCount++;
-            //             break;
-            //         }
-            //     }
-            //     if (DIYAmountCount == Object.keys(item).length)
-            //     {
-            //         newUpdatedDIYArr.push(item);
-            //     }
-            // }   
+            for (let i = 0; i < Object.keys(diy.materials).length; i++)
+            {
+               for (let x = 0; x < dropdownArr.length; x++) 
+               {
+                   if (Object.keys(diy.materials)[i] == dropdownArr[x]) 
+                   {
+                        if (Object.values(diy.materials)[i] <= amountArr[x]) 
+                        {
+                            diyMaterialCount--;
+                        }
+                   }
+               }
+            }
+            if (diyMaterialCount == 0) 
+            {
+                newUpdatedDIYArr.push(diy);
+            }
         }
-    )    
+    )
+
     // console.log(newUpdatedDIYArr);
     return newUpdatedDIYArr;
 }
 
 const materialValue = function (diy) 
 {
+    // check van de huidige diy hoeveel materialen het gebruikt
+    // zoek de value van de materialen op
+    // multiply de amount materialen van de diy met de value van het materiaal
+
     let bellsForMaterials = 0;
     let materialItem = null;
     let amount = 0;
 
-    for (let i = 0; i< (Object.keys(diy).length); i++)
+    for (let i = 0; i < Object.keys(diy.materials).length; i++) 
     {
-        amount = 0;
+        materialItem = Object.keys(diy.materials)[i];
+        amount = Object.values(diy.materials)[i]
 
-        for (let x = 1; x< (Object.keys(diy).length); x++)
+        for (let x = 0; x < materialArr.length; x++) 
         {
-            if (Object.keys(diy)[i] == "material"+[x])
-            {
-                materialItem = Object.values(diy)[i];
-            }
-            if (Object.keys(diy)[i] == "material"+[x]+"_num")
-            {
-                amount = Object.values(diy)[i];
-            }
-            
-        }
-        if (materialItem != null && amount != 0)
-        {
-
-            materialArr.forEach //Loop through array
-            (
-                function (item) // item = objects in material arr
-                {
-                    for (let y = 0; y< (Object.keys(item).length); y++)
-                    {
-                        if (item.name == materialItem)
-                        {
-                            let fullAmount = amount*item.sell;
-                            bellsForMaterials = bellsForMaterials + fullAmount;
-                        }
-                        break;
-                    }
-                }
-            )
+           if (materialItem == materialArr[x].name)
+           {
+                bellsForMaterials = amount*materialArr[x].sell
+           }
         }
     }
-    // console.log(Object.values(diy)[0], "cost of Materials:",bellsForMaterials);
+
+    // console.log(diy.name, "cost of Materials:",bellsForMaterials);
     return bellsForMaterials;
 }
 
 const profitCalc = function (diy) 
 {
-    let profit = (Object.values(diy)[0]) - (materialValue(diy));
+    // calculeer de winst van huidige diy
+    // diy sell - materialValue
+
+    profit = diy.sell-(materialValue(diy));
+
     return profit;
 }
 
@@ -175,6 +128,7 @@ const sort = function (diyArr, profitArr)
             }
         }
     }
+
     // console.log(diyArr, profitArr);
     return(diyArr);
 }
@@ -200,62 +154,63 @@ const calcClick = function ()
     // console.log(newDiyArr);
 
     newDiyArr = countMaterials(newDiyArr, dropdownArr, amountArr);
-    console.log(newDiyArr);
+    // console.log(newDiyArr);
 
-    // for (let i = 0; i < newDiyArr.length; i++) 
-    // {
-    //     profitArr.push(profitCalc(newDiyArr[i]));
-    // }
-    // // console.log(newDiyArr, profitArr);
+    for (let i = 0; i < newDiyArr.length; i++) 
+    {
+        profitArr.push(profitCalc(newDiyArr[i]));
+    }
+    // console.log(newDiyArr, profitArr);
     
-    // newDiyArr = sort(newDiyArr, profitArr);
+    newDiyArr = sort(newDiyArr, profitArr);
 
-    // // console.log(newDiyArr);
+    // console.log(newDiyArr);
 
-    // var profitList = document.getElementById("profitable");
-    // profitList.style = "display: none";
+    var profitList = document.getElementById("profitable");
+    profitList.style = "display: none";
 
-    // if (newDiyArr.length != 0)
-    // {
-    //     profitList.style = "display: flex";
-    //     profitList.innerHTML = "";
+    if (newDiyArr.length != 0)
+    {
+        profitList.style = "display: flex";
+        profitList.innerHTML = "";
 
-    //     for (let i = 0; i < newDiyArr.length; i++)
-    //     {
-    //         let diyTitle = Object.keys(newDiyArr[i])[0];
-    //         let diyImg = Object.values(newDiyArr[i])[(Object.values(newDiyArr[i]).length-1)];
-    //         let diySell = Object.values(newDiyArr[i])[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // add dots after 3 digits
-    //         let materialCost = materialValue(newDiyArr[i]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-    //         let profit = profitCalc(newDiyArr[i]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        for (let i = 0; i < newDiyArr.length; i++)
+        {
+            let diyTitle = newDiyArr[i].name;
+            let diyImg = newDiyArr[i].img;
+            let diySell = (newDiyArr[i].sell).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // add dots after 3 digits
 
-    //         var createForm = document.createElement("form");
-    //         createForm.setAttribute("class", "width border");
-    //         var createH4 = document.createElement("h4");
-    //         var createImg = document.createElement("img");
-    //         createImg.setAttribute("src", diyImg);
-    //         createImg.setAttribute("style", "width: 50%; display: block; margin-left: auto; margin-right: auto");
-    //         var createP1 = document.createElement("p");
-    //         var createP2 = document.createElement("p");
-    //         var createP3 = document.createElement("p");
-    //         createP3.setAttribute("class", "bold");
+            let materialCost = materialValue(newDiyArr[i]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            let profit = profitCalc(newDiyArr[i]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+            var createForm = document.createElement("form");
+            createForm.setAttribute("class", "width border");
+            var createH4 = document.createElement("h4");
+            var createImg = document.createElement("img");
+            createImg.setAttribute("src", diyImg);
+            createImg.setAttribute("style", "width: 50%; display: block; margin-left: auto; margin-right: auto");
+            var createP1 = document.createElement("p");
+            var createP2 = document.createElement("p");
+            var createP3 = document.createElement("p");
+            createP3.setAttribute("class", "bold");
             
-    //         createForm.appendChild(createH4);
-    //         createForm.appendChild(createImg);
-    //         createForm.appendChild(createP1);
-    //         createForm.appendChild(createP2);
-    //         createForm.appendChild(createP3);
-    //         profitList.appendChild(createForm);
+            createForm.appendChild(createH4);
+            createForm.appendChild(createImg);
+            createForm.appendChild(createP1);
+            createForm.appendChild(createP2);
+            createForm.appendChild(createP3);
+            profitList.appendChild(createForm);
 
-    //         createH4.innerHTML = diyTitle;
-    //         createP1.innerHTML = "Sold for: "+ diySell + " Bells";
-    //         createP2.innerHTML = "Cost of Materials: "+ materialCost + " Bells";
-    //         createP3.innerHTML = "Total Profit: "+ profit + " Bells";
-    //     }
-    // }
-    // else
-    // {
-    //     window.alert("No DIY's can be crafted :(");
-    // }
+            createH4.innerHTML = diyTitle;
+            createP1.innerHTML = "Sold for: "+ diySell + " Bells";
+            createP2.innerHTML = "Cost of Materials: "+ materialCost + " Bells";
+            createP3.innerHTML = "Total Profit: "+ profit + " Bells";
+        }
+    }
+    else
+    {
+        window.alert("No DIY's can be crafted :(");
+    }
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
