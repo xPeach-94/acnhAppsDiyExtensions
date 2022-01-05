@@ -8,7 +8,7 @@ const fillSelect = function (Index)// Filling in each select
                 {
                     var newSelect = document.getElementById("material" + Index);
                     var optn = document.createElement("option");
-                    optn.value = Object.values(item)[0].replace(" ", "");
+                    optn.value = Object.values(item)[0];
 
                     optn.innerHTML = Object.values(item)[0];
 

@@ -393,9 +393,6 @@ header, .mainContent, footer {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 0px 20px;
 }
-header .imgLogo, .mainContent .imgLogo, footer .imgLogo {
-  background-color: rgba(255, 255, 255, 0.5);
-}
 
 header,
 footer {
@@ -446,8 +443,12 @@ ul a {
   margin: 20px 0px;
 }
 
+.logo {
+  text-align: center;
+}
+
 .imgLogo {
-  width: 100%;
+  width: 80%;
 }
 
 .dateTime {

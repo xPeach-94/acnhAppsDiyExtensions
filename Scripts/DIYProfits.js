@@ -145,7 +145,7 @@ const calcClick = function ()
         // check if there is not no input element left AND check for the input to not have the default value of 0
         {
             amountArr.push(document.getElementById("input" + i).value);
-            dropdownArr.push((document.getElementById("material" + i).value).replace(/([A-Z])/g, ' $1').trim());
+            dropdownArr.push((document.getElementById("material" + i).value));
         }
     }
     // console.log(amountArr, dropdownArr);
@@ -180,6 +180,8 @@ const calcClick = function ()
             let diyImg = newDiyArr[i].img;
             let diySell = (newDiyArr[i].sell).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // add dots after 3 digits
 
+            // let diyMaterials = showMaterials(newDiyArr[i].materials);
+
             let materialCost = materialValue(newDiyArr[i]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
             let profit = profitCalc(newDiyArr[i]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
@@ -189,6 +191,7 @@ const calcClick = function ()
             var createImg = document.createElement("img");
             createImg.setAttribute("src", diyImg);
             createImg.setAttribute("style", "width: 50%; display: block; margin-left: auto; margin-right: auto");
+            // var createPMaterials = document.createElement("p");
             var createP1 = document.createElement("p");
             var createP2 = document.createElement("p");
             var createP3 = document.createElement("p");
@@ -196,12 +199,14 @@ const calcClick = function ()
             
             createForm.appendChild(createH4);
             createForm.appendChild(createImg);
+            // createForm.appendChild(createPMaterials);
             createForm.appendChild(createP1);
             createForm.appendChild(createP2);
             createForm.appendChild(createP3);
             profitList.appendChild(createForm);
 
             createH4.innerHTML = diyTitle;
+            // createPMaterials.innerHTML = "Materials: " +diyMaterials;
             createP1.innerHTML = "Sold for: "+ diySell + " Bells";
             createP2.innerHTML = "Cost of Materials: "+ materialCost + " Bells";
             createP3.innerHTML = "Total Profit: "+ profit + " Bells";
