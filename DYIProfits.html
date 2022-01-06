@@ -1,75 +1,78 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <!--Represents the document type, and helps browsers to display web pages correctly.-->
 
-<html lang="en"> 
+<html lang="en">
 <!--declare the language of the Web page. This is meant to assist search engines and browsers.-->
-    <head> 
+
+<head>
     <!--container for metadata-->
-        <meta charset="utf-8"> 
-        <!--Specify the character encoding for the HTML document.-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <!--Gives the browser instructions on how to control the page's dimensions and scaling.-->
+    <meta charset="utf-8">
+    <!--Specify the character encoding for the HTML document.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Gives the browser instructions on how to control the page's dimensions and scaling.-->
 
-        <title>ACNH-Apps/DIY-Profits</title> 
-        <!--Defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.-->
-        <link rel="stylesheet" href="Style/Style.css"> 
+    <title>ACNH-Apps/DIY-Profits</title>
+    <!--Defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.-->
+    <link rel="stylesheet" href="Style/Style.css">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 
-        <!--Defines the relationship between the current document and an external resource. Used to link to external style sheets.-->
+    <!--Defines the relationship between the current document and an external resource. Used to link to external style sheets.-->
 
-        <script src="Scripts/JavaScript.js" defer type="text/javascript"></script> 
-        <script src="Scripts/interactiveBackground.js" defer type="text/javascript"></script> 
-        <!-- <script src="Scripts/eventsFunctions.js" defer type="text/javascript"></script> -->
-        <script src="Scripts/materials.js" defer type="text/javascript"></script> 
-        <!-- <script src="Scripts/DIYs.js" defer type="text/javascript"></script>  -->
-        <!-- <script src="Scripts/DIYs-V2.js" defer type="text/javascript"></script> -->
-        <script src="Scripts/DIYs-V3.js" defer type="text/javascript"></script>
-        <script src="Scripts/DYIProfitsRows.js" defer type="text/javascript"></script> 
-        <script src="Scripts/DIYProfits.js" defer type="text/javascript"></script> 
-        <!--Used to embed a client-side script (JavaScript).-->
-        <!-- "defer" A script that will not run until after the page has loaded-->
-    </head>
+    <script src="Scripts/JavaScript.js" defer type="text/javascript"></script>
+    <script src="Scripts/interactiveBackground.js" defer type="text/javascript"></script>
+    <!-- <script src="Scripts/eventsFunctions.js" defer type="text/javascript"></script> -->
+    <script src="Scripts/materials.js" defer type="text/javascript"></script>
+    <!-- <script src="Scripts/DIYs.js" defer type="text/javascript"></script>  -->
+    <!-- <script src="Scripts/DIYs-V2.js" defer type="text/javascript"></script> -->
+    <script src="Scripts/DIYs-V3.js" defer type="text/javascript"></script>
+    <script src="Scripts/DYIProfitsRows.js" defer type="text/javascript"></script>
+    <script src="Scripts/DIYProfits.js" defer type="text/javascript"></script>
+    <!--Used to embed a client-side script (JavaScript).-->
+    <!-- "defer" A script that will not run until after the page has loaded-->
+</head>
 
-    <body class="backImage"> <!--Contains all the contents of an HTML document.-->
-<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- header -->
-        <header class="flex align">
-            <div class="dateTime flexChild">
-                <p id="date"></p>
-                <p id="time"></p>
-            </div>
-            <div class="logo flexChild">
-                <img class="imgLogo" src="Images/logo.png" alt="Logo">                
-            </div>
-            <div class="menu flexChild">
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="DYIProfits.html">DIY Profits</a></li>
-                        <li><a href="Craftulator.html">Craftulator</a></li>
-                        <li><a href="MoreWebsites.html">More Websites</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- main content -->
-        <div class="mainContent flexVertical" id="formWrapper">
+<body class="backImage">
+    <!--Contains all the contents of an HTML document.-->
+    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- header -->
+    <header class="flex align">
+        <div class="dateTime flexChild">
+            <p id="date"></p>
+            <p id="time"></p>
+        </div>
+        <div class="logo flexChild">
+            <img class="imgLogo" src="Images/logo.png" alt="Logo">
+        </div>
+        <div class="menu flexChild">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="DYIProfits.html">DIY Profits</a></li>
+                    <li><a href="Craftulator.html">Craftulator</a></li>
+                    <li><a href="MoreWebsites.html">More Websites</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- main content -->
+    <div class="mainContent flexVertical" id="formWrapper">
 
-            <h3>How to Use:</h3>
-            <p>Fill in the amount of materials you want to craft and what material you want to craft with. <br> 
-                Click "Add" if you want to add more materials to craft with. <br>
-                When you noted all materials click "Calculate". <br>
-                Depending on how many materials you've noted, this may take some time. <br>
-                When it's finished you see 
-                all the DIY's that can be crafted with the given materials and how much profit you get for crafting and selling the item.</p>
+        <h3>How to Use:</h3>
+        <p>Fill in the amount of materials you want to craft and what material you want to craft with. <br>
+            Click "Add" if you want to add more materials to craft with. <br>
+            When you noted all materials click "Calculate". <br>
+            Depending on how many materials you've noted, this may take some time. <br>
+            When it's finished you see
+            all the DIY's that can be crafted with the given materials and how much profit you get for crafting and
+            selling the item.</p>
 
-            <!-- <form class="flex">
+        <!-- <form class="flex">
                 <h3 style="display: inline-block;">Native Fruit?</h3>
                 <select name="fruits" id="fruitDropdown">
                     <option value="">Pick One</option>
@@ -88,29 +91,29 @@
                     <input type="text" class="hotItem">
                 </div>
             </form> -->
-            
-            <form class="flex form" id="form0">
-                <input type="number" id="input0" value="0">
-                <select id="material0">
-                    
-                </select>
-                <button type="button" class="addBtn btn" id="btn0" onclick= "buttonAddClicked(this.id)">Add</button>
-            </form>
 
-            <div id="calcBtn">
-                <button class="calc btn" onclick="calcClick()">Calculate</button>
-            </div>
+        <form class="flex form" id="form0">
+            <input type="number" id="input0" value="0">
+            <select id="material0">
+
+            </select>
+            <button type="button" class="addBtn btn" id="btn0" onclick="buttonAddClicked(this.id)">Add</button>
+        </form>
+
+        <div id="calcBtn">
+            <button class="calc btn" onclick="calcClick()">Calculate</button>
         </div>
+    </div>
 
-        <div id="profitable" class="mainContent flexVertical" style="display: none">
-            
-        </div>
+    <div id="profitable" class="mainContent flexVertical" style="display: none">
 
-<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- footer -->
-        <footer class="flex bottomLinks">
-            <p>just put some links at the bottom or something :P</p>
-        </footer>        
-<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-    </body>
+    </div>
+
+    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- footer -->
+    <footer class="flex bottomLinks">
+        <p>just put some links at the bottom or something :P</p>
+    </footer>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+</body>
 
 </html>
