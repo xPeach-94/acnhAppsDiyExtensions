@@ -3,22 +3,27 @@ let dropdownArr = [];
 let profitArr = []
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-const checkCompatibleDiy = function (materials) {
+const checkCompatibleDiy = function (materials) 
+{
     let newDiyArr = [];
 
     diyArr.forEach
         (
-            function (diy) {
+            function (diy) 
+            {
                 let diyMaterialCount = Object.keys(diy.materials).length;
 
-                for (let i = 0; i < Object.keys(diy.materials).length; i++) {
+                for (let i = 0; i < Object.keys(diy.materials).length; i++) 
+                {
                     for (let x = 0; x < materials.length; x++) {
-                        if (Object.keys(diy.materials)[i] == materials[x]) {
+                        if (Object.keys(diy.materials)[i] == materials[x]) 
+                        {
                             diyMaterialCount--;
                         }
                     }
                 }
-                if (diyMaterialCount == 0) {
+                if (diyMaterialCount == 0) 
+                {
                     newDiyArr.push(diy);
                 }
             }
@@ -26,7 +31,8 @@ const checkCompatibleDiy = function (materials) {
     return newDiyArr;
 }
 
-const countMaterials = function (newDiyArr, dropdownArr, amountArr) {
+const countMaterials = function (newDiyArr, dropdownArr, amountArr) 
+{
     // check of de huidige diy minder materialen gebruikt dan de opgegeven aantal materialen
     let newUpdatedDIYArr = [];
 
@@ -34,19 +40,24 @@ const countMaterials = function (newDiyArr, dropdownArr, amountArr) {
 
     newDiyArr.forEach
         (
-            function (diy) {
+            function (diy) 
+            {
                 let diyMaterialCount = Object.keys(diy.materials).length;
 
-                for (let i = 0; i < Object.keys(diy.materials).length; i++) {
+                for (let i = 0; i < Object.keys(diy.materials).length; i++) 
+                {
                     for (let x = 0; x < dropdownArr.length; x++) {
-                        if (Object.keys(diy.materials)[i] == dropdownArr[x]) {
-                            if (Object.values(diy.materials)[i] <= amountArr[x]) {
+                        if (Object.keys(diy.materials)[i] == dropdownArr[x]) 
+                        {
+                            if (Object.values(diy.materials)[i] <= amountArr[x]) 
+                            {
                                 diyMaterialCount--;
                             }
                         }
                     }
                 }
-                if (diyMaterialCount == 0) {
+                if (diyMaterialCount == 0) 
+                {
                     newUpdatedDIYArr.push(diy);
                 }
             }
@@ -56,7 +67,8 @@ const countMaterials = function (newDiyArr, dropdownArr, amountArr) {
     return newUpdatedDIYArr;
 }
 
-const materialValue = function (diy) {
+const materialValue = function (diy) 
+{
     // check van de huidige diy hoeveel materialen het gebruikt
     // zoek de value van de materialen op
     // multiply de amount materialen van de diy met de value van het materiaal
@@ -65,12 +77,15 @@ const materialValue = function (diy) {
     let materialItem = null;
     let amount = 0;
 
-    for (let i = 0; i < Object.keys(diy.materials).length; i++) {
+    for (let i = 0; i < Object.keys(diy.materials).length; i++) 
+    {
         materialItem = Object.keys(diy.materials)[i];
         amount = Object.values(diy.materials)[i]
 
-        for (let x = 0; x < materialArr.length; x++) {
-            if (materialItem == materialArr[x].name) {
+        for (let x = 0; x < materialArr.length; x++) 
+        {
+            if (materialItem == materialArr[x].name) 
+            {
                 bellsForMaterials = bellsForMaterials + (amount * materialArr[x].sell)
             }
         }
@@ -80,7 +95,8 @@ const materialValue = function (diy) {
     return bellsForMaterials;
 }
 
-const profitCalc = function (diy) {
+const profitCalc = function (diy) 
+{
     // calculeer de winst van huidige diy
     // diy sell - materialValue
 
@@ -89,10 +105,14 @@ const profitCalc = function (diy) {
     return profit;
 }
 
-const sort = function (diyArr, profitArr) {
-    for (x = 0; x < profitArr.length; x++) {
-        for (y = 0; y < profitArr.length; y++) {
-            if (profitArr[x] > profitArr[y]) {
+const sort = function (diyArr, profitArr) 
+{
+    for (x = 0; x < profitArr.length; x++) 
+    {
+        for (y = 0; y < profitArr.length; y++) 
+        {
+            if (profitArr[x] > profitArr[y]) 
+            {
                 let temp = profitArr[x];
                 profitArr[x] = profitArr[y];
                 profitArr[y] = temp;
@@ -111,12 +131,14 @@ const sort = function (diyArr, profitArr) {
     return (diyArr);
 }
 
-const calcClick = function () {
+const calcClick = function () 
+{
     amountArr = [];
     dropdownArr = [];
     profitArr = [];
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 100; i++) 
+    {
         if (document.getElementById("input" + i) != null && document.getElementById("input" + i).value != 0)
         // check if there is not no input element left AND check for the input to not have the default value of 0
         {
@@ -144,11 +166,13 @@ const calcClick = function () {
     var profitList = document.getElementById("profitable");
     profitList.style = "display: none";
 
-    if (newDiyArr.length != 0) {
+    if (newDiyArr.length != 0) 
+    {
         profitList.style = "display: flex";
         profitList.innerHTML = "";
 
-        for (let i = 0; i < newDiyArr.length; i++) {
+        for (let i = 0; i < newDiyArr.length; i++) 
+        {
             let diyTitle = newDiyArr[i].name;
             let diyImg = newDiyArr[i].img;
             let diySell = (newDiyArr[i].sell).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // add dots after 3 digits
@@ -180,17 +204,20 @@ const calcClick = function () {
 
             createH4.innerHTML = diyTitle;
 
-            for (let x = 0; x < Object.keys(newDiyArr[i].materials).length; x++) {
+            for (let x = 0; x < Object.keys(newDiyArr[i].materials).length; x++) 
+            {
                 for (let y = 0; y < Object.keys(materialArr).length; y++) {
-                    if (Object.keys(newDiyArr[i].materials)[x] == materialArr[y].name) {
+                    if (Object.keys(newDiyArr[i].materials)[x] == materialArr[y].name) 
+                    {
                         let diyMaterialImg = materialArr[y].img;
                         let diyMaterialCount = Object.values(newDiyArr[i].materials)[x];
 
                         var createDiv = document.createElement("div");
+                        createDiv.setAttribute("style", "display: flex; justify-content: center; gap: 0px; align-items: center;");
 
                         var createMaterialImg = document.createElement("img");
                         createMaterialImg.setAttribute("src", diyMaterialImg);
-                        createMaterialImg.setAttribute("style", "width: 25%;");
+                        createMaterialImg.setAttribute("style", "width: 20%;");
 
                         var createPMaterialCount = document.createElement("p");
                         createPMaterialCount.innerHTML = ": " + diyMaterialCount
@@ -208,7 +235,8 @@ const calcClick = function () {
             createP3.innerHTML = "Total Profit: " + profit + " Bells";
         }
     }
-    else {
+    else 
+    {
         window.alert("No DIY's can be crafted :(");
     }
 }
