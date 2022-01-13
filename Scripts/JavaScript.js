@@ -6,3 +6,9 @@ const myTimer = function (date) {
 }
 
 setInterval(myTimer, 100);
+
+const getYear = function ()
+{
+  let currentYear = new Date();
+  return currentYear.getFullYear;
+}

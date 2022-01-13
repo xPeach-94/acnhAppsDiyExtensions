@@ -130,7 +130,7 @@ const sort = function (diyArr, profitArr)
     // console.log(diyArr, profitArr);
     return (diyArr);
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const calcClick = function () 
 {
     amountArr = [];
