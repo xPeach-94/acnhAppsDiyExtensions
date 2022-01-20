@@ -51,16 +51,19 @@ const materialArr =
             "sell": 375,
 
         },
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ A
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ A
         {
             "name": "Acorn",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/DIYAcorn.png",
             "sell": 200,
-            "material_seasonality": "Autumn",
-            "Start": "0901",
-            "End": "1210",
-            "StartSouth": "0301",
-            "EndSouth": "0610",
+            // "Start": "0901",
+            // "End": "1210",
+            // "StartSouth": "0301",
+            // "EndSouth": "0610",
+            "Start": getYear() + "-09-01",
+            "End": getYear() + "-12-10",
+            "StartSouth": getYear() + "-03-01",
+            "EndSouth": getYear() + "-06-10",
         },
         {
             "name": "Apple",
@@ -68,7 +71,7 @@ const materialArr =
             "sell": 500,
 
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- B
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- B
         {
             "name": "Bamboo Piece",
             "img": "https://dodo.ac/np/images/8/8b/Bamboo_Piece_NH_Icon.png",
@@ -93,14 +96,19 @@ const materialArr =
             "sell": 210,
 
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- C
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- C
         {
             "name": "Candy",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Candy.png",
             "sell": 30,
-            "material_seasonality": "Halloween",
-            "Start": "1001",
-            "End": "1031",
+            // "Start": "1001",
+            // "End": "1031",
+            // "StartSouth": "1001",
+            // "EndSouth": "1031",
+            "Start": getYear() + "-10-01",
+            "End": getYear() + "-10-31",
+            "StartSouth": getYear() + "-10-01",
+            "EndSouth": getYear() + "-10-31",
         },
         {
             "name": "Carrot",
@@ -118,11 +126,14 @@ const materialArr =
             "name": "Cherry-Blossom Petal",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Sakurapetal.png",
             "sell": 200,
-            "material_seasonality": "Spring",
-            "Start": "0401",
-            "End": "0410",
-            "StartSouth": "1001",
-            "EndSouth": "1010",
+            // "Start": "0401",
+            // "End": "0410",
+            // "StartSouth": "1001",
+            // "EndSouth": "1010",
+            "Start": getYear() + "-04-01",
+            "End": getYear() + "-04-10",
+            "StartSouth": getYear() + "-10-01",
+            "EndSouth": getYear() + "-10-10",
         },
         {
             "name": "Coconut",
@@ -184,72 +195,62 @@ const materialArr =
             "sell": 60,
 
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- E
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- E
         {
             "name": "Earth Egg",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggGround.png",
             "sell": 200,
-            "material_seasonality": "Bunny Day"
         },
         {
             "name": "Leaf Egg",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggLeaf.png",
             "sell": 200,
-            "material_seasonality": "Bunny Day"
         },
         {
             "name": "Sky Egg",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggSky.png",
             "sell": 200,
-            "material_seasonality": "Bunny Day"
         },
         {
             "name": "Stone Egg",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggRock.png",
             "sell": 200,
-            "material_seasonality": "Bunny Day"
         },
         {
             "name": "Water Egg",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggFish.png",
             "sell": 200,
-            "material_seasonality": "Bunny Day"
         },
         {
             "name": "Wood Egg",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggForest.png",
             "sell": 200,
-            "material_seasonality": "Bunny Day"
         },
         {
             "name": "Empty Can",
             "img": "https://dodo.ac/np/images/8/89/Empty_Can_NH_Icon.png",
             "sell": 10,
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- F
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- F
         {
             "name": "Blue Feather",
             "img": "https://dodo.ac/np/images/6/66/Blue_Feather_NH_Icon.png",
             "sell": 200,
-            "material_seasonality": "Festivale"
         },
         {
             "name": "Green Feather",
             "img": "https://dodo.ac/np/images/9/92/Green_Feather_NH_Icon.png",
             "sell": 200,
-            "material_seasonality": "Festivale"
         },
         {
             "name": "Purple Feather",
             "img": "https://dodo.ac/np/images/e/ed/Purple_Feather_NH_Icon.png",
             "sell": 200,
-            "material_seasonality": "Festivale"
         },
         {
             "name": "Red Feather",
             "img": "https://dodo.ac/np/images/9/9e/Red_Feather_NH_Icon.png",
             "sell": 200,
-            "material_seasonality": "Festivale"
         },
         {
             "name": "Aquarius Fragment",
@@ -335,7 +336,7 @@ const materialArr =
             "sell": 100,
 
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- G
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- G
         {
             "name": "Giant Clam",
             "img": "https://dodo.ac/np/images/4/44/Shell_NH_Icon.png",
@@ -354,7 +355,7 @@ const materialArr =
             "sell": 10000,
 
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- H
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- H
         {
             "name": "Blue Hyacinths",
             "img": "https://dodo.ac/np/images/a/a9/Blue_Hyacinths_NH_Icon.png",
@@ -390,14 +391,19 @@ const materialArr =
             "sell": 40,
 
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- L
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- L
         {
             "name": "Large Snowflake",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/SnowCrystalLarge.png",
             "sell": 2500,
-            "material_seasonality": "Winter",
-            "Start": "1211",
-            "End": "0224",
+            // "Start": "1211",
+            // "End": "0224",
+            // "StartSouth": "0611",
+            // "EndSouth": "0824",
+            "Start": getYear() + "-12-11",
+            "End": getYear() + "-02-24",
+            "StartSouth": getYear() + "-06-11",
+            "EndSouth": getYear() + "-08-24",
         },
         {
             "name": "Large Star Fragment",
@@ -441,7 +447,7 @@ const materialArr =
             "sell": 40,
 
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- M
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- M
         {
             "name": "Manila Clam",
             "img": "https://dodo.ac/np/images/4/44/Shell_NH_Icon.png",
@@ -452,7 +458,6 @@ const materialArr =
             "name": "Maple Leaf",
             "img": "https://dodo.ac/np/images/1/10/Maple_Leaf_NH_Icon.png",
             "sell": 200,
-            "material_seasonality": "Autumn"
         },
         {
             "name": "Green Mums",
@@ -493,53 +498,68 @@ const materialArr =
             "name": "Elegant Mushroom",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Mush0.png",
             "sell": 10000,
-            "material_seasonality": "Autumn",
-            "Start": "1101",
-            "End": "1130",
-            "StartSouth": "0501",
-            "EndSouth": "0531",
+            // "Start": "1101",
+            // "End": "1130",
+            // "StartSouth": "0501",
+            // "EndSouth": "0531",
+            "Start": getYear() + "-11-01",
+            "End": getYear() + "-11-30",
+            "StartSouth": getYear() + "-05-01",
+            "EndSouth": getYear() + "-05-31",
         },
         {
             "name": "Flat Mushroom",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Mush3.png",
             "sell": 200,
-            "material_seasonality": "Autumn",
-            "Start": "1101",
-            "End": "1130",
-            "StartSouth": "0501",
-            "EndSouth": "0531",
+            // "Start": "1101",
+            // "End": "1130",
+            // "StartSouth": "0501",
+            // "EndSouth": "0531",
+            "Start": getYear() + "-11-01",
+            "End": getYear() + "-11-30",
+            "StartSouth": getYear() + "-05-01",
+            "EndSouth": getYear() + "-05-31",
         },
         {
             "name": "Rare Mushroom",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Mush4.png",
             "sell": 16000,
-            "material_seasonality": "Autumn",
-            "Start": "1101",
-            "End": "1130",
-            "StartSouth": "0501",
-            "EndSouth": "0531",
+            // "Start": "1101",
+            // "End": "1130",
+            // "StartSouth": "0501",
+            // "EndSouth": "0531",
+            "Start": getYear() + "-11-01",
+            "End": getYear() + "-11-30",
+            "StartSouth": getYear() + "-05-01",
+            "EndSouth": getYear() + "-05-31",
         },
         {
             "name": "Round Mushroom",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Mush1.png",
             "sell": 200,
-            "material_seasonality": "Autumn",
-            "Start": "1101",
-            "End": "1130",
-            "StartSouth": "0501",
-            "EndSouth": "0531",
+            // "Start": "1101",
+            // "End": "1130",
+            // "StartSouth": "0501",
+            // "EndSouth": "0531",
+            "Start": getYear() + "-11-01",
+            "End": getYear() + "-11-30",
+            "StartSouth": getYear() + "-05-01",
+            "EndSouth": getYear() + "-05-31",
         },
         {
             "name": "Skinny Mushroom",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Mush2.png",
             "sell": 300,
-            "material_seasonality": "Autumn",
-            "Start": "1101",
-            "End": "1130",
-            "StartSouth": "0501",
-            "EndSouth": "0531",
+            // "Start": "1101",
+            // "End": "1130",
+            // "StartSouth": "0501",
+            // "EndSouth": "0531",
+            "Start": getYear() + "-11-01",
+            "End": getYear() + "-11-30",
+            "StartSouth": getYear() + "-05-01",
+            "EndSouth": getYear() + "-05-31",
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- O
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- O
         {
             "name": "Old Tire",
             "img": "https://dodo.ac/np/images/7/77/Old_Tire_NH_Icon.png",
@@ -556,33 +576,42 @@ const materialArr =
             "name": "Blue Ornament",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/ChristmasOrnamentB.png",
             "sell": 50,
-            "material_seasonality": "Festive season",
-            "Start": "1215",
-            "End": "0106",
-            "StartSouth": "1215",
-            "EndSouth": "0106",
+            // "Start": "1215",
+            // "End": "0106",
+            // "StartSouth": "1215",
+            // "EndSouth": "0106",
+            "Start": getYear() + "-12-15",
+            "End": getYear() + "-01-06",
+            "StartSouth": getYear() + "-12-15",
+            "EndSouth": getYear() + "-01-06",
         },
         {
             "name": "Gold Ornament",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/ChristmasOrnamentC.png",
             "sell": 50,
-            "material_seasonality": "Festive season",
-            "Start": "1215",
-            "End": "0106",
-            "StartSouth": "1215",
-            "EndSouth": "0106",
+            // "Start": "1215",
+            // "End": "0106",
+            // "StartSouth": "1215",
+            // "EndSouth": "0106",
+            "Start": getYear() + "-12-15",
+            "End": getYear() + "-01-06",
+            "StartSouth": getYear() + "-12-15",
+            "EndSouth": getYear() + "-01-06",
         },
         {
             "name": "Red Ornament",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/ChristmasOrnamentA.png",
             "sell": 50,
-            "material_seasonality": "Festive season",
-            "Start": "1215",
-            "End": "0106",
-            "StartSouth": "1215",
-            "EndSouth": "0106",
+            // "Start": "1215",
+            // "End": "0106",
+            // "StartSouth": "1215",
+            // "EndSouth": "0106",
+            "Start": getYear() + "-12-15",
+            "End": getYear() + "-01-06",
+            "StartSouth": getYear() + "-12-15",
+            "EndSouth": getYear() + "-01-06",
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- P
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- P
         {
             "name": "Blue Pansies",
             "img": "https://dodo.ac/np/images/9/98/Blue_Pansies_NH_Icon.png",
@@ -640,7 +669,10 @@ const materialArr =
             "name": "Pine Cone",
             "img": "https://dodo.ac/np/images/6/6c/Pine_Cone_NH_Icon.png",
             "sell": 200,
-            "material_seasonality": "Autumn"
+            "Start": getYear() + "-09-01",
+            "End": getYear() + "-12-10",
+            "StartSouth": getYear() + "-03-01",
+            "EndSouth": getYear() + "-06-10",
         },
         {
             "name": "Potato",
@@ -672,7 +704,7 @@ const materialArr =
             "sell": 350,
 
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- R
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- R
         {
             "name": "Red Wrapping Paper",
             "img": "https://dodo.ac/np/images/9/95/Red_Wrapping_Paper_NH_Icon.png",
@@ -738,7 +770,7 @@ const materialArr =
             "sell": 10,
 
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- S
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- S
         {
             "name": "Sand Dollar",
             "img": "https://dodo.ac/np/images/4/44/Shell_NH_Icon.png",
@@ -755,9 +787,14 @@ const materialArr =
             "name": "Snowflake",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/SnowCrystal.png",
             "sell": 200,
-            "material_seasonality": "Winter",
-            "Start": "1211",
-            "End": "0224",
+            // "Start": "1211",
+            // "End": "0224",
+            // "StartSouth": "0611",
+            // "EndSouth": "0824",
+            "Start": getYear() + "-12-11",
+            "End": getYear() + "-02-24",
+            "StartSouth": getYear() + "-06-11",
+            "EndSouth": getYear() + "-08-24",
         },
         {
             "name": "Star Fragment",
@@ -781,13 +818,16 @@ const materialArr =
             "name": "Summer Shell",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/ShellSummer.png",
             "sell": 600,
-            "material_seasonality": "Summer",
-            "Start": "0601",
-            "End": "0831",
-            "StartSouth": "1201",
-            "EndSouth": "0229",
+            // "Start": "0601",
+            // "End": "0831",
+            // "StartSouth": "1201",
+            // "EndSouth": "0229",
+            "Start": getYear() + "-06-01",
+            "End": getYear() + "-08-31",
+            "StartSouth": getYear() + "-12-01",
+            "EndSouth": getYear() + "-02-29",
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- T
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- T
         {
             "name": "Tomato",
             "img": "https://dodo.ac/np/images/6/6b/Tomato_NH_Icon.png",
@@ -841,7 +881,7 @@ const materialArr =
             "sell": "",
 
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- V
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- V
         {
             "name": "Venus Comb",
             "img": "https://dodo.ac/np/images/8/8a/Conch_NH_Icon.png",
@@ -854,7 +894,7 @@ const materialArr =
             "sell": 50,
 
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- W
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- W
         {
             "name": "Wasp Nest",
             "img": "https://dodo.ac/np/images/5/56/Wasp_Nest_NH_Icon.png",
@@ -908,15 +948,18 @@ const materialArr =
             "sell": 210,
 
         },
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- Y
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- Y
         {
             "name": "Young Spring Bamboo",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/DIYBambooSpring.png",
             "sell": 200,
-            "material_seasonality": "Spring",
-            "Start": "0225",
-            "End": "0531",
-            "StartSouth": "0828",
-            "EndSouth": "1130",
+            // "Start": "0225",
+            // "End": "0531",
+            // "StartSouth": "0828",
+            // "EndSouth": "1130",
+            "Start": getYear() + "-02-25",
+            "End": getYear() + "-05-31",
+            "StartSouth": getYear() + "-08-28",
+            "EndSouth": getYear() + "-11-30",
         }
     ]
