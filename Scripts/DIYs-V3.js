@@ -1,4 +1,3 @@
-// https://nookipedia.com/w/index.php?title=Special%3ACargoQuery&tables=nh_recipe%2C+nh_furniture%2C+nh_clothing%2C+nh_tool%2C+nh_item%2C+nh_interior%2C+&fields=nh_recipe.en_name%3Dname%2C+nh_furniture.sell%3DfurnitureSell%2C+nh_clothing.sell%3DclothingSell%2C+nh_tool.sell%3Dsell%2C+nh_item.sell%3DitemSell%2C+nh_interior.sell%3DinteriorSell%2C+nh_recipe.img%2C+nh_recipe.materials%2C+&where=&join_on=nh_recipe.en_name+%3D+nh_furniture.en_name%2C%0D%0Anh_recipe.en_name+%3D+nh_clothing.en_name%2C%0D%0Anh_recipe.en_name+%3D+nh_tool.en_name%2C%0D%0Anh_recipe.en_name+%3D+nh_item.en_name%2C%0D%0Anh_recipe.en_name+%3D+nh_interior.en_name&group_by=&having=&order_by%5B0%5D=&order_by_options%5B0%5D=ASC&limit=1000&offset=0&format=
 const diyArr =
     [
         {

@@ -1,7 +1,4 @@
 const materialArr =
-    //https://nookipedia.com/w/index.php?title=Special%3ACargoQuery&tables=nh_item%2C+&fields=nh_item.name%2C+nh_item.image_url%2C+&where=&join_on=&group_by=&having=&order_by%5B0%5D=&order_by_options%5B0%5D=ASC&limit=100&offset=0&format=
-    //https://nookipedia.com/w/index.php?title=Special%3ACargoQuery&tables=nh_item%2C+&fields=nh_item.name%2C+nh_item.is_material%2C+nh_item.image_url%2C+&where=&join_on=&group_by=&having=&order_by%5B0%5D=&order_by_options%5B0%5D=ASC&limit=1000&offset=0&format=
-
     [
         {
             "name": "Weeds",
@@ -200,31 +197,55 @@ const materialArr =
             "name": "Earth Egg",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggGround.png",
             "sell": 200,
+            "Start": subtractDays(getEaster(), 11),
+            "End": getEaster(),
+            "StartSouth": subtractDays(getEaster(), 11),
+            "EndSouth": getEaster(),
         },
         {
             "name": "Leaf Egg",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggLeaf.png",
             "sell": 200,
+            "Start": subtractDays(getEaster(), 11),
+            "End": getEaster(),
+            "StartSouth": subtractDays(getEaster(), 11),
+            "EndSouth": getEaster(),
         },
         {
             "name": "Sky Egg",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggSky.png",
             "sell": 200,
+            "Start": subtractDays(getEaster(), 11),
+            "End": getEaster(),
+            "StartSouth": subtractDays(getEaster(), 11),
+            "EndSouth": getEaster(),
         },
         {
             "name": "Stone Egg",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggRock.png",
             "sell": 200,
+            "Start": subtractDays(getEaster(), 11),
+            "End": getEaster(),
+            "StartSouth": subtractDays(getEaster(), 11),
+            "EndSouth": getEaster(),
         },
         {
             "name": "Water Egg",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggFish.png",
             "sell": 200,
+            "Start": subtractDays(getEaster(), 11),
+            "End": getEaster(),
+            "StartSouth": subtractDays(getEaster(), 11),
+            "EndSouth": getEaster(),
         },
         {
             "name": "Wood Egg",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/EggForest.png",
             "sell": 200,
+            "Start": subtractDays(getEaster(), 11),
+            "End": getEaster(),
+            "StartSouth": subtractDays(getEaster(), 11),
+            "EndSouth": getEaster(),
         },
         {
             "name": "Empty Can",

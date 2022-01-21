@@ -10,7 +10,7 @@ if (day.length < 2) {
 
 var curDate = getYear() + "-" + month + "-" + day;
 
-// curDate = getYear() + "-04-01";
+curDate = getYear() +"-04-10";
 console.log(curDate);
 
 

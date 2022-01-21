@@ -11,5 +11,3 @@ const getYear = function () {
   let currentYear = new Date();
   return currentYear.getFullYear();
 }
-
-// let d = new Date(getYear() + "-03-16");
