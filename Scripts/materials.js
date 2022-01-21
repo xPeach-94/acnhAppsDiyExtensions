@@ -391,7 +391,7 @@ const materialArr =
         },
         {
             "name": "Purple Hyacinths",
-            "image_url": "https://dodo.ac/np/images/9/9e/Purple_Hyacinths_NH_Icon.png",
+            "img": "https://dodo.ac/np/images/9/9e/Purple_Hyacinths_NH_Icon.png",
             "sell": 240
         },
         {
@@ -494,7 +494,7 @@ const materialArr =
         },
         {
             "name": "Purple Mums",
-            "image_url": "https://dodo.ac/np/images/6/6e/Purple_Mums_NH_Icon.png",
+            "img": "https://dodo.ac/np/images/6/6e/Purple_Mums_NH_Icon.png",
             "sell": 80
         },
         {
@@ -647,7 +647,7 @@ const materialArr =
         },
         {
             "name": "Purple Pansies",
-            "image_url": "https://dodo.ac/np/images/a/a6/Purple_Pansies_NH_Icon.png",
+            "img": "https://dodo.ac/np/images/a/a6/Purple_Pansies_NH_Icon.png",
             "sell": 240
         },
         {
@@ -764,7 +764,7 @@ const materialArr =
         },
         {
             "name": "Purple Roses",
-            "image_url": "https://dodo.ac/np/images/1/1d/Purple_Roses_NH_Icon.png",
+            "img": "https://dodo.ac/np/images/1/1d/Purple_Roses_NH_Icon.png",
             "sell": 240
         },
         {
@@ -875,7 +875,7 @@ const materialArr =
         },
         {
             "name": "Purple Tulips",
-            "image_url": "https://dodo.ac/np/images/f/fa/Purple_Tulips_NH_Icon.png",
+            "img": "https://dodo.ac/np/images/f/fa/Purple_Tulips_NH_Icon.png",
             "sell": 240
         },
         {
@@ -948,7 +948,7 @@ const materialArr =
         },
         {
             "name": "Purple Windflowers",
-            "image_url": "https://dodo.ac/np/images/5/55/Purple_Windflowers_NH_Icon.png",
+            "img": "https://dodo.ac/np/images/5/55/Purple_Windflowers_NH_Icon.png",
             "sell": 240
         },
         {
