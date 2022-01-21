@@ -10,8 +10,8 @@ if (day.length < 2) {
 
 var curDate = getYear() + "-" + month + "-" + day;
 
-curDate = getYear() +"-04-10";
-console.log(curDate);
+// curDate = getYear() +"-04-10";
+// console.log(curDate);
 
 
 const seasonalMaterialsNorth = function (item) {
