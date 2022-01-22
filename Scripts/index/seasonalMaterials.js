@@ -1,18 +1,4 @@
-var month = (new Date().getMonth() + 1).toLocaleString();
-var day = (new Date().getDate().toLocaleString());
-
-if (month.length < 2) {
-    month = "0" + month;
-}
-if (day.length < 2) {
-    day = "0" + day;
-}
-
-var curDate = getYear() + "-" + month + "-" + day;
-
-// curDate = getYear() +"-04-10";
-// console.log(curDate);
-
+var curDate = getYear() + "-" + getMonth() + "-" + getDate();
 
 const seasonalMaterialsNorth = function (item) {
     var newSeason = document.getElementById("seasonalNorth");

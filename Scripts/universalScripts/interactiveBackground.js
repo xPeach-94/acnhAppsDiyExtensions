@@ -1,4 +1,4 @@
-// var curDate = new Date();
+// var curDate = dateObj;
 
 // var day = curDate.getDate().toString();
 // var month = (curDate.getMonth() +1).toString();

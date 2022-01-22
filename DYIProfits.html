@@ -26,16 +26,17 @@
 
     <!--Defines the relationship between the current document and an external resource. Used to link to external style sheets.-->
 
-    <script src="Scripts/JavaScript.js" defer type="text/javascript"></script>
-    <script src="Scripts/interactiveBackground.js" defer type="text/javascript"></script>
-    <script src="Scripts/bunnyDay.js" defer type="text/javascript"></script>
-    <script src="Scripts/eventsFunctions.js" defer type="text/javascript"></script>
-    <script src="Scripts/materials.js" defer type="text/javascript"></script>
-    <!-- <script src="Scripts/DIYs.js" defer type="text/javascript"></script>  -->
-    <!-- <script src="Scripts/DIYs-V2.js" defer type="text/javascript"></script> -->
-    <script src="Scripts/DIYs-V3.js" defer type="text/javascript"></script>
-    <script src="Scripts/DYIProfitsRows.js" defer type="text/javascript"></script>
-    <script src="Scripts/DIYProfits.js" defer type="text/javascript"></script>
+    <script src="Scripts/universalScripts/time.js" defer type="text/javascript"></script>
+    <script src="Scripts/universalScripts/interactiveBackground.js" defer type="text/javascript"></script>
+    <script src="Scripts/universalScripts/eventsFunctions.js" defer type="text/javascript"></script>
+
+    <script src="Scripts/otherCode/bunnyDay.js" defer type="text/javascript"></script>
+
+    <script src="Scripts/lists/materials.js" defer type="text/javascript"></script>
+    <script src="Scripts/lists/DIYs-V3.js" defer type="text/javascript"></script>
+    
+    <script src="Scripts/diyProfits/DYIProfitsRows.js" defer type="text/javascript"></script>
+    <script src="Scripts/diyProfits/DIYProfits.js" defer type="text/javascript"></script>
     <!--Used to embed a client-side script (JavaScript).-->
     <!-- "defer" A script that will not run until after the page has loaded-->
 </head>
@@ -67,13 +68,14 @@
 
         <h3>How to Use:</h3>
         <p>Fill in the amount of materials you want to craft and what material you want to craft with. <br>
-            Click "Add" if you want to add more materials to craft with. <br>
+            Click "Add" if you want to add more materials. <br>
             When you noted all materials click "Calculate". <br>
             Depending on how many materials you've noted, this may take some time. <br>
-            When it's finished you see
-            all the DIY's that can be crafted with the given materials and how much profit you get for crafting and
-            selling the item.</p>
+            When it's finished you see all the DIY's that can be crafted with the given materials and how much profit you'll get for crafting and selling the item.
+        </p>
 
+        <!-- update for native fruit and hot items of the day -->
+        
         <!-- <form class="flex">
                 <h3 style="display: inline-block;">Native Fruit?</h3>
                 <select name="fruits" id="fruitDropdown">
@@ -94,6 +96,7 @@
                 </div>
             </form> -->
 
+        <!-- form for the amount, dropdown and add button (another one gets added with javascript everytime add is clicked) -->
         <form class="flex form" id="form0">
             <input type="number" id="input0" value="0">
             <select id="material0">
@@ -102,11 +105,13 @@
             <button type="button" class="addBtn btn" id="btn0" onclick="buttonAddClicked(this.id)">Add</button>
         </form>
 
+        <!-- calculate button -->
         <div id="calcBtn">
             <button class="calc btn" onclick="calcClick()">Calculate</button>
         </div>
     </div>
 
+    <!-- the list with craftable items when calculated -->
     <div id="profitable" class="mainContent flexVertical" style="display: none">
 
     </div>
