@@ -1,0 +1,66 @@
+/* menu */
+.menu
+{
+  background-color: transparent;
+  border: none;
+}
+
+.dropmenu
+{
+  width: 2em;
+  height: 0.3em;
+  background-color: $seaBlue;
+  margin: 7px 0;
+}
+
+  /* Dropdown Button */
+.dropbtn
+{
+  padding: 16px;
+  font-size: 1em;
+  border: none;
+}
+
+  /* The container <div> - needed to position the dropdown content */
+.dropdown
+{
+  display: inline-block;
+  position: static;
+  width: 100%;
+  text-align: center;
+}
+
+  /* Dropdown Content (Hidden by Default) */
+.dropdown-content
+{
+  display: none;
+  position: absolute;
+  background-color: $blue;
+  min-width: 160px;
+  z-index: 1;
+  right: 0;
+  width: 50%;
+  a /* Links inside the dropdown */
+  {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  a:hover /* Change color of dropdown links on hover */
+  {
+    background-color: $seaBlue;
+  }
+}
+
+  /* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content
+{
+  display: block;
+}
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn
+{
+  background-color: $seaBlue;
+}
