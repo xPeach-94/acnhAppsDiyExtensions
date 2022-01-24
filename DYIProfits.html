@@ -28,13 +28,13 @@
 
     <script src="Scripts/universalScripts/time.js" defer type="text/javascript"></script>
     <script src="Scripts/universalScripts/interactiveBackground.js" defer type="text/javascript"></script>
-    <script src="Scripts/universalScripts/eventsFunctions.js" defer type="text/javascript"></script>
+    <script src="Scripts/universalScripts/addSubtractDays.js" defer type="text/javascript"></script>
 
     <script src="Scripts/otherCode/bunnyDay.js" defer type="text/javascript"></script>
 
     <script src="Scripts/lists/materials.js" defer type="text/javascript"></script>
     <script src="Scripts/lists/DIYs-V3.js" defer type="text/javascript"></script>
-    
+
     <script src="Scripts/diyProfits/DYIProfitsRows.js" defer type="text/javascript"></script>
     <script src="Scripts/diyProfits/DIYProfits.js" defer type="text/javascript"></script>
     <!--Used to embed a client-side script (JavaScript).-->
@@ -52,23 +52,23 @@
         <div class="logo flexChild">
             <a href="index.html">
                 <img class="imgLogo" src="Images/logo.png" alt="Logo">
-            </a>  
+            </a>
         </div>
 
         <div class="dropdown flexChild">
             <button type="dropbtn" class="menu">
-              <div class="dropmenu"></div>
-              <div class="dropmenu"></div>
-              <div class="dropmenu"></div>
+                <div class="dropmenu"></div>
+                <div class="dropmenu"></div>
+                <div class="dropmenu"></div>
             </button>
             <div class="dropdown-content">
-              <a href="index.html">Home</a>
-              <a href="DYIProfits.html">DIY Profits</a>
-              <a href="Craftulator.html">Craftulator</a>
-              <a href="MoreWebsites.html">More Websites</a>
+                <a href="index.html">Home</a>
+                <a href="DYIProfits.html">DIY Profits</a>
+                <a href="Craftulator.html">Craftulator</a>
+                <a href="MoreWebsites.html">More Websites</a>
             </div>
-          </div>
-          
+        </div>
+
     </header>
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- main content -->
     <div class="mainContent flexVertical" id="formWrapper">
@@ -78,11 +78,12 @@
             Click "Add" if you want to add more materials. <br>
             When you noted all materials click "Calculate". <br>
             Depending on how many materials you've noted, this may take some time. <br>
-            When it's finished you see all the DIY's that can be crafted with the given materials and how much profit you'll get for crafting and selling the item.
+            When it's finished you see all the DIY's that can be crafted with the given materials and how much profit
+            you'll get for crafting and selling the item.
         </p>
 
         <!-- update for native fruit and hot items of the day -->
-        
+
         <!-- <form class="flex">
                 <h3 style="display: inline-block;">Native Fruit?</h3>
                 <select name="fruits" id="fruitDropdown">

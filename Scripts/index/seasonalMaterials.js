@@ -1,5 +1,3 @@
-var curDate = getYear() + "-" + getMonth() + "-" + getDate();
-
 const seasonalMaterialsNorth = function (item) {
     var newSeason = document.getElementById("seasonalNorth");
     var icon = document.createElement("img");
