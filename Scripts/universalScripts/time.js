@@ -13,8 +13,10 @@ const leadingZeros = function (number) {
   if ((number.toString()).length < 2) {
     number = "0" + number;
   }
+  
   return number.toString();
 }
+
 
 const getYear = function () {
   let currentYear = dateObj.getFullYear();
