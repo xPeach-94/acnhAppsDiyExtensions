@@ -6,8 +6,7 @@
 * @returns {array} [int month, int day]
 */
 
-function getEaster() {
-    let year = getYear();
+function getEaster(year) {
 
     var f = Math.floor,
         // Golden Number - 1
