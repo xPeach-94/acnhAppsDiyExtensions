@@ -69,7 +69,6 @@ const getTurkeyDate = function(date)
 
 const getFishingDate = function(date)
 {
-    // second saturdays in january, april, july and october
     date = new Date(date);
 
     for (let i = 0; i <= 365; i++) 
@@ -80,7 +79,7 @@ const getFishingDate = function(date)
             {
                 let newD = leadingZeros(date.getMonth()+1) +"-"+ leadingZeros(date.getDate());
 
-                // console.log(date.getFullYear() +"-"+newD);
+                // console.log("fishing tourney", date.getFullYear() +"-"+newD);
                 return newD;
             }
         }
@@ -102,7 +101,7 @@ const getBugDate = function(hem, date)
                 {
                     let newD = leadingZeros(date.getMonth()+1) +"-"+ leadingZeros(date.getDate());
 
-                    // console.log(date.getFullYear() +"-"+newD);
+                    // console.log("bug off north", date.getFullYear() +"-"+newD);
                     return newD;
                 }
             }
@@ -119,7 +118,7 @@ const getBugDate = function(hem, date)
                 {
                     let newD = leadingZeros(date.getMonth()+1) +"-"+ leadingZeros(date.getDate());
 
-                    // console.log(date.getFullYear() +"-"+newD);
+                    // console.log("bug off south", date.getFullYear() +"-"+newD);
                     return newD;
                 }
             }

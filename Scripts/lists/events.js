@@ -13,12 +13,12 @@ const eventsArr =
     {
         "name": "Festivale",
         "Date": getFestivaleDate(curDate),
-        "img": "https://static.wikia.nocookie.net/animalcrossing/images/1/16/Pave_NLa.png/revision/latest?cb=20200826024643"
+        "img": "https://static.wikia.nocookie.net/animalcrossing/images/1/16/Pave_NLa.png"
     },
     {
         "name": "Bunny Day",
         "Date": getBunnyDayDate(curDate),
-        "img": "https://static.wikia.nocookie.net/animalcrossing/images/e/e3/Zipper_NH.png/revision/latest?cb=20200413134815",
+        "img": "https://static.wikia.nocookie.net/animalcrossing/images/e/e3/Zipper_NH.png",
     },
     {
         "name": "Nature Day",
@@ -30,13 +30,13 @@ const eventsArr =
         "name": "May Day",
         "Date": "05-01",
         "endDate": "05-07",
-        "img": "https://static.wikia.nocookie.net/animalcrossing/images/0/02/Rover_AmF.png/revision/latest?cb=20200827041621",
+        "img": "https://static.wikia.nocookie.net/animalcrossing/images/0/02/Rover_AmF.png",
     },
     {
         "name": "International Museum Day",
         "Date": "05-18",
         "endDate": "05-31",
-        "img": "https://static.wikia.nocookie.net/animalcrossing/images/c/c3/Blathers_NL.png/revision/latest?cb=20130807000633",
+        "img": "https://static.wikia.nocookie.net/animalcrossing/images/c/c3/Blathers_NL.png",
     },
     {
         "name": "Wedding Season",
@@ -52,17 +52,17 @@ const eventsArr =
     {
         "name": "Halloween",
         "Date": "10-31",
-        "img": "https://static.wikia.nocookie.net/animalcrossing/images/5/5c/Jack_NLa.png/revision/latest/scale-to-width-down/250?cb=20210113083859",
+        "img": "https://static.wikia.nocookie.net/animalcrossing/images/5/5c/Jack_NLa.png",
     },
     {
         "name": "Turkey Day",
         "Date": getTurkeyDate(curDate),
-        "img": "https://static.wikia.nocookie.net/animalcrossing/images/c/c3/Franklin_NLa.png/revision/latest?cb=20200719235419",
+        "img": "https://static.wikia.nocookie.net/animalcrossing/images/c/c3/Franklin_NLa.png",
     },
     {
         "name": "Toy Day",
         "Date": "12-24",
-        "img": "https://static.wikia.nocookie.net/animalcrossing/images/a/a6/Jingle_NH.png/revision/latest?cb=20210113193418",
+        "img": "https://static.wikia.nocookie.net/animalcrossing/images/a/a6/Jingle_NH.png",
     },
     {
         "name": "New Year's Eve",
@@ -72,16 +72,16 @@ const eventsArr =
     {
         "name": "Fishing Tourney",
         "Date": getFishingDate(curDate), 
-        "img": "https://static.wikia.nocookie.net/animalcrossing/images/4/49/C.J._NH.png/revision/latest?cb=20200317162527",
+        "img": "https://static.wikia.nocookie.net/animalcrossing/images/4/49/C.J._NH.png",
     },
     {
         "name": "Bug Off North",
         "Date": getBugDate(0, curDate), 
-        "img": "https://static.wikia.nocookie.net/animalcrossing/images/f/f4/Flick_NH.png/revision/latest?cb=20200403152806",
+        "img": "https://static.wikia.nocookie.net/animalcrossing/images/f/f4/Flick_NH.png",
     },
     {
         "name": "Bug Off South",
         "Date": getBugDate(1, curDate),
-        "img": "https://static.wikia.nocookie.net/animalcrossing/images/f/f4/Flick_NH.png/revision/latest?cb=20200403152806",
+        "img": "https://static.wikia.nocookie.net/animalcrossing/images/f/f4/Flick_NH.png",
     },
 ];
