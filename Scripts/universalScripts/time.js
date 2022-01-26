@@ -41,5 +41,5 @@ const getDate = function () {
 }
 
 let curDate = getYear() + "-" + getMonth() + "-" + getDate();
-// curDate = "2022-05-01";
+// curDate = "2022-02-14";
 // console.log(curDate);

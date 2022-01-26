@@ -4,16 +4,17 @@ const eventsArr =
     {
         "name": "New Year's Day",
         "Date": "01-01",
+        "img": "https://dodo.ac/np/images/6/60/New_Year%27s_Silk_Hat_%28Red%29_NH_Icon.png",
     },
     {
         "name": "Valentine's Day",
         "Date": "02-14",
-        "img": "https://dodo.ac/np/images/1/17/Chocolate_Heart_%28Milk_Chocolate%29_NH_Icon.png"
+        "img": "https://dodo.ac/np/images/1/17/Chocolate_Heart_%28Milk_Chocolate%29_NH_Icon.png",
     },
     {
         "name": "Festivale",
         "Date": getFestivaleDate(curDate),
-        "img": "https://static.wikia.nocookie.net/animalcrossing/images/1/16/Pave_NLa.png"
+        "img": "https://static.wikia.nocookie.net/animalcrossing/images/1/16/Pave_NLa.png",
     },
     {
         "name": "Bunny Day",
