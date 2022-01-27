@@ -86,3 +86,20 @@ const eventsArr =
         "img": "https://static.wikia.nocookie.net/animalcrossing/images/f/f4/Flick_NH.png",
     },
 ];
+
+const sortEvents = function ()
+{
+    for (let i = 0; i < eventsArr.length; i++) 
+    {
+        for (let x = 0; x < eventsArr.length; x++) 
+        {
+            if (eventsArr[i].Date < eventsArr[x].Date) 
+            {
+                let temp = eventsArr[i];
+                eventsArr[i] = eventsArr[x];
+                eventsArr[x] = temp;
+            }
+        }
+    }
+    // console.log(eventsArr);
+}()

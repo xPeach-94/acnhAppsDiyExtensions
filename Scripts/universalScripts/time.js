@@ -21,6 +21,7 @@ const leadingZeros = function (number) {
 const getYear = function () {
   let currentYear = dateObj.getFullYear();
 
+  // return "2022";
   return currentYear;
 }
 
@@ -29,6 +30,7 @@ const getMonth = function () {
 
   currentMonth = leadingZeros(currentMonth);
 
+  // return "02";
   return currentMonth;
 }
 
@@ -37,9 +39,9 @@ const getDate = function () {
 
   currentDate = leadingZeros(currentDate);
 
+  // return "15";
   return currentDate;
 }
 
 let curDate = getYear() + "-" + getMonth() + "-" + getDate();
-// curDate = "2022-02-14";
-// console.log(curDate);
+console.log("Today's Date", curDate);

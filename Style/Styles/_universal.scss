@@ -25,9 +25,13 @@ h2 {
 h3 {
   color: $seaBlue;
 }
+h5 {
+  padding-bottom: 10px;
+}
 
-header, .mainContent, footer 
-{
+header,
+.mainContent,
+footer {
   background-color: rgba(white, 0.5);
   padding: 0px 20px;
 }
@@ -80,7 +84,6 @@ ul {
   margin: 20px 0px;
 }
 
-.center
-{
+.center {
   text-align: center;
 }
