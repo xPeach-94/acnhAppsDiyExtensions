@@ -39,9 +39,9 @@ const getDate = function () {
 
   currentDate = leadingZeros(currentDate);
 
-  // return "15";
+  // return "11";
   return currentDate;
 }
 
 let curDate = getYear() + "-" + getMonth() + "-" + getDate();
-console.log("Today's Date", curDate);
+// console.log("Today's Date", curDate);

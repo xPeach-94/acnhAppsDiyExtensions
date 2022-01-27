@@ -68,7 +68,7 @@ const eventsArr =
     {
         "name": "New Year's Eve",
         "Date": "12-31",
-        "img": "https://dodo.ac/np/images/4/46/Bulb_Bopper_NH_Icon.png",
+        "img": "https://static.wikia.nocookie.net/animalcrossing/images/f/f9/NH-Icon-Light-Stick.png",
     },
     {
         "name": "Fishing Tourney",
