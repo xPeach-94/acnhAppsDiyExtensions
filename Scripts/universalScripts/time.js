@@ -25,21 +25,23 @@ const getYear = function () {
   return currentYear;
 }
 
-const getMonth = function () {
+const getMonth = function () 
+{
   let currentMonth = dateObj.getMonth() + 1;
 
   currentMonth = leadingZeros(currentMonth);
 
-  // return "05";
+  // return "02";
   return currentMonth;
 }
 
-const getDate = function () {
+const getDate = function () 
+{
   let currentDate = dateObj.getDate();
 
   currentDate = leadingZeros(currentDate);
 
-  // return "01";
+  // return "14";
   return currentDate;
 }
 

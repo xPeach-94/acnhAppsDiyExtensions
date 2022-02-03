@@ -33,7 +33,9 @@ const birthdaysVillagers = function (villager) {
     birthS.appendChild(date);
 }
 
-villagerBirthdays.forEach
+const vilBirthdays = function(date) 
+{
+    villagerBirthdays.forEach
     (
         function (villager) 
         {
@@ -43,9 +45,34 @@ villagerBirthdays.forEach
 
             let newD = getYear() + "-" + birthM + "-" + birthD;
 
-            if (curDate == newD) 
+            if (date == newD) 
             {
                 birthdaysVillagers(villager);
             }
         }
     )
+}
+
+vilBirthdays(curDate);
+
+var newBirthday = document.getElementById("birthdaysN");
+var upcomming = document.createElement("h4");
+upcomming.setAttribute("style", "color: #006994; margin: 10px 0px");
+
+upcomming.innerHTML = "Upcoming Birthdays:";
+newBirthday.appendChild(upcomming);
+
+var newBirthday = document.getElementById("birthdaysS");
+var upcomming = document.createElement("h4");
+upcomming.setAttribute("style", "color: #006994; margin: 10px 0px");
+
+upcomming.innerHTML = "Upcoming Birthdays:";
+newBirthday.appendChild(upcomming);
+
+let newD = curDate;
+
+for (let i = 0; i < 3; i++) 
+{
+    newD = addDays(newD, 1);
+    vilBirthdays(newD);
+}

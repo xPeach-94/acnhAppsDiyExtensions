@@ -51,50 +51,72 @@ materialArr.forEach //Loop through array
     }
 )
 
+const seasonArr = [];
+
 const upCommingSeason = function()
 {
     for (let i = 0; i < materialArr.length; i++) 
     {
-        if (materialArr[i].Start && materialArr[i].End) 
+
+        if (materialArr[i].Start) 
         {
-            let newD = subtractDays(materialArr[i].Start, 7);
-
-            if (curDate >= newD && curDate < materialArr[i].Start) 
-            {
-                var newSeason = document.getElementById("seasonalNorth");
-                var upcomming = document.createElement("h4");
-                upcomming.setAttribute("style", "color: #006994; margin: 10px 0px");
-
-                upcomming.innerHTML = "Upcoming Season:";
-                newSeason.appendChild(upcomming);
-
-                seasonalMaterialsNorth(materialArr[i]);
-
-                var date = document.createElement("h5");
-                date.innerHTML = new Date(materialArr[i].Start).toLocaleDateString();
-                newSeason.appendChild(date);
-            }
+            seasonArr.push(materialArr[i]);
         }
-
-        if (materialArr[i].StartSouth && materialArr[i].EndSouth) 
+    }
+    
+    for (let i = 0; i < seasonArr.length; i++) 
+    {
+        let newD = subtractDays(seasonArr[i].Start, 7);
+        if (curDate >= newD && curDate < seasonArr[i].Start) 
         {
-            let newD = subtractDays(materialArr[i].StartSouth, 7);
+            var newSeason = document.getElementById("seasonalNorth");
+            var upcomming = document.createElement("h4");
+            upcomming.setAttribute("style", "color: #006994; margin: 10px 0px");
 
-            if (curDate >= newD && curDate < materialArr[i].StartSouth) 
-            {
-                var newSeason = document.getElementById("seasonalSouth");
-                var upcomming = document.createElement("h4");
-                upcomming.setAttribute("style", "color: #006994; margin: 10px 0px");
+            upcomming.innerHTML = "Upcoming Season:";
+            newSeason.appendChild(upcomming);
+            break;
+        }
+    }
 
-                upcomming.innerHTML = "Upcoming Season:";
-                newSeason.appendChild(upcomming);
+    for (let i = 0; i < seasonArr.length; i++) 
+    {
+        let newD = subtractDays(seasonArr[i].Start, 7);
+        if (curDate >= newD && curDate < seasonArr[i].Start) 
+        {
+            seasonalMaterialsNorth(seasonArr[i]);
 
-                seasonalMaterialsSouth(materialArr[i]);
+            var date = document.createElement("h5");
+            date.innerHTML = new Date(seasonArr[i].Start).toLocaleDateString();
+            newSeason.appendChild(date);
+        }
+    }
 
-                var date = document.createElement("h5");
-                date.innerHTML = new Date(materialArr[i].StartSouth).toLocaleDateString();
-                newSeason.appendChild(date);
-            }
+    for (let i = 0; i < seasonArr.length; i++) 
+    {
+        let newD = subtractDays(seasonArr[i].StartSouth, 7);
+        if (curDate >= newD && curDate < seasonArr[i].StartSouth) 
+        {
+            var newSeason = document.getElementById("seasonalSouth");
+            var upcomming = document.createElement("h4");
+            upcomming.setAttribute("style", "color: #006994; margin: 10px 0px");
+
+            upcomming.innerHTML = "Upcoming Season:";
+            newSeason.appendChild(upcomming);
+            break;
+        }
+    }
+
+    for (let i = 0; i < seasonArr.length; i++) 
+    {
+        let newD = subtractDays(seasonArr[i].StartSouth, 7);
+        if (curDate >= newD && curDate < seasonArr[i].StartSouth) 
+        {
+            seasonalMaterialsSouth(seasonArr[i]);
+
+            var date = document.createElement("h5");
+            date.innerHTML = new Date(seasonArr[i].Start).toLocaleDateString();
+            newSeason.appendChild(date);
         }
     }
 }()

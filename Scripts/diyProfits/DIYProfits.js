@@ -110,8 +110,19 @@ const sort = function (diyArr, profitArr) {
     // console.log(diyArr, profitArr);
     return (diyArr);
 }
+
+const nativeFruit = function (fruit)
+{
+    
+    console.log(fruit);
+}
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const calcClick = function () {
+    let fruits = document.getElementById("fruitDropdown");
+    let fruit = fruits.value;
+    nativeFruit(fruit);
+    
+    
     amountArr = [];
     dropdownArr = [];
     profitArr = [];
