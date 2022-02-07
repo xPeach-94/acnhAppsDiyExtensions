@@ -156,7 +156,7 @@ const hotItem = function (input)
 const calcClick = function () {
     let fruits = document.getElementById("fruitDropdown");
     let fruit = fruits.value;
-    if (fruit != "") 
+    if (fruit != "" && fruits.disabled == false) 
     {
         fruits.disabled = true;   
     }
@@ -165,7 +165,7 @@ const calcClick = function () {
     let hot1 = document.getElementById("hot1");
     let hot2 = document.getElementById("hot2");
 
-    if (hot1.value != "" && hot2.value != "") 
+    if (hot1.value != "" && hot2.value != "" && hot1.disabled == false && hot2.disabled == false) 
     {
         hotItem(hot1.value);
         hotItem(hot2.value);
@@ -174,12 +174,12 @@ const calcClick = function () {
     }
     else if (hot1.value != "" || hot2.value != "")
     {
-        if (hot1.value != "") 
+        if (hot1.value != "" && hot1.disabled == false) 
         {
             hotItem(hot1.value);
             hot1.disabled = true;
         }
-        else if (hot2.value != "") 
+        else if (hot2.value != "" && hot2.disabled == false) 
         {
             hotItem(hot2.value);
             hot2.disabled = true;
