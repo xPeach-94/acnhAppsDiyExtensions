@@ -541,10 +541,10 @@ ul {
 
 .btn {
   font: bold 11px Arial;
-  border-top: 1px solid #CCCCCC;
+  border-top: 1px solid #cccccc;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+  border-left: 1px solid #cccccc;
   width: 45%;
   padding: 15px 0px;
   background-color: lightblue;
@@ -620,7 +620,9 @@ article {
 .form {
   gap: 20px;
 }
-.form input, .form select, .form button {
+.form input,
+.form select,
+.form button {
   width: 100%;
 }
 .form .addBtn {
@@ -666,6 +668,38 @@ article {
   border: 3px dashed lightgreen;
   border-left: none;
   border-right: none;
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+}
+
+.autocomplete-items {
+  position: absolute;
+  background-color: #69a7fd;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  background-color: #9bc5fe;
+  border-bottom: 1px solid #006994;
+}
+
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #69a7fd;
+}
+
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: #69a7fd;
+  color: #ffffff;
 }
 
 footer {

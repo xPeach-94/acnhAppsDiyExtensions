@@ -113,14 +113,80 @@ const sort = function (diyArr, profitArr) {
 
 const nativeFruit = function (fruit)
 {
-    
-    console.log(fruit);
+    materialArr.forEach
+    (
+        function(material)
+        {
+            if (fruit == material.name) 
+            {
+                material.sell = 100;
+            }
+        }
+    );
 }
+
+let diyNames = [];
+
+diyArr.forEach
+(
+    function(diy)
+    {
+        diyNames.push(diy.name);
+    }
+);
+
+autocomplete(document.getElementById("hot1"), diyNames);
+autocomplete(document.getElementById("hot2"), diyNames);
+
+const hotItem = function (input)
+{
+    diyArr.forEach
+    (
+        function(diy)
+        {
+            if (input == diy.name) 
+            {
+                diy.sell = diy.sell * 2;
+            }
+        }
+    );
+}
+
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const calcClick = function () {
     let fruits = document.getElementById("fruitDropdown");
     let fruit = fruits.value;
+    if (fruit != "") 
+    {
+        fruits.disabled = true;   
+    }
     nativeFruit(fruit);
+
+    let hot1 = document.getElementById("hot1");
+    let hot2 = document.getElementById("hot2");
+
+    if (hot1.value != "" && hot2.value != "") 
+    {
+        hotItem(hot1.value);
+        hotItem(hot2.value);
+        hot1.disabled = true;
+        hot2.disabled = true;
+    }
+    else if (hot1.value != "" || hot2.value != "")
+    {
+        if (hot1.value != "") 
+        {
+            hotItem(hot1.value);
+            hot1.disabled = true;
+        }
+        else if (hot2.value != "") 
+        {
+            hotItem(hot2.value);
+            hot2.disabled = true;
+        }
+    }
+
+    
     
     
     amountArr = [];

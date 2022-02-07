@@ -8357,7 +8357,7 @@ const diyArr =
 
 
 
-            "img": "https://dodo.ac/np/images/2/26/Turkey_Day_Wheat_Decor_NH_DIY_Icon.png",
+            "img": "https://dodo.ac/np/images/6/66/Turkey_Day_Wheat_Decor_%28Fall_Harvest%29_NH_Icon.png",
             "materials": { "Weeds": 10 }
         },
         {
