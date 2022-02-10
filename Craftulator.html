@@ -27,6 +27,15 @@
 
         <script src="Scripts/universalScripts/time.js" defer type="text/javascript"></script> 
         <script src="Scripts/universalScripts/interactiveBackground.js" defer type="text/javascript"></script> 
+        <script src="Scripts/universalScripts/addSubtractDays.js" defer type="text/javascript"></script>
+        <script src="Scripts/universalScripts/suggestiveTextbox.js" defer type="text/javascript"></script>
+
+        <script src="Scripts/otherCode/bunnyDay.js" defer type="text/javascript"></script>
+
+        <script src="Scripts/lists/materials.js" defer type="text/javascript"></script>
+        <script src="Scripts/lists/DIYs-V3.js" defer type="text/javascript"></script>
+
+        <script src="Scripts/craftulator/craftulator.js" defer type="text/javascript"></script>
         <!--Used to embed a client-side script (JavaScript).-->
         <!-- "defer" A script that will not run until after the page has loaded-->
     </head>
@@ -68,6 +77,12 @@
             <p> Note all the diys you want to craft and press calculate. <br>
                 The program will tell you how many of which items you'll need. <br> <br>
             </p>
+            <form class="flex form" autocomplete="off">
+                <div class="autocomplete">
+                    <input type="text" id="diyInp" style="height: 100%;">
+                </div>
+                <button class="addBtn btn" style="width:35%" onclick="btnAddClick">Add</button>
+            </form>
         </div>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- footer -->
         <footer class="flex bottomLinks">
