@@ -10,7 +10,10 @@ diyArr.forEach
 
 autocomplete(document.getElementById("diyInp"), diyNames);
 
-const btnAddClick = function()
+const btnAddDiyClick = function()
 {
-    console.log("Clicked");
+    let item = (document.getElementById("diyInp")).value;
+    console.log(item);
+
+    //
 }
