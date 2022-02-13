@@ -41,7 +41,7 @@ const getDate = function ()
 
   currentDate = leadingZeros(currentDate);
 
-  // return "01";
+  // return "18";
   return currentDate;
 }
 

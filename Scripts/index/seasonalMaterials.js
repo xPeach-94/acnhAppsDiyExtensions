@@ -115,7 +115,7 @@ const upCommingSeason = function()
             seasonalMaterialsSouth(seasonArr[i]);
 
             var date = document.createElement("h5");
-            date.innerHTML = new Date(seasonArr[i].Start).toLocaleDateString();
+            date.innerHTML = new Date(seasonArr[i].StartSouth).toLocaleDateString();
             newSeason.appendChild(date);
         }
     }
