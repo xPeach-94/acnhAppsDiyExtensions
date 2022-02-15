@@ -50,6 +50,61 @@ const materialArr =
         },
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ A
         {
+            "name": "Carrot",
+            "img": "https://dodo.ac/np/images/8/85/Carrot_NH_Icon.png",
+            "sell": 350,
+
+        },
+        {
+            "name": "Potato",
+            "img": "https://dodo.ac/np/images/3/39/Potato_NH_Icon.png",
+            "sell": 350,
+
+        },
+        {
+            "name": "Green Pumpkin",
+            "img": "https://dodo.ac/np/images/9/9f/Green_Pumpkin_NH_Icon.png",
+            "sell": 350,
+
+        },
+        {
+            "name": "Orange Pumpkin",
+            "img": "https://dodo.ac/np/images/c/ce/Orange_Pumpkin_NH_Icon.png",
+            "sell": 350,
+
+        },
+        {
+            "name": "White Pumpkin",
+            "img": "https://dodo.ac/np/images/1/1a/White_Pumpkin_NH_Icon.png",
+            "sell": 350,
+
+        },
+        {
+            "name": "Yellow Pumpkin",
+            "img": "https://dodo.ac/np/images/2/21/Yellow_Pumpkin_NH_Icon.png",
+            "sell": 350,
+
+        },
+        {
+            "name": "Sugarcane",
+            "img": "https://dodo.ac/np/images/7/74/Sugarcane_NH_Icon.png",
+            "sell": 350,
+
+        },
+        {
+            "name": "Tomato",
+            "img": "https://dodo.ac/np/images/6/6b/Tomato_NH_Icon.png",
+            "sell": 350,
+
+        },
+        {
+            "name": "Wheat",
+            "img": "https://dodo.ac/np/images/3/31/Wheat_NH_Icon.png",
+            "sell": 350,
+
+        },
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ A
+        {
             "name": "Acorn",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/DIYAcorn.png",
             "sell": 200,
@@ -100,12 +155,6 @@ const materialArr =
             "EndSouth": getYear() + "-10-31",
         },
         {
-            "name": "Carrot",
-            "img": "https://dodo.ac/np/images/8/85/Carrot_NH_Icon.png",
-            "sell": 350,
-
-        },
-        {
             "name": "Cherry",
             "img": "https://dodo.ac/np/images/6/67/Cherry_NH_Icon.png",
             "sell": 500,
@@ -128,13 +177,13 @@ const materialArr =
         },
         {
             "name": "Conch",
-            "img": "https://dodo.ac/np/images/8/8a/Conch_NH_Icon.png",
+            "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Shell1.png",
             "sell": 700,
 
         },
         {
             "name": "Coral",
-            "img": "https://dodo.ac/np/images/2/26/Coral_NH_Icon.png",
+            "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Shell3.png",
             "sell": 500,
 
         },
@@ -176,7 +225,7 @@ const materialArr =
         },
         {
             "name": "Cowrie",
-            "img": "https://dodo.ac/np/images/4/44/Shell_NH_Icon.png",
+            "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Shell7.png",
             "sell": 60,
 
         },
@@ -348,7 +397,7 @@ const materialArr =
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- G
         {
             "name": "Giant Clam",
-            "img": "https://dodo.ac/np/images/4/44/Shell_NH_Icon.png",
+            "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Shell2.png",
             "sell": 900,
 
         },
@@ -647,36 +696,6 @@ const materialArr =
             "StartSouth": getYear() + "-03-01",
             "EndSouth": getYear() + "-06-10",
         },
-        {
-            "name": "Potato",
-            "img": "https://dodo.ac/np/images/3/39/Potato_NH_Icon.png",
-            "sell": 350,
-
-        },
-        {
-            "name": "Green Pumpkin",
-            "img": "https://dodo.ac/np/images/9/9f/Green_Pumpkin_NH_Icon.png",
-            "sell": 350,
-
-        },
-        {
-            "name": "Orange Pumpkin",
-            "img": "https://dodo.ac/np/images/c/ce/Orange_Pumpkin_NH_Icon.png",
-            "sell": 350,
-
-        },
-        {
-            "name": "White Pumpkin",
-            "img": "https://dodo.ac/np/images/1/1a/White_Pumpkin_NH_Icon.png",
-            "sell": 350,
-
-        },
-        {
-            "name": "Yellow Pumpkin",
-            "img": "https://dodo.ac/np/images/2/21/Yellow_Pumpkin_NH_Icon.png",
-            "sell": 350,
-
-        },
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- R
         {
             "name": "Red Wrapping Paper",
@@ -746,13 +765,13 @@ const materialArr =
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- S
         {
             "name": "Sand Dollar",
-            "img": "https://dodo.ac/np/images/4/44/Shell_NH_Icon.png",
+            "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Shell8.png",
             "sell": 120,
 
         },
         {
             "name": "Sea Snail",
-            "img": "https://dodo.ac/np/images/8/8a/Conch_NH_Icon.png",
+            "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Shell6.png",
             "sell": 180,
 
         },
@@ -778,12 +797,6 @@ const materialArr =
 
         },
         {
-            "name": "Sugarcane",
-            "img": "https://dodo.ac/np/images/7/74/Sugarcane_NH_Icon.png",
-            "sell": 350,
-
-        },
-        {
             "name": "Summer Shell",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/ShellSummer.png",
             "sell": 600,
@@ -793,12 +806,6 @@ const materialArr =
             "EndSouth": getYear() + "-02-29",
         },
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- T
-        {
-            "name": "Tomato",
-            "img": "https://dodo.ac/np/images/6/6b/Tomato_NH_Icon.png",
-            "sell": 350,
-
-        },
         {
             "name": "Black Tulips",
             "img": "https://dodo.ac/np/images/0/0c/Black_Tulips_NH_Icon.png",
@@ -849,7 +856,7 @@ const materialArr =
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- V
         {
             "name": "Venus Comb",
-            "img": "https://dodo.ac/np/images/8/8a/Conch_NH_Icon.png",
+            "img": "https://cdn.nookazon.com/nookazon/MenuIcon/Shell4.png",
             "sell": 300,
 
         },
@@ -864,12 +871,6 @@ const materialArr =
             "name": "Wasp Nest",
             "img": "https://dodo.ac/np/images/5/56/Wasp_Nest_NH_Icon.png",
             "sell": 300,
-
-        },
-        {
-            "name": "Wheat",
-            "img": "https://dodo.ac/np/images/3/31/Wheat_NH_Icon.png",
-            "sell": 350,
 
         },
         {
