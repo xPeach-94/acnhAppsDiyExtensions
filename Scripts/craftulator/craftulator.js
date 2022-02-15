@@ -1,8 +1,3 @@
-const resetClick = function()
-{
-    location.reload();
-}
-
 let diyNames = [];
 
 diyArr.forEach
@@ -137,7 +132,38 @@ const calculateMaterials = function()
 
 const findImgUrl = function(material)
 {
-    console.log(material);
+    let imgUrl;
+    materialArr.forEach
+    (
+        function (materialItem)
+        {
+            if (material == materialItem.name) 
+            {
+                imgUrl = materialItem.img;                
+            }
+        }
+    )
+    fishArr.forEach
+    (
+        function (materialItem)
+        {
+            if (material == materialItem.name) 
+            {
+                imgUrl = materialItem.image_url;                
+            }
+        }
+    )
+    diyArr.forEach
+    (
+        function (materialItem)
+        {
+            if (material == materialItem.name) 
+            {
+                imgUrl = materialItem.img;                
+            }
+        }
+    )
+    return imgUrl;
 }
 
 const displayMaterials = function(material, amount)
@@ -146,22 +172,37 @@ const displayMaterials = function(material, amount)
     materialList.style = "display: flex";
 
     var materialContainer = document.createElement("div");
+    materialContainer.setAttribute("class", "flex");
+    materialContainer.setAttribute("style", "justify-content: center; align-items: center; gap: 10px");
+    
     var materialImg = document.createElement("img");
     materialImg.setAttribute("src", findImgUrl(material));
+    materialImg.setAttribute("style", "width: 25%");
+
+    var itemName = document.createElement("h4");
+    itemName.innerHTML = material;
 
     var materialCount = document.createElement("h4");
+    materialCount.innerHTML = "X "+amount;
+
+    materialContainer.appendChild(materialImg);
+    materialContainer.appendChild(itemName);
+    materialContainer.appendChild(materialCount);
+    materialList.appendChild(materialContainer)
 
     // console.log(material, amount)
 }
 
 const calcDiyMaterialsClick = function()
 {
+    document.getElementById("materialList").innerHTML = "";
+
     selectedDiyMaterials = [];
     selectedDiyMaterialsAmount = [];
 
     calculateMaterials();
 
-    console.log(selectedDiyMaterials, selectedDiyMaterialsAmount);
+    // console.log(selectedDiyMaterials, selectedDiyMaterialsAmount);
 
     for (let i = 0; i < selectedDiyMaterials.length; i++) 
     {
