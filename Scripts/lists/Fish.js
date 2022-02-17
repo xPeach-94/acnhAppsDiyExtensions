@@ -29,7 +29,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 AM \u2013 9 PM",
+        "time": "4 AM  9 PM",
         "sell_nook": 200
     },
     {
@@ -61,7 +61,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 3000
     },
     {
@@ -93,7 +93,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 10000
     },
     {
@@ -125,7 +125,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 10000
     },
     {
@@ -189,7 +189,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "9 PM \u2013 4 AM",
+        "time": "9 PM  4 AM",
         "sell_nook": 15000
     },
     {
@@ -221,7 +221,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "9 AM \u2013 4 PM",
+        "time": "9 AM  4 PM",
         "sell_nook": 2500
     },
     {
@@ -317,7 +317,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "9 PM \u2013 4 AM",
+        "time": "9 PM  4 AM",
         "sell_nook": 5000
     },
     {
@@ -381,7 +381,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "9 AM \u2013 4 PM",
+        "time": "9 AM  4 PM",
         "sell_nook": 180
     },
     {
@@ -509,7 +509,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 3800
     },
     {
@@ -541,7 +541,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 1000
     },
     {
@@ -733,7 +733,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 240
     },
     {
@@ -765,7 +765,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "4 AM \u2013 9 PM",
+        "time": "4 AM  9 PM",
         "sell_nook": 15000
     },
     {
@@ -797,7 +797,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 2500
     },
     {
@@ -829,7 +829,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 400
     },
     {
@@ -893,7 +893,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 6000
     },
     {
@@ -925,7 +925,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "9 AM \u2013 4 PM",
+        "time": "9 AM  4 PM",
         "sell_nook": 5500
     },
     {
@@ -989,7 +989,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 0,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 15000
     },
     {
@@ -1053,7 +1053,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 15000
     },
     {
@@ -1085,7 +1085,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "9 AM \u2013 4 PM",
+        "time": "9 AM  4 PM",
         "sell_nook": 1300
     },
     {
@@ -1117,7 +1117,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 8000
     },
     {
@@ -1245,7 +1245,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 4000
     },
     {
@@ -1341,7 +1341,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 2000
     },
     {
@@ -1405,7 +1405,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "4 AM \u2013 9 PM",
+        "time": "4 AM  9 PM",
         "sell_nook": 10000
     },
     {
@@ -1437,7 +1437,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "9 AM \u2013 4 PM",
+        "time": "9 AM  4 PM",
         "sell_nook": 500
     },
     {
@@ -1469,7 +1469,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "9 AM \u2013 4 PM",
+        "time": "9 AM  4 PM",
         "sell_nook": 1500
     },
     {
@@ -1533,7 +1533,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "4 AM \u2013 9 PM",
+        "time": "4 AM  9 PM",
         "sell_nook": 4000
     },
     {
@@ -1597,7 +1597,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "9 AM \u2013 4 PM",
+        "time": "9 AM  4 PM",
         "sell_nook": 200
     },
     {
@@ -1661,7 +1661,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "9 AM \u2013 4 PM &amp; 9 PM \u2013 4 AM",
+        "time": "9 AM  4 PM &amp; 9 PM  4 AM",
         "sell_nook": 2500
     },
     {
@@ -1725,7 +1725,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "9 AM \u2013 4 PM",
+        "time": "9 AM  4 PM",
         "sell_nook": 1300
     },
     {
@@ -1789,7 +1789,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "9 AM \u2013 4 PM",
+        "time": "9 AM  4 PM",
         "sell_nook": 800
     },
     {
@@ -1821,7 +1821,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "9 AM \u2013 4 PM",
+        "time": "9 AM  4 PM",
         "sell_nook": 4500
     },
     {
@@ -1853,7 +1853,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "4 AM \u2013 9 PM",
+        "time": "4 AM  9 PM",
         "sell_nook": 3000
     },
     {
@@ -1949,7 +1949,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "9 PM \u2013 4 AM",
+        "time": "9 PM  4 AM",
         "sell_nook": 4000
     },
     {
@@ -2013,7 +2013,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 12000
     },
     {
@@ -2141,7 +2141,7 @@ const fishArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "9 PM \u2013 4 AM",
+        "time": "9 PM  4 AM",
         "sell_nook": 5000
     },
     {
@@ -2173,7 +2173,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 3750
     },
     {
@@ -2237,7 +2237,7 @@ const fishArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "4 PM \u2013 9 AM",
+        "time": "4 PM  9 AM",
         "sell_nook": 15000
     },
     {

@@ -28,7 +28,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any except rain",
         "sell_nook": 3000
     },
@@ -92,7 +92,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "7 PM \u2013 4 AM",
+        "time": "7 PM  4 AM",
         "weather": "Any weather",
         "sell_nook": 3000
     },
@@ -156,7 +156,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any except rain",
         "sell_nook": 4500
     },
@@ -188,7 +188,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "5 PM \u2013 8 AM",
+        "time": "5 PM  8 AM",
         "weather": "Any except rain",
         "sell_nook": 430
     },
@@ -252,7 +252,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any weather",
         "sell_nook": 250
     },
@@ -284,7 +284,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 PM \u2013 11 PM",
+        "time": "4 PM  11 PM",
         "weather": "Any weather",
         "sell_nook": 300
     },
@@ -380,7 +380,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 AM \u2013 7 PM",
+        "time": "4 AM  7 PM",
         "weather": "Any except rain",
         "sell_nook": 300
     },
@@ -412,7 +412,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 AM \u2013 7 PM",
+        "time": "4 AM  7 PM",
         "weather": "Any except rain",
         "sell_nook": 160
     },
@@ -444,7 +444,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "5 PM \u2013 8 AM",
+        "time": "5 PM  8 AM",
         "weather": "Any except rain",
         "sell_nook": 130
     },
@@ -476,7 +476,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "5 PM \u2013 8 AM",
+        "time": "5 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 8000
     },
@@ -540,7 +540,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any except rain",
         "sell_nook": 230
     },
@@ -572,7 +572,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 7 PM",
+        "time": "8 AM  7 PM",
         "weather": "Any weather",
         "sell_nook": 800
     },
@@ -700,7 +700,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "5 PM \u2013 8 AM",
+        "time": "5 PM  8 AM",
         "weather": "Any except rain",
         "sell_nook": 4000
     },
@@ -732,7 +732,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "4 AM \u2013 8 AM &amp; 4 PM \u2013 7 PM",
+        "time": "4 AM  8 AM &amp; 4 PM  7 PM",
         "weather": "Any weather",
         "sell_nook": 550
     },
@@ -764,7 +764,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "7 PM \u2013 4 AM",
+        "time": "7 PM  4 AM",
         "weather": "Any except rain",
         "sell_nook": 300
     },
@@ -860,7 +860,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any weather",
         "sell_nook": 500
     },
@@ -892,7 +892,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "11 PM \u2013 8 AM",
+        "time": "11 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 10000
     },
@@ -924,7 +924,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "7 PM \u2013 8 AM",
+        "time": "7 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 2000
     },
@@ -956,7 +956,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "5 PM \u2013 8 AM",
+        "time": "5 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 12000
     },
@@ -988,7 +988,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "5 PM \u2013 8 AM",
+        "time": "5 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 12000
     },
@@ -1020,7 +1020,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "5 PM \u2013 8 AM",
+        "time": "5 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 8000
     },
@@ -1052,7 +1052,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any except rain",
         "sell_nook": 160
     },
@@ -1084,7 +1084,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 AM \u2013 7 PM",
+        "time": "4 AM  7 PM",
         "weather": "Any except rain",
         "sell_nook": 3000
     },
@@ -1116,7 +1116,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "7 PM \u2013 8 AM",
+        "time": "7 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 1000
     },
@@ -1148,7 +1148,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any except rain",
         "sell_nook": 200
     },
@@ -1180,7 +1180,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "5 PM \u2013 8 AM",
+        "time": "5 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 8000
     },
@@ -1212,7 +1212,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "5 PM \u2013 8 AM",
+        "time": "5 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 1350
     },
@@ -1244,7 +1244,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "5 PM \u2013 8 AM",
+        "time": "5 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 8000
     },
@@ -1276,7 +1276,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "5 PM \u2013 8 AM",
+        "time": "5 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 12000
     },
@@ -1340,7 +1340,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any except rain",
         "sell_nook": 200
     },
@@ -1372,7 +1372,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 7 PM",
+        "time": "8 AM  7 PM",
         "weather": "Any weather",
         "sell_nook": 200
     },
@@ -1404,7 +1404,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 4 PM",
+        "time": "8 AM  4 PM",
         "weather": "Any except rain",
         "sell_nook": 2500
     },
@@ -1436,7 +1436,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "7 PM \u2013 8 AM",
+        "time": "7 PM  8 AM",
         "weather": "Any except rain",
         "sell_nook": 1000
     },
@@ -1468,7 +1468,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any except rain",
         "sell_nook": 430
     },
@@ -1500,7 +1500,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "8 AM \u2013 7 PM",
+        "time": "8 AM  7 PM",
         "weather": "Any weather",
         "sell_nook": 600
     },
@@ -1596,7 +1596,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "4 AM \u2013 5 PM",
+        "time": "4 AM  5 PM",
         "weather": "Any except rain",
         "sell_nook": 140
     },
@@ -1628,7 +1628,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "5 PM \u2013 4 AM",
+        "time": "5 PM  4 AM",
         "weather": "Any except rain",
         "sell_nook": 130
     },
@@ -1660,7 +1660,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "7 PM \u2013 4 AM",
+        "time": "7 PM  4 AM",
         "weather": "Any except rain",
         "sell_nook": 130
     },
@@ -1692,7 +1692,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any except rain",
         "sell_nook": 2400
     },
@@ -1724,7 +1724,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 7 PM",
+        "time": "8 AM  7 PM",
         "weather": "Any except rain",
         "sell_nook": 1000
     },
@@ -1756,7 +1756,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 AM \u2013 7 PM",
+        "time": "4 AM  7 PM",
         "weather": "Any except rain",
         "sell_nook": 2500
     },
@@ -1788,7 +1788,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "11 PM \u2013 4 PM",
+        "time": "11 PM  4 PM",
         "weather": "Any weather",
         "sell_nook": 250
     },
@@ -1820,7 +1820,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 7 PM",
+        "time": "8 AM  7 PM",
         "weather": "Any weather",
         "sell_nook": 130
     },
@@ -1852,7 +1852,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 4 PM",
+        "time": "8 AM  4 PM",
         "weather": "Any except rain",
         "sell_nook": 4000
     },
@@ -1884,7 +1884,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 1,
-        "time": "7 PM \u2013 8 AM",
+        "time": "7 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 6000
     },
@@ -1916,7 +1916,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any except rain",
         "sell_nook": 2500
     },
@@ -1948,7 +1948,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "8 AM \u2013 7 PM",
+        "time": "8 AM  7 PM",
         "weather": "Any except rain",
         "sell_nook": 180
     },
@@ -1980,7 +1980,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "8 AM \u2013 7 PM",
+        "time": "8 AM  7 PM",
         "weather": "Any weather",
         "sell_nook": 400
     },
@@ -2012,7 +2012,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any weather",
         "sell_nook": 300
     },
@@ -2108,7 +2108,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "11 PM \u2013 8 AM",
+        "time": "11 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 10000
     },
@@ -2140,7 +2140,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "7 PM \u2013 4 AM",
+        "time": "7 PM  4 AM",
         "weather": "Any weather",
         "sell_nook": 8000
     },
@@ -2204,7 +2204,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "7 PM \u2013 8 AM",
+        "time": "7 PM  8 AM",
         "weather": "Any weather",
         "sell_nook": 600
     },
@@ -2268,7 +2268,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "7 PM \u2013 4 AM",
+        "time": "7 PM  4 AM",
         "weather": "Any weather",
         "sell_nook": 8000
     },
@@ -2332,7 +2332,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 AM \u2013 7 PM",
+        "time": "4 AM  7 PM",
         "weather": "Any except rain",
         "sell_nook": 240
     },
@@ -2396,7 +2396,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "8 AM \u2013 5 PM",
+        "time": "8 AM  5 PM",
         "weather": "Any weather",
         "sell_nook": 400
     },
@@ -2460,7 +2460,7 @@ const bugArr =
         "s_m10": 0,
         "s_m11": 0,
         "s_m12": 0,
-        "time": "4 AM \u2013 8 AM &amp; 5 PM \u2013 7 PM",
+        "time": "4 AM  8 AM &amp; 5 PM  7 PM",
         "weather": "Any weather",
         "sell_nook": 600
     },
@@ -2556,7 +2556,7 @@ const bugArr =
         "s_m10": 1,
         "s_m11": 1,
         "s_m12": 1,
-        "time": "4 AM \u2013\u00a07 PM",
+        "time": "4 AM \u00a07 PM",
         "weather": "Any except rain",
         "sell_nook": 160
     }
