@@ -133,6 +133,9 @@ const calculateMaterials = function()
 const findImgUrl = function(material)
 {
     let imgUrl;
+
+    imgUrl = "https://dodo.ac/np/images/thumb/8/82/Furniture_NH_Inv_Icon.png/120px-Furniture_NH_Inv_Icon.png"; // default url
+
     materialArr.forEach
     (
         function (materialItem)
@@ -144,6 +147,16 @@ const findImgUrl = function(material)
         }
     )
     fishArr.forEach
+    (
+        function (materialItem)
+        {
+            if (material == materialItem.name) 
+            {
+                imgUrl = materialItem.image_url;                
+            }
+        }
+    )
+    divingArr.forEach
     (
         function (materialItem)
         {
