@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<!--Represents the document type, and helps browsers to display web pages correctly.-->
+
+<html lang="en"> 
+<!--declare the language of the Web page. This is meant to assist search engines and browsers.-->
+    <head> 
+    <!--container for metadata-->
+        <meta charset="utf-8"> 
+        <!--Specify the character encoding for the HTML document.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!--Gives the browser instructions on how to control the page's dimensions and scaling.-->
+
+        <title>ACNH-Apps/Calendar</title> 
+        <!--Defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.-->
+        <link rel="icon" type="image/icon" href="Images\favicon.ico">
+        <link rel="stylesheet" href="Style/Style.css"> 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+        <!--Defines the relationship between the current document and an external resource. Used to link to external style sheets.-->
+
+        <script src="Scripts/universalScripts/header.js" defer type="text/javascript"></script>
+        <script src="Scripts/universalScripts/time.js" defer type="text/javascript"></script>
+        <script src="Scripts/universalScripts/addSubtractDays.js" defer type="text/javascript"></script>
+        <script src="Scripts/universalScripts/eventsFunctions.js" defer type="text/javascript"></script>
+
+        <script src="Scripts/otherCode/bunnyDay.js" defer type="text/javascript"></script>
+
+        <script src="Scripts/lists/materials.js" defer type="text/javascript"></script>
+        <script src="Scripts/lists/birthdays.js" defer type="text/javascript"></script>
+        <script src="Scripts/lists/events.js" defer type="text/javascript"></script>
+
+        <script src="Scripts\Calendar\calendar.js" defer type="text/javascript"></script>
+        <!--Used to embed a client-side script (JavaScript).-->
+        <!-- "defer" A script that will not run until after the page has loaded-->
+    </head>
+
+    <body class="backImage"> <!--Contains all the contents of an HTML document.-->
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- header -->
+<header class="flex align" id="header">
+
+</header>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------- main content -->
+        <main class="mainContent">
+            
+            <p class="maintenance">This page is still in development. <br> Please be patient while I work on it :)</p>
+
+            <h3 id="monthName" style="font-size: 1.5em; margin-bottom: 10px;"></h3>
+            
+            <!-- <div id="gridContainer">
+
+            </div> -->
+            <table id="tableContainer">
+                <tr>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
+                </tr>
+            </table>
+        </main>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- footer -->
+        <footer class="flex bottomLinks">
+            <p>DA: DA-2835-3163-1741 <br> Creator ID: MA-6618-4613-6781 <br> HHN ID: RA-7528-6506-4511</p>
+        </footer>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+    </body>
+
+</html>

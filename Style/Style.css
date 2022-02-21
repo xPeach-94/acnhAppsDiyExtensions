@@ -703,6 +703,10 @@ article {
   color: #ffffff;
 }
 
+#tableContainer {
+  width: 100%;
+}
+
 footer {
   padding: 20px 0px;
   justify-content: space-around;
