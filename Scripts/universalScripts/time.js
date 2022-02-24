@@ -100,7 +100,7 @@ const getMonth = function ()
 
   currentMonth = leadingZeros(currentMonth);
 
-  // return "04";
+//   return "04";
   return currentMonth;
 }
 
@@ -110,7 +110,7 @@ const getDate = function ()
 
   currentDate = leadingZeros(currentDate);
 
-  // return "18";
+//   return "18";
   return currentDate;
 }
 

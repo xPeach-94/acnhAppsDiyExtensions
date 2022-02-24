@@ -703,6 +703,12 @@ article {
   color: #ffffff;
 }
 
+.cell {
+  vertical-align: top;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
 #tableContainer {
   width: 100%;
 }
