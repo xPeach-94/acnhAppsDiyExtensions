@@ -1,11 +1,15 @@
 // Put header contents in this document
+#header
+{
+  max-height: 100px;
+}
 .logo 
 {
   text-align: center;
 }
 .imgLogo 
 {
-  width: 80%;
+  max-height: 100px;
 }
 .dateTime 
 {

@@ -511,12 +511,16 @@ ul a {
   background-color: #006994;
 }
 
+#header {
+  max-height: 100px;
+}
+
 .logo {
   text-align: center;
 }
 
 .imgLogo {
-  width: 80%;
+  max-height: 100px;
 }
 
 .dateTime {

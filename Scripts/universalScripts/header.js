@@ -1,6 +1,5 @@
 let header = document.getElementById("header");
 
-
 // date and time
 let dateTimeContainer = document.createElement("div");
 dateTimeContainer.setAttribute("class", "dateTime flexChild");

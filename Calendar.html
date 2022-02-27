@@ -35,7 +35,11 @@
         <script src="Scripts/lists/birthdays.js" defer type="text/javascript"></script>
         <script src="Scripts/lists/events.js" defer type="text/javascript"></script>
 
-        <script src="Scripts\Calendar\calendar.js" defer type="text/javascript"></script>
+        <script src="Scripts\Calendar/fillCalendar.js" defer type="text/javascript"></script>
+        <script src="Scripts\Calendar/showCalendar.js" defer type="text/javascript"></script>
+
+        <script src="Scripts\Calendar/dayClicked.js" defer type="text/javascript"></script>
+        <script src="Scripts\Calendar/calendar.js" defer type="text/javascript"></script>
         <!--Used to embed a client-side script (JavaScript).-->
         <!-- "defer" A script that will not run until after the page has loaded-->
     </head>
@@ -51,21 +55,13 @@
             <p class="maintenance">This page is still in development. <br> Please be patient while I work on it :)</p>
 
             <div class="flex" style="width: 100%; justify-content: space-between; align-items: center;">
-                <button style="width: 65px; background-color: transparent; border: none;"><img src="Images/back.png" alt="" style="width: 100%;"></button>
+                <button style="width: 65px; background-color: transparent; border: none;"><img src="Images/back.png" alt="" style="width: 100%;" onclick="back()"></button>
                 <h3 id="monthName" style="font-size: 1.5em; flex-grow: 1;"></h3>
-                <button style="width: 65px; background-color: transparent; border: none;"><img src="Images/next.png" alt="" style="width: 100%;"></button>
+                <button style="width: 65px; background-color: transparent; border: none;"><img src="Images/next.png" alt="" style="width: 100%;" onclick="next()"></button>
             </div>
             
-            <table id="tableContainer" style="height: 75vw;">
-                <tr>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                    <th>Sun</th>
-                </tr>
+            <table id="tableContainer" style="min-height: 75vw;">
+                
             </table>
         </main>
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- footer -->
