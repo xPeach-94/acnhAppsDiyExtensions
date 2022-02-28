@@ -50,17 +50,28 @@
 
 </header>
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------- main content -->
-        <main class="mainContent">
+        <main class="mainContent flexVertical">
             
             <p class="maintenance">This page is still in development. <br> Please be patient while I work on it :)</p>
 
+            <div style="align-self: center; font-size: 1.2em;">
+                <div>
+                    <input type="checkbox" name="events" id="showEvents" value="showEvents" checked onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
+                    <label for="showEvents">Show Events</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="birthdays" id="showBirthdays" value="showBirthdays" onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
+                    <label for="showBirthdays">Show Birthdays</label>
+                </div>
+            </div>
+            
             <div class="flex" style="width: 100%; justify-content: space-between; align-items: center;">
                 <button style="width: 65px; background-color: transparent; border: none;"><img src="Images/back.png" alt="" style="width: 100%;" onclick="back()"></button>
                 <h3 id="monthName" style="font-size: 1.5em; flex-grow: 1;"></h3>
                 <button style="width: 65px; background-color: transparent; border: none;"><img src="Images/next.png" alt="" style="width: 100%;" onclick="next()"></button>
             </div>
             
-            <table id="tableContainer" style="min-height: 75vw;">
+            <table id="tableContainer" style="min-height: 100vw;">
                 
             </table>
         </main>

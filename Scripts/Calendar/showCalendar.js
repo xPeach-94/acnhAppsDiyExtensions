@@ -75,28 +75,25 @@ const showCalendar = function(month, year)
                 cellBtn.setAttribute("value", dateNr);
                 cellBtn.setAttribute("onclick", "cellBtnClicked(this)");
 
-
-                // let todayEvents = document.createElement("div");
-                // let img = document.createElement("img");
-                // img.setAttribute("style", "width: 100%;");
-
-                // img.setAttribute("src", fillDay(year +"-"+ month +"-"+ dateNr));
-
-                // todayEvents.appendChild(img);
-
-
                 // Here we can also check if the date/month/year we’re at matches the today’s date. If it does, we can highlight it.
 
-                if (dateNr === dateToday.getDate() && year === dateToday.getFullYear() && month === (dateToday.getMonth()+1)) 
-                {
-                    cell.setAttribute("style", "background-color: #69a7fd;");
-                } // highlight today’s date
+                // if (dateNr === dateToday.getDate() && year === dateToday.getFullYear() && month === (dateToday.getMonth()+1)) 
+                // {
+                //     cell.setAttribute("style", "background-color: #69a7fd;");
+                // } // highlight today’s date
 
-
-                // cellBtn.appendChild(cellText);
-                // cellBtn.appendChild(todayEvents);
 
                 cellBtn.appendChild(cellText);
+
+                if (document.getElementById("showEvents").checked) 
+                {
+                    cellBtn.appendChild(fillEvents(year +"-"+ month +"-"+ dateNr));
+                }
+                if (document.getElementById("showBirthdays").checked) 
+                {                    
+                    cellBtn.appendChild(fillBirthdays(year +"-"+ month +"-"+ dateNr));
+                }
+
                 cell.appendChild(cellBtn);
                 row.appendChild(cell);
                 dateNr++;
