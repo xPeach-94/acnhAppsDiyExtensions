@@ -85,10 +85,21 @@ const showCalendar = function(month, year)
 
                 cellBtn.appendChild(cellText);
 
-                if (document.getElementById("showEvents").checked) 
+                if (document.getElementById("northHem").checked) 
                 {
-                    cellBtn.appendChild(fillEvents(year +"-"+ month +"-"+ dateNr));
+                    if (document.getElementById("showEvents").checked) 
+                    {
+                        cellBtn.appendChild(fillEvents(year +"-"+ month +"-"+ dateNr, 0));
+                    }
                 }
+                else if (document.getElementById("southHem").checked)
+                {
+                    if (document.getElementById("showEvents").checked) 
+                    {
+                        cellBtn.appendChild(fillEvents(year +"-"+ month +"-"+ dateNr, 1));
+                    }
+                }
+
                 if (document.getElementById("showBirthdays").checked) 
                 {                    
                     cellBtn.appendChild(fillBirthdays(year +"-"+ month +"-"+ dateNr));

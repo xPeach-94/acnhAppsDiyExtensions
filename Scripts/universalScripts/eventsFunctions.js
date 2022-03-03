@@ -50,24 +50,6 @@ const getFireworksDate = function(date)
     }
 }
 
-// const getAllFireworksDates = function(date)
-// {
-//     // every sunday in august
-//     date = new Date(date);
-
-//     for (let i = 0; i <= 356; i++) 
-//     {
-//         if ((date.getMonth() +1) == "08" && date.getDay() == 0) 
-//         {
-//             let newD = leadingZeros(date.getMonth()+1) +"-"+ leadingZeros(date.getDate());
-
-//             console.log("Fireworks", date.getFullYear()+"-"+leadingZeros(date.getMonth() +1) +"-"+ leadingZeros(date.getDate()));
-//             // return newD
-//         }
-//         date = new Date(addDays(date, 1));
-//     }
-// }
-
 const getTurkeyDate = function(date)
 {
     date = new Date(date);

@@ -1,4 +1,4 @@
-const fillEvents = function(date)
+const fillEvents = function(date, hem)
 {
     date = new Date(date);
     let day = date.getDate();
@@ -6,22 +6,49 @@ const fillEvents = function(date)
 
     let eventDiv = document.createElement("div");
 
+    let firework = new Date(date.getFullYear() +"-"+ getFireworksDate(date)).toLocaleDateString();
+    let bug = new Date(date.getFullYear()+"-"+ getBugDate(hem, date));
+
     eventsArr.forEach
     (
         function (event)
         {
-            if (event.Date == (leadingZeros(month) +"-"+ leadingZeros(day)) && event.name != "Fireworks Show") 
+            if (event.Date == (leadingZeros(month) +"-"+ leadingZeros(day)) && event.name != "Fireworks Show" && event.name != "Bug Off North" && event.name != "Bug Off South") 
             {
                 let eventImg = document.createElement("img");
                 eventImg.setAttribute("src", event.img);
-                eventImg.setAttribute("style", "height: 50px;");
+                eventImg.setAttribute("style", "width: 100%;");
 
                 eventDiv.appendChild(eventImg);
             }
-            else if (event.Date == (leadingZeros(month) +"-"+ leadingZeros(day)) && event.name == "Fireworks Show")
-            {
-                // fireworks show every sunday in august
 
+            if (date.toLocaleDateString() == firework) 
+            {
+                if (event.name == "Fireworks Show") 
+                {
+                    let eventImg = document.createElement("img");
+                    eventImg.setAttribute("src", event.img);
+                    eventImg.setAttribute("style", "width: 100%;");
+
+                    eventDiv.appendChild(eventImg);
+                }
+            }
+
+            if (event.name == "Bug Off North" && hem == 0 && date.toLocaleDateString() == bug.toLocaleDateString()) 
+            {
+                let eventImg = document.createElement("img");
+                eventImg.setAttribute("src", event.img);
+                eventImg.setAttribute("style", "width: 100%;");
+
+                eventDiv.appendChild(eventImg);
+            }
+            else if (event.name == "Bug Off South" && hem == 1 && date.toLocaleDateString() == bug.toLocaleDateString()) 
+            {
+                let eventImg = document.createElement("img");
+                eventImg.setAttribute("src", event.img);
+                eventImg.setAttribute("style", "width: 100%;");
+
+                eventDiv.appendChild(eventImg);
             }
         }
     )
