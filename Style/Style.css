@@ -512,7 +512,7 @@ ul a {
 }
 
 #header {
-  max-height: 100px;
+  max-height: 80px;
 }
 
 .logo {
@@ -520,7 +520,7 @@ ul a {
 }
 
 .imgLogo {
-  max-height: 100px;
+  max-height: 80px;
 }
 
 .dateTime {

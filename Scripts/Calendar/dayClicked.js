@@ -4,7 +4,6 @@ const cellBtnClicked = function(el)
     currentYear = getSelectedYear();
 
     let dateClicked = new Date(currentYear +"-"+ leadingZeros(currentMonth) +"-"+ leadingZeros(el.value));
-    // console.log("Clicked", dateClicked);
 
     let dayClicked = document.getElementById("currentDay");
     dayClicked.innerHTML = "";
@@ -24,9 +23,20 @@ const dayEvent = function(date)
     (
         function (event)
         {
-            if (date.toLocaleDateString() == new Date(date.getFullYear() +"-"+ event.Date).toLocaleDateString()) 
+            if (event.name != "Festivale" && event.name != "Bunny Day" && event.name != "Fireworks Show" && event.name != "Turkey Day" && event.name != "Fishing Tourney" && event.name != "Bug Off North" && event.name != "Bug Off South") 
             {
-                console.log(event);
+                if (date.toLocaleDateString() == new Date(date.getFullYear() +"-"+ event.Date).toLocaleDateString()) 
+                {
+                    console.log(event);
+                }
+            }
+            else if (event.name == "Fireworks Show")
+            {
+                let firework = new Date(date.getFullYear() +"-"+ getFireworksDate(date)).toLocaleDateString();
+                if (date.toLocaleDateString() == firework) 
+                {
+                    console.log(event);
+                }
             }
         }
     )
