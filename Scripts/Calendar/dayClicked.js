@@ -29,7 +29,7 @@ const cellBtnClicked = function(el)
 
     dayClicked.appendChild(title);
     dayClicked.appendChild(dayEvent(dateClicked));// append events
-    // dayClicked.appendChild(daySeason(dateClicked));// append seasonal
+    dayClicked.appendChild(daySeason(dateClicked));// append seasonal
     // dayClicked.appendChild(dayBirthday(dateClicked));// append birthdays
 
     dayClicked.setAttribute("style", "flex");
@@ -46,83 +46,110 @@ const dayEvent = function(date)
     (
         function (event)
         {
-            if (event.name != "Festivale" && event.name != "Bunny Day" && event.name != "Fireworks Show" && event.name != "Turkey Day" && event.name != "Fishing Tourney" && event.name != "Bug Off North" && event.name != "Bug Off South") 
+            if (!event.endDate) 
             {
-                if (date.toLocaleDateString() == new Date(date.getFullYear() +"-"+ event.Date).toLocaleDateString()) 
+                if (event.name != "Festivale" && event.name != "Bunny Day" && event.name != "Fireworks Show" && event.name != "Turkey Day" && event.name != "Fishing Tourney" && event.name != "Bug Off North" && event.name != "Bug Off South") 
                 {
-                    eventName.innerHTML = event.name;
-                    eventDiv.appendChild(addImg(event, "30%"));
-                    eventDiv.appendChild(eventName);
+                    if (date.toLocaleDateString() == new Date(date.getFullYear() +"-"+ event.Date).toLocaleDateString()) 
+                    {
+                        eventName.innerHTML = event.name;
+                        eventDiv.appendChild(addImg(event, "30%"));
+                        eventDiv.appendChild(eventName);
+                    }
+                }
+                else if (event.name == "Fireworks Show")
+                {
+                    let firework = new Date(date.getFullYear() +"-"+ getFireworksDate(date)).toLocaleDateString();
+                    if (date.toLocaleDateString() == firework) 
+                    {
+                        eventName.innerHTML = event.name;
+                        eventDiv.appendChild(addImg(event, "30%"));
+                        eventDiv.appendChild(eventName);
+                    }
+                }
+                else if (event.name == "Festivale") 
+                {
+                    let newD = new Date(date.getFullYear() +"-"+ getFestivaleDate(date));
+                    if (date.toLocaleDateString() == newD.toLocaleDateString()) 
+                    {
+                        eventName.innerHTML = event.name;
+                        eventDiv.appendChild(addImg(event, "30%"));
+                        eventDiv.appendChild(eventName);
+                    }
+                }
+                else if (event.name == "Bunny Day")
+                {
+                    let newD = new Date(date.getFullYear() +"-"+ getBunnyDayDate(date));
+                    if (date.toLocaleDateString() == newD.toLocaleDateString()) 
+                    {
+                        eventName.innerHTML = event.name;
+                        eventDiv.appendChild(addImg(event, "30%"));
+                        eventDiv.appendChild(eventName);
+                    }
+                }
+                else if (event.name == "Turkey Day")
+                {
+                    newD = new Date(date.getFullYear() +"-"+ getTurkeyDate(date));
+                    if (date.toLocaleDateString() == newD.toLocaleDateString()) 
+                    {
+                        eventName.innerHTML = event.name;
+                        eventDiv.appendChild(addImg(event, "30%"));
+                        eventDiv.appendChild(eventName);
+                    }
+                }
+                else if (event.name == "Fishing Tourney")
+                {
+                    newD = new Date(date.getFullYear() +"-"+ getFishingDate(date));
+                    if (date.toLocaleDateString() == newD.toLocaleDateString()) 
+                    {
+                        eventName.innerHTML = event.name;
+                        eventDiv.appendChild(addImg(event, "30%"));
+                        eventDiv.appendChild(eventName);
+                    }
+                }
+                else if (event.name == "Bug Off North" && north.checked)
+                {
+                    newD = new Date(date.getFullYear() +"-"+ getBugDate(0, date));
+                    if (date.toLocaleDateString() == newD.toLocaleDateString()) 
+                    {
+                        eventName.innerHTML = event.name;
+                        eventDiv.appendChild(addImg(event, "30%"));
+                        eventDiv.appendChild(eventName);
+                    }
+                }
+                else if (event.name == "Bug Off South" && south.checked)
+                {
+                    newD = new Date(date.getFullYear() +"-"+ getBugDate(1, date));
+                    if (date.toLocaleDateString() == newD.toLocaleDateString()) 
+                    {
+                        eventName.innerHTML = event.name;
+                        eventDiv.appendChild(addImg(event, "30%"));
+                        eventDiv.appendChild(eventName);
+                    }
                 }
             }
-            else if (event.name == "Fireworks Show")
+
+            else
             {
-                let firework = new Date(date.getFullYear() +"-"+ getFireworksDate(date)).toLocaleDateString();
-                if (date.toLocaleDateString() == firework) 
+                // console.log(date);
+                let start = new Date(date.getFullYear()+"-"+event.Date);
+                let end = new Date(date.getFullYear()+"-"+event.endDate);
+
+                if (date >= start && date <= end) 
                 {
+                    let eventStart = document.createElement("h4");
+                    let eventEnd = document.createElement("h4");
+                    let eventName = document.createElement("h4");
+                    eventName.setAttribute("style", "padding: 10px 0; color: #1B9CE2;");
+
                     eventName.innerHTML = event.name;
+                    eventStart.innerHTML = "Start Date: " + event.Date;
+                    eventEnd.innerHTML = "End Date: " + event.endDate;
+                    
                     eventDiv.appendChild(addImg(event, "30%"));
                     eventDiv.appendChild(eventName);
-                }
-            }
-            else if (event.name == "Festivale") 
-            {
-                let newD = new Date(date.getFullYear() +"-"+ getFestivaleDate(date));
-                if (date.toLocaleDateString() == newD.toLocaleDateString()) 
-                {
-                    eventName.innerHTML = event.name;
-                    eventDiv.appendChild(addImg(event, "30%"));
-                    eventDiv.appendChild(eventName);
-                }
-            }
-            else if (event.name == "Bunny Day")
-            {
-                let newD = new Date(date.getFullYear() +"-"+ getBunnyDayDate(date));
-                if (date.toLocaleDateString() == newD.toLocaleDateString()) 
-                {
-                    eventName.innerHTML = event.name;
-                    eventDiv.appendChild(addImg(event, "30%"));
-                    eventDiv.appendChild(eventName);
-                }
-            }
-            else if (event.name == "Turkey Day")
-            {
-                newD = new Date(date.getFullYear() +"-"+ getTurkeyDate(date));
-                if (date.toLocaleDateString() == newD.toLocaleDateString()) 
-                {
-                    eventName.innerHTML = event.name;
-                    eventDiv.appendChild(addImg(event, "30%"));
-                    eventDiv.appendChild(eventName);
-                }
-            }
-            else if (event.name == "Fishing Tourney")
-            {
-                newD = new Date(date.getFullYear() +"-"+ getFishingDate(date));
-                if (date.toLocaleDateString() == newD.toLocaleDateString()) 
-                {
-                    eventName.innerHTML = event.name;
-                    eventDiv.appendChild(addImg(event, "30%"));
-                    eventDiv.appendChild(eventName);
-                }
-            }
-            else if (event.name == "Bug Off North" && north.checked)
-            {
-                newD = new Date(date.getFullYear() +"-"+ getBugDate(0, date));
-                if (date.toLocaleDateString() == newD.toLocaleDateString()) 
-                {
-                    eventName.innerHTML = event.name;
-                    eventDiv.appendChild(addImg(event, "30%"));
-                    eventDiv.appendChild(eventName);
-                }
-            }
-            else if (event.name == "Bug Off South" && south.checked)
-            {
-                newD = new Date(date.getFullYear() +"-"+ getBugDate(1, date));
-                if (date.toLocaleDateString() == newD.toLocaleDateString()) 
-                {
-                    eventName.innerHTML = event.name;
-                    eventDiv.appendChild(addImg(event, "30%"));
-                    eventDiv.appendChild(eventName);
+                    eventDiv.appendChild(eventStart);
+                    eventDiv.appendChild(eventEnd);
                 }
             }
         }
@@ -135,13 +162,6 @@ const daySeason = function(date)
     let seasonDiv = document.createElement("div");
     seasonDiv.setAttribute("class", "flexVertical");
     seasonDiv.setAttribute("Style", "text-align: center; align-items: center;");
-    
-    
-    let materialName = document.createElement("h4");
-    materialName.setAttribute("style", "padding: 10px 0; color: #1B9CE2;");
-
-    let materialStart = document.createElement("h4");
-    let materialEnd = document.createElement("h4");
 
 
     if (north.checked) 
@@ -161,6 +181,12 @@ const daySeason = function(date)
                 {
                     if (date >= start && date <= end) 
                     {
+                        let materialName = document.createElement("h4");
+                        materialName.setAttribute("style", "padding: 10px 0; color: #1B9CE2;");
+
+                        let materialStart = document.createElement("h4");
+                        let materialEnd = document.createElement("h4");
+
                         let div = document.createElement("div");
                         div.setAttribute("style", "width: 100%;");
 
@@ -176,12 +202,31 @@ const daySeason = function(date)
                         seasonDiv.appendChild(div);
                     }
                 }
-                else
+                else if ((date >= start && date <= new Date(date.getFullYear() + "-12-31")) || (date >= new Date(date.getFullYear() + "-01-01") && date <= end)) 
                 {
-                    // console.log(material);
+                    console.log(material.name, material.Start, material.End);
+                    // the end of the year dates SUCK cause it's always displaying the current year...
+
+                    let materialName = document.createElement("h4");
+                    materialName.setAttribute("style", "padding: 10px 0; color: #1B9CE2;");
+
+                    let materialStart = document.createElement("h4");
+                    let materialEnd = document.createElement("h4");
+
+                    let div = document.createElement("div");
+                    div.setAttribute("style", "width: 100%;");
+
+                    materialName.innerHTML = material.name;
+                    materialStart.innerHTML = "Start Date: " + new Date(material.Start).toLocaleDateString();
+                    materialEnd.innerHTML = "End Date: " + new Date(material.End).toLocaleDateString();
+
+                    div.appendChild(addImg(material, "30%"));
+                    div.appendChild(materialName);
+                    div.appendChild(materialStart);
+                    div.appendChild(materialEnd);
+
+                    seasonDiv.appendChild(div);
                 }
-                
-                
             }
         )
     }
@@ -191,22 +236,7 @@ const daySeason = function(date)
         (
             function (material)
             {
-                // let start = new Date(material.StartSouth);
-                // let end = new Date(material.EndSouth);
-
-                // console.log(material.name);
-                // console.log("start: ", start.toLocaleDateString());
-                // console.log("end", end.toLocaleDateString());
-
-                // if (start > end)
-                // {
-                //     console.log(material);
-                // }
-                // else
-                // {
-                    
-                // }
-
+                
             }
         )
     }

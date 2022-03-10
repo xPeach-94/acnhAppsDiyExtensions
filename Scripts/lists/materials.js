@@ -1,3 +1,26 @@
+const getPreviousYear = function(year)
+{
+    if (year == getYear()) 
+    {
+        return (year -1);
+    }
+    else
+    {
+        return year;
+    }
+}
+const getNextYear = function(year)
+{
+    if (year != getYear()) 
+    {
+        return (year +1);    
+    }
+    else
+    {
+        return year;
+    }
+}
+
 const materialArr =
     [
         {
@@ -454,8 +477,8 @@ const materialArr =
             "name": "Large Snowflake",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/SnowCrystalLarge.png",
             "sell": 2500,
-            "Start": getYear() + "-12-11",
-            "End": getYear() + "-02-24",
+            "Start": getPreviousYear(getYear()) + "-12-11",
+            "End": getNextYear(getYear()) + "-02-24",
             "StartSouth": getYear() + "-06-11",
             "EndSouth": getYear() + "-08-24",
         },
@@ -610,28 +633,28 @@ const materialArr =
             "name": "Blue Ornament",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/ChristmasOrnamentB.png",
             "sell": 50,
-            "Start": getYear() + "-12-15",
-            "End": getYear() + "-01-06",
-            "StartSouth": getYear() + "-12-15",
-            "EndSouth": getYear() + "-01-06",
+            "Start": getPreviousYear(getYear()) + "-12-15",
+            "End": getNextYear(getYear()) + "-01-06",
+            "StartSouth": getPreviousYear(getYear()) + "-12-15",
+            "EndSouth": getNextYear(getYear()) + "-01-06",
         },
         {
             "name": "Gold Ornament",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/ChristmasOrnamentC.png",
             "sell": 50,
-            "Start": getYear() + "-12-15",
-            "End": getYear() + "-01-06",
-            "StartSouth": getYear() + "-12-15",
-            "EndSouth": getYear() + "-01-06",
+            "Start": getPreviousYear(getYear()) + "-12-15",
+            "End": getNextYear(getYear()) + "-01-06",
+            "StartSouth": getPreviousYear(getYear()) + "-12-15",
+            "EndSouth": getNextYear(getYear()) + "-01-06",
         },
         {
             "name": "Red Ornament",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/ChristmasOrnamentA.png",
             "sell": 50,
-            "Start": getYear() + "-12-15",
-            "End": getYear() + "-01-06",
-            "StartSouth": getYear() + "-12-15",
-            "EndSouth": getYear() + "-01-06",
+            "Start": getPreviousYear(getYear()) + "-12-15",
+            "End": getNextYear(getYear()) + "-01-06",
+            "StartSouth": getPreviousYear(getYear()) + "-12-15",
+            "EndSouth": getNextYear(getYear()) + "-01-06",
         },
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- P
         {
@@ -779,8 +802,8 @@ const materialArr =
             "name": "Snowflake",
             "img": "https://cdn.nookazon.com/nookazon/MenuIcon/SnowCrystal.png",
             "sell": 200,
-            "Start": getYear() + "-12-11",
-            "End": getYear() + "-02-24",
+            "Start": getPreviousYear(getYear()) + "-12-11",
+            "End": getNextYear(getYear()) + "-02-24",
             "StartSouth": getYear() + "-06-11",
             "EndSouth": getYear() + "-08-24",
         },
@@ -802,8 +825,8 @@ const materialArr =
             "sell": 600,
             "Start": getYear() + "-06-01",
             "End": getYear() + "-08-31",
-            "StartSouth": getYear() + "-12-01",
-            "EndSouth": getYear() + "-02-29",
+            "StartSouth": getPreviousYear(getYear()) + "-12-01",
+            "EndSouth": getNextYear(getYear()) + "-02-29",
         },
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- T
         {
