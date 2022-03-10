@@ -22,11 +22,11 @@ const getBunnyDayDate = function (date)
 
     let bunnyD = new Date(getEaster(dateYear));
 
-    if (date > bunnyD) 
-    {
-        dateYear = dateYear +1;
-        bunnyD = new Date(getEaster(dateYear));
-    }
+    // if (date > bunnyD) 
+    // {
+    //     dateYear = dateYear +1;
+    //     bunnyD = new Date(getEaster(dateYear));
+    // }
 
     // console.log("Bunny Day", date.getFullYear()+"-"+leadingZeros(bunnyD.getMonth() +1) +"-"+ leadingZeros(bunnyD.getDate()));
     return leadingZeros(bunnyD.getMonth() +1) +"-"+ leadingZeros(bunnyD.getDate());

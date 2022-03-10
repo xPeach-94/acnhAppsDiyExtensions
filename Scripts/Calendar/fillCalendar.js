@@ -1,8 +1,8 @@
-const addImg = function(event)
+const addImg = function(event, width = "100%")
 {
     let eventImg = document.createElement("img");
     eventImg.setAttribute("src", event.img);
-    eventImg.setAttribute("style", "width: 100%;");
+    eventImg.setAttribute("style", "width: "+width+";");
 
     return eventImg;
 }
@@ -40,80 +40,51 @@ const fillEvents = function(date, hem)
             }
             else if (event.name == "Festivale") 
             {
-                newD = date.getFullYear() +"-"+ getFestivaleDate(date);
-                // console.log(event.name, newD);
+                newD = new Date(date.getFullYear() +"-"+ getFestivaleDate(date));
+                if (date.toLocaleDateString() == newD.toLocaleDateString()) 
+                {
+                    eventDiv.appendChild(addImg(event));
+                }
             }
-            else
+            else if (event.name == "Bunny Day")
             {
-                // console.log(event.name);
+                newD = new Date(date.getFullYear() +"-"+ getBunnyDayDate(date));
+                if (date.toLocaleDateString() == newD.toLocaleDateString()) 
+                {
+                    eventDiv.appendChild(addImg(event));
+                }
             }
-
-        //     let newD
-        //     if (event.name == "Festivale") 
-        //     {
-        //         newD = getFestivaleDate(date);
-        //     }
-        //     if (event.name == "Bunny Day") 
-        //     {
-        //         newD = getBunnyDayDate(date);
-        //     }
-        //     if (event.name == "Turkey Day") 
-        //     {
-        //         newD = getTurkeyDate(date);    
-        //     }
-        //     if (event.name == "Fishing Tourney") 
-        //     {
-        //         newD = getFishingDate(date);
-        //     }
-
-        //     if (event.name != "Fireworks Show" && event.name != "Bug Off North" && event.name != "Bug Off South" && event.name != "Festivale" && event.name != "Bunny Day" && event.name != "Turkey Day" && event.name != "Fishing Tourney") 
-        //     {
-        //         if (event.Date == (leadingZeros(month) +"-"+ leadingZeros(day))) 
-        //         {
-        //             let eventImg = document.createElement("img");
-        //             eventImg.setAttribute("src", event.img);
-        //             eventImg.setAttribute("style", "width: 100%;");
-
-        //             eventDiv.appendChild(eventImg);
-        //         }
-        //     }
-        //     else if (newD == (leadingZeros(month) +"-"+ leadingZeros(day)) && event.name != "Fireworks Show" && event.name != "Bug Off North" && event.name != "Bug Off South") 
-        //     {
-        //         let eventImg = document.createElement("img");
-        //         eventImg.setAttribute("src", event.img);
-        //         eventImg.setAttribute("style", "width: 100%;");
-
-        //         eventDiv.appendChild(eventImg);
-        //     }
-
-        //     if (date.toLocaleDateString() == firework) 
-        //     {
-        //         if (event.name == "Fireworks Show") 
-        //         {
-        //             let eventImg = document.createElement("img");
-        //             eventImg.setAttribute("src", event.img);
-        //             eventImg.setAttribute("style", "width: 100%;");
-
-        //             eventDiv.appendChild(eventImg);
-        //         }
-        //     }
-
-        //     if (event.name == "Bug Off North" && hem == 0 && date.toLocaleDateString() == bug.toLocaleDateString()) 
-        //     {
-        //         let eventImg = document.createElement("img");
-        //         eventImg.setAttribute("src", event.img);
-        //         eventImg.setAttribute("style", "width: 100%;");
-
-        //         eventDiv.appendChild(eventImg);
-        //     }
-        //     else if (event.name == "Bug Off South" && hem == 1 && date.toLocaleDateString() == bug.toLocaleDateString()) 
-        //     {
-        //         let eventImg = document.createElement("img");
-        //         eventImg.setAttribute("src", event.img);
-        //         eventImg.setAttribute("style", "width: 100%;");
-
-        //         eventDiv.appendChild(eventImg);
-        //     }
+            else if (event.name == "Turkey Day")
+            {
+                newD = new Date(date.getFullYear() +"-"+ getTurkeyDate(date));
+                if (date.toLocaleDateString() == newD.toLocaleDateString()) 
+                {
+                    eventDiv.appendChild(addImg(event));
+                }
+            }
+            else if (event.name == "Fishing Tourney")
+            {
+                newD = new Date(date.getFullYear() +"-"+ getFishingDate(date));
+                if (date.toLocaleDateString() == newD.toLocaleDateString()) 
+                {
+                    eventDiv.appendChild(addImg(event));
+                }
+            }
+            else if (event.name == "Bug Off North" && hem == 0)
+            {
+                
+                if (date.toLocaleDateString() == bug.toLocaleDateString()) 
+                {
+                    eventDiv.appendChild(addImg(event));
+                }
+            }
+            else if (event.name == "Bug Off South" && hem == 1)
+            {
+                if (date.toLocaleDateString() == bug.toLocaleDateString()) 
+                {
+                    eventDiv.appendChild(addImg(event));
+                }
+            }
         }
     )
 
