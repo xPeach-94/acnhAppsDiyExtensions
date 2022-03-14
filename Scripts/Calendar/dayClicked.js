@@ -131,7 +131,6 @@ const dayEvent = function(date)
 
             else
             {
-                // console.log(date);
                 let start = new Date(date.getFullYear()+"-"+event.Date);
                 let end = new Date(date.getFullYear()+"-"+event.endDate);
 
@@ -143,8 +142,8 @@ const dayEvent = function(date)
                     eventName.setAttribute("style", "padding: 10px 0; color: #1B9CE2;");
 
                     eventName.innerHTML = event.name;
-                    eventStart.innerHTML = "Start Date: " + event.Date;
-                    eventEnd.innerHTML = "End Date: " + event.endDate;
+                    eventStart.innerHTML = "Start Date: " + start.toLocaleDateString();
+                    eventEnd.innerHTML = "End Date: " + end.toLocaleDateString();
                     
                     eventDiv.appendChild(addImg(event, "30%"));
                     eventDiv.appendChild(eventName);
@@ -172,10 +171,10 @@ const daySeason = function(date)
             {
                 let start = new Date(material.Start);
                 let end = new Date(material.End);
+                // console.log(material.name, start.toLocaleDateString(), end.toLocaleDateString());
 
-                // console.log(material.name);
-                // console.log("start: ", start.toLocaleDateString());
-                // console.log("end", end.toLocaleDateString());
+                start.setFullYear(getSelectedYear())
+                end.setFullYear(getSelectedYear());
 
                 if (start < end)
                 {
@@ -191,8 +190,8 @@ const daySeason = function(date)
                         div.setAttribute("style", "width: 100%;");
 
                         materialName.innerHTML = material.name;
-                        materialStart.innerHTML = "Start Date: " + new Date(material.Start).toLocaleDateString();
-                        materialEnd.innerHTML = "End Date: " + new Date(material.End).toLocaleDateString();
+                        materialStart.innerHTML = "Start Date: " + new Date(start).toLocaleDateString();
+                        materialEnd.innerHTML = "End Date: " + new Date(end).toLocaleDateString();
 
                         div.appendChild(addImg(material, "30%"));
                         div.appendChild(materialName);
@@ -204,8 +203,14 @@ const daySeason = function(date)
                 }
                 else if ((date >= start && date <= new Date(date.getFullYear() + "-12-31")) || (date >= new Date(date.getFullYear() + "-01-01") && date <= end)) 
                 {
-                    console.log(material.name, material.Start, material.End);
-                    // the end of the year dates SUCK cause it's always displaying the current year...
+                    if (date >= start && date <= new Date(date.getFullYear() + "-12-31"))
+                    {
+                        end.setFullYear(end.getFullYear() +1)
+                    }
+                    else if (date >= new Date(date.getFullYear() + "-01-01") && date <= end)
+                    {
+                        start.setFullYear(start.getFullYear()-1);
+                    }
 
                     let materialName = document.createElement("h4");
                     materialName.setAttribute("style", "padding: 10px 0; color: #1B9CE2;");
@@ -217,8 +222,8 @@ const daySeason = function(date)
                     div.setAttribute("style", "width: 100%;");
 
                     materialName.innerHTML = material.name;
-                    materialStart.innerHTML = "Start Date: " + new Date(material.Start).toLocaleDateString();
-                    materialEnd.innerHTML = "End Date: " + new Date(material.End).toLocaleDateString();
+                    materialStart.innerHTML = "Start Date: " + new Date(start).toLocaleDateString();
+                    materialEnd.innerHTML = "End Date: " + new Date(end).toLocaleDateString();
 
                     div.appendChild(addImg(material, "30%"));
                     div.appendChild(materialName);
@@ -236,7 +241,69 @@ const daySeason = function(date)
         (
             function (material)
             {
-                
+                let start = new Date(material.StartSouth);
+                let end = new Date(material.EndSouth);
+                // console.log(material.name, start.toLocaleDateString(), end.toLocaleDateString());
+
+                start.setFullYear(getSelectedYear())
+                end.setFullYear(getSelectedYear());
+
+                if (start < end)
+                {
+                    if (date >= start && date <= end) 
+                    {
+                        let materialName = document.createElement("h4");
+                        materialName.setAttribute("style", "padding: 10px 0; color: #1B9CE2;");
+
+                        let materialStart = document.createElement("h4");
+                        let materialEnd = document.createElement("h4");
+
+                        let div = document.createElement("div");
+                        div.setAttribute("style", "width: 100%;");
+
+                        materialName.innerHTML = material.name;
+                        materialStart.innerHTML = "Start Date: " + new Date(start).toLocaleDateString();
+                        materialEnd.innerHTML = "End Date: " + new Date(end).toLocaleDateString();
+
+                        div.appendChild(addImg(material, "30%"));
+                        div.appendChild(materialName);
+                        div.appendChild(materialStart);
+                        div.appendChild(materialEnd);
+
+                        seasonDiv.appendChild(div);
+                    }
+                }
+                else if ((date >= start && date <= new Date(date.getFullYear() + "-12-31")) || (date >= new Date(date.getFullYear() + "-01-01") && date <= end)) 
+                {
+                    if (date >= start && date <= new Date(date.getFullYear() + "-12-31"))
+                    {
+                        end.setFullYear(end.getFullYear() +1)
+                    }
+                    else if (date >= new Date(date.getFullYear() + "-01-01") && date <= end)
+                    {
+                        start.setFullYear(start.getFullYear()-1);
+                    }
+
+                    let materialName = document.createElement("h4");
+                    materialName.setAttribute("style", "padding: 10px 0; color: #1B9CE2;");
+
+                    let materialStart = document.createElement("h4");
+                    let materialEnd = document.createElement("h4");
+
+                    let div = document.createElement("div");
+                    div.setAttribute("style", "width: 100%;");
+
+                    materialName.innerHTML = material.name;
+                    materialStart.innerHTML = "Start Date: " + new Date(start).toLocaleDateString();
+                    materialEnd.innerHTML = "End Date: " + new Date(end).toLocaleDateString();
+
+                    div.appendChild(addImg(material, "30%"));
+                    div.appendChild(materialName);
+                    div.appendChild(materialStart);
+                    div.appendChild(materialEnd);
+
+                    seasonDiv.appendChild(div);
+                }
             }
         )
     }
