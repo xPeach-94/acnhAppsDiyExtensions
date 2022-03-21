@@ -921,7 +921,7 @@ const materialArr =
             "sell": 200,
             "Start": getYear() + "-02-25",
             "End": getYear() + "-05-31",
-            "StartSouth": getYear() + "-08-28",
+            "StartSouth": getYear() + "-08-25",
             "EndSouth": getYear() + "-11-30",
         }
     ]

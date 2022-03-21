@@ -59,6 +59,10 @@ let craftulatorLink = document.createElement("a");
 craftulatorLink.setAttribute("href", "Craftulator.html");
 craftulatorLink.innerHTML = "Craftulator";
 
+let encyclopedia = document.createElement("a");
+encyclopedia.setAttribute("href", "Encyclopedia.html");
+encyclopedia.innerHTML = "Encyclopedia";
+
 let calendarLink = document.createElement("a");
 calendarLink.setAttribute("href", "Calendar.html");
 calendarLink.innerHTML = "Calendar";
@@ -70,6 +74,7 @@ moreWebsitesLink.innerHTML = "More Websites";
 menuContent.appendChild(indexLink);
 menuContent.appendChild(diyProfitsLink);
 menuContent.appendChild(craftulatorLink);
+menuContent.appendChild(encyclopedia);
 menuContent.appendChild(calendarLink);
 menuContent.appendChild(moreWebsitesLink);
 

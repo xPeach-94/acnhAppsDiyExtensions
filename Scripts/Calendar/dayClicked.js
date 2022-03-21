@@ -30,7 +30,7 @@ const cellBtnClicked = function(el)
     dayClicked.appendChild(title);
     dayClicked.appendChild(dayEvent(dateClicked));// append events
     dayClicked.appendChild(daySeason(dateClicked));// append seasonal
-    // dayClicked.appendChild(dayBirthday(dateClicked));// append birthdays
+    dayClicked.appendChild(dayBirthday(dateClicked));// append birthdays
 
     dayClicked.setAttribute("style", "flex");
 }
@@ -38,7 +38,11 @@ const cellBtnClicked = function(el)
 const dayEvent = function(date)
 {
     let eventDiv = document.createElement("div");
+    eventDiv.setAttribute("class", "flexVertical");
     eventDiv.setAttribute("Style", "text-align: center;");
+
+    let div = document.createElement("div");
+
     let eventName = document.createElement("h4");
     eventName.setAttribute("style", "padding: 10px 0; color: #1B9CE2;");
 
@@ -53,8 +57,9 @@ const dayEvent = function(date)
                     if (date.toLocaleDateString() == new Date(date.getFullYear() +"-"+ event.Date).toLocaleDateString()) 
                     {
                         eventName.innerHTML = event.name;
-                        eventDiv.appendChild(addImg(event, "30%"));
-                        eventDiv.appendChild(eventName);
+                        div.appendChild(addImg(event, "30%"));
+                        div.appendChild(eventName);
+                        eventDiv.appendChild(div);
                     }
                 }
                 else if (event.name == "Fireworks Show")
@@ -63,8 +68,9 @@ const dayEvent = function(date)
                     if (date.toLocaleDateString() == firework) 
                     {
                         eventName.innerHTML = event.name;
-                        eventDiv.appendChild(addImg(event, "30%"));
-                        eventDiv.appendChild(eventName);
+                        div.appendChild(addImg(event, "30%"));
+                        div.appendChild(eventName);
+                        eventDiv.appendChild(div);
                     }
                 }
                 else if (event.name == "Festivale") 
@@ -73,8 +79,9 @@ const dayEvent = function(date)
                     if (date.toLocaleDateString() == newD.toLocaleDateString()) 
                     {
                         eventName.innerHTML = event.name;
-                        eventDiv.appendChild(addImg(event, "30%"));
-                        eventDiv.appendChild(eventName);
+                        div.appendChild(addImg(event, "30%"));
+                        div.appendChild(eventName);
+                        eventDiv.appendChild(div);
                     }
                 }
                 else if (event.name == "Bunny Day")
@@ -83,8 +90,9 @@ const dayEvent = function(date)
                     if (date.toLocaleDateString() == newD.toLocaleDateString()) 
                     {
                         eventName.innerHTML = event.name;
-                        eventDiv.appendChild(addImg(event, "30%"));
-                        eventDiv.appendChild(eventName);
+                        div.appendChild(addImg(event, "30%"));
+                        div.appendChild(eventName);
+                        eventDiv.appendChild(div);
                     }
                 }
                 else if (event.name == "Turkey Day")
@@ -93,8 +101,9 @@ const dayEvent = function(date)
                     if (date.toLocaleDateString() == newD.toLocaleDateString()) 
                     {
                         eventName.innerHTML = event.name;
-                        eventDiv.appendChild(addImg(event, "30%"));
-                        eventDiv.appendChild(eventName);
+                        div.appendChild(addImg(event, "30%"));
+                        div.appendChild(eventName);
+                        eventDiv.appendChild(div);
                     }
                 }
                 else if (event.name == "Fishing Tourney")
@@ -103,8 +112,9 @@ const dayEvent = function(date)
                     if (date.toLocaleDateString() == newD.toLocaleDateString()) 
                     {
                         eventName.innerHTML = event.name;
-                        eventDiv.appendChild(addImg(event, "30%"));
-                        eventDiv.appendChild(eventName);
+                        div.appendChild(addImg(event, "30%"));
+                        div.appendChild(eventName);
+                        eventDiv.appendChild(div);
                     }
                 }
                 else if (event.name == "Bug Off North" && north.checked)
@@ -113,8 +123,9 @@ const dayEvent = function(date)
                     if (date.toLocaleDateString() == newD.toLocaleDateString()) 
                     {
                         eventName.innerHTML = event.name;
-                        eventDiv.appendChild(addImg(event, "30%"));
-                        eventDiv.appendChild(eventName);
+                        div.appendChild(addImg(event, "30%"));
+                        div.appendChild(eventName);
+                        eventDiv.appendChild(div);
                     }
                 }
                 else if (event.name == "Bug Off South" && south.checked)
@@ -123,8 +134,9 @@ const dayEvent = function(date)
                     if (date.toLocaleDateString() == newD.toLocaleDateString()) 
                     {
                         eventName.innerHTML = event.name;
-                        eventDiv.appendChild(addImg(event, "30%"));
-                        eventDiv.appendChild(eventName);
+                        div.appendChild(addImg(event, "30%"));
+                        div.appendChild(eventName);
+                        eventDiv.appendChild(div);
                     }
                 }
             }
@@ -136,6 +148,8 @@ const dayEvent = function(date)
 
                 if (date >= start && date <= end) 
                 {
+                    let div = document.createElement("div");
+
                     let eventStart = document.createElement("h4");
                     let eventEnd = document.createElement("h4");
                     let eventName = document.createElement("h4");
@@ -145,10 +159,12 @@ const dayEvent = function(date)
                     eventStart.innerHTML = "Start Date: " + start.toLocaleDateString();
                     eventEnd.innerHTML = "End Date: " + end.toLocaleDateString();
                     
-                    eventDiv.appendChild(addImg(event, "30%"));
-                    eventDiv.appendChild(eventName);
-                    eventDiv.appendChild(eventStart);
-                    eventDiv.appendChild(eventEnd);
+                    div.appendChild(addImg(event, "30%"));
+                    div.appendChild(eventName);
+                    div.appendChild(eventStart);
+                    div.appendChild(eventEnd);
+
+                    eventDiv.appendChild(div);
                 }
             }
         }
@@ -162,7 +178,6 @@ const daySeason = function(date)
     seasonDiv.setAttribute("class", "flexVertical");
     seasonDiv.setAttribute("Style", "text-align: center; align-items: center;");
 
-
     if (north.checked) 
     {
         seasonalMaterialArr.forEach
@@ -175,6 +190,12 @@ const daySeason = function(date)
 
                 start.setFullYear(getSelectedYear())
                 end.setFullYear(getSelectedYear());
+
+                if ((material.name).includes("Egg")) 
+                {
+                    start = new Date(subtractDays(getEaster(start.getFullYear()), 11))
+                    end = new Date(getEaster(end.getFullYear()));
+                }
 
                 if (start < end)
                 {
@@ -248,6 +269,12 @@ const daySeason = function(date)
                 start.setFullYear(getSelectedYear())
                 end.setFullYear(getSelectedYear());
 
+                if ((material.name).includes("Egg")) 
+                {
+                    start = new Date(subtractDays(getEaster(start.getFullYear()), 11))
+                    end = new Date(getEaster(end.getFullYear()));
+                }
+
                 if (start < end)
                 {
                     if (date >= start && date <= end) 
@@ -313,5 +340,36 @@ const daySeason = function(date)
 
 const dayBirthday = function(date)
 {
+    let birthdayDiv = document.createElement("div");
+    birthdayDiv.setAttribute("class", "flexVertical");
+    birthdayDiv.setAttribute("Style", "text-align: center; align-items: center;");
 
+    villagerBirthdays.forEach
+    (
+        function(villager)
+        {
+            let birthday = new Date(date.getFullYear() +"-"+ villager.birthday);
+            if (date.toLocaleDateString() == birthday.toLocaleDateString()) 
+            {
+                let birthdayName = document.createElement("h4");
+                birthdayName.setAttribute("style", "padding: 10px 0; color: #1B9CE2;");
+
+                let div = document.createElement("div");
+                div.setAttribute("style", "width: 100%;");
+
+                birthdayName.innerHTML = villager.name;
+
+                let img = document.createElement("img");
+                img.setAttribute("src", villager.icon_url);
+                img.setAttribute("style", "width: 30%;");
+
+                div.appendChild(img);
+                div.appendChild(birthdayName);
+
+                birthdayDiv.appendChild(div);
+            }
+        }
+    )
+
+    return birthdayDiv;
 }
