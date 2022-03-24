@@ -33,6 +33,8 @@
         <script src="Scripts/lists/Fish.js" defer type="text/javascript"></script>
         <script src="Scripts/lists/Diving.js" defer type="text/javascript"></script>
 
+        <script src="Scripts/Encyclopedia/Encyclopedia.js" defer type="text/javascript"></script>
+
         <!--Used to embed a client-side script (JavaScript).-->
         <!-- "defer" A script that will not run until after the page has loaded-->
     </head>
@@ -47,7 +49,25 @@
             
             <p class="maintenance">This page is still in development. <br> Please be patient while I work on it :)</p>
 
+            <div style="align-self: center; font-size: 1.2em;">
+                <div>
+                    <input type="radio" name="hemisphere" id="northHem" value="northHem" checked onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
+                    <label for="northHem">North Hemisphere</label>
+                </div>
+                <div>
+                    <input type="radio" name="hemisphere" id="southHem" value="southHem" onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
+                    <label for="southHem">South Hemisphere</label>
+                </div>
+            </div>
 
+            <form class="flex form" autocomplete="off">
+                <div class="autocomplete" style="width: 100%;">
+                    <input type="text" id="creatureInput" style="height: 90%; width: 98%;">
+                </div>
+                <button type="button" class="btn" id="addDiy" style="width:35%" onclick="">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149852.png" alt="Search" style="width: 35%;">
+                </button>
+            </form>
         </main>
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- footer -->
