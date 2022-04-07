@@ -193,7 +193,7 @@ const daySeason = function(date)
 
                 if ((material.name).includes("Egg")) 
                 {
-                    start = new Date(subtractDays(getEaster(start.getFullYear()), 11))
+                    start = new Date(subtractDays(getEaster(start.getFullYear()), 7))
                     end = new Date(getEaster(end.getFullYear()));
                 }
 
@@ -271,7 +271,7 @@ const daySeason = function(date)
 
                 if ((material.name).includes("Egg")) 
                 {
-                    start = new Date(subtractDays(getEaster(start.getFullYear()), 11))
+                    start = new Date(subtractDays(getEaster(start.getFullYear()), 7))
                     end = new Date(getEaster(end.getFullYear()));
                 }
 

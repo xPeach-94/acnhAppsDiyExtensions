@@ -77,10 +77,10 @@ const showCalendar = function(month, year)
 
                 // Here we can also check if the date/month/year we’re at matches the today’s date. If it does, we can highlight it.
 
-                // if (dateNr === dateToday.getDate() && year === dateToday.getFullYear() && month === (dateToday.getMonth()+1)) 
-                // {
-                //     cell.setAttribute("style", "background-color: #69a7fd;");
-                // } // highlight today’s date
+                if (dateNr === dateToday.getDate() && year === dateToday.getFullYear() && month === (dateToday.getMonth()+1)) 
+                {
+                    cell.setAttribute("style", "background-color: rgba(105, 167, 253, 0.6);");
+                } // highlight today’s date
 
 
                 cellBtn.appendChild(cellText);
@@ -155,4 +155,9 @@ const back = function()
         currentMonth = currentMonth -1;
     }
     showCalendar(currentMonth, currentYear);
+}
+
+const backToCurrentDay = function()
+{
+    showCalendar((dateToday.getMonth()+1), dateToday.getFullYear());
 }

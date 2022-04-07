@@ -54,6 +54,16 @@
             
             <!-- <p class="maintenance">This page is still in development. <br> Please be patient while I work on it :)</p> -->
 
+            <h3>How to Use:</h3>
+            <p>
+                Click on "Show Events" to see the Events. <br>
+                Click on "Show Birthdays" to see the Birthdays. <br>
+                Specify your Hemisphere. By default always North. <br> <br>
+                Click the arrows to go to next or previous months. <br>
+                Click on any day to see the specifics of that day. Including events, seasonal materials and birthdays. <br>
+                Click on the month to jump back to the current date. <br> <br>
+            </p>
+
             <div style="align-self: center; font-size: 1.2em;">
                 <div>
                     <input type="checkbox" name="events" id="showEvents" value="showEvents" checked onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
@@ -78,7 +88,7 @@
             
             <div class="flex" style="width: 100%; justify-content: space-between; align-items: center;">
                 <button style="width: 65px; background-color: transparent; border: none;"><img src="Images/back.png" alt="" style="width: 100%;" onclick="back()"></button>
-                <h3 id="monthName" style="font-size: 1.5em; flex-grow: 1;"></h3>
+                <h3 id="monthName" style="font-size: 1.5em; flex-grow: 1;" onclick="backToCurrentDay()"></h3>
                 <button style="width: 65px; background-color: transparent; border: none;"><img src="Images/next.png" alt="" style="width: 100%;" onclick="next()"></button>
             </div>
             
