@@ -160,4 +160,6 @@ const back = function()
 const backToCurrentDay = function()
 {
     showCalendar((dateToday.getMonth()+1), dateToday.getFullYear());
+    currentMonth = dateToday.getMonth()+1;
+    currentYear = dateToday.getFullYear();
 }
