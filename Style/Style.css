@@ -453,6 +453,16 @@ ul a {
   text-align: center;
 }
 
+@media (min-width: 426px) {
+  .mainContent {
+    width: 70%;
+  }
+}
+@media (min-width: 769px) {
+  .mainContent {
+    width: 30%;
+  }
+}
 /* menu */
 .menu {
   background-color: transparent;
@@ -488,6 +498,7 @@ ul a {
   background-color: #69a7fd;
   min-width: 160px;
   z-index: 1;
+  top: 80px;
   right: 0;
   width: 50%;
 }
@@ -511,6 +522,13 @@ ul a {
   background-color: #006994;
 }
 
+@media (min-width: 769px) {
+  .dropdown-content {
+    max-width: 30%;
+    right: 1.5%;
+    top: 65px;
+  }
+}
 #header {
   max-height: 80px;
 }
@@ -713,6 +731,10 @@ article {
   padding-top: 5px;
   width: 14%;
   height: 20%;
+}
+
+#tableContainer {
+  min-height: 500px;
 }
 
 #tableContainer {

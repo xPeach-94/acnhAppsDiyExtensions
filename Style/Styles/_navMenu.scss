@@ -38,6 +38,7 @@
   background-color: $blue;
   min-width: 160px;
   z-index: 1;
+  top: 80px;
   right: 0;
   width: 50%;
   a /* Links inside the dropdown */
@@ -63,4 +64,14 @@
 .dropdown:hover .dropbtn
 {
   background-color: $seaBlue;
+}
+
+@include Laptop1024
+{
+  .dropdown-content
+  {
+    max-width: 30%;
+    right: 1.5%;
+    top: 65px;
+  }
 }

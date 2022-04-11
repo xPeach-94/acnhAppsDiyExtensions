@@ -52,28 +52,28 @@
 
 @mixin Tablet
 {
-    // @media (min-width: 426px) 
-    // {
-    //     @content;
-    // }  
-
-    @media (max-width: 768px) 
+    @media (min-width: 426px) 
     {
         @content;
-    }
+    }  
+
+    // @media (max-width: 768px) 
+    // {
+    //     @content;
+    // }
 }
 
 @mixin Laptop1024
 {
-    // @media (min-width: 769px) 
-    // {
-    //     @content;
-    // }  
-
-    @media (max-width: 1024px) 
+    @media (min-width: 769px) 
     {
         @content;
-    }
+    }  
+
+    // @media (max-width: 1024px) 
+    // {
+    //     @content;
+    // }
 }
 
 @mixin LaptopL

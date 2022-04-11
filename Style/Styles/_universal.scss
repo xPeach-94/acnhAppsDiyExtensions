@@ -87,3 +87,18 @@ ul {
 .center {
   text-align: center;
 }
+
+@include Tablet
+{
+  .mainContent
+  {
+    width: 70%;
+  }
+}
+@include Laptop1024
+{
+  .mainContent
+  {
+    width: 30%;
+  }
+}
