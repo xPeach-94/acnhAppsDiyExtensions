@@ -28,12 +28,13 @@
         <script src="Scripts/universalScripts/time.js" defer type="text/javascript"></script>
         <script src="Scripts/universalScripts/addSubtractDays.js" defer type="text/javascript"></script>
         <script src="Scripts/universalScripts/eventsFunctions.js" defer type="text/javascript"></script>
+        <script src="Scripts\universalScripts\suggestiveTextbox.js" defer type="text/javascript"></script>
 
         <script src="Scripts/lists/Bugs.js" defer type="text/javascript"></script>
         <script src="Scripts/lists/Fish.js" defer type="text/javascript"></script>
         <script src="Scripts/lists/Diving.js" defer type="text/javascript"></script>
 
-        <script src="Scripts/Encyclopedia/Encyclopedia.js" defer type="text/javascript"></script>
+        <script src="Scripts\Encyclopedia\Encyclopedia.js" defer type="text/javascript"></script>
 
         <!--Used to embed a client-side script (JavaScript).-->
         <!-- "defer" A script that will not run until after the page has loaded-->
@@ -51,23 +52,28 @@
 
             <div style="align-self: center; font-size: 1.2em;">
                 <div>
-                    <input type="radio" name="hemisphere" id="northHem" value="northHem" checked onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
+                    <input type="radio" name="hemisphere" id="northHem" value="northHem" checked>
                     <label for="northHem">North Hemisphere</label>
                 </div>
                 <div>
-                    <input type="radio" name="hemisphere" id="southHem" value="southHem" onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
+                    <input type="radio" name="hemisphere" id="southHem" value="southHem">
                     <label for="southHem">South Hemisphere</label>
                 </div>
             </div>
 
-            <form class="flex form" autocomplete="off">
+            <form class="flex form" autocomplete="off" style="height: 40px;">
                 <div class="autocomplete" style="width: 100%;">
                     <input type="text" id="creatureInput" style="height: 90%; width: 98%;">
                 </div>
-                <button type="button" class="btn" id="addDiy" style="width:35%" onclick="">
-                    <img src="https://cdn-icons-png.flaticon.com/512/149/149852.png" alt="Search" style="width: 35%;">
+                <button type="button" class="btn" id="search" style="width:35%; padding: 0px;" onclick="">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149852.png" alt="Search" style="height: 70%;">
                 </button>
             </form>
+
+            <div id="encuclopedia">
+
+            </div>
+
         </main>
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- footer -->

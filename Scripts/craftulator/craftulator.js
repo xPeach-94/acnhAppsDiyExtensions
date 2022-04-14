@@ -62,10 +62,6 @@ const btnAddDiyClick = function()
 {
     let item = (document.getElementById("diyInp")).value;
 
-    // diy zoeken in de diy array
-    // de diy image en name laten zien onderaan
-        // als er op de image geklikt wordt moet de desbetreffende diy verwijdert worden
-    // als de eerste diy toegevoegd is moet ook een knop calculate laten zien worden.
     if (item != "") 
     {
         diyArr.forEach
@@ -222,4 +218,3 @@ const calcDiyMaterialsClick = function()
         displayMaterials(selectedDiyMaterials[i], selectedDiyMaterialsAmount[i]);
     }
 }
-// aan het einde wordt een lijst laten zien met welke en hoeveel materialen je nodig hebt
