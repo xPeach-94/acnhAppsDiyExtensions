@@ -737,6 +737,15 @@ article {
   min-height: 500px;
 }
 
+#Shortcuts {
+  margin-left: 25px;
+}
+#Shortcuts .shortcutBtn {
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+}
+
 #tableContainer {
   width: 100%;
 }

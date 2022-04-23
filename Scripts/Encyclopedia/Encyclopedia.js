@@ -20,6 +20,11 @@ pageNumber.setAttribute("style", "margin: auto 0px");
 
 pageNumber.innerHTML = pageNr;
 
+if (pageNr == 0) 
+{
+    pageNumber.innerHTML = "";
+}
+
 const next = function()
 {
     pageNr++;
@@ -33,10 +38,10 @@ const back = function()
         pageNr--;
         initiatePage();
         pageNumber.innerHTML = pageNr;
-        if (pageNr == 0) 
-        {
-            pageNumber.innerHTML = "Cover";
-        }
+    }
+    if (pageNr == 0) 
+    {
+        pageNumber.innerHTML = "";
     }
 }
 
@@ -76,16 +81,15 @@ const pageTurn = function()
 
 const index = function()
 {
-    
+    let index = document.createElement("table");
 
     if (pageNr >= 1) 
     {
-        let index = document.createElement("table");
 
-        return index
+        
     }
 
-    return document.createElement("p");;
+    return index
 
     // console.log("Page:", pageNr);
     // bugArr.forEach
@@ -150,10 +154,33 @@ const index = function()
 const initiatePage = function()
 {
     book.innerHTML = "";
-    
-    let indexPage = index();
 
-    book.appendChild(indexPage);
+    if (pageNr == 0) 
+    {
+        let cover = document.createElement("img");
+        cover.setAttribute("src", "Images/encyclopedia.png");
+        book.appendChild(cover);    
+    }
+    if (pageNr > 0) 
+    {
+        if (pageNr % 2 == 0) 
+        {
+            console.log(pageNr, "right");
+
+            // book.style.backgroundImage = "url(Images/right.png)";
+
+            // put pages (divs) inside encyclopedia div, put background image on those page divs
+        }
+        else
+        {
+            console.log(pageNr, "left");
+
+            let paper = document.createElement("img");
+            paper.setAttribute("src", "Images/left.png");
+        }
+        // let indexPage = index();
+        // book.appendChild(indexPage);
+    }
 
     let turnPage = pageTurn();
     book.appendChild(turnPage);

@@ -190,3 +190,14 @@ article {
 {
   min-height: 500px;
 }
+
+#Shortcuts
+{
+  margin-left: 25px;
+  .shortcutBtn
+  {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+  }
+}
