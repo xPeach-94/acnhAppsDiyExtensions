@@ -1,22 +1,13 @@
-// class Page
-// {
-//     constructor(id, title, description, page_num, page_type, object_arr)
-//     {
-//         this.id = id;
-//         this.title = title;
-//         this.description = description;
-//         this.page_num = page_num;
-//         this.page_type = page_type;
-//         this.object_arr = object_arr;
-//     }
-// }
-
-
 let pageNr = 0;
 
-let book = document.getElementById("encyclopedia");
+let encyclopediaBook = document.getElementById("encyclopedia");
+let book = document.getElementById("book");
+book.setAttribute("style", "flex-grow: 1; height: 400px");
+
 let pageNumber = document.createElement("h3");
+
 pageNumber.setAttribute("style", "margin: auto 0px");
+pageNumber.setAttribute("onClick", "closeBook();");
 
 pageNumber.innerHTML = pageNr;
 
@@ -27,6 +18,8 @@ if (pageNr == 0)
 
 const next = function()
 {
+    let pageArrows = document.getElementById("turnPage");
+    pageArrows.innerHTML = "";
     pageNr++;
     initiatePage();
     pageNumber.innerHTML = pageNr;
@@ -35,6 +28,8 @@ const back = function()
 {
     if (pageNr > 0) 
     {
+        let pageArrows = document.getElementById("turnPage");
+        pageArrows.innerHTML = "";
         pageNr--;
         initiatePage();
         pageNumber.innerHTML = pageNr;
@@ -45,10 +40,20 @@ const back = function()
     }
 }
 
+const closeBook = function()
+{
+    pageNr = 0;
+    pageNumber.innerHTML = "";
+    document.getElementById("turnPage").innerHTML = "";
+    initiatePage();
+}
+
+let turnPage = document.createElement("div");
+
 const pageTurn = function()
 {
-    let turnPage = document.createElement("div");
     turnPage.setAttribute("style", "display: flex; justify-content: space-between;");
+    turnPage.setAttribute("id", "turnPage");
 
     let arrowBack = document.createElement("button");
     arrowBack.setAttribute("style", "text-align: left; width: 20%; padding: 0px; background-color: transparent; border: none;");
@@ -82,74 +87,267 @@ const pageTurn = function()
 const index = function()
 {
     let index = document.createElement("table");
+    index.setAttribute("style", "margin: auto 20px; height: 100%");
 
-    if (pageNr >= 1) 
+    if (pageNr >= 1 && pageNr <= 4) // bugs
     {
+        let tr = document.createElement("tr");
 
-        
+        bugArr.forEach
+        (
+            function (bug)
+            {
+                if (bug.index >= 1 && bug.index<= 20 && pageNr == 1) 
+                {
+                    let td = document.createElement("td");
+                    let bugBtn = document.createElement("button");
+                    bugBtn.setAttribute("style", "background-color: transparent; border: none;");
+                    bugBtn.setAttribute("value", bug.name);
+
+                    let bugIco = document.createElement("img");
+                    
+                    bugIco.setAttribute("src", bug.icon);
+                    bugIco.setAttribute("style", "width:100%;");
+                    
+                    bugBtn.appendChild(bugIco);
+                    td.appendChild(bugBtn);
+                    tr.appendChild(td);
+
+                    if (bug.index % 4 == 0 && bug.index != 20) 
+                    {
+                        tr = document.createElement("tr");
+                    }
+
+                    index.appendChild(tr);
+                }
+                else if (bug.index > 20 && bug.index <= 40 && pageNr == 2) 
+                {
+                    let td = document.createElement("td");
+                    let bugBtn = document.createElement("button");
+                    bugBtn.setAttribute("style", "background-color: transparent; border: none;");
+                    bugBtn.setAttribute("value", bug.name);
+
+                    let bugIco = document.createElement("img");
+                    
+                    bugIco.setAttribute("src", bug.icon);
+                    bugIco.setAttribute("style", "width:100%;");
+                    
+                    bugBtn.appendChild(bugIco);
+                    td.appendChild(bugBtn);
+                    tr.appendChild(td);
+                    if (bug.index % 4 == 0 && bug.index != 40) 
+                    {
+                        tr = document.createElement("tr");
+                    }
+
+                    index.appendChild(tr);
+                }
+                else if (bug.index > 40 && bug.index <= 60 && pageNr == 3) 
+                {
+                    let td = document.createElement("td");
+                    let bugBtn = document.createElement("button");
+                    bugBtn.setAttribute("style", "background-color: transparent; border: none;");
+                    bugBtn.setAttribute("value", bug.name);
+
+                    let bugIco = document.createElement("img");
+                    
+                    bugIco.setAttribute("src", bug.icon);
+                    bugIco.setAttribute("style", "width:100%;");
+                    
+                    bugBtn.appendChild(bugIco);
+                    td.appendChild(bugBtn);
+                    tr.appendChild(td);
+                    if (bug.index % 4 == 0 && bug.index != 60) 
+                    {
+                        tr = document.createElement("tr"); 
+                    }
+
+                    index.appendChild(tr);
+                }
+                else if (bug.index > 60 && bug.index <= 80 && pageNr == 4) 
+                {
+                    let td = document.createElement("td");
+                    let bugBtn = document.createElement("button");
+                    bugBtn.setAttribute("style", "background-color: transparent; border: none;");
+                    bugBtn.setAttribute("value", bug.name);
+
+                    let bugIco = document.createElement("img");
+                    
+                    bugIco.setAttribute("src", bug.icon);
+                    bugIco.setAttribute("style", "width:100%;");
+                    
+                    bugBtn.appendChild(bugIco);
+                    td.appendChild(bugBtn);
+                    tr.appendChild(td);
+                    if (bug.index % 4 == 0 && bug.index != 80) 
+                    {
+                        tr = document.createElement("tr"); 
+                    }
+
+                    index.appendChild(tr);
+                }
+            }
+        )
+    }
+    else if (pageNr >= 5 && pageNr <= 8) // fish
+    {
+        let tr = document.createElement("tr");
+
+        fishArr.forEach
+        (
+            function (fish)
+            {
+                if (fish.index >= 1 && fish.index<= 20 && pageNr == 5) 
+                {
+                    let td = document.createElement("td");
+                    let fishBtn = document.createElement("button");
+                    fishBtn.setAttribute("style", "background-color: transparent; border: none;");
+                    fishBtn.setAttribute("value", fish.name);
+
+                    let fishIco = document.createElement("img");
+                    
+                    fishIco.setAttribute("src", fish.icon);
+                    fishIco.setAttribute("style", "width:100%;");
+                    
+                    fishBtn.appendChild(fishIco);
+                    td.appendChild(fishBtn);
+                    tr.appendChild(td);
+                    if (fish.index % 4 == 0) 
+                    {
+                        tr = document.createElement("tr"); 
+                    }
+
+                    index.appendChild(tr);
+                }
+                else if (fish.index > 20 && fish.index <= 40 && pageNr == 6) 
+                {
+                    let td = document.createElement("td");
+                    let fishBtn = document.createElement("button");
+                    fishBtn.setAttribute("style", "background-color: transparent; border: none;");
+                    fishBtn.setAttribute("value", fish.name);
+
+                    let fishIco = document.createElement("img");
+                    
+                    fishIco.setAttribute("src", fish.icon);
+                    fishIco.setAttribute("style", "width:100%;");
+                    
+                    fishBtn.appendChild(fishIco);
+                    td.appendChild(fishBtn);
+                    tr.appendChild(td);
+                    if (fish.index % 4 == 0) 
+                    {
+                        tr = document.createElement("tr"); 
+                    }
+
+                    index.appendChild(tr);
+                }
+                else if (fish.index > 40 && fish.index <= 60 && pageNr == 7) 
+                {
+                    let td = document.createElement("td");
+                    let fishBtn = document.createElement("button");
+                    fishBtn.setAttribute("style", "background-color: transparent; border: none;");
+                    fishBtn.setAttribute("value", fish.name);
+
+                    let fishIco = document.createElement("img");
+                    
+                    fishIco.setAttribute("src", fish.icon);
+                    fishIco.setAttribute("style", "width:100%;");
+                    
+                    fishBtn.appendChild(fishIco);
+                    td.appendChild(fishBtn);
+                    tr.appendChild(td);
+                    if (fish.index % 4 == 0) 
+                    {
+                        tr = document.createElement("tr"); 
+                    }
+
+                    index.appendChild(tr);
+                }
+                else if (fish.index > 60 && fish.index <= 80 && pageNr == 8) 
+                {
+                    let td = document.createElement("td");
+                    let fishBtn = document.createElement("button");
+                    fishBtn.setAttribute("style", "background-color: transparent; border: none;");
+                    fishBtn.setAttribute("value", fish.name);
+
+                    let fishIco = document.createElement("img");
+                    
+                    fishIco.setAttribute("src", fish.icon);
+                    fishIco.setAttribute("style", "width:100%;");
+                    
+                    fishBtn.appendChild(fishIco);
+                    td.appendChild(fishBtn);
+                    tr.appendChild(td);
+                    if (fish.index % 4 == 0) 
+                    {
+                        tr = document.createElement("tr"); 
+                    }
+
+                    index.appendChild(tr);
+                }
+            }
+        )
+    }
+    else if (pageNr >= 8 && pageNr <= 10) //diving
+    {
+        let tr = document.createElement("tr");
+
+        divingArr.forEach
+        (
+            function (dive)
+            {
+                if (dive.index >= 1 && dive.index<= 20 && pageNr == 9) 
+                {
+                    let td = document.createElement("td");
+                    let diveBtn = document.createElement("button");
+                    diveBtn.setAttribute("style", "background-color: transparent; border: none;");
+                    diveBtn.setAttribute("value", dive.name);
+
+                    let diveIco = document.createElement("img");
+                    
+                    diveIco.setAttribute("src", dive.icon);
+                    diveIco.setAttribute("style", "width:100%;");
+                    
+                    diveBtn.appendChild(diveIco);
+                    td.appendChild(diveBtn);
+                    tr.appendChild(td);
+                    if (dive.index % 4 == 0) 
+                    {
+                        tr = document.createElement("tr"); 
+                    }
+                    index.appendChild(tr);
+                }
+                else if (dive.index > 20 && dive.index <= 40 && pageNr == 10) 
+                {
+                    let td = document.createElement("td");
+                    let diveBtn = document.createElement("button");
+                    diveBtn.setAttribute("style", "background-color: transparent; border: none;");
+                    diveBtn.setAttribute("value", dive.name);
+
+                    let diveIco = document.createElement("img");
+                    
+                    diveIco.setAttribute("src", dive.icon);
+                    diveIco.setAttribute("style", "width:100%;");
+                    
+                    diveBtn.appendChild(diveIco);
+                    td.appendChild(diveBtn);
+                    tr.appendChild(td);
+                    if (dive.index % 4 == 0) 
+                    {
+                        tr = document.createElement("tr"); 
+                    }
+
+                    index.appendChild(tr);
+                }
+            }
+        )
     }
 
-    return index
-
-    // console.log("Page:", pageNr);
-    // bugArr.forEach
-    // (
-    //     function (bug)
-    //     {
-    //         console.log(bug.name);
-    //         if (bug.index % 4 == 0) 
-    //         {
-    //             console.log("")
-    //             // next row
-    //         }
-
-    //         if (bug.index % 20 == 0) 
-    //         {
-    //             pageNr++;
-    //             console.log(""); // next page
-    //             console.log("Page:", pageNr);
-    //         }
-    //     }
-    // )
-
-    // fishArr.forEach
-    // (
-    //     function (fish)
-    //     {
-    //         console.log(fish.name);
-    //         if (fish.index % 4 == 0) 
-    //         {
-    //             console.log("")    
-    //         }
-
-    //         if (fish.index % 20 == 0) 
-    //         {
-    //             pageNr++;
-    //             console.log("");
-    //             console.log("Page:", pageNr);
-    //         }
-    //     }
-    // )
-
-    // divingArr.forEach
-    // (
-    //     function (dive)
-    //     {
-    //         console.log(dive.name);
-    //         if (dive.index % 4 == 0) 
-    //         {
-    //             console.log("")
-    //         }
-            
-    //         if (dive.index % 20 == 0) 
-    //         {
-    //             pageNr++;
-    //             console.log("");
-    //             console.log("Page:", pageNr);
-    //         }
-    //     }
-    // )
+    book.appendChild(index);
 }
+
+//https://www.w3schools.com/howto/howto_css_flip_card.asp
+
 
 const initiatePage = function()
 {
@@ -159,31 +357,33 @@ const initiatePage = function()
     {
         let cover = document.createElement("img");
         cover.setAttribute("src", "Images/encyclopedia.png");
-        book.appendChild(cover);    
+        cover.setAttribute("style", "width: 100%;");
+        book.appendChild(cover);   
+        book.style.background = "transparent";
+        book.style.backgroundPosition = "center";
     }
     if (pageNr > 0) 
     {
         if (pageNr % 2 == 0) 
         {
-            console.log(pageNr, "right");
-
-            // book.style.backgroundImage = "url(Images/right.png)";
-
-            // put pages (divs) inside encyclopedia div, put background image on those page divs
+            book.style.backgroundImage = "url(Images/right.png)";
+            book.style.backgroundRepeat = "no-repeat";
+            book.style.backgroundPosition = "center";
         }
         else
         {
-            console.log(pageNr, "left");
-
-            let paper = document.createElement("img");
-            paper.setAttribute("src", "Images/left.png");
+            book.style.backgroundImage = "url(Images/left.png)";
+            book.style.backgroundRepeat = "no-repeat";
+            book.style.backgroundPosition = "center";
         }
-        // let indexPage = index();
-        // book.appendChild(indexPage);
+    }
+    if (pageNr >= 1 && pageNr <= 10) 
+    {
+        index();
     }
 
     let turnPage = pageTurn();
-    book.appendChild(turnPage);
+    encyclopediaBook.appendChild(turnPage);
 }
 
 initiatePage();
