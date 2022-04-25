@@ -1,8 +1,8 @@
-let pageNr = 0;
+let pageNr = 11;
 
 let encyclopediaBook = document.getElementById("encyclopedia");
 let book = document.getElementById("book");
-book.setAttribute("style", "flex-grow: 1; height: 400px");
+book.setAttribute("style", "flex-grow: 1; height: 400px; text-align: center; padding: 20px");
 
 let pageNumber = document.createElement("h3");
 
@@ -18,11 +18,18 @@ if (pageNr == 0)
 
 const next = function()
 {
-    let pageArrows = document.getElementById("turnPage");
-    pageArrows.innerHTML = "";
-    pageNr++;
-    initiatePage();
-    pageNumber.innerHTML = pageNr;
+    if (pageNr < 211) 
+    {
+        let pageArrows = document.getElementById("turnPage");
+        pageArrows.innerHTML = "";
+        pageNr++;
+        initiatePage();
+        pageNumber.innerHTML = pageNr;
+    }
+    if (pageNr == 211) 
+    {
+        pageNumber.innerHTML = "The End"    
+    }
 }
 const back = function()
 {
@@ -87,7 +94,7 @@ const pageTurn = function()
 const index = function()
 {
     let index = document.createElement("table");
-    index.setAttribute("style", "margin: auto 20px; height: 100%");
+    index.setAttribute("style", "height: 100%");
 
     if (pageNr >= 1 && pageNr <= 4) // bugs
     {
@@ -346,6 +353,70 @@ const index = function()
     book.appendChild(index);
 }
 
+const bugPage = function()
+{
+    let bugPage = document.createElement("div");
+
+    let top = document.createElement("div");
+    let name = document.createElement("h3");
+    let picture = document.createElement("img");
+    let sell = document.createElement("div");
+    let sellNook = document.createElement("p");
+    let sellFlick = document.createElement("p");
+
+    sell.setAttribute("style", "display: flex; justify-content: center;");
+
+    let bottom = document.createElement("div");
+    let seasonality = document.createElement("table");
+    let timeLocationWeather = document.createElement("div");
+    let time = document.createElement("p");
+    let locationWeather = document.createElement("div");
+    let location = document.createElement("p");
+    let weather = document.createElement("p");
+
+    bugArr.forEach
+    (
+        function(bug)
+        {
+            if ((bug.index + 10) == pageNr) 
+            {
+                name.innerHTML = bug.name;
+                picture.setAttribute("src", bug.picture);
+                sellNook.innerHTML = "Sell Nooks: <br>" + bug.sell_nook +" Bells";
+                sellFlick.innerHTML = "Sell Flick: <br>"+(bug.sell_nook * 1.5) +" Bells";
+            }
+        }
+    )
+
+    top.appendChild(name);
+    top.appendChild(picture);
+    sell.appendChild(sellNook);
+    sell.appendChild(sellFlick);
+    top.appendChild(sell);
+
+    bottom.appendChild(seasonality);
+    timeLocationWeather.appendChild(time);
+    locationWeather.appendChild(location);
+    locationWeather.appendChild(weather);
+    timeLocationWeather.appendChild(locationWeather);
+    bottom.appendChild(timeLocationWeather);
+
+    bugPage.appendChild(top); // 1/3
+    bugPage.appendChild(bottom); // 2/3
+
+    book.appendChild(bugPage);
+}
+
+const fishPage = function()
+{
+
+}
+
+const divePage = function()
+{
+
+}
+
 //https://www.w3schools.com/howto/howto_css_flip_card.asp
 
 
@@ -355,31 +426,55 @@ const initiatePage = function()
 
     if (pageNr == 0) 
     {
-        let cover = document.createElement("img");
-        cover.setAttribute("src", "Images/encyclopedia.png");
-        cover.setAttribute("style", "width: 100%;");
-        book.appendChild(cover);   
         book.style.background = "transparent";
+        book.style.backgroundImage = "url(Images/encyclopedia.png)";
+        book.style.backgroundRepeat = "no-repeat";
         book.style.backgroundPosition = "center";
+        book.style.backgroundSize = "100%";
     }
-    if (pageNr > 0) 
+    if (pageNr > 0 && pageNr < 211) 
     {
         if (pageNr % 2 == 0) 
         {
             book.style.backgroundImage = "url(Images/right.png)";
             book.style.backgroundRepeat = "no-repeat";
             book.style.backgroundPosition = "center";
+            book.style.backgroundSize = "100%";
         }
         else
         {
             book.style.backgroundImage = "url(Images/left.png)";
             book.style.backgroundRepeat = "no-repeat";
             book.style.backgroundPosition = "center";
+            book.style.backgroundSize = "100%";
+        }
+
+        if (pageNr >= 1 && pageNr <= 10) 
+        {
+            index();
+        }
+        else if (pageNr >= 11 && pageNr < 91)
+        {
+            bugPage();
+        }
+        else if (pageNr >= 91 && pageNr < 171) 
+        {
+            console.log("Fish Section");
+            fishPage();
+        }
+        else if (pageNr >= 171 && pageNr < 211) 
+        {
+            console.log("Diving Section");
+            divePage();
         }
     }
-    if (pageNr >= 1 && pageNr <= 10) 
+    if (pageNr == 211) 
     {
-        index();
+        book.style.background = "transparent";
+        book.style.backgroundImage = "url(Images/red-leather-book-cover-260nw-169.png)";
+        book.style.backgroundRepeat = "no-repeat";
+        book.style.backgroundPosition = "center";
+        book.style.backgroundSize = "100%";
     }
 
     let turnPage = pageTurn();
@@ -387,3 +482,28 @@ const initiatePage = function()
 }
 
 initiatePage();
+
+
+const Bug = function()
+{
+    pageNr = 11;
+    document.getElementById("turnPage").innerHTML = "";
+    pageNumber.innerHTML = pageNr;
+    initiatePage()
+}
+
+const Fish = function()
+{
+    pageNr = 91;
+    document.getElementById("turnPage").innerHTML = "";
+    pageNumber.innerHTML = pageNr;
+    initiatePage()
+}
+
+const Dive = function()
+{
+    pageNr = 171;
+    document.getElementById("turnPage").innerHTML = "";
+    pageNumber.innerHTML = pageNr;
+    initiatePage()
+}
