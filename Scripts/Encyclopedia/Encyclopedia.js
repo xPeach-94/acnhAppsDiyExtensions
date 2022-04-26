@@ -1,4 +1,4 @@
-let pageNr = 11;
+let pageNr = 0;
 
 let encyclopediaBook = document.getElementById("encyclopedia");
 let book = document.getElementById("book");
@@ -356,6 +356,7 @@ const index = function()
 const bugPage = function()
 {
     let bugPage = document.createElement("div");
+    bugPage.setAttribute("style", "height: 100%");
 
     let top = document.createElement("div");
     let name = document.createElement("h3");
@@ -364,7 +365,25 @@ const bugPage = function()
     let sellNook = document.createElement("p");
     let sellFlick = document.createElement("p");
 
+    if (window.innerWidth >= 375 && window.innerWidth < 425) 
+    {
+        top.style.paddingTop = "10px";
+    }
+    else if (window.innerWidth < 375) 
+    {
+        top.style.paddingTop = "40px";
+    }
+
+    top.setAttribute("class", "flexVertical");
+    top.style.gap = "10px";
+    top.style.alignItems = "center";
+    top.style.height = "48%"
+    
     sell.setAttribute("style", "display: flex; justify-content: center;");
+    
+    picture.setAttribute("style", "height: 40%; flex-grow: 1;");
+
+
 
     let bottom = document.createElement("div");
     let seasonality = document.createElement("table");
@@ -373,6 +392,9 @@ const bugPage = function()
     let locationWeather = document.createElement("div");
     let location = document.createElement("p");
     let weather = document.createElement("p");
+
+    bottom.style.height = "48%";
+
 
     bugArr.forEach
     (
@@ -401,8 +423,8 @@ const bugPage = function()
     timeLocationWeather.appendChild(locationWeather);
     bottom.appendChild(timeLocationWeather);
 
-    bugPage.appendChild(top); // 1/3
-    bugPage.appendChild(bottom); // 2/3
+    bugPage.appendChild(top);
+    bugPage.appendChild(bottom);
 
     book.appendChild(bugPage);
 }
