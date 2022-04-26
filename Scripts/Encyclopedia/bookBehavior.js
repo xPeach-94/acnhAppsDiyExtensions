@@ -1,3 +1,50 @@
+const searchCritter = function()
+{
+    let critter = document.getElementById("creatureInput").value;
+
+    bugArr.forEach
+    (
+        function(bug)
+        {
+            if (critter == bug.name) 
+            {
+                pageNr = bug.index + 10;
+                document.getElementById("turnPage").innerHTML = "";
+                pageNumber.innerHTML = pageNr;
+                initiatePage();
+            }
+        }
+    )
+    
+    fishArr.forEach
+    (
+        function(fish)
+        {
+            if (critter == fish.name) 
+            {
+                pageNr = fish.index + 90;
+                document.getElementById("turnPage").innerHTML = "";
+                pageNumber.innerHTML = pageNr;
+                initiatePage();
+            }
+        }
+    )
+
+    divingArr.forEach
+    (
+        function(dive)
+        {
+            if (critter == dive.name) 
+            {
+                pageNr = dive.index + 170;
+                document.getElementById("turnPage").innerHTML = "";
+                pageNumber.innerHTML = pageNr;
+                initiatePage();
+            }
+        }
+    )
+}
+
 const next = function()
 {
     if (pageNr < 211) 
