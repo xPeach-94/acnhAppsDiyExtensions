@@ -2319,7 +2319,7 @@ const bugArr =
         "picture": "https://dodo.ac/np/images/4/4a/Ant_NH.png",
         "icon": "https://dodo.ac/np/images/5/5d/Ant_NH_Icon.png",
         "sell_nook": 80,
-        "location": "On rotten Turnips/Candy/Lollipops",
+        "location": "On rotten Turnips, Candy, Lollipops",
         "weather": "Any weather",
         "n_m1": 1,
         "n_m2": 1,
