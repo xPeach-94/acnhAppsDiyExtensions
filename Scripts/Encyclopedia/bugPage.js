@@ -1,7 +1,7 @@
 const bugPage = function()
 {
     let bugPage = document.createElement("div");
-    bugPage.setAttribute("style", "height: 100%");
+    bugPage.setAttribute("style", "height: 90%");
 
     let top = document.createElement("div");
     let name = document.createElement("h3");
@@ -16,13 +16,13 @@ const bugPage = function()
     }
     else if (window.innerWidth < 375) 
     {
-        top.style.paddingTop = "40px";
+        top.style.paddingTop = "20px";
     }
 
     top.setAttribute("class", "flexVertical");
     top.style.gap = "10px";
     top.style.alignItems = "center";
-    top.style.height = "46%"
+    top.style.height = "35%"
     
     sell.setAttribute("style", "display: flex; justify-content: center;");
     
@@ -40,7 +40,7 @@ const bugPage = function()
     let weather = document.createElement("p");
 
     bottom.style.marginTop = "6px"
-    bottom.style.height = "50%";
+    bottom.style.height = "65%";
 
     seasonality.setAttribute("style", "width: 100%");
 
@@ -58,12 +58,12 @@ const bugPage = function()
         seasonality.appendChild(tr);
     }
 
-    timeLocationWeather.setAttribute("style", "height: 60%; display: flex; gap: 10px; align-items: center");
+    timeLocationWeather.setAttribute("style", "height: 58%; display: flex; gap: 10px; align-items: center; margin-top: 10px");
 
     time.setAttribute("id", "critterTime");
     time.setAttribute("style", "width: 100%;");
     
-    locationWeather.setAttribute("style", "width: 100%; height: 100%; display: flex; flex-direction: column; gap:10px; justify-content: space-evenly");
+    locationWeather.setAttribute("style", "width: 100%; height: 100%; display: flex; flex-direction: column; gap:10px; justify-content: space-between");
     
     location.setAttribute("id", "critterLocation");
     location.setAttribute("style", "width: 100%");
