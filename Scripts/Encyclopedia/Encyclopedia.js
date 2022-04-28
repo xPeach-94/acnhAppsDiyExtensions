@@ -1,4 +1,4 @@
-let pageNr = 0;
+let pageNr = 91;
 
 let encyclopediaBook = document.getElementById("encyclopedia");
 let book = document.getElementById("book");
@@ -60,7 +60,6 @@ const initiatePage = function()
         }
         else if (pageNr >= 91 && pageNr < 171) 
         {
-            console.log("Fish Section");
             fishPage();
         }
         else if (pageNr >= 171 && pageNr < 211) 

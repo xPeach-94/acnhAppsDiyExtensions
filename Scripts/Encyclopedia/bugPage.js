@@ -1,7 +1,7 @@
 const bugPage = function()
 {
     let bugPage = document.createElement("div");
-    bugPage.setAttribute("style", "height: 90%");
+    bugPage.setAttribute("style", "height: 92%; padding-top: 15px");
 
     let top = document.createElement("div");
     let name = document.createElement("h3");
@@ -10,22 +10,12 @@ const bugPage = function()
     let sellNook = document.createElement("p");
     let sellFlick = document.createElement("p");
 
-    if (window.innerWidth >= 375 && window.innerWidth < 425) 
-    {
-        top.style.paddingTop = "10px";
-    }
-    else if (window.innerWidth < 375) 
-    {
-        top.style.paddingTop = "20px";
-    }
-
     top.setAttribute("class", "flexVertical");
     top.style.gap = "10px";
     top.style.alignItems = "center";
-    top.style.height = "35%"
+    top.style.height = "48%";
     
     sell.setAttribute("style", "display: flex; justify-content: center;");
-    
     
     picture.setAttribute("style", "height: 40%; flex-grow: 1;");
 
@@ -40,9 +30,9 @@ const bugPage = function()
     let weather = document.createElement("p");
 
     bottom.style.marginTop = "6px"
-    bottom.style.height = "65%";
+    bottom.style.height = "50%";
 
-    seasonality.setAttribute("style", "width: 100%");
+    seasonality.setAttribute("style", "width: 100%; height: 41%");
 
     for (let i = 1; i <= 3; i++) 
     {
@@ -58,7 +48,7 @@ const bugPage = function()
         seasonality.appendChild(tr);
     }
 
-    timeLocationWeather.setAttribute("style", "height: 58%; display: flex; gap: 10px; align-items: center; margin-top: 10px");
+    timeLocationWeather.setAttribute("style", "height: 50%; display: flex; gap: 10px; align-items: center; margin-top: 10px");
 
     time.setAttribute("id", "critterTime");
     time.setAttribute("style", "width: 100%;");
@@ -97,9 +87,21 @@ const bugPage = function()
         {
             if ((bug.index + 10) == pageNr) 
             {
+                if (bug.name == "Peacock Butterfly")
+                {
+                    top.style.height = "35%";
+                    bottom.style.height = "65%";
+                    seasonality.style.height = "35%";
+                }
                 if (bug.name == "Migratory Locust" || bug.name == "Rice Grasshopper") 
                 {
                     picture.setAttribute("style", "width: 100%; flex-grow: 1;");
+                }
+                if (bug.name == "Ant") 
+                {
+                    top.style.height = "35%";
+                    bottom.style.height = "65%";
+                    seasonality.style.height = "40%";
                 }
 
                 name.innerHTML = bug.name;
