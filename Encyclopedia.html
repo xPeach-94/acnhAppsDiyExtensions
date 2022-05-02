@@ -54,15 +54,23 @@
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------- main content -->
         <main class="mainContent flexVertical">
             
-            <p class="maintenance">This page is still in development. <br> Please be patient while I work on it :)</p>
+            <!-- <p class="maintenance">This page is still in development. <br> Please be patient while I work on it :)</p> -->
+
+            <h3>How to Use:</h3>
+            <p>Select your hemisphere. <br> <br>
+                Use the arrows under the book to navigate. In the index, click on a critter to see their specifications.
+                Or use the search input to immediatly look for the critter in mind. <br> <br>
+                Use the shortcuts above the book to go to the diffrent sections (Bugs, Fish, Diving) <br> <br>
+                If you want to go back to the cover of the encyclopedia, Click on the page number <br> <br>
+            </p>
 
             <div style="align-self: center; font-size: 1.2em;">
                 <div>
-                    <input type="radio" name="hemisphere" id="northHem" value="northHem" checked>
+                    <input type="radio" name="hemisphere" id="northHem" onchange="hemChange()" value="northHem" checked>
                     <label for="northHem">North Hemisphere</label>
                 </div>
                 <div>
-                    <input type="radio" name="hemisphere" id="southHem" value="southHem">
+                    <input type="radio" name="hemisphere" id="southHem" onchange="hemChange()" value="southHem">
                     <label for="southHem">South Hemisphere</label>
                 </div>
             </div>

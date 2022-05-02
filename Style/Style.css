@@ -746,6 +746,16 @@ article {
   padding: 5px 10px;
 }
 
+.homeLink {
+  color: #006994;
+  font-weight: bold;
+  text-decoration: none;
+}
+.homeLink :visited {
+  color: #006994;
+  text-decoration: none;
+}
+
 #tableContainer {
   width: 100%;
 }

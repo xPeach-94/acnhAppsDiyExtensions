@@ -1,4 +1,4 @@
-let pageNr = 91;
+let pageNr = 0;
 
 let encyclopediaBook = document.getElementById("encyclopedia");
 let book = document.getElementById("book");
@@ -64,7 +64,6 @@ const initiatePage = function()
         }
         else if (pageNr >= 171 && pageNr < 211) 
         {
-            console.log("Diving Section");
             divePage();
         }
     }

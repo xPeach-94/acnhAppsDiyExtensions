@@ -43,6 +43,13 @@ const searchCritter = function()
             }
         }
     )
+    document.getElementById("creatureInput").value = "";
+}
+
+const hemChange = function()
+{
+    document.getElementById("turnPage").innerHTML = "";
+    initiatePage()
 }
 
 const next = function()

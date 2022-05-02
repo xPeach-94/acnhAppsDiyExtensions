@@ -5,6 +5,7 @@ const bugPage = function()
 
     let top = document.createElement("div");
     let name = document.createElement("h3");
+    let picContainer = document.createElement("div");
     let picture = document.createElement("img");
     let sell = document.createElement("div");
     let sellNook = document.createElement("p");
@@ -17,7 +18,14 @@ const bugPage = function()
     
     sell.setAttribute("style", "display: flex; justify-content: center;");
     
-    picture.setAttribute("style", "height: 40%; flex-grow: 1;");
+    picContainer.style.height = "40%";
+    picContainer.style.width = "100%";
+    picContainer.style.display = "flex";
+    picContainer.style.flexDirection = "column";
+    picContainer.style.justifyContent = "center";
+    picContainer.style.alignItems = "center";
+    
+    picture.setAttribute("style", "height: 100%");
 
 
 
@@ -62,7 +70,8 @@ const bugPage = function()
     weather.setAttribute("style", "width: 100%");
 
     top.appendChild(name);
-    top.appendChild(picture);
+    picContainer.appendChild(picture);
+    top.appendChild(picContainer);
     sell.appendChild(sellNook);
     sell.appendChild(sellFlick);
     top.appendChild(sell);

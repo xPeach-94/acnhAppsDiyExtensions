@@ -343,7 +343,7 @@ const bugArr =
     },
     {
         "index": 11,
-        "name": "Rajah Brooke's Birdwing",
+        "name": "Rajah Brookes Birdwing",
         "picture": "https://dodo.ac/np/images/b/b7/Rajah_Brooke%27s_Birdwing_NH.png",
         "icon": "https://dodo.ac/np/images/8/81/Rajah_Brooke%27s_Birdwing_NH_Icon.png",
         "sell_nook": 2500,
@@ -377,7 +377,7 @@ const bugArr =
     },
     {
         "index": 12,
-        "name": "Queen Alexandra's Birdwing",
+        "name": "Queen Alexandras Birdwing",
         "picture": "https://dodo.ac/np/images/8/8a/Queen_Alexandra%27s_Birdwing_NH.png",
         "icon": "https://dodo.ac/np/images/b/bb/Queen_Alexandra%27s_Birdwing_NH_Icon.png",
         "sell_nook": 4000,

@@ -201,3 +201,16 @@ article {
     padding: 5px 10px;
   }
 }
+
+.homeLink
+{
+  color: $seaBlue; 
+  font-weight: bold;
+  text-decoration: none;
+
+  :visited
+  {
+    color: $seaBlue;
+    text-decoration: none;
+  }
+}

@@ -1329,7 +1329,7 @@ const divingArr =
     },
     {
         "index": 40,
-        "name": "Venus' Flower Basket",
+        "name": "Venus Flower Basket",
         "picture": "https://dodo.ac/np/images/5/51/Venus%27_Flower_Basket_NH.png",
         "icon": "https://dodo.ac/np/images/6/6a/Venus%27_Flower_Basket_NH_Icon.png",
         "sell_nook": 5000,

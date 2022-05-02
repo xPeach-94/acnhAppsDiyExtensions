@@ -18,13 +18,13 @@ const fishPage = function()
     
     sell.setAttribute("style", "display: flex; justify-content: center;");
     
-    picContainer.style.flexGrow = "1";
     picContainer.style.height = "40%";
     picContainer.style.width = "100%";
     picContainer.style.display = "flex";
     picContainer.style.flexDirection = "column";
     picContainer.style.justifyContent = "center";
     picContainer.style.alignItems = "center";
+    
     picture.setAttribute("id", "img");
 
 
