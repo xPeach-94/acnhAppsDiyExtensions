@@ -50,7 +50,15 @@ const eventAdd = function(event)
 
         var name = document.createElement("h4");
         var date = document.createElement("h5");
-        name.innerHTML = event.name;
+
+        if (event.name == "International Museum Day" && window.innerWidth < 490) 
+        {
+            name.innerHTML = "Inter-national Museum Day"
+        }
+        else
+        {
+            name.innerHTML = event.name;
+        }
         date.innerHTML = new Date(getYear() +"-"+ event.Date).toLocaleDateString();
 
         newEvent.appendChild(name);
@@ -67,7 +75,14 @@ const eventAdd = function(event)
 
         var name = document.createElement("h4");
         var date = document.createElement("h5");
-        name.innerHTML = event.name;
+        if (event.name == "International Museum Day" && window.innerWidth < 490) 
+        {
+            name.innerHTML = "Inter-national Museum Day"
+        }
+        else
+        {
+            name.innerHTML = event.name;
+        }
         date.innerHTML = new Date(getYear() +"-"+ event.Date).toLocaleDateString();
 
         newEvent.appendChild(name);
