@@ -24,10 +24,13 @@ const seasonalMaterialsSouth = function (item)
 
 materialArr.forEach //Loop through array
 (
-    function (item) {
+    function (item) 
+    {
         // console.log(item.name, item.Start);
 
-        if (("Start" in item) && ("End" in item) && ("img" in item)) {
+        // if (("Start" in item) && ("End" in item) && ("img" in item)) 
+        if (item.Start && item.End && item.img)
+        {
             if (curDate >= item.Start && curDate <= item.End) {
                 seasonalMaterialsNorth(item)
             }
@@ -37,8 +40,8 @@ materialArr.forEach //Loop through array
                 }
             }
         }
-        if (("StartSouth" in item) && ("EndSouth" in item) && ("img" in item)) {
-
+        if (item.StartSouth && item.EndSouth && item.img) 
+        {
             if ((curDate >= item.StartSouth && curDate <= item.EndSouth)) {
                 seasonalMaterialsSouth(item)
             }
@@ -55,15 +58,14 @@ const seasonArr = [];
 
 const upCommingSeason = function()
 {
-    for (let i = 0; i < materialArr.length; i++) 
+    materialArr.forEach(material => 
     {
-
-        if (materialArr[i].Start) 
+        if (material.Start) 
         {
-            seasonArr.push(materialArr[i]);
+            seasonArr.push(material);
         }
-    }
-    
+    });
+
     for (let i = 0; i < seasonArr.length; i++) 
     {
         let newD = subtractDays(seasonArr[i].Start, 7);
@@ -119,4 +121,6 @@ const upCommingSeason = function()
             newSeason.appendChild(date);
         }
     }
-}()
+}
+
+upCommingSeason();
